@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import itertools
+import feather
 
 sic_mappings = pd.read_csv('lookups/sic_mappings.csv')
 
@@ -16,7 +17,7 @@ df6 = df5.drop(81)
 df7 = pd.melt(df6, id_vars=['sic'], var_name='year', value_name='abs')
 df7.year = pd.to_numeric(df7.year)
 abs = df7
-abs[abs['abs'] < 0] = 0
+#abs.loc[abs['abs'] < 0, 'abs'] = 0
 
 
 df = pd.read_excel(path, sheet_name = 'Charities', usecols=list(range(0, 5)), skiprows=[0])
@@ -50,8 +51,17 @@ df = pd.read_excel(path, sheet_name='SIC 91 Sales Data', header=None)
 df2 = df.iloc[:, [0,2,3]]
 df3 = df2.dropna(axis=0).reset_index(drop=True)
 df3.columns = ['sic', 'year', 'abs']
-df3.sic = df3.sic.astype(str)
+
+# convert sics to string
+#df3.sic = df3.sic.astype(str)
+mysics = df3.sic
+mask = mysics.apply(lambda x: x.is_integer())
+tempo = mysics.astype(str)
+tempo[mask] = mysics[mask].astype(int).astype(str)
+df3.sic = tempo
+
 df3.year = df3.year.astype(int)
+
 sic91 = df3
 
 # combine extracts =============================================================
@@ -61,7 +71,7 @@ abs_2015 = pd.concat([abs_2015, sic91], axis=0)
 abs_year = abs.year.max()
 
 # copy 2015 data to append as 2016 data
-temp = abs_2015.loc[abs['year'] == abs_year].copy()
+temp = abs_2015.loc[abs_2015['year'] == abs_year].copy()
 temp['year'] = abs_year + 1
 abs_2015 = pd.concat([abs_2015, temp], axis=0)
 
@@ -157,16 +167,20 @@ df['year'] = df['year'].astype(int)
 
 tb = pd.crosstab(df['sector'], df['year'], values=df['gva'], aggfunc=sum)
 tb.loc['perc_of_UK'] = round(tb.loc['all_dcms'] / tb.loc['UK'] * 100, 1)
-tb.reindex(list(sector_names))
+tb = tb.reindex(list(sector_names))
 
-gva_excel = pd.read_excel('GVA_sector_tables.xlsx', sheet_name = '1.1 - GVA current (£bn)', skiprows=5).iloc[0:11]
+gva_excel = pd.read_excel('GVA_sector_tables.xlsx', sheet_name = '1.1 - GVA current (£bn)', skiprows=5).iloc[0:11,:-3]
+gva_excel = gva_excel.set_index(['Sector'])
+gva_excel = round(gva_excel, 1)
+tb.values == gva_excel.values
 
 
 
-import feather
+
 gvar = feather.read_dataframe('gva.feather')
 absr = feather.read_dataframe('abs.feather')
 combined_gvar = feather.read_dataframe('combined_gva.feather')
+tempr = feather.read_dataframe('temp.feather')
 gva.dtypes
 gvar.dtypes
 (gva != gvar).any()
@@ -183,9 +197,16 @@ absr.iloc[69]
 abs.dtypes
 absr.dtypes
 
-combined_gva.dtypes
-combined_gvar.dtypes
-(abs != absr).any()
+tempr.dtypes
+gva_sectors.dtypes
+tempr.sic = tempr.sic.astype(float)
+tempr.sic2 = tempr.sic2.astype(float)
+(combined_gva != combined_gvar).any()
+df_all = gva_sectors.merge(tempr.drop_duplicates(), 
+                   how='left', indicator=True)
+df_all['_merge'] == 'left_only'
+
+
 
 row_order = """Civil Society (Non-market charities)
 Creative Industries
