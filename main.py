@@ -8,15 +8,18 @@ sic_mappings = pd.read_csv('lookups/sic_mappings.csv')
 
 path = '/Volumes/Data/EAU/Statistics/Economic Estimates/2017 publications/November publication/GVA - current/Working_file_dcms_V11 2016 Data.xlsx'
 
+# read abs data
+# note: both sections of data contain sic 92 so one needs removing
 df = pd.read_excel(path, sheet_name = 'NEW ABS DATA (2)', usecols=list(range(12, 21)))
 df2 = df.iloc[90:161, :]
 df3 = df.iloc[list(range(4, 86)) + [88], :]
 df4 = pd.concat([df2, df3])
 df5 = df4.rename(columns={'Checks': 'sic'}).reset_index(drop=True)
 df6 = df5.drop(81)
-df7 = pd.melt(df6, id_vars=['sic'], var_name='year', value_name='abs')
-df7.year = pd.to_numeric(df7.year)
-abs = df7
+df7 = df6.drop(148)
+df8 = pd.melt(df7, id_vars=['sic'], var_name='year', value_name='abs')
+df8.year = pd.to_numeric(df8.year)
+abs = df8
 #abs.loc[abs['abs'] < 0, 'abs'] = 0
 
 
@@ -162,18 +165,21 @@ df = gva_by_sector.copy()
 temp = gva_by_sector.copy()
 temp = temp.loc[(temp['sector'] == 'UK') & (temp['year'] == 2016)]
 total2016 = temp.copy()
-df['gva'] = round(df['gva'] / 1000, 1)
+#df['gva'] = round(df['gva'] / 1000, 5)
+#df['gva'] = df['gva'] / 1000
 df['year'] = df['year'].astype(int)
 
 tb = pd.crosstab(df['sector'], df['year'], values=df['gva'], aggfunc=sum)
-tb.loc['perc_of_UK'] = round(tb.loc['all_dcms'] / tb.loc['UK'] * 100, 1)
+perc_row = round(tb.loc['all_dcms'] / tb.loc['UK'] * 100, 5)
+tb = round(tb / 1000, 5)
+tb.loc['perc_of_UK'] = perc_row
 tb = tb.reindex(list(sector_names))
 
 gva_excel = pd.read_excel('GVA_sector_tables.xlsx', sheet_name = '1.1 - GVA current (£bn)', skiprows=5).iloc[0:11,:-3]
 gva_excel = gva_excel.set_index(['Sector'])
-gva_excel = round(gva_excel, 1)
-tb.values == gva_excel.values
+gva_excel = round(gva_excel, 5)
 
+tb.values == gva_excel.values
 
 
 
