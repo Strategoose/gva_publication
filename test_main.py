@@ -147,9 +147,20 @@ gva_by_sector = gva_by_sector.drop(['overlap'], axis=1)
 current_year = combined_gva.year.max()
 gva_by_sector = gva_by_sector.loc[gva_by_sector['year'].isin(range(2010, current_year + 1))]
 gva_by_sector = gva_by_sector[['sector', 'year', 'gva']].sort_values(by=['year', 'sector'])
+gva_by_sector['year'] = gva_by_sector['year'].astype(int)
 
 
 # sub-sector level tables ======================================================
+all_row_order = """Civil Society (Non-market charities)
+Creative Industries
+Cultural Sector
+Digital Sector
+Gambling
+Sport
+Telecoms
+Tourism
+All DCMS sectors
+UK""".split('\n')
 creative_row_order = """Advertising and marketing
 Architecture 
 Crafts 
@@ -177,27 +188,16 @@ Museums and galleries
 Library and archives
 Cultural education
 Heritage""".split('\n')
-sub_sector_row_orders = {
-    'creative': creative_row_order,
-    'digital': digital_row_order,
-    'culture': culture_row_order,
+row_orders = {
+    'Creative Industries': creative_row_order,
+    'Digital Sector': digital_row_order,
+    'Cultural Sector': culture_row_order,
+    'All': all_row_order
 }
 
 
 
-def sub_sector_table(sector):
-    df = combined_gva.loc[combined_gva['sector'] == sector]
-    df = df[['year', 'sub_sector_categories', 'gva']].groupby(['year', 'sub_sector_categories']).sum().reset_index()    
-    df = df.loc[df['year'].isin(range(2010, current_year + 1))]
-    tb = pd.crosstab(df['sub_sector_categories'], df['year'], values=df['gva'], aggfunc=sum)
-    tb = round(tb, 5)
-    tb = tb.reindex(sub_sector_row_orders[sector])
-    return tb
-gva_creative = sub_sector_table('creative')
-gva_digital = sub_sector_table('digital')
-gva_culture = sub_sector_table('culture')
-
-# sector level tables ==========================================================
+# create aggregate data CSV ====================================================
 sector_names = {
     "charities": "Civil Society (Non-market charities)",
     "creative": "Creative Industries",
@@ -208,50 +208,86 @@ sector_names = {
     "telecoms": "Telecoms",
     "tourism": "Tourism",
     "all_dcms": "All DCMS sectors",
-    "perc_of_UK": "% of UK GVA",
     "UK": "UK"
 }
 
-df = gva_by_sector.copy()
+df = combined_gva.loc[combined_gva['sector'].isin(['creative', 'culture', 'digital']), ['sector', 'sub_sector_categories', 'year', 'gva']]
+df = df[df['year'] >= 2010]
+df.columns = ['sector', 'sub-sector', 'year', 'gva']
 temp = gva_by_sector.copy()
-temp = temp.loc[(temp['sector'] == 'UK') & (temp['year'] == 2016)]
-total2016 = temp.copy()
-#df['gva'] = round(df['gva'] / 1000, 5)
-#df['gva'] = df['gva'] / 1000
-df['year'] = df['year'].astype(int)
+temp['sub-sector'] = 'All'
+df = pd.concat([df, temp], axis=0)
+df['sector'] = df['sector'].map(sector_names)
+agg = df.copy()
+agg.to_csv('gva_aggregate_data_2016.csv', index=False)
 
-tb = pd.crosstab(df['sector'], df['year'], values=df['gva'], aggfunc=sum)
-perc_row = round(tb.loc['all_dcms'] / tb.loc['UK'] * 100, 5)
-tb = round(tb / 1000, 5)
-tb.loc['perc_of_UK'] = perc_row
-tb = tb.reindex(list(sector_names))
-tb = tb.reset_index()
-tb['sector'] = tb['sector'].map(sector_names)
-tb = tb.set_index('sector')
-gva_current = tb.copy()
+def make_table(sector):
+    df = agg
+    if sector == 'All':
+        df = agg.loc[agg['sub-sector'] == 'All']
+        breakdown_col = 'sector'
+    else:
+        df = agg.loc[agg['sector'] == sector]
+        breakdown_col = 'sub-sector'        
+
+    tb = pd.crosstab(df[breakdown_col], df['year'], values=df['gva'], aggfunc=sum)
+    if sector == 'All':
+        tb = round(tb / 1000, 5)
+    else:
+        tb = round(tb, 5)        
+    
+    tb = tb.reindex(row_orders[sector])
+    return tb
+gva_creative = make_table('Creative Industries')
+gva_digital = make_table('Digital Sector')
+gva_culture = make_table('Cultural Sector')
+gva_current = make_table('All')
+
+
+def make_table(sector):
+    df = agg
+    if sector == 'All':
+        df = agg.loc[agg['sub-sector'] == 'All']
+        breakdown_col = 'sector'
+    else:
+        df = agg.loc[agg['sector'] == sector]
+        breakdown_col = 'sub-sector'        
+
+    tb = pd.crosstab(df[breakdown_col], df['year'], values=df['gva'], aggfunc=sum)
+     
+    
+    tb = tb.reindex(row_orders[sector])
+    return tb
+
+gva_current_full = make_table('All')
+
+def indexed(tb):
+    data = tb.copy()
+    tb.loc[:, 2010] = 100
+    for y in range(2011, current_year + 1):
+        tb.loc[:, y] = data.loc[:, y] / data.loc[:, 2010] * 100
+    tb = round(tb, 5)
+    return tb
+
+gva_current_indexed = indexed(gva_current_full.copy())
 
 # indexed version - needs unrounded absolute table
-tb = pd.crosstab(df['sector'], df['year'], values=df['gva'], aggfunc=sum)
-data = tb.copy()
-tb.loc[:, 2010] = 100
-for y in range(2011, current_year + 1):
-    tb.loc[:, y] = data.loc[:, y] / data.loc[:, 2010] * 100
-index_names = list(sector_names)
-del index_names[-2]
-tb = tb.reindex(index_names)
-tb = tb.reset_index()
-tb['sector'] = tb['sector'].map(sector_names)
-tb = tb.set_index('sector')
-tb = round(tb, 5)
-gva_current_indexed = tb.copy()
-
-
-
-
+#tb = pd.crosstab(df['sector'], df['year'], values=df['gva'], aggfunc=sum)
+#data = tb.copy()
+#tb.loc[:, 2010] = 100
+#for y in range(2011, current_year + 1):
+#    tb.loc[:, y] = data.loc[:, y] / data.loc[:, 2010] * 100
+#index_names = list(sector_names.values())
+#tb = tb.reindex(index_names)
+##tb = tb.reset_index()
+##tb['sector'] = tb['sector'].map(sector_names)
+##tb = tb.set_index('sector')
+#tb = round(tb, 5)
+#gva_current_indexed = tb.copy()
 
 
 # read in excel data for testing
-df = pd.read_excel('GVA_sector_tables.xlsx', sheet_name = '1.1 - GVA current (£bn)', skiprows=5).iloc[0:11,:-3]
+df = pd.read_excel('GVA_sector_tables.xlsx', sheet_name = '1.1 - GVA current (£bn)', skiprows=5).iloc[list(range(9)) + [10],:-3]
 df = df.set_index(['Sector'])
 gva_current_excel = round(df, 5)
 
