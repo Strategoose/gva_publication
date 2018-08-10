@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import itertools
+import pytest
 import feather
 
 sic_mappings = pd.read_csv('lookups/sic_mappings.csv')
@@ -105,6 +106,7 @@ gva_sectors['gva'] = gva_sectors['perc_split'] * gva_sectors['gva_2digit']
 combined_gva = gva_sectors
 combined_gva = combined_gva[combined_gva['sic'] != 62.011]
 
+
 # sum by sector ================================================================
 gva_by_sector = combined_gva[['year', 'sector', 'gva']].groupby(['year', 'sector']).sum().reset_index()
 
@@ -147,6 +149,55 @@ gva_by_sector = gva_by_sector.loc[gva_by_sector['year'].isin(range(2010, current
 gva_by_sector = gva_by_sector[['sector', 'year', 'gva']].sort_values(by=['year', 'sector'])
 
 
+# sub-sector level tables ======================================================
+creative_row_order = """Advertising and marketing
+Architecture 
+Crafts 
+Design and designer fashion 
+Film, TV, video, radio and photography
+IT, software and computer services
+Publishing
+Museums, galleries and Libraries 
+Music, performing and visual arts""".split('\n')
+digital_row_order = """Manufacturing of electronics and computers    
+Wholesale of computers and electronics    
+Publishing (excluding translation and interpretation activities)       
+Software publishing       
+Film, TV, video, radio and music   
+Telecommunications        
+Computer programming, consultancy and related activities        
+Information service activities      
+Repair of computers and communication equipment""".split('\n')
+culture_row_order = """Arts
+Film, TV and music
+Radio
+Photography
+Crafts
+Museums and galleries
+Library and archives
+Cultural education
+Heritage""".split('\n')
+sub_sector_row_orders = {
+    'creative': creative_row_order,
+    'digital': digital_row_order,
+    'culture': culture_row_order,
+}
+
+
+
+def sub_sector_table(sector):
+    df = combined_gva.loc[combined_gva['sector'] == sector]
+    df = df[['year', 'sub_sector_categories', 'gva']].groupby(['year', 'sub_sector_categories']).sum().reset_index()    
+    df = df.loc[df['year'].isin(range(2010, current_year + 1))]
+    tb = pd.crosstab(df['sub_sector_categories'], df['year'], values=df['gva'], aggfunc=sum)
+    tb = round(tb, 5)
+    tb = tb.reindex(sub_sector_row_orders[sector])
+    return tb
+gva_creative = sub_sector_table('creative')
+gva_digital = sub_sector_table('digital')
+gva_culture = sub_sector_table('culture')
+
+# sector level tables ==========================================================
 sector_names = {
     "charities": "Civil Society (Non-market charities)",
     "creative": "Creative Industries",
@@ -174,89 +225,71 @@ perc_row = round(tb.loc['all_dcms'] / tb.loc['UK'] * 100, 5)
 tb = round(tb / 1000, 5)
 tb.loc['perc_of_UK'] = perc_row
 tb = tb.reindex(list(sector_names))
+tb = tb.reset_index()
+tb['sector'] = tb['sector'].map(sector_names)
+tb = tb.set_index('sector')
+gva_current = tb.copy()
 
-gva_excel = pd.read_excel('GVA_sector_tables.xlsx', sheet_name = '1.1 - GVA current (£bn)', skiprows=5).iloc[0:11,:-3]
-gva_excel = gva_excel.set_index(['Sector'])
-gva_excel = round(gva_excel, 5)
-
-tb.values == gva_excel.values
-
-
-
-gvar = feather.read_dataframe('gva.feather')
-absr = feather.read_dataframe('abs.feather')
-combined_gvar = feather.read_dataframe('combined_gva.feather')
-tempr = feather.read_dataframe('temp.feather')
-gva.dtypes
-gvar.dtypes
-(gva != gvar).any()
-gvar.head()
-abs.iloc[16]
-absr.iloc[16]
-(abs != absr).any()
-test = abs != absr
-absr[test['sic']]
-absr[abs != absr]
-test = abs != absr
-abs.iloc[69]
-absr.iloc[69]
-abs.dtypes
-absr.dtypes
-
-tempr.dtypes
-gva_sectors.dtypes
-tempr.sic = tempr.sic.astype(float)
-tempr.sic2 = tempr.sic2.astype(float)
-(combined_gva != combined_gvar).any()
-df_all = gva_sectors.merge(tempr.drop_duplicates(), 
-                   how='left', indicator=True)
-df_all['_merge'] == 'left_only'
+# indexed version - needs unrounded absolute table
+tb = pd.crosstab(df['sector'], df['year'], values=df['gva'], aggfunc=sum)
+data = tb.copy()
+tb.loc[:, 2010] = 100
+for y in range(2011, current_year + 1):
+    tb.loc[:, y] = data.loc[:, y] / data.loc[:, 2010] * 100
+index_names = list(sector_names)
+del index_names[-2]
+tb = tb.reindex(index_names)
+tb = tb.reset_index()
+tb['sector'] = tb['sector'].map(sector_names)
+tb = tb.set_index('sector')
+tb = round(tb, 5)
+gva_current_indexed = tb.copy()
 
 
 
-row_order = """Civil Society (Non-market charities)
-Creative Industries
-Cultural Sector
-Digital Sector
-Gambling
-Sport
-Telecoms
-Tourism
-All DCMS sectors
-% of UK GVA
-UK""".split('\n')
-tb[row_order]
 
-    
-  total2016 <- df %>%
-    dplyr::filter(sector == "UK" & year == 2016) %>%
-    data.frame()
 
-  df <- df %>%
-    dplyr::group_by(sector) %>%
-    tidyr::spread(key = year, value = gva) %>%
-    dplyr::ungroup()
 
-  df <- df %>%
-    dplyr::rename(`Sector` = sector) %>%
-    as.data.frame() # just ata.frame() will read in data and convert col names
+# read in excel data for testing
+df = pd.read_excel('GVA_sector_tables.xlsx', sheet_name = '1.1 - GVA current (£bn)', skiprows=5).iloc[0:11,:-3]
+df = df.set_index(['Sector'])
+gva_current_excel = round(df, 5)
 
-  # append dcms % uk row
+df = pd.read_excel('GVA_sector_tables.xlsx', sheet_name = '1.1a - GVA current (2010=100)', skiprows=5).iloc[list(range(9)) + [10],:-3]
+df = df.set_index(['Sector'])
+gva_current_indexed_excel = round(df, 5)
 
-  # update sector column with pretty category names
-  sector_lookup <- eegva::sector_lookup
-  df$Sector <-
-    sector_lookup$output_name[match(df$Sector, sector_lookup$working_name)]
+df = pd.read_excel('GVA_subsector_tables.xlsx', sheet_name = '1 - Creative Industries-current', skiprows=5).iloc[0:9,:-3]
+df = df.set_index(['Sub-sector'])
+gva_creative_excel = round(df, 5)
 
-  # re-order rows
-  df <-
-    df[
-      order(
-        sector_lookup$row_postition[
-          match(df$Sector, sector_lookup$output_name)]
-      ),
-    ]
+df = pd.read_excel('GVA_subsector_tables.xlsx', sheet_name = '2 - Digital Sector-current', skiprows=5).iloc[0:9,:-3]
+df = df.set_index(['Sub-sector'])
+gva_digital_excel = round(df, 5)
 
+df = pd.read_excel('GVA_subsector_tables.xlsx', sheet_name = '3 - Cultural Sector-current', skiprows=5).iloc[0:9,:-3]
+df = df.set_index(['Sub-sector'])
+gva_culture_excel = round(df, 5)
+
+
+test_cases = {
+    'gva_current': [gva_current, gva_current_excel],
+    'gva_current_indexed': [gva_current_indexed, gva_current_indexed_excel],
+    'creative': [gva_creative, gva_creative_excel],
+    'digital': [gva_digital, gva_digital_excel],
+    'culture': [gva_culture, gva_culture_excel],
+
+}
+# marks=pytest.mark.xfail
+@pytest.mark.parametrize('test_input,expected', [
+    pytest.param('gva_current', False, marks=pytest.mark.basic),
+    pytest.param('gva_current_indexed', False, marks=pytest.mark.basic),
+    pytest.param('creative', False, marks=pytest.mark.basic),
+    pytest.param('digital', False, marks=pytest.mark.basic),
+    pytest.param('culture', False, marks=pytest.mark.basic),
+])
+def test_data_matches(test_input, expected):
+    assert (test_cases[test_input][0].values != test_cases[test_input][1].values).any() == expected
 
 
 
