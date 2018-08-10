@@ -221,7 +221,7 @@ df['sector'] = df['sector'].map(sector_names)
 agg = df.copy()
 agg.to_csv('gva_aggregate_data_2016.csv', index=False)
 
-def make_table(sector):
+def make_table(sector, indexed=False):
     df = agg
     if sector == 'All':
         df = agg.loc[agg['sub-sector'] == 'All']
@@ -231,59 +231,29 @@ def make_table(sector):
         breakdown_col = 'sub-sector'        
 
     tb = pd.crosstab(df[breakdown_col], df['year'], values=df['gva'], aggfunc=sum)
-    if sector == 'All':
-        tb = round(tb / 1000, 5)
-    else:
-        tb = round(tb, 5)        
-    
     tb = tb.reindex(row_orders[sector])
+    
+    if indexed:
+        data = tb.copy()
+        tb.loc[:, 2010] = 100
+        for y in range(2011, current_year + 1):
+            tb.loc[:, y] = data.loc[:, y] / data.loc[:, 2010] * 100
+        tb = round(tb, 5)
+    else:
+        if sector == 'All':
+            tb = round(tb / 1000, 5)
+        else:
+            tb = round(tb, 5)        
+        
+    
     return tb
 gva_creative = make_table('Creative Industries')
 gva_digital = make_table('Digital Sector')
 gva_culture = make_table('Cultural Sector')
 gva_current = make_table('All')
+gva_current_indexed = make_table('All', indexed=True)
 
 
-def make_table(sector):
-    df = agg
-    if sector == 'All':
-        df = agg.loc[agg['sub-sector'] == 'All']
-        breakdown_col = 'sector'
-    else:
-        df = agg.loc[agg['sector'] == sector]
-        breakdown_col = 'sub-sector'        
-
-    tb = pd.crosstab(df[breakdown_col], df['year'], values=df['gva'], aggfunc=sum)
-     
-    
-    tb = tb.reindex(row_orders[sector])
-    return tb
-
-gva_current_full = make_table('All')
-
-def indexed(tb):
-    data = tb.copy()
-    tb.loc[:, 2010] = 100
-    for y in range(2011, current_year + 1):
-        tb.loc[:, y] = data.loc[:, y] / data.loc[:, 2010] * 100
-    tb = round(tb, 5)
-    return tb
-
-gva_current_indexed = indexed(gva_current_full.copy())
-
-# indexed version - needs unrounded absolute table
-#tb = pd.crosstab(df['sector'], df['year'], values=df['gva'], aggfunc=sum)
-#data = tb.copy()
-#tb.loc[:, 2010] = 100
-#for y in range(2011, current_year + 1):
-#    tb.loc[:, y] = data.loc[:, y] / data.loc[:, 2010] * 100
-#index_names = list(sector_names.values())
-#tb = tb.reindex(index_names)
-##tb = tb.reset_index()
-##tb['sector'] = tb['sector'].map(sector_names)
-##tb = tb.set_index('sector')
-#tb = round(tb, 5)
-#gva_current_indexed = tb.copy()
 
 
 # read in excel data for testing
