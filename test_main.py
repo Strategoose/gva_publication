@@ -1,72 +1,53 @@
 import pandas as pd
 import numpy as np
-import itertools
 import pytest
-import feather
 
 sic_mappings = pd.read_csv('lookups/sic_mappings.csv')
 
-
 path = '/Volumes/Data/EAU/Statistics/Economic Estimates/2017 publications/November publication/GVA - current/Working_file_dcms_V11 2016 Data.xlsx'
 
-# read abs data
 # note: both sections of data contain sic 92 so one needs removing
 df = pd.read_excel(path, sheet_name = 'NEW ABS DATA (2)', usecols=list(range(12, 21)))
-df2 = df.iloc[90:161, :]
-df3 = df.iloc[list(range(4, 86)) + [88], :]
-df4 = pd.concat([df2, df3])
-df5 = df4.rename(columns={'Checks': 'sic'}).reset_index(drop=True)
-df6 = df5.drop(81)
-df7 = df6.drop(148)
-df8 = pd.melt(df7, id_vars=['sic'], var_name='year', value_name='abs')
-df8.year = pd.to_numeric(df8.year)
-abs = df8
-#abs.loc[abs['abs'] < 0, 'abs'] = 0
-
+df = df.iloc[pd.np.r_[4:81, 82:86, 88, 90:161], :]
+df = df.rename(columns={'Checks': 'sic'}).reset_index(drop=True)
+df = pd.melt(df, id_vars=['sic'], var_name='year', value_name='abs')
+df.year = df.year.astype(int)
+abs = df.copy()
 
 df = pd.read_excel(path, sheet_name = 'Charities', usecols=list(range(0, 5)), skiprows=[0])
-df2 = df.iloc[0:7, :]
-df2.columns = ['year', 'gva', 'total', 'perc', 'overlap']
-charities = df2
+df = df.iloc[0:7, :]
+df.columns = ['year', 'gva', 'total', 'perc', 'overlap']
+charities = df.copy()
 
 df = pd.read_excel(path, sheet_name = 'Tourism', usecols=list(range(0, 5)))
 df.columns = ['year', 'gva', 'total', 'perc', 'overlap']
-tourism = df
+tourism = df.copy()
 
 df = pd.read_excel(path, sheet_name = 'CP Millions', skiprows=[0,1,2,3])
-df2 = df.iloc[9:36, 2:].set_index('Unnamed: 2')
-df3 = df2.T.reset_index().rename(columns={'index': 'sic'})
-df3.iloc[0,0] = 'year_total'
-#mysics = sic_mappings.sic2.astype(int).astype(str).append(pd.Series('year_total'))
+df = df.iloc[9:36, 2:].set_index('Unnamed: 2')
+df = df.T.reset_index().rename(columns={'index': 'sic'})
+df.iloc[0,0] = 'year_total'
 mysics = sic_mappings.sic2.copy()
 mask = mysics.apply(lambda x: x.is_integer())
-tempo = mysics.astype(str)
-tempo[mask] = mysics[mask].astype(int).astype(str)
-mysics = tempo.append(pd.Series('year_total'))
-df4 = df3.loc[df3['sic'].isin(mysics)]
-if len(sic_mappings.sic2.unique()) != df4.shape[0] - 1:
-    print('missing sics')
-df5 = pd.melt(df4, id_vars=['sic'], var_name='year', value_name='gva_2digit')
-df5.year = pd.to_numeric(df5.year)
-df5.gva_2digit = pd.to_numeric(df5.gva_2digit)
-gva = df5
+temp = mysics.astype(str)
+temp[mask] = mysics[mask].astype(int).astype(str)
+temp = temp.append(pd.Series('year_total'))
+df = df.loc[df['sic'].isin(temp)]
+if len(sic_mappings.sic2.unique()) != df.shape[0] - 1:
+    print('missing sics!')
+df = pd.melt(df, id_vars=['sic'], var_name='year', value_name='gva_2digit')
+df[['year', 'gva_2digit']] = df[['year', 'gva_2digit']].apply(pd.to_numeric)
+gva = df.copy()
 
 df = pd.read_excel(path, sheet_name='SIC 91 Sales Data', header=None)
-df2 = df.iloc[:, [0,2,3]]
-df3 = df2.dropna(axis=0).reset_index(drop=True)
-df3.columns = ['sic', 'year', 'abs']
-
-# convert sics to string
-#df3.sic = df3.sic.astype(str)
-mysics = df3.sic
-mask = mysics.apply(lambda x: x.is_integer())
-tempo = mysics.astype(str)
-tempo[mask] = mysics[mask].astype(int).astype(str)
-df3.sic = tempo
-
-df3.year = df3.year.astype(int)
-
-sic91 = df3
+df = df.iloc[:, [0,2,3]].dropna(axis=0).reset_index(drop=True)
+df.columns = ['sic', 'year', 'abs']
+temp = df.sic.copy()
+df.sic = df.sic.astype(str)
+mask = temp.apply(lambda x: x.is_integer())
+df.loc[mask, 'sic'] = temp[mask].astype(int).astype(str).copy()
+df.year = df.year.astype(int)
+sic91 = df.copy()
 
 # combine extracts =============================================================
 # appending SIC sales data which supplements the ABS for SIC 91
