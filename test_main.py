@@ -3,6 +3,7 @@ import numpy as np
 import pytest
 
 sic_mappings = pd.read_csv('lookups/sic_mappings.csv')
+sic_mappings2 = pd.read_csv('lookups/sic_mappings.csv', dtype={'sic': 'str', 'sic2': 'str'})
 
 path = '/Volumes/Data/EAU/Statistics/Economic Estimates/2017 publications/November publication/GVA - current/Working_file_dcms_V11 2016 Data.xlsx'
 
@@ -27,11 +28,7 @@ df = pd.read_excel(path, sheet_name = 'CP Millions', skiprows=[0,1,2,3])
 df = df.iloc[9:36, 2:].set_index('Unnamed: 2')
 df = df.T.reset_index().rename(columns={'index': 'sic'})
 df.iloc[0,0] = 'year_total'
-mysics = sic_mappings.sic2.copy()
-mask = mysics.apply(lambda x: x.is_integer())
-temp = mysics.astype(str)
-temp[mask] = mysics[mask].astype(int).astype(str)
-temp = temp.append(pd.Series('year_total'))
+temp = sic_mappings2.sic2.append(pd.Series('year_total'))
 df = df.loc[df['sic'].isin(temp)]
 if len(sic_mappings.sic2.unique()) != df.shape[0] - 1:
     print('missing sics!')
@@ -39,13 +36,9 @@ df = pd.melt(df, id_vars=['sic'], var_name='year', value_name='gva_2digit')
 df[['year', 'gva_2digit']] = df[['year', 'gva_2digit']].apply(pd.to_numeric)
 gva = df.copy()
 
-df = pd.read_excel(path, sheet_name='SIC 91 Sales Data', header=None)
+df = pd.read_excel(path, sheet_name='SIC 91 Sales Data', header=None, dtype={0: 'str'})
 df = df.iloc[:, [0,2,3]].dropna(axis=0).reset_index(drop=True)
 df.columns = ['sic', 'year', 'abs']
-temp = df.sic.copy()
-df.sic = df.sic.astype(str)
-mask = temp.apply(lambda x: x.is_integer())
-df.loc[mask, 'sic'] = temp[mask].astype(int).astype(str).copy()
 df.year = df.year.astype(int)
 sic91 = df.copy()
 
@@ -65,7 +58,7 @@ abs_2015 = pd.concat([abs_2015, temp], axis=0)
 # convert abs_2015.sic from str without decimals to float
 abs_2015['sic'] = abs_2015['sic'].astype(float)
 #temp = sic_mappings.loc[sic_mappings['sic2'].apply(lambda x: x.is_integer()), 'sic2']
-abs_2digit = abs_2015.loc[abs_2015['sic'].isin(sic_mappings.sic2)]
+abs_2digit = abs_2015.loc[abs_2015['sic'].isin(sic_mappings2.sic2)]
 abs_2digit = abs_2digit[['year', 'abs', 'sic']]
 abs_2digit.rename(columns={'sic': 'sic2', 'abs': 'abs_2digit'}, inplace=True)
 
