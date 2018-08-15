@@ -2,8 +2,7 @@ import pandas as pd
 import numpy as np
 import pytest
 
-sic_mappings = pd.read_csv('lookups/sic_mappings.csv')
-sic_mappings2 = pd.read_csv('lookups/sic_mappings.csv', dtype={'sic': 'str', 'sic2': 'str'})
+sic_mappings = pd.read_csv('lookups/sic_mappings.csv', dtype={'sic': 'str', 'sic2': 'str'})
 
 path = '/Volumes/Data/EAU/Statistics/Economic Estimates/2017 publications/November publication/GVA - current/Working_file_dcms_V11 2016 Data.xlsx'
 
@@ -24,7 +23,6 @@ df.year = df.year.astype(int)
 charities = df.copy()
 charities.dtypes
 
-
 df = pd.read_excel(path, sheet_name = 'Tourism', usecols=list(range(0, 5)))
 df.columns = ['year', 'gva', 'total', 'perc', 'overlap']
 tourism = df.copy()
@@ -34,9 +32,9 @@ df = pd.read_excel(path, sheet_name = 'CP Millions', skiprows=[0,1,2,3])
 df = df.iloc[9:36, 2:].set_index('Unnamed: 2')
 df = df.T.reset_index().rename(columns={'index': 'sic'})
 df.iloc[0,0] = 'year_total'
-s = sic_mappings2.sic2.append(pd.Series('year_total'))
+s = sic_mappings.sic2.append(pd.Series('year_total'))
 df = df.loc[df['sic'].isin(s)]
-if len(sic_mappings2.sic2.unique()) != df.shape[0] - 1:
+if len(sic_mappings.sic2.unique()) != df.shape[0] - 1:
     print('missing sics!')
 df = pd.melt(df, id_vars=['sic'], var_name='year', value_name='gva_2digit')
 df[['year', 'gva_2digit']] = df[['year', 'gva_2digit']].apply(pd.to_numeric)
@@ -65,37 +63,18 @@ abs_2015 = pd.concat([abs_2015, temp], axis=0)
 # keep cases from ABS which have integer SIC - which is just a higher level SIC
 # sic mappings 2 digit has 30.1 as a value
 # convert abs_2015.sic from str without decimals to float
-abs_2015['sic'] = abs_2015['sic'].astype(float)
+#abs_2015['sic'] = abs_2015['sic'].astype(float)
 #temp = sic_mappings.loc[sic_mappings['sic2'].apply(lambda x: x.is_integer()), 'sic2']
-abs_2digit = abs_2015.loc[abs_2015['sic'].isin(sic_mappings2.sic2)]
+abs_2digit = abs_2015.loc[abs_2015['sic'].isin(sic_mappings.sic2)]
 abs_2digit = abs_2digit[['year', 'abs', 'sic']]
 abs_2digit.rename(columns={'sic': 'sic2', 'abs': 'abs_2digit'}, inplace=True)
 
-sic_mappings2.dtypes
-abs_2015.dtypes
-
-test = pd.DataFrame(dict(hi=['hello', '6','5','7','3','4',5,'6','2','4','5','6','5.4','6.1','5.6','8.9','4.0134543','6']))
-
-
 # add ABS to DCMS sectors
 gva_sectors = pd.merge(sic_mappings, abs_2015, how='left')
-gva_sectors.year = gva_sectors.year.astype(int)
-gva_sectors.dtypes
-gva_sectors_old = gva_sectors.copy()
-#myout = compare_df(gva_sectors, gva_sectors_old)
-len(abs_2015.sic.unique())
-abs_2015_str = abs_2015.copy()
-len(abs_2015_str.sic.unique())
-check = pd.DataFrame(dict(
-    temp1 = abs_2015.sic.isin(sic_mappings.sic),
-    temp2 = abs_2015.sic.isin(sic_mappings2.sic),
-    temp3 = abs_2015_str.sic.isin(sic_mappings.sic),
-    temp4 = abs_2015_str.sic.isin(sic_mappings2.sic)
-))
-check['final'] = check.sum(axis=1)
 
 # add ABS GVA for integer SIC
 gva_sectors = pd.merge(gva_sectors, abs_2digit, how='left')
+
 # split of GVA between SIC by SIC2
 gva_sectors['perc_split'] = gva_sectors['abs'] / gva_sectors['abs_2digit']
 gva_sectors = gva_sectors.dropna(axis=0, subset=['year', 'abs'], how='any')
@@ -103,21 +82,18 @@ gva_sectors = gva_sectors.dropna(axis=0, subset=['year', 'abs'], how='any')
 # add GVA
 temp = gva.rename(columns={'sic': 'sic2'})
 temp = temp.loc[temp['sic2'] != 'year_total']
-temp['sic2'] = temp['sic2'].astype(float)
 gva_sectors = pd.merge(gva_sectors, temp, how='left')
 gva_sectors['gva'] = gva_sectors['perc_split'] * gva_sectors['gva_2digit']
 
-gva_sectors['sic'] = gva_sectors['sic'].astype(float)
-gva_sectors['sic2'] = gva_sectors['sic2'].astype(float)
+gva_sectors = gva_sectors[gva_sectors['sic'] != '62.011']
 combined_gva = gva_sectors
-combined_gva = combined_gva[combined_gva['sic'] != 62.011]
-combined_gva['year'] = combined_gva['year'].astype(int)
+#combined_gva['year'] = combined_gva['year'].astype(int)
 
 combined_gva_dtypes_check = pd.Series(dict(
-    sic=np.dtype(np.float64),
+    sic=np.dtype(np.object),
     description=np.dtype(np.object),
     sector=np.dtype(np.object),
-    sic2=np.dtype(np.float64),
+    sic2=np.dtype(np.object),
     sub_sector_categories=np.dtype(np.object),
     year=np.dtype(np.int64),
     abs=np.dtype(np.float64),
@@ -129,30 +105,11 @@ combined_gva_dtypes_check = pd.Series(dict(
 combined_gva.shape == (1494, 11)
 combined_gva_dtypes_check.sort_index() == combined_gva.dtypes.sort_index()
 
-# this matches but fails pytest - need to compare actual data.
-combined_gva_old = combined_gva.copy()
-combined_gva_old = combined_gva_old.sort_values(['sic', 'description', 'sector', 'sic2', 'sub_sector_categories', 'year', 'abs', 'abs_2digit', 'perc_split', 'gva_2digit', 'gva']).reset_index(drop=True)
-combined_gva = combined_gva.sort_values(['sic', 'description', 'sector', 'sic2', 'sub_sector_categories', 'year', 'abs', 'abs_2digit', 'perc_split', 'gva_2digit', 'gva']).reset_index(drop=True)
-
-combined_gva.equals(combined_gva_old)
-combined_gva.columns == combined_gva_old.columns
-
-def compare_df(df1, df2):
-    out = pd.DataFrame()
-    
-    for c in df1:
-        for i, v in enumerate(df1[c]):
-            check = df1.loc[i, c] == df2.loc[i, c]
-            if pd.isnull(df1.loc[i, c]) and pd.isnull(df2.loc[i, c]):
-                check = True
-            out.loc[i, c] = check
-            
-    return out
-
-myout = compare_df(combined_gva, combined_gva_old)
 
 
 # sum by sector ================================================================
+combined_gva['sic'] = combined_gva['sic'].astype(float)
+combined_gva['sic2'] = combined_gva['sic2'].astype(float)
 gva_by_sector = combined_gva[['year', 'sector', 'gva']].groupby(['year', 'sector']).sum().reset_index()
 
 temp = gva.loc[gva['sic'] == 'year_total'].copy()
