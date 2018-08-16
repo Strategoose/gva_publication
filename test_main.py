@@ -70,48 +70,54 @@ abs_2digit = abs_2digit[['year', 'abs', 'sic']]
 abs_2digit.rename(columns={'sic': 'sic2', 'abs': 'abs_2digit'}, inplace=True)
 
 # add ABS to DCMS sectors
-gva_sectors = pd.merge(sic_mappings, abs_2015, how='left')
+df = pd.merge(sic_mappings, abs_2015, how='left')
 
 # add ABS GVA for integer SIC
-gva_sectors = pd.merge(gva_sectors, abs_2digit, how='left')
+df = pd.merge(df, abs_2digit, how='left')
 
 # split of GVA between SIC by SIC2
-gva_sectors['perc_split'] = gva_sectors['abs'] / gva_sectors['abs_2digit']
-gva_sectors = gva_sectors.dropna(axis=0, subset=['year', 'abs'], how='any')
+df['perc_split'] = df['abs'] / df['abs_2digit']
+df = df.dropna(axis=0, subset=['year', 'abs'], how='any')
 
 # add GVA
 temp = gva.rename(columns={'sic': 'sic2'})
 temp = temp.loc[temp['sic2'] != 'year_total']
-gva_sectors = pd.merge(gva_sectors, temp, how='left')
-gva_sectors['gva'] = gva_sectors['perc_split'] * gva_sectors['gva_2digit']
+df = pd.merge(df, temp, how='left')
+df['gva'] = df['perc_split'] * df['gva_2digit']
 
-gva_sectors = gva_sectors[gva_sectors['sic'] != '62.011']
-combined_gva = gva_sectors
-#combined_gva['year'] = combined_gva['year'].astype(int)
+# not totally sure why we remove 62.011
+df = df[df['sic'] != '62.011']
+combined_gva = df.copy()
 
-combined_gva_dtypes_check = pd.Series(dict(
-    sic=np.dtype(np.object),
-    description=np.dtype(np.object),
-    sector=np.dtype(np.object),
-    sic2=np.dtype(np.object),
-    sub_sector_categories=np.dtype(np.object),
-    year=np.dtype(np.int64),
-    abs=np.dtype(np.float64),
-    abs_2digit=np.dtype(np.float64),
-    perc_split=np.dtype(np.float64),
-    gva_2digit=np.dtype(np.float64),
-    gva=np.dtype(np.float64),
-))
+combined_gva_dtypes_check = pd.Series({
+    'sic': np.dtype(np.object),
+    'description': np.dtype(np.object),
+    'sector': np.dtype(np.object),
+    'sic2': np.dtype(np.object),
+    'sub-sector': np.dtype(np.object),
+    'year': np.dtype(np.int64),
+    'abs': np.dtype(np.float64),
+    'abs_2digit': np.dtype(np.float64),
+    'perc_split': np.dtype(np.float64),
+    'gva_2digit': np.dtype(np.float64),
+    'gva': np.dtype(np.float64),
+})
 combined_gva.shape == (1494, 11)
 combined_gva_dtypes_check.sort_index() == combined_gva.dtypes.sort_index()
 
 
 
-# sum by sector ================================================================
-combined_gva['sic'] = combined_gva['sic'].astype(float)
-combined_gva['sic2'] = combined_gva['sic2'].astype(float)
-gva_by_sector = combined_gva[['year', 'sector', 'gva']].groupby(['year', 'sector']).sum().reset_index()
+# we aggregate the data in two parts: sector level, and sub-sector level. It is not sufficient to simple have sub-sector level and then sum up to find sector level, since some sectors such as toursim and charities do not have a sub-sector breakdown, and for 'All DCMS' there is overlap between sectors so you could not simply sum all sub-sectors. So for a clean approach the data for total sector level is provided where sub-sector column has the value 'All'
 
+# part 1 - sector level aggregate
+
+# aggregate combined GVA
+df = combined_gva.copy()
+#df['sic'] = df['sic'].astype(float)
+#df['sic2'] = df['sic2'].astype(float)
+df = df[['year', 'sector', 'gva']].groupby(['year', 'sector']).sum().reset_index()
+
+# append Uk total, tourism, and charities
 temp = gva.loc[gva['sic'] == 'year_total'].copy()
 temp['sector'] = 'UK'
 temp = temp.rename(columns={'gva_2digit': 'gva'})
@@ -125,34 +131,66 @@ temp = charities.copy()
 temp['sector'] = 'charities'
 charities_temp = temp[['year', 'sector', 'gva']].copy()
 
-gva_by_sector = pd.concat([gva_by_sector, gva_temp, tourism_temp, charities_temp], axis=0)
+df = pd.concat([df, gva_temp, tourism_temp, charities_temp], axis=0)
 
 # add overlap info from tourism in order to calculate GVA for sector=all_dcms
 temp = tourism.copy()
 temp['sector'] = 'all_dcms'
-tourism_all_sectors = temp[['year', 'sector', 'overlap']].copy()
+temp = temp[['year', 'sector', 'overlap']].copy()
+df = pd.merge(df, temp, how='left')
+df['gva'] = df['gva'] + df['overlap'].fillna(0)
+df = df.drop(['overlap'], axis=1)
 
 # add overlap info from charities in order to calculate GVA for sector=all_dcms
 temp = charities.copy()
 temp['sector'] = 'all_dcms'
-charities_all_sectors = temp[['year', 'sector', 'overlap']].copy()
+temp = temp[['year', 'sector', 'overlap']].copy()
+df = pd.merge(df, temp, how='left')
+df['gva'] = df['gva'] + df['overlap'].fillna(0)
+df = df.drop(['overlap'], axis=1)
 
-gva_by_sector = pd.merge(gva_by_sector, tourism_all_sectors, how='left')
-gva_by_sector['gva'] = gva_by_sector['gva'] + gva_by_sector['overlap'].fillna(0)
-gva_by_sector = gva_by_sector.drop(['overlap'], axis=1)
+# sort data - this is for consistency
+df = df[['sector', 'year', 'gva']].sort_values(by=['year', 'sector'])
 
-gva_by_sector = pd.merge(gva_by_sector, charities_all_sectors, how='left')
-gva_by_sector['gva'] = gva_by_sector['gva'] + gva_by_sector['overlap'].fillna(0)
-gva_by_sector = gva_by_sector.drop(['overlap'], axis=1)
+# populate sub-sector column with 'All'
+df['sub-sector'] = 'All'
 
-# clean up
-current_year = combined_gva.year.max()
-gva_by_sector = gva_by_sector.loc[gva_by_sector['year'].isin(range(2010, current_year + 1))]
-gva_by_sector = gva_by_sector[['sector', 'year', 'gva']].sort_values(by=['year', 'sector'])
-gva_by_sector['year'] = gva_by_sector['year'].astype(int)
+sector_agg = df.copy()
 
+# part 2 - sub-sector level aggregate
+df = combined_gva.loc[combined_gva['sector'] != 'all_dcms', ['sector', 'sub-sector', 'year', 'gva']]
+#df.columns = ['sector', 'sub-sector', 'year', 'gva']
+subsector_agg = df.copy()
 
-# sub-sector level tables ======================================================
+# append data
+df = pd.concat([subsector_agg, sector_agg], axis=0)
+
+# remove pre 2010 data
+current_year = gva.year.max()
+df = df.loc[df['year'].isin(range(2010, current_year + 1))]
+
+# rename sector column's level names
+sector_names = {
+    "charities": "Civil Society (Non-market charities)",
+    "creative": "Creative Industries",
+    "culture": "Cultural Sector",
+    "digital": "Digital Sector",
+    "gambling": "Gambling",
+    "sport": "Sport",
+    "telecoms": "Telecoms",
+    "tourism": "Tourism",
+    "all_dcms": "All DCMS sectors",
+    "UK": "UK"
+}
+df['sector'] = df['sector'].map(sector_names)
+agg = df.copy()
+
+# create aggregate data CSV
+agg.to_csv('gva_aggregate_data_2016.csv', index=False)
+
+# make summary tables ==========================================================
+
+# specify row orders for summary tables
 all_row_order = """Civil Society (Non-market charities)
 Creative Industries
 Cultural Sector
@@ -199,32 +237,9 @@ row_orders = {
 
 
 
-# create aggregate data CSV ====================================================
-sector_names = {
-    "charities": "Civil Society (Non-market charities)",
-    "creative": "Creative Industries",
-    "culture": "Cultural Sector",
-    "digital": "Digital Sector",
-    "gambling": "Gambling",
-    "sport": "Sport",
-    "telecoms": "Telecoms",
-    "tourism": "Tourism",
-    "all_dcms": "All DCMS sectors",
-    "UK": "UK"
-}
-
-df = combined_gva.loc[combined_gva['sector'].isin(['creative', 'culture', 'digital']), ['sector', 'sub_sector_categories', 'year', 'gva']]
-df = df[df['year'] >= 2010]
-df.columns = ['sector', 'sub-sector', 'year', 'gva']
-temp = gva_by_sector.copy()
-temp['sub-sector'] = 'All'
-df = pd.concat([df, temp], axis=0)
-df['sector'] = df['sector'].map(sector_names)
-agg = df.copy()
-agg.to_csv('gva_aggregate_data_2016.csv', index=False)
 
 def make_table(sector, indexed=False):
-    df = agg
+    df = pd.read_csv('gva_aggregate_data_2016.csv')
     if sector == 'All':
         df = agg.loc[agg['sub-sector'] == 'All']
         breakdown_col = 'sector'
