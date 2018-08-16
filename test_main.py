@@ -113,8 +113,6 @@ combined_gva_dtypes_check.sort_index() == combined_gva.dtypes.sort_index()
 
 # aggregate combined GVA
 df = combined_gva.copy()
-#df['sic'] = df['sic'].astype(float)
-#df['sic2'] = df['sic2'].astype(float)
 df = df[['year', 'sector', 'gva']].groupby(['year', 'sector']).sum().reset_index()
 
 # append Uk total, tourism, and charities
@@ -183,6 +181,11 @@ sector_names = {
     "UK": "UK"
 }
 df['sector'] = df['sector'].map(sector_names)
+
+# rounding to remove floating point inaccuracies
+#df.gva = round(df.gva, 7)
+
+df = df.reset_index(drop=True)
 agg = df.copy()
 
 # create aggregate data CSV
@@ -236,15 +239,14 @@ row_orders = {
 }
 
 
-
-
 def make_table(sector, indexed=False):
-    df = pd.read_csv('gva_aggregate_data_2016.csv')
+    # float precision ensure floating points are not rounded
+    df = pd.read_csv('gva_aggregate_data_2016.csv', float_precision='round_trip')
     if sector == 'All':
-        df = agg.loc[agg['sub-sector'] == 'All']
+        df = df.loc[df['sub-sector'] == 'All']
         breakdown_col = 'sector'
     else:
-        df = agg.loc[agg['sector'] == sector]
+        df = df.loc[df['sector'] == sector]
         breakdown_col = 'sub-sector'        
 
     tb = pd.crosstab(df[breakdown_col], df['year'], values=df['gva'], aggfunc=sum)
@@ -264,45 +266,47 @@ def make_table(sector, indexed=False):
         
     
     return tb
-gva_creative = make_table('Creative Industries')
-gva_digital = make_table('Digital Sector')
-gva_culture = make_table('Cultural Sector')
-gva_current = make_table('All')
-gva_current_indexed = make_table('All', indexed=True)
 
 
-
+test_cases = {
+    'gva_current': 
+        {'calculated': make_table('All')},
+    'gva_current_indexed': 
+        {'calculated': make_table('All', indexed=True)},
+    'creative': 
+        {'calculated': make_table('Creative Industries')},
+    'digital': 
+        {'calculated': make_table('Digital Sector')},
+    'culture':
+        {'calculated': make_table('Cultural Sector')},
+}
 
 # read in excel data for testing
 df = pd.read_excel('GVA_sector_tables.xlsx', sheet_name = '1.1 - GVA current (£bn)', skiprows=5).iloc[list(range(9)) + [10],:-3]
 df = df.set_index(['Sector'])
-gva_current_excel = round(df, 5)
+df = round(df, 5)
+test_cases['gva_current']['publication'] = df
 
 df = pd.read_excel('GVA_sector_tables.xlsx', sheet_name = '1.1a - GVA current (2010=100)', skiprows=5).iloc[list(range(9)) + [10],:-3]
 df = df.set_index(['Sector'])
-gva_current_indexed_excel = round(df, 5)
+df = round(df, 5)
+test_cases['gva_current_indexed']['publication'] = df
 
 df = pd.read_excel('GVA_subsector_tables.xlsx', sheet_name = '1 - Creative Industries-current', skiprows=5).iloc[0:9,:-3]
 df = df.set_index(['Sub-sector'])
-gva_creative_excel = round(df, 5)
+df = round(df, 5)
+test_cases['creative']['publication'] = df
 
 df = pd.read_excel('GVA_subsector_tables.xlsx', sheet_name = '2 - Digital Sector-current', skiprows=5).iloc[0:9,:-3]
 df = df.set_index(['Sub-sector'])
-gva_digital_excel = round(df, 5)
+df = round(df, 5)
+test_cases['digital']['publication'] = df
 
 df = pd.read_excel('GVA_subsector_tables.xlsx', sheet_name = '3 - Cultural Sector-current', skiprows=5).iloc[0:9,:-3]
 df = df.set_index(['Sub-sector'])
-gva_culture_excel = round(df, 5)
+df = round(df, 5)
+test_cases['culture']['publication'] = df
 
-
-test_cases = {
-    'gva_current': [gva_current, gva_current_excel],
-    'gva_current_indexed': [gva_current_indexed, gva_current_indexed_excel],
-    'creative': [gva_creative, gva_creative_excel],
-    'digital': [gva_digital, gva_digital_excel],
-    'culture': [gva_culture, gva_culture_excel],
-
-}
 # marks=pytest.mark.xfail
 @pytest.mark.parametrize('test_input,expected', [
     pytest.param('gva_current', False, marks=pytest.mark.basic),
@@ -312,7 +316,7 @@ test_cases = {
     pytest.param('culture', False, marks=pytest.mark.basic),
 ])
 def test_data_matches(test_input, expected):
-    assert (test_cases[test_input][0].values != test_cases[test_input][1].values).any() == expected
+    assert (test_cases[test_input]['calculated'].values != test_cases[test_input]['publication'].values).any() == expected
 
 
 
