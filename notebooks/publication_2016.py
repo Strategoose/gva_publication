@@ -1,10 +1,19 @@
+
+# coding: utf-8
+
+# In[1]:
+
+
 import pandas as pd
 import numpy as np
-import pytest
 
 sic_mappings = pd.read_csv('lookups/sic_mappings.csv', dtype={'sic': 'str', 'sic2': 'str'})
 
 path = '/Volumes/Data/EAU/Statistics/Economic Estimates/2017 publications/November publication/GVA - current/Working_file_dcms_V11 2016 Data.xlsx'
+
+
+# In[2]:
+
 
 # note: both sections of data contain sic 92 so one needs removing
 df = pd.read_excel(path, sheet_name = 'NEW ABS DATA (2)', usecols=list(range(12, 21)))
@@ -16,6 +25,10 @@ df.year = df.year.astype(int)
 abs = df.copy()
 abs.dtypes
 
+
+# In[3]:
+
+
 df = pd.read_excel(path, sheet_name = 'Charities', usecols=list(range(0, 5)), skiprows=[0])
 df = df.iloc[0:7, :]
 df.columns = ['year', 'gva', 'total', 'perc', 'overlap']
@@ -23,10 +36,18 @@ df.year = df.year.astype(int)
 charities = df.copy()
 charities.dtypes
 
+
+# In[4]:
+
+
 df = pd.read_excel(path, sheet_name = 'Tourism', usecols=list(range(0, 5)))
 df.columns = ['year', 'gva', 'total', 'perc', 'overlap']
 tourism = df.copy()
 tourism.dtypes
+
+
+# In[5]:
+
 
 df = pd.read_excel(path, sheet_name = 'CP Millions', skiprows=[0,1,2,3])
 df = df.iloc[9:36, 2:].set_index('Unnamed: 2')
@@ -41,12 +62,19 @@ df[['year', 'gva_2digit']] = df[['year', 'gva_2digit']].apply(pd.to_numeric)
 gva = df.copy()
 gva.dtypes
 
+
+# In[6]:
+
+
 df = pd.read_excel(path, sheet_name='SIC 91 Sales Data', header=None, dtype={0: 'str'})
 df = df.iloc[:, [0,2,3]].dropna(axis=0).reset_index(drop=True)
 df.columns = ['sic', 'year', 'abs']
 df.year = df.year.astype(int)
 sic91 = df.copy()
 sic91.dtypes
+
+
+# In[7]:
 
 
 # combine extracts =============================================================
@@ -105,6 +133,8 @@ combined_gva_dtypes_check = pd.Series({
 combined_gva.shape == (1494, 11)
 combined_gva_dtypes_check.sort_index() == combined_gva.dtypes.sort_index()
 
+
+# In[8]:
 
 
 # we aggregate the data in two parts: sector level, and sub-sector level. It is not sufficient to simple have sub-sector level and then sum up to find sector level, since some sectors such as toursim and charities do not have a sub-sector breakdown, and for 'All DCMS' there is overlap between sectors so you could not simply sum all sub-sectors. So for a clean approach the data for total sector level is provided where sub-sector column has the value 'All'
@@ -191,6 +221,10 @@ agg = df.copy()
 # create aggregate data CSV
 agg.to_csv('gva_aggregate_data_2016.csv', index=False)
 
+
+# In[9]:
+
+
 # make summary tables ==========================================================
 
 # specify row orders for summary tables
@@ -266,68 +300,4 @@ def make_table(sector, indexed=False):
         
     
     return tb
-
-
-test_cases = {
-    'gva_current': 
-        {'calculated': make_table('All')},
-    'gva_current_indexed': 
-        {'calculated': make_table('All', indexed=True)},
-    'creative': 
-        {'calculated': make_table('Creative Industries')},
-    'digital': 
-        {'calculated': make_table('Digital Sector')},
-    'culture':
-        {'calculated': make_table('Cultural Sector')},
-}
-
-# read in excel data for testing
-df = pd.read_excel('GVA_sector_tables.xlsx', sheet_name = '1.1 - GVA current (£bn)', skiprows=5).iloc[list(range(9)) + [10],:-3]
-df = df.set_index(['Sector'])
-df = round(df, 5)
-test_cases['gva_current']['publication'] = df
-
-df = pd.read_excel('GVA_sector_tables.xlsx', sheet_name = '1.1a - GVA current (2010=100)', skiprows=5).iloc[list(range(9)) + [10],:-3]
-df = df.set_index(['Sector'])
-df = round(df, 5)
-test_cases['gva_current_indexed']['publication'] = df
-
-df = pd.read_excel('GVA_subsector_tables.xlsx', sheet_name = '1 - Creative Industries-current', skiprows=5).iloc[0:9,:-3]
-df = df.set_index(['Sub-sector'])
-df = round(df, 5)
-test_cases['creative']['publication'] = df
-
-df = pd.read_excel('GVA_subsector_tables.xlsx', sheet_name = '2 - Digital Sector-current', skiprows=5).iloc[0:9,:-3]
-df = df.set_index(['Sub-sector'])
-df = round(df, 5)
-test_cases['digital']['publication'] = df
-
-df = pd.read_excel('GVA_subsector_tables.xlsx', sheet_name = '3 - Cultural Sector-current', skiprows=5).iloc[0:9,:-3]
-df = df.set_index(['Sub-sector'])
-df = round(df, 5)
-test_cases['culture']['publication'] = df
-
-# marks=pytest.mark.xfail
-@pytest.mark.parametrize('test_input,expected', [
-    pytest.param('gva_current', False, marks=pytest.mark.basic),
-    pytest.param('gva_current_indexed', False, marks=pytest.mark.basic),
-    pytest.param('creative', False, marks=pytest.mark.basic),
-    pytest.param('digital', False, marks=pytest.mark.basic),
-    pytest.param('culture', False, marks=pytest.mark.basic),
-])
-def test_data_matches(test_input, expected):
-    assert (test_cases[test_input]['calculated'].values != test_cases[test_input]['publication'].values).any() == expected
-
-
-
-
-
-
-
-
-
-
-
-
-
 
