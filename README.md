@@ -27,6 +27,13 @@ removing the posibility of commiting sensitive data to the public github reposit
 
 solution: keep code in
 
+want to use the same code (source code) each year, but with different inputs
+
+everything that is distributed as part of the package, eg lookups, are defined in python scripts and imported to the publication notebooks. anything that is not distributed in the package like raw data, or is specific to that publication, like what tables to make, is defined in the notebook.
+
+We want the same code to be used for each publication (where reasonable) so that we can be sure the same methodology/calculation is used for every publication. We will then use a jupyter notebook to import the functionality from the code and run it, with documentation. However, each publication might require different outputs, input variables, and documenting, so we need a different notebook for each publication.
+
+
 future:
 use docker to allow sharing of config files e.g.jupyter_notebook_config.py which would allow for things like automatically creating .py scripts upon .ipynb saves, and safety measure to be put in place. Also it will remove the need for users to install packages or set up virtual environments. Also can have jupyterlab image hosted on GCP so users can remote in without needing ANY software installed locally.
 
