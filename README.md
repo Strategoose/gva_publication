@@ -52,23 +52,31 @@ Use docker to allow sharing of config files e.g.jupyter_notebook_config.py which
 ## Using the package
 In most cases, users will want to clone the package so that they add updates to the package and save the changes to github. For following steps should be used as a workflow for making updates to the package.
 
-1. Clone the repository
- * Install [Git](https://git-scm.com/downloads)
- * Navigate to the folder where you want to store the repo on your machine. For Windows users - open the 'Git Bash' application, for Mac users open the terminal. Then use pwd to find the current directory, ls to display the folders within the current directory, and cd to enter one of those directories, then pwd again to confirm the new current directory. For example:
- ```bash
- user$ pwd
- C:/user.name/documents/
- user$ ls
- myprojects/ otherfolder/ anotherfolder/
- user$ cd myprojects/
- user$ pwd
- C:/user.name/documents/myprojects/
- ```
- This shows sucessfully navigating to the myprojects/ directory.
- * download the repo from github using by running
- ```bash
- user$ git clone https://github.com/DCMSstats/gva.git
- ```
+### Clone the repository
+1. Install [Git](https://git-scm.com/downloads)
+1. Navigate to the folder where you want to store the repo on your machine. For Windows users - open the 'Git Bash' application, for Mac users open the terminal. Then use pwd to find the current directory, ls to display the folders within the current directory, and cd to enter one of those directories, then pwd again to confirm the new current directory. For example:
+   ```bash
+   user$ pwd
+   C:/user.name/documents/
+   user$ ls
+   myprojects/ otherfolder/ anotherfolder/
+   user$ cd myprojects/
+   user$ pwd
+   C:/user.name/documents/myprojects/
+   ```
+   This shows sucessfully navigating to the myprojects/ directory. 
+ 1. Download the repo from github using by running:
+    ```bash
+    user$ git clone https://github.com/DCMSstats/gva.git
+    ```
+    This will create a folder called gva within the myprojects/ folder.
+ 
+### Updating and running the code
+1. Install [Anaconda](https://anaconda.org/), which can be installed via the DCMS software centre.
+1. Open the Anconda Navigator application and then launch jupyterlab.
+1. To run an existing publication, in the left hand pane, navigate to myprojects/gva/publications/Nov_2016 and open the notebook 'publication_2016.ipynb'. To run a code block, click on it and hit shift + enter.
+1. To produce a new publication, create a copy of publications/Nov_2016, rename for example to publications/Nov_2017 (the name must not start with a number), and then update the notebook accordingly - for example point to new data.
+1. If you need to make changes to the package functions used by the notebook, for example changing what data is read in by the read_abs() function, open the file /src/functions.py, update the read_abs() function, save the notebook, 
 
 
 Installation
