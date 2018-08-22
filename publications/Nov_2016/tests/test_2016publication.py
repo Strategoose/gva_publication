@@ -1,13 +1,14 @@
 # this adds the root directory to sys.path - I believe it is equivalent to using python -m pytest
 import sys
 import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..')))
 
 import pandas as pd
 import numpy as np
 import pytest
 
-from publication.publication_2016 import summary_tables
+from publications.Nov_2016.publication_2016 import summary_tables
+excel_dir = 'publications/Nov_2016/tests'
 
 test_cases = {}
 for k in summary_tables:
@@ -16,27 +17,27 @@ for k in summary_tables:
 
 
 # read in excel data for testing
-df = pd.read_excel('tests/GVA_sector_tables.xlsx', sheet_name = '1.1 - GVA current (£bn)', skiprows=5).iloc[list(range(9)) + [10],:-3]
+df = pd.read_excel(os.path.join(excel_dir, 'GVA_sector_tables.xlsx'), sheet_name = '1.1 - GVA current (£bn)', skiprows=5).iloc[list(range(9)) + [10],:-3]
 df = df.set_index(['Sector'])
 df = round(df, 5)
 test_cases['gva_current']['publication'] = df
 
-df = pd.read_excel('tests/GVA_sector_tables.xlsx', sheet_name = '1.1a - GVA current (2010=100)', skiprows=5).iloc[list(range(9)) + [10],:-3]
+df = pd.read_excel(os.path.join(excel_dir, 'GVA_sector_tables.xlsx'), sheet_name = '1.1a - GVA current (2010=100)', skiprows=5).iloc[list(range(9)) + [10],:-3]
 df = df.set_index(['Sector'])
 df = round(df, 5)
 test_cases['gva_current_indexed']['publication'] = df
 
-df = pd.read_excel('tests/GVA_subsector_tables.xlsx', sheet_name = '1 - Creative Industries-current', skiprows=5).iloc[0:9,:-3]
+df = pd.read_excel(os.path.join(excel_dir, 'GVA_subsector_tables.xlsx'), sheet_name = '1 - Creative Industries-current', skiprows=5).iloc[0:9,:-3]
 df = df.set_index(['Sub-sector'])
 df = round(df, 5)
 test_cases['creative']['publication'] = df
 
-df = pd.read_excel('tests/GVA_subsector_tables.xlsx', sheet_name = '2 - Digital Sector-current', skiprows=5).iloc[0:9,:-3]
+df = pd.read_excel(os.path.join(excel_dir, 'GVA_subsector_tables.xlsx'), sheet_name = '2 - Digital Sector-current', skiprows=5).iloc[0:9,:-3]
 df = df.set_index(['Sub-sector'])
 df = round(df, 5)
 test_cases['digital']['publication'] = df
 
-df = pd.read_excel('tests/GVA_subsector_tables.xlsx', sheet_name = '3 - Cultural Sector-current', skiprows=5).iloc[0:9,:-3]
+df = pd.read_excel(os.path.join(excel_dir, 'GVA_subsector_tables.xlsx'), sheet_name = '3 - Cultural Sector-current', skiprows=5).iloc[0:9,:-3]
 df = df.set_index(['Sub-sector'])
 df = round(df, 5)
 test_cases['culture']['publication'] = df

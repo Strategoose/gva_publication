@@ -18,7 +18,7 @@ import os
 import sys
 
 # find path to root directory
-if os.path.exists(os.path.abspath(os.path.join('outputs'))):
+if os.path.exists(os.path.abspath(os.path.join('src'))):
     module_path = os.path.abspath(os.path.join(''))
 else: 
     module_path = os.path.abspath(os.path.join('..'))
@@ -28,10 +28,10 @@ if module_path not in sys.path:
     sys.path.append(module_path)
         
 # import package functions
-from publication.functions import read_abs, read_charities, read_tourism, read_gva, read_sic91, combine_gva, aggregate_data, make_table
+from src.functions import read_abs, read_charities, read_tourism, read_gva, read_sic91, combine_gva, aggregate_data, make_table
 
 # specify output directory
-output_dir = os.path.join(module_path, 'outputs')
+output_dir = os.path.join(module_path, 'publications/Nov_2016')
 
 #package_dir = os.path.dirname(os.path.abspath(__file__))
 #output_dir = os.path.join(module_path, 'outputs')

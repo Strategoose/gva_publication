@@ -1,0 +1,778 @@
+year,sector,sub-sector,gva
+2010,Creative Industries,Crafts ,291.9925654298279
+2011,Creative Industries,Crafts ,307.6828057620549
+2012,Creative Industries,Crafts ,284.3575905846875
+2013,Creative Industries,Crafts ,215.88773213126225
+2014,Creative Industries,Crafts ,395.5191476954058
+2015,Creative Industries,Crafts ,367.70774400984726
+2016,Creative Industries,Crafts ,421.3055710006122
+2010,Creative Industries,Publishing,2448.4519117141826
+2011,Creative Industries,Publishing,2066.0017712399967
+2012,Creative Industries,Publishing,2472.8629957160165
+2013,Creative Industries,Publishing,2255.817611646517
+2014,Creative Industries,Publishing,2669.933073223351
+2015,Creative Industries,Publishing,3109.5081454276033
+2016,Creative Industries,Publishing,3347.38409181595
+2010,Creative Industries,Publishing,31.800301392852383
+2011,Creative Industries,Publishing,20.854131672187304
+2012,Creative Industries,Publishing,48.151700532467736
+2013,Creative Industries,Publishing,79.2360709368483
+2014,Creative Industries,Publishing,59.509888634254985
+2015,Creative Industries,Publishing,50.51290033005197
+2016,Creative Industries,Publishing,54.3771140284467
+2010,Creative Industries,Publishing,2517.5465049355707
+2011,Creative Industries,Publishing,2346.084620231504
+2012,Creative Industries,Publishing,2435.5726139638605
+2013,Creative Industries,Publishing,2457.4866319365124
+2014,Creative Industries,Publishing,2425.8693610821756
+2015,Creative Industries,Publishing,2590.517942051109
+2016,Creative Industries,Publishing,2788.6913760096363
+2010,Creative Industries,Publishing,4431.3770129020795
+2011,Creative Industries,Publishing,4322.185277248927
+2012,Creative Industries,Publishing,4114.086281080836
+2013,Creative Industries,Publishing,4117.3422444131475
+2014,Creative Industries,Publishing,3830.207799862109
+2015,Creative Industries,Publishing,3571.2381829130786
+2016,Creative Industries,Publishing,3844.4362653132866
+2010,Creative Industries,Publishing,857.3923388821565
+2011,Creative Industries,Publishing,1125.7390077186376
+2012,Creative Industries,Publishing,1122.0504380752266
+2013,Creative Industries,Publishing,1331.6196821446858
+2014,Creative Industries,Publishing,1307.1336075054844
+2015,Creative Industries,Publishing,1299.850005914322
+2016,Creative Industries,Publishing,1399.28793495607
+2010,Creative Industries,"IT, software and computer services",103.32515129111458
+2011,Creative Industries,"IT, software and computer services",187.43766941192862
+2012,Creative Industries,"IT, software and computer services",226.5873878715509
+2013,Creative Industries,"IT, software and computer services",195.09875090108736
+2014,Creative Industries,"IT, software and computer services",179.15319338760585
+2015,Creative Industries,"IT, software and computer services",98.58025140582394
+2016,Creative Industries,"IT, software and computer services",106.12159540675333
+2010,Creative Industries,"IT, software and computer services",728.1067788820449
+2011,Creative Industries,"IT, software and computer services",893.6975224768174
+2012,Creative Industries,"IT, software and computer services",949.6885827600421
+2013,Creative Industries,"IT, software and computer services",941.3990080212022
+2014,Creative Industries,"IT, software and computer services",1180.1930763050198
+2015,Creative Industries,"IT, software and computer services",1266.7925719580128
+2016,Creative Industries,"IT, software and computer services",1363.7016224698589
+2010,Creative Industries,"Film, TV, video, radio and photography",1549.3203621101711
+2011,Creative Industries,"Film, TV, video, radio and photography",2539.571168768057
+2012,Creative Industries,"Film, TV, video, radio and photography",1628.471792430577
+2013,Creative Industries,"Film, TV, video, radio and photography",1895.5759177820923
+2014,Creative Industries,"Film, TV, video, radio and photography",2922.393313808415
+2015,Creative Industries,"Film, TV, video, radio and photography",2564.074606772547
+2016,Creative Industries,"Film, TV, video, radio and photography",2577.9594873146366
+2010,Creative Industries,"Film, TV, video, radio and photography",857.9275591335174
+2011,Creative Industries,"Film, TV, video, radio and photography",1496.6075388337645
+2012,Creative Industries,"Film, TV, video, radio and photography",1926.4298079704915
+2013,Creative Industries,"Film, TV, video, radio and photography",1475.671215352002
+2014,Creative Industries,"Film, TV, video, radio and photography",1445.129512609778
+2015,Creative Industries,"Film, TV, video, radio and photography",1246.5679737375162
+2016,Creative Industries,"Film, TV, video, radio and photography",1253.3183418263475
+2010,Creative Industries,"Film, TV, video, radio and photography",3991.4153639513133
+2011,Creative Industries,"Film, TV, video, radio and photography",2904.9657489297583
+2012,Creative Industries,"Film, TV, video, radio and photography",3470.09335974559
+2013,Creative Industries,"Film, TV, video, radio and photography",3612.870083237816
+2014,Creative Industries,"Film, TV, video, radio and photography",3190.7762797627497
+2015,Creative Industries,"Film, TV, video, radio and photography",3281.6400308062025
+2016,Creative Industries,"Film, TV, video, radio and photography",3299.4106446914348
+2010,Creative Industries,"Film, TV, video, radio and photography",1127.247365605862
+2011,Creative Industries,"Film, TV, video, radio and photography",936.6493403281534
+2012,Creative Industries,"Film, TV, video, radio and photography",1154.3682606363823
+2013,Creative Industries,"Film, TV, video, radio and photography",1034.0030244120728
+2014,Creative Industries,"Film, TV, video, radio and photography",799.3997565794161
+2015,Creative Industries,"Film, TV, video, radio and photography",870.9530001545587
+2016,Creative Industries,"Film, TV, video, radio and photography",875.6693521409552
+2010,Creative Industries,"Music, performing and visual arts",804.0893491991363
+2011,Creative Industries,"Music, performing and visual arts",874.2062031402663
+2012,Creative Industries,"Music, performing and visual arts",1340.6367792169601
+2013,Creative Industries,"Music, performing and visual arts",2029.8797592160156
+2014,Creative Industries,"Music, performing and visual arts",1529.3011372396427
+2015,Creative Industries,"Music, performing and visual arts",1454.7643885291764
+2016,Creative Industries,"Music, performing and visual arts",1462.642174026627
+2010,Creative Industries,"Film, TV, video, radio and photography",552.1092933877187
+2011,Creative Industries,"Film, TV, video, radio and photography",453.4346702957225
+2012,Creative Industries,"Film, TV, video, radio and photography",570.2975731246198
+2013,Creative Industries,"Film, TV, video, radio and photography",467.60092549719366
+2014,Creative Industries,"Film, TV, video, radio and photography",279.2947643163224
+2015,Creative Industries,"Film, TV, video, radio and photography",376.7031920512522
+2016,Creative Industries,"Film, TV, video, radio and photography",431.7520851830085
+2010,Creative Industries,"Film, TV, video, radio and photography",4017.890706612281
+2011,Creative Industries,"Film, TV, video, radio and photography",4179.565329704278
+2012,Creative Industries,"Film, TV, video, radio and photography",4156.702426875379
+2013,Creative Industries,"Film, TV, video, radio and photography",4394.399074502806
+2014,Creative Industries,"Film, TV, video, radio and photography",5219.705235683678
+2015,Creative Industries,"Film, TV, video, radio and photography",5248.296807948748
+2016,Creative Industries,"Film, TV, video, radio and photography",6015.247914816991
+2010,Creative Industries,"IT, software and computer services",6427.669908829888
+2011,Creative Industries,"IT, software and computer services",8394.608561256631
+2012,Creative Industries,"IT, software and computer services",7924.129792868603
+2013,Creative Industries,"IT, software and computer services",8315.71547741461
+2014,Creative Industries,"IT, software and computer services",9366.7886686326
+2015,Creative Industries,"IT, software and computer services",10088.387913760667
+2016,Creative Industries,"IT, software and computer services",11255.358288641335
+2010,Creative Industries,"IT, software and computer services",15455.215776154188
+2011,Creative Industries,"IT, software and computer services",15362.827486298189
+2012,Creative Industries,"IT, software and computer services",16495.649711829967
+2013,Creative Industries,"IT, software and computer services",17874.916100724364
+2014,Creative Industries,"IT, software and computer services",18668.420022636907
+2015,Creative Industries,"IT, software and computer services",19700.39491757309
+2016,Creative Industries,"IT, software and computer services",21979.230489597354
+2010,Creative Industries,Advertising and marketing,661.5728337933205
+2011,Creative Industries,Advertising and marketing,515.7086693754735
+2012,Creative Industries,Advertising and marketing,832.3046815076359
+2013,Creative Industries,Advertising and marketing,876.4211438072444
+2014,Creative Industries,Advertising and marketing,979.0690130551864
+2015,Creative Industries,Advertising and marketing,960.4303047110542
+2016,Creative Industries,Advertising and marketing,1101.4981079354231
+2010,Creative Industries,Architecture ,2297.127054865151
+2011,Creative Industries,Architecture ,2856.6571319100362
+2012,Creative Industries,Architecture ,3040.146523466109
+2013,Creative Industries,Architecture ,3007.2464001549597
+2014,Creative Industries,Architecture ,3527.3739859200628
+2015,Creative Industries,Architecture ,4024.5662093657816
+2016,Creative Industries,Architecture ,4203.286845187135
+2010,Creative Industries,Advertising and marketing,4643.9788182978255
+2011,Creative Industries,Advertising and marketing,4925.952963607657
+2012,Creative Industries,Advertising and marketing,5661.711789493887
+2013,Creative Industries,Advertising and marketing,6152.09329606031
+2014,Creative Industries,Advertising and marketing,6058.742096709378
+2015,Creative Industries,Advertising and marketing,7220.200493008647
+2016,Creative Industries,Advertising and marketing,7496.265269461506
+2010,Creative Industries,Advertising and marketing,910.8999330374272
+2011,Creative Industries,Advertising and marketing,1311.7825728289151
+2012,Creative Industries,Advertising and marketing,1304.5280402817136
+2013,Creative Industries,Advertising and marketing,2227.2806960024827
+2014,Creative Industries,Advertising and marketing,3719.75669914285
+2015,Creative Industries,Advertising and marketing,3577.654996800801
+2016,Creative Industries,Advertising and marketing,3714.4468390597012
+2010,Creative Industries,Design and designer fashion ,1967.5979749567466
+2011,Creative Industries,Design and designer fashion ,2293.176826710645
+2012,Creative Industries,Design and designer fashion ,2533.7182541254874
+2013,Creative Industries,Design and designer fashion ,2704.8611850803604
+2014,Creative Industries,Design and designer fashion ,2633.7091139280287
+2015,Creative Industries,Design and designer fashion ,3184.8162368057265
+2016,Creative Industries,Design and designer fashion ,3536.6671380025086
+2010,Creative Industries,"Film, TV, video, radio and photography",697.4829469437935
+2011,Creative Industries,"Film, TV, video, radio and photography",749.8947124939039
+2012,Creative Industries,"Film, TV, video, radio and photography",778.6996707282398
+2013,Creative Industries,"Film, TV, video, radio and photography",883.1962364070547
+2014,Creative Industries,"Film, TV, video, radio and photography",749.2786760049875
+2015,Creative Industries,"Film, TV, video, radio and photography",817.3681308486093
+2016,Creative Industries,"Film, TV, video, radio and photography",907.6690123013672
+2010,Creative Industries,Publishing,77.01048593746174
+2011,Creative Industries,Publishing,98.5966722996654
+2012,Creative Industries,Publishing,125.65459140067941
+2013,Creative Industries,Publishing,137.497858683745
+2014,Creative Industries,Publishing,149.00021852598482
+2015,Creative Industries,Publishing,169.47963853016532
+2016,Creative Industries,Publishing,188.20334474033967
+2010,Creative Industries,"Music, performing and visual arts",365.5962373776413
+2011,Creative Industries,"Music, performing and visual arts",581.2921843323722
+2012,Creative Industries,"Music, performing and visual arts",268.8049882591566
+2013,Creative Industries,"Music, performing and visual arts",331.6431014990161
+2014,Creative Industries,"Music, performing and visual arts",132.80482534746923
+2015,Creative Industries,"Music, performing and visual arts",717.267483225181
+2016,Creative Industries,"Music, performing and visual arts",699.6269040053446
+2010,Creative Industries,"Music, performing and visual arts",1741.159621325588
+2011,Creative Industries,"Music, performing and visual arts",1670.372007485112
+2012,Creative Industries,"Music, performing and visual arts",1734.1448292026384
+2013,Creative Industries,"Music, performing and visual arts",1696.2849750990101
+2014,Creative Industries,"Music, performing and visual arts",2170.715747437493
+2015,Creative Industries,"Music, performing and visual arts",2139.984595665192
+2016,Creative Industries,"Music, performing and visual arts",2128.422792839889
+2010,Creative Industries,"Music, performing and visual arts",200.98116127133218
+2011,Creative Industries,"Music, performing and visual arts",330.9984137636043
+2012,Creative Industries,"Music, performing and visual arts",395.3914985509752
+2013,Creative Industries,"Music, performing and visual arts",595.0460181485792
+2014,Creative Industries,"Music, performing and visual arts",298.12677219680575
+2015,Creative Industries,"Music, performing and visual arts",877.3481756193264
+2016,Creative Industries,"Music, performing and visual arts",872.6080823325815
+2010,Creative Industries,"Music, performing and visual arts",2078.7702100084957
+2011,Creative Industries,"Music, performing and visual arts",2065.069648730624
+2012,Creative Industries,"Music, performing and visual arts",2252.5769029669145
+2013,Creative Industries,"Music, performing and visual arts",2074.834589996541
+2014,Creative Industries,"Music, performing and visual arts",2656.64155670157
+2015,Creative Industries,"Music, performing and visual arts",2898.3531255749117
+2016,Creative Industries,"Music, performing and visual arts",2882.6940468021594
+2010,Creative Industries,"Music, performing and visual arts",266.0890073945844
+2011,Creative Industries,"Music, performing and visual arts",211.55993002065944
+2012,Creative Industries,"Music, performing and visual arts",236.8867692794714
+2013,Creative Industries,"Music, performing and visual arts",230.83441675586954
+2014,Creative Industries,"Music, performing and visual arts",181.5159236641308
+2015,Creative Industries,"Music, performing and visual arts",192.31410314056845
+2016,Creative Industries,"Music, performing and visual arts",191.2750780253689
+2010,Creative Industries,"Museums, galleries and Libraries ",459.62999185004077
+2011,Creative Industries,"Museums, galleries and Libraries ",256.0615384615385
+2012,Creative Industries,"Museums, galleries and Libraries ",249.48186528497408
+2013,Creative Industries,"Museums, galleries and Libraries ",261.41379310344826
+2014,Creative Industries,"Museums, galleries and Libraries ",236.89514066496164
+2015,Creative Industries,"Museums, galleries and Libraries ",264.8358628442945
+2016,Creative Industries,"Museums, galleries and Libraries ",282.24002248454184
+2010,Creative Industries,"Museums, galleries and Libraries ",863.8272208638957
+2011,Creative Industries,"Museums, galleries and Libraries ",968.7661538461539
+2012,Creative Industries,"Museums, galleries and Libraries ",988.4233900814212
+2013,Creative Industries,"Museums, galleries and Libraries ",994.551724137931
+2014,Creative Industries,"Museums, galleries and Libraries ",990.4667519181585
+2015,Creative Industries,"Museums, galleries and Libraries ",1076.7414277684093
+2016,Creative Industries,"Museums, galleries and Libraries ",1147.5014052838674
+2010,Digital Sector,Manufacturing of electronics and computers    ,937.7179992678908
+2011,Digital Sector,Manufacturing of electronics and computers    ,855.2061977097759
+2012,Digital Sector,Manufacturing of electronics and computers    ,928.2783052989713
+2013,Digital Sector,Manufacturing of electronics and computers    ,845.5196198304959
+2014,Digital Sector,Manufacturing of electronics and computers    ,594.0254906851766
+2015,Digital Sector,Manufacturing of electronics and computers    ,575.5761411690344
+2016,Digital Sector,Manufacturing of electronics and computers    ,587.9612997278836
+2010,Digital Sector,Manufacturing of electronics and computers    ,358.40017755993364
+2011,Digital Sector,Manufacturing of electronics and computers    ,379.0717352189817
+2012,Digital Sector,Manufacturing of electronics and computers    ,434.81113337289196
+2013,Digital Sector,Manufacturing of electronics and computers    ,406.5293563799409
+2014,Digital Sector,Manufacturing of electronics and computers    ,281.16951317091963
+2015,Digital Sector,Manufacturing of electronics and computers    ,348.8753338166656
+2016,Digital Sector,Manufacturing of electronics and computers    ,356.3823793967949
+2010,Digital Sector,Manufacturing of electronics and computers    ,903.6437543752562
+2011,Digital Sector,Manufacturing of electronics and computers    ,776.2460545458166
+2012,Digital Sector,Manufacturing of electronics and computers    ,891.1076167602879
+2013,Digital Sector,Manufacturing of electronics and computers    ,909.8121409086992
+2014,Digital Sector,Manufacturing of electronics and computers    ,843.58935203235
+2015,Digital Sector,Manufacturing of electronics and computers    ,648.3878235307346
+2016,Digital Sector,Manufacturing of electronics and computers    ,662.3397326313187
+2010,Digital Sector,Manufacturing of electronics and computers    ,1419.7321989768923
+2011,Digital Sector,Manufacturing of electronics and computers    ,1339.279008486341
+2012,Digital Sector,Manufacturing of electronics and computers    ,1248.5388658721424
+2013,Digital Sector,Manufacturing of electronics and computers    ,1201.1279894303343
+2014,Digital Sector,Manufacturing of electronics and computers    ,1097.3033951309455
+2015,Digital Sector,Manufacturing of electronics and computers    ,1224.7817873029953
+2016,Digital Sector,Manufacturing of electronics and computers    ,1251.1364527429644
+2010,Digital Sector,Manufacturing of electronics and computers    ,395.16078146386974
+2011,Digital Sector,Manufacturing of electronics and computers    ,292.7131761513114
+2012,Digital Sector,Manufacturing of electronics and computers    ,245.80183670779687
+2013,Digital Sector,Manufacturing of electronics and computers    ,233.18654331211064
+2014,Digital Sector,Manufacturing of electronics and computers    ,279.270238675898
+2015,Digital Sector,Manufacturing of electronics and computers    ,202.8192266756462
+2016,Digital Sector,Manufacturing of electronics and computers    ,207.18345948776226
+2010,Digital Sector,Manufacturing of electronics and computers    ,0.0
+2011,Digital Sector,Manufacturing of electronics and computers    ,0.979694779691809
+2012,Digital Sector,Manufacturing of electronics and computers    ,3.9129190537035257
+2013,Digital Sector,Manufacturing of electronics and computers    ,4.6831142204619685
+2014,Digital Sector,Manufacturing of electronics and computers    ,3.512812732723573
+2015,Digital Sector,Manufacturing of electronics and computers    ,5.121146983935793
+2016,Digital Sector,Manufacturing of electronics and computers    ,5.23134303422793
+2010,Digital Sector,Wholesale of computers and electronics    ,3032.580763444755
+2011,Digital Sector,Wholesale of computers and electronics    ,3432.64356430617
+2012,Digital Sector,Wholesale of computers and electronics    ,3806.9757904455805
+2013,Digital Sector,Wholesale of computers and electronics    ,4198.864120399695
+2014,Digital Sector,Wholesale of computers and electronics    ,2383.193820720775
+2015,Digital Sector,Wholesale of computers and electronics    ,2453.391425282713
+2016,Digital Sector,Wholesale of computers and electronics    ,2607.399506102662
+2010,Digital Sector,Wholesale of computers and electronics    ,2680.5582288646156
+2011,Digital Sector,Wholesale of computers and electronics    ,2973.474774033902
+2012,Digital Sector,Wholesale of computers and electronics    ,3018.2812541579297
+2013,Digital Sector,Wholesale of computers and electronics    ,3214.6818935042506
+2014,Digital Sector,Wholesale of computers and electronics    ,2290.1395403570173
+2015,Digital Sector,Wholesale of computers and electronics    ,1916.9585953276942
+2016,Digital Sector,Wholesale of computers and electronics    ,2037.2928849299753
+2010,Digital Sector,Publishing (excluding translation and interpretation activities)       ,2448.4519117141826
+2011,Digital Sector,Publishing (excluding translation and interpretation activities)       ,2066.0017712399967
+2012,Digital Sector,Publishing (excluding translation and interpretation activities)       ,2472.8629957160165
+2013,Digital Sector,Publishing (excluding translation and interpretation activities)       ,2255.817611646517
+2014,Digital Sector,Publishing (excluding translation and interpretation activities)       ,2669.933073223351
+2015,Digital Sector,Publishing (excluding translation and interpretation activities)       ,3109.5081454276033
+2016,Digital Sector,Publishing (excluding translation and interpretation activities)       ,3347.38409181595
+2010,Digital Sector,Publishing (excluding translation and interpretation activities)       ,31.800301392852383
+2011,Digital Sector,Publishing (excluding translation and interpretation activities)       ,20.854131672187304
+2012,Digital Sector,Publishing (excluding translation and interpretation activities)       ,48.151700532467736
+2013,Digital Sector,Publishing (excluding translation and interpretation activities)       ,79.2360709368483
+2014,Digital Sector,Publishing (excluding translation and interpretation activities)       ,59.509888634254985
+2015,Digital Sector,Publishing (excluding translation and interpretation activities)       ,50.51290033005197
+2016,Digital Sector,Publishing (excluding translation and interpretation activities)       ,54.3771140284467
+2010,Digital Sector,Publishing (excluding translation and interpretation activities)       ,2517.5465049355707
+2011,Digital Sector,Publishing (excluding translation and interpretation activities)       ,2346.084620231504
+2012,Digital Sector,Publishing (excluding translation and interpretation activities)       ,2435.5726139638605
+2013,Digital Sector,Publishing (excluding translation and interpretation activities)       ,2457.4866319365124
+2014,Digital Sector,Publishing (excluding translation and interpretation activities)       ,2425.8693610821756
+2015,Digital Sector,Publishing (excluding translation and interpretation activities)       ,2590.517942051109
+2016,Digital Sector,Publishing (excluding translation and interpretation activities)       ,2788.6913760096363
+2010,Digital Sector,Publishing (excluding translation and interpretation activities)       ,4431.3770129020795
+2011,Digital Sector,Publishing (excluding translation and interpretation activities)       ,4322.185277248927
+2012,Digital Sector,Publishing (excluding translation and interpretation activities)       ,4114.086281080836
+2013,Digital Sector,Publishing (excluding translation and interpretation activities)       ,4117.3422444131475
+2014,Digital Sector,Publishing (excluding translation and interpretation activities)       ,3830.207799862109
+2015,Digital Sector,Publishing (excluding translation and interpretation activities)       ,3571.2381829130786
+2016,Digital Sector,Publishing (excluding translation and interpretation activities)       ,3844.4362653132866
+2010,Digital Sector,Publishing (excluding translation and interpretation activities)       ,857.3923388821565
+2011,Digital Sector,Publishing (excluding translation and interpretation activities)       ,1125.7390077186376
+2012,Digital Sector,Publishing (excluding translation and interpretation activities)       ,1122.0504380752266
+2013,Digital Sector,Publishing (excluding translation and interpretation activities)       ,1331.6196821446858
+2014,Digital Sector,Publishing (excluding translation and interpretation activities)       ,1307.1336075054844
+2015,Digital Sector,Publishing (excluding translation and interpretation activities)       ,1299.850005914322
+2016,Digital Sector,Publishing (excluding translation and interpretation activities)       ,1399.28793495607
+2010,Digital Sector,Software publishing       ,103.32515129111458
+2011,Digital Sector,Software publishing       ,187.43766941192862
+2012,Digital Sector,Software publishing       ,226.5873878715509
+2013,Digital Sector,Software publishing       ,195.09875090108736
+2014,Digital Sector,Software publishing       ,179.15319338760585
+2015,Digital Sector,Software publishing       ,98.58025140582394
+2016,Digital Sector,Software publishing       ,106.12159540675333
+2010,Digital Sector,Software publishing       ,728.1067788820449
+2011,Digital Sector,Software publishing       ,893.6975224768174
+2012,Digital Sector,Software publishing       ,949.6885827600421
+2013,Digital Sector,Software publishing       ,941.3990080212022
+2014,Digital Sector,Software publishing       ,1180.1930763050198
+2015,Digital Sector,Software publishing       ,1266.7925719580128
+2016,Digital Sector,Software publishing       ,1363.7016224698589
+2010,Digital Sector,"Film, TV, video, radio and music   ",1549.3203621101711
+2011,Digital Sector,"Film, TV, video, radio and music   ",2539.571168768057
+2012,Digital Sector,"Film, TV, video, radio and music   ",1628.471792430577
+2013,Digital Sector,"Film, TV, video, radio and music   ",1895.5759177820923
+2014,Digital Sector,"Film, TV, video, radio and music   ",2922.393313808415
+2015,Digital Sector,"Film, TV, video, radio and music   ",2564.074606772547
+2016,Digital Sector,"Film, TV, video, radio and music   ",2577.9594873146366
+2010,Digital Sector,"Film, TV, video, radio and music   ",857.9275591335174
+2011,Digital Sector,"Film, TV, video, radio and music   ",1496.6075388337645
+2012,Digital Sector,"Film, TV, video, radio and music   ",1926.4298079704915
+2013,Digital Sector,"Film, TV, video, radio and music   ",1475.671215352002
+2014,Digital Sector,"Film, TV, video, radio and music   ",1445.129512609778
+2015,Digital Sector,"Film, TV, video, radio and music   ",1246.5679737375162
+2016,Digital Sector,"Film, TV, video, radio and music   ",1253.3183418263475
+2010,Digital Sector,"Film, TV, video, radio and music   ",3991.4153639513133
+2011,Digital Sector,"Film, TV, video, radio and music   ",2904.9657489297583
+2012,Digital Sector,"Film, TV, video, radio and music   ",3470.09335974559
+2013,Digital Sector,"Film, TV, video, radio and music   ",3612.870083237816
+2014,Digital Sector,"Film, TV, video, radio and music   ",3190.7762797627497
+2015,Digital Sector,"Film, TV, video, radio and music   ",3281.6400308062025
+2016,Digital Sector,"Film, TV, video, radio and music   ",3299.4106446914348
+2010,Digital Sector,"Film, TV, video, radio and music   ",1127.247365605862
+2011,Digital Sector,"Film, TV, video, radio and music   ",936.6493403281534
+2012,Digital Sector,"Film, TV, video, radio and music   ",1154.3682606363823
+2013,Digital Sector,"Film, TV, video, radio and music   ",1034.0030244120728
+2014,Digital Sector,"Film, TV, video, radio and music   ",799.3997565794161
+2015,Digital Sector,"Film, TV, video, radio and music   ",870.9530001545587
+2016,Digital Sector,"Film, TV, video, radio and music   ",875.6693521409552
+2010,Digital Sector,"Film, TV, video, radio and music   ",804.0893491991363
+2011,Digital Sector,"Film, TV, video, radio and music   ",874.2062031402663
+2012,Digital Sector,"Film, TV, video, radio and music   ",1340.6367792169601
+2013,Digital Sector,"Film, TV, video, radio and music   ",2029.8797592160156
+2014,Digital Sector,"Film, TV, video, radio and music   ",1529.3011372396427
+2015,Digital Sector,"Film, TV, video, radio and music   ",1454.7643885291764
+2016,Digital Sector,"Film, TV, video, radio and music   ",1462.642174026627
+2010,Digital Sector,"Film, TV, video, radio and music   ",552.1092933877187
+2011,Digital Sector,"Film, TV, video, radio and music   ",453.4346702957225
+2012,Digital Sector,"Film, TV, video, radio and music   ",570.2975731246198
+2013,Digital Sector,"Film, TV, video, radio and music   ",467.60092549719366
+2014,Digital Sector,"Film, TV, video, radio and music   ",279.2947643163224
+2015,Digital Sector,"Film, TV, video, radio and music   ",376.7031920512522
+2016,Digital Sector,"Film, TV, video, radio and music   ",431.7520851830085
+2010,Digital Sector,"Film, TV, video, radio and music   ",4017.890706612281
+2011,Digital Sector,"Film, TV, video, radio and music   ",4179.565329704278
+2012,Digital Sector,"Film, TV, video, radio and music   ",4156.702426875379
+2013,Digital Sector,"Film, TV, video, radio and music   ",4394.399074502806
+2014,Digital Sector,"Film, TV, video, radio and music   ",5219.705235683678
+2015,Digital Sector,"Film, TV, video, radio and music   ",5248.296807948748
+2016,Digital Sector,"Film, TV, video, radio and music   ",6015.247914816991
+2010,Digital Sector,Telecommunications        ,519.4087187809379
+2011,Digital Sector,Telecommunications        ,772.3907657091489
+2012,Digital Sector,Telecommunications        ,891.3706786383655
+2013,Digital Sector,Telecommunications        ,852.364880645296
+2014,Digital Sector,Telecommunications        ,763.492961745718
+2015,Digital Sector,Telecommunications        ,804.1166658775628
+2016,Digital Sector,Telecommunications        ,793.0763442105358
+2010,Digital Sector,Telecommunications        ,683.0324025736642
+2011,Digital Sector,Telecommunications        ,786.7507739269536
+2012,Digital Sector,Telecommunications        ,892.269075399153
+2013,Digital Sector,Telecommunications        ,1050.0121878183973
+2014,Digital Sector,Telecommunications        ,1327.057476108655
+2015,Digital Sector,Telecommunications        ,5351.18574513875
+2016,Digital Sector,Telecommunications        ,5277.715296840223
+2010,Digital Sector,Telecommunications        ,-540.4782593984105
+2011,Digital Sector,Telecommunications        ,-496.2882386029652
+2012,Digital Sector,Telecommunications        ,-507.65740040963163
+2013,Digital Sector,Telecommunications        ,-460.5932921030107
+2014,Digital Sector,Telecommunications        ,-322.80141621019936
+2015,Digital Sector,Telecommunications        ,-237.0553918672062
+2016,Digital Sector,Telecommunications        ,-233.8006803431503
+2010,Digital Sector,Telecommunications        ,24083.03713804381
+2011,Digital Sector,Telecommunications        ,24391.146698966866
+2012,Digital Sector,Telecommunications        ,24737.01764637211
+2013,Digital Sector,Telecommunications        ,26639.216223639316
+2014,Digital Sector,Telecommunications        ,28244.250978355823
+2015,Digital Sector,Telecommunications        ,24453.75298085089
+2016,Digital Sector,Telecommunications        ,24118.00903929239
+2010,Digital Sector,"Computer programming, consultancy and related activities        ",6427.669908829888
+2011,Digital Sector,"Computer programming, consultancy and related activities        ",8394.608561256631
+2012,Digital Sector,"Computer programming, consultancy and related activities        ",7924.129792868603
+2013,Digital Sector,"Computer programming, consultancy and related activities        ",8315.71547741461
+2014,Digital Sector,"Computer programming, consultancy and related activities        ",9366.7886686326
+2015,Digital Sector,"Computer programming, consultancy and related activities        ",10088.387913760667
+2016,Digital Sector,"Computer programming, consultancy and related activities        ",11255.358288641335
+2010,Digital Sector,"Computer programming, consultancy and related activities        ",15455.215776154188
+2011,Digital Sector,"Computer programming, consultancy and related activities        ",15362.827486298189
+2012,Digital Sector,"Computer programming, consultancy and related activities        ",16495.649711829967
+2013,Digital Sector,"Computer programming, consultancy and related activities        ",17874.916100724364
+2014,Digital Sector,"Computer programming, consultancy and related activities        ",18668.420022636907
+2015,Digital Sector,"Computer programming, consultancy and related activities        ",19700.39491757309
+2016,Digital Sector,"Computer programming, consultancy and related activities        ",21979.230489597354
+2010,Digital Sector,"Computer programming, consultancy and related activities        ",24.638166166549098
+2011,Digital Sector,"Computer programming, consultancy and related activities        ",55.80615291171084
+2012,Digital Sector,"Computer programming, consultancy and related activities        ",29.939663342123396
+2013,Digital Sector,"Computer programming, consultancy and related activities        ",299.20422542188555
+2014,Digital Sector,"Computer programming, consultancy and related activities        ",64.35841438411852
+2015,Digital Sector,"Computer programming, consultancy and related activities        ",82.95094894932868
+2016,Digital Sector,"Computer programming, consultancy and related activities        ",92.5462679259183
+2010,Digital Sector,"Computer programming, consultancy and related activities        ",7973.476148849375
+2011,Digital Sector,"Computer programming, consultancy and related activities        ",9348.757799533474
+2012,Digital Sector,"Computer programming, consultancy and related activities        ",8400.280831959308
+2013,Digital Sector,"Computer programming, consultancy and related activities        ",7657.16419643914
+2014,Digital Sector,"Computer programming, consultancy and related activities        ",7906.432894346373
+2015,Digital Sector,"Computer programming, consultancy and related activities        ",7794.266219716915
+2016,Digital Sector,"Computer programming, consultancy and related activities        ",8695.864953835393
+2010,Digital Sector,Information service activities      ,2579.4221008192103
+2011,Digital Sector,Information service activities      ,2847.041119419805
+2012,Digital Sector,Information service activities      ,3126.228275345164
+2013,Digital Sector,Information service activities      ,3560.436728976276
+2014,Digital Sector,Information service activities      ,3166.6579694631523
+2015,Digital Sector,Information service activities      ,3167.2810039664373
+2016,Digital Sector,Information service activities      ,3256.3324218788175
+2010,Digital Sector,Information service activities      ,229.60550029569612
+2011,Digital Sector,Information service activities      ,271.46334439305457
+2012,Digital Sector,Information service activities      ,421.59562927865596
+2013,Digital Sector,Information service activities      ,556.2291777162978
+2014,Digital Sector,Information service activities      ,661.0077844927144
+2015,Digital Sector,Information service activities      ,832.8400537057328
+2016,Digital Sector,Information service activities      ,856.256222837502
+2010,Digital Sector,Information service activities      ,1520.0532581415034
+2011,Digital Sector,Information service activities      ,1412.573905124629
+2012,Digital Sector,Information service activities      ,1216.7905786748197
+2013,Digital Sector,Information service activities      ,1124.3567493920914
+2014,Digital Sector,Information service activities      ,1134.7824766926228
+2015,Digital Sector,Information service activities      ,1099.4026468053726
+2016,Digital Sector,Information service activities      ,1130.313502025366
+2010,Digital Sector,Information service activities      ,345.91914074359
+2011,Digital Sector,Information service activities      ,323.9216310625114
+2012,Digital Sector,Information service activities      ,297.38551670135973
+2013,Digital Sector,Information service activities      ,225.97734391533513
+2014,Digital Sector,Information service activities      ,520.55176935151
+2015,Digital Sector,Information service activities      ,484.4762955224574
+2016,Digital Sector,Information service activities      ,498.09785325831444
+2010,Digital Sector,Repair of computers and communication equipment,1203.726657877989
+2011,Digital Sector,Repair of computers and communication equipment,1408.7336604641448
+2012,Digital Sector,Repair of computers and communication equipment,1430.54727469947
+2013,Digital Sector,Repair of computers and communication equipment,1463.3818614644738
+2014,Digital Sector,Repair of computers and communication equipment,1898.854231246367
+2015,Digital Sector,Repair of computers and communication equipment,1839.825114125774
+2016,Digital Sector,Repair of computers and communication equipment,1936.7293466561555
+2010,Digital Sector,Repair of computers and communication equipment,252.19732879543957
+2011,Digital Sector,Repair of computers and communication equipment,274.8109229573126
+2012,Digital Sector,Repair of computers and communication equipment,181.0717540129178
+2013,Digital Sector,Repair of computers and communication equipment,339.5889098776322
+2014,Digital Sector,Repair of computers and communication equipment,183.5983118503451
+2015,Digital Sector,Repair of computers and communication equipment,287.71132584343104
+2016,Digital Sector,Repair of computers and communication equipment,302.86518204807584
+2010,Cultural Sector,Crafts,291.9925654298279
+2011,Cultural Sector,Crafts,307.6828057620549
+2012,Cultural Sector,Crafts,284.3575905846875
+2013,Cultural Sector,Crafts,215.88773213126225
+2014,Cultural Sector,Crafts,395.5191476954058
+2015,Cultural Sector,Crafts,367.70774400984726
+2016,Cultural Sector,Crafts,421.3055710006122
+2010,Cultural Sector,"Film, TV and music",1549.3203621101711
+2011,Cultural Sector,"Film, TV and music",2539.571168768057
+2012,Cultural Sector,"Film, TV and music",1628.471792430577
+2013,Cultural Sector,"Film, TV and music",1895.5759177820923
+2014,Cultural Sector,"Film, TV and music",2922.393313808415
+2015,Cultural Sector,"Film, TV and music",2564.074606772547
+2016,Cultural Sector,"Film, TV and music",2577.9594873146366
+2010,Cultural Sector,"Film, TV and music",857.9275591335174
+2011,Cultural Sector,"Film, TV and music",1496.6075388337645
+2012,Cultural Sector,"Film, TV and music",1926.4298079704915
+2013,Cultural Sector,"Film, TV and music",1475.671215352002
+2014,Cultural Sector,"Film, TV and music",1445.129512609778
+2015,Cultural Sector,"Film, TV and music",1246.5679737375162
+2016,Cultural Sector,"Film, TV and music",1253.3183418263475
+2010,Cultural Sector,"Film, TV and music",3991.4153639513133
+2011,Cultural Sector,"Film, TV and music",2904.9657489297583
+2012,Cultural Sector,"Film, TV and music",3470.09335974559
+2013,Cultural Sector,"Film, TV and music",3612.870083237816
+2014,Cultural Sector,"Film, TV and music",3190.7762797627497
+2015,Cultural Sector,"Film, TV and music",3281.6400308062025
+2016,Cultural Sector,"Film, TV and music",3299.4106446914348
+2010,Cultural Sector,"Film, TV and music",1127.247365605862
+2011,Cultural Sector,"Film, TV and music",936.6493403281534
+2012,Cultural Sector,"Film, TV and music",1154.3682606363823
+2013,Cultural Sector,"Film, TV and music",1034.0030244120728
+2014,Cultural Sector,"Film, TV and music",799.3997565794161
+2015,Cultural Sector,"Film, TV and music",870.9530001545587
+2016,Cultural Sector,"Film, TV and music",875.6693521409552
+2010,Cultural Sector,"Film, TV and music",804.0893491991363
+2011,Cultural Sector,"Film, TV and music",874.2062031402663
+2012,Cultural Sector,"Film, TV and music",1340.6367792169601
+2013,Cultural Sector,"Film, TV and music",2029.8797592160156
+2014,Cultural Sector,"Film, TV and music",1529.3011372396427
+2015,Cultural Sector,"Film, TV and music",1454.7643885291764
+2016,Cultural Sector,"Film, TV and music",1462.642174026627
+2010,Cultural Sector,Radio,552.1092933877187
+2011,Cultural Sector,Radio,453.4346702957225
+2012,Cultural Sector,Radio,570.2975731246198
+2013,Cultural Sector,Radio,467.60092549719366
+2014,Cultural Sector,Radio,279.2947643163224
+2015,Cultural Sector,Radio,376.7031920512522
+2016,Cultural Sector,Radio,431.7520851830085
+2010,Cultural Sector,"Film, TV and music",4017.890706612281
+2011,Cultural Sector,"Film, TV and music",4179.565329704278
+2012,Cultural Sector,"Film, TV and music",4156.702426875379
+2013,Cultural Sector,"Film, TV and music",4394.399074502806
+2014,Cultural Sector,"Film, TV and music",5219.705235683678
+2015,Cultural Sector,"Film, TV and music",5248.296807948748
+2016,Cultural Sector,"Film, TV and music",6015.247914816991
+2010,Cultural Sector,Photography,697.4829469437935
+2011,Cultural Sector,Photography,749.8947124939039
+2012,Cultural Sector,Photography,778.6996707282398
+2013,Cultural Sector,Photography,883.1962364070547
+2014,Cultural Sector,Photography,749.2786760049875
+2015,Cultural Sector,Photography,817.3681308486093
+2016,Cultural Sector,Photography,907.6690123013672
+2010,Cultural Sector,Cultural education,365.5962373776413
+2011,Cultural Sector,Cultural education,581.2921843323722
+2012,Cultural Sector,Cultural education,268.8049882591566
+2013,Cultural Sector,Cultural education,331.6431014990161
+2014,Cultural Sector,Cultural education,132.80482534746923
+2015,Cultural Sector,Cultural education,717.267483225181
+2016,Cultural Sector,Cultural education,699.6269040053446
+2010,Cultural Sector,Arts,1741.159621325588
+2011,Cultural Sector,Arts,1670.372007485112
+2012,Cultural Sector,Arts,1734.1448292026384
+2013,Cultural Sector,Arts,1696.2849750990101
+2014,Cultural Sector,Arts,2170.715747437493
+2015,Cultural Sector,Arts,2139.984595665192
+2016,Cultural Sector,Arts,2128.422792839889
+2010,Cultural Sector,Arts,200.98116127133218
+2011,Cultural Sector,Arts,330.9984137636043
+2012,Cultural Sector,Arts,395.3914985509752
+2013,Cultural Sector,Arts,595.0460181485792
+2014,Cultural Sector,Arts,298.12677219680575
+2015,Cultural Sector,Arts,877.3481756193264
+2016,Cultural Sector,Arts,872.6080823325815
+2010,Cultural Sector,Arts,2078.7702100084957
+2011,Cultural Sector,Arts,2065.069648730624
+2012,Cultural Sector,Arts,2252.5769029669145
+2013,Cultural Sector,Arts,2074.834589996541
+2014,Cultural Sector,Arts,2656.64155670157
+2015,Cultural Sector,Arts,2898.3531255749117
+2016,Cultural Sector,Arts,2882.6940468021594
+2010,Cultural Sector,Arts,266.0890073945844
+2011,Cultural Sector,Arts,211.55993002065944
+2012,Cultural Sector,Arts,236.8867692794714
+2013,Cultural Sector,Arts,230.83441675586954
+2014,Cultural Sector,Arts,181.5159236641308
+2015,Cultural Sector,Arts,192.31410314056845
+2016,Cultural Sector,Arts,191.2750780253689
+2010,Cultural Sector,Library and archives,459.62999185004077
+2011,Cultural Sector,Library and archives,256.0615384615385
+2012,Cultural Sector,Library and archives,249.48186528497408
+2013,Cultural Sector,Library and archives,261.41379310344826
+2014,Cultural Sector,Library and archives,236.89514066496164
+2015,Cultural Sector,Library and archives,264.8358628442945
+2016,Cultural Sector,Library and archives,282.24002248454184
+2010,Cultural Sector,Museums and galleries,863.8272208638957
+2011,Cultural Sector,Museums and galleries,968.7661538461539
+2012,Cultural Sector,Museums and galleries,988.4233900814212
+2013,Cultural Sector,Museums and galleries,994.551724137931
+2014,Cultural Sector,Museums and galleries,990.4667519181585
+2015,Cultural Sector,Museums and galleries,1076.7414277684093
+2016,Cultural Sector,Museums and galleries,1147.5014052838674
+2010,Cultural Sector,"Film, TV and music",165.01626297940953
+2011,Cultural Sector,"Film, TV and music",137.87263878017072
+2012,Cultural Sector,"Film, TV and music",105.46110546733698
+2013,Cultural Sector,"Film, TV and music",249.5305710770187
+2014,Cultural Sector,"Film, TV and music",202.43378294916877
+2015,Cultural Sector,"Film, TV and music",115.58021556975865
+2016,Cultural Sector,"Film, TV and music",117.11304899081443
+2010,Cultural Sector,"Film, TV and music",45.20986613790138
+2011,Cultural Sector,"Film, TV and music",31.605983223945568
+2012,Cultural Sector,"Film, TV and music",37.76554573989272
+2013,Cultural Sector,"Film, TV and music",32.44660680257474
+2014,Cultural Sector,"Film, TV and music",51.02960717080993
+2015,Cultural Sector,"Film, TV and music",41.775870593139686
+2016,Cultural Sector,"Film, TV and music",47.86520627049687
+2010,Cultural Sector,"Film, TV and music",207.10082295525828
+2011,Cultural Sector,"Film, TV and music",149.02427660053797
+2012,Cultural Sector,"Film, TV and music",74.07506144869606
+2013,Cultural Sector,"Film, TV and music",99.2991573183294
+2014,Cultural Sector,"Film, TV and music",134.13746136233803
+2015,Cultural Sector,"Film, TV and music",159.16032493958147
+2016,Cultural Sector,"Film, TV and music",164.7134795705085
+2010,Cultural Sector,Heritage,780.6780766096169
+2011,Cultural Sector,Heritage,896.2153846153847
+2012,Cultural Sector,Heritage,971.7912657290896
+2013,Cultural Sector,Heritage,731.1724137931035
+2014,Cultural Sector,Heritage,935.3273657289002
+2015,Cultural Sector,Heritage,925.9589657110736
+2016,Cultural Sector,Heritage,986.8100056211355
+2010,Telecoms,,519.4087187809379
+2011,Telecoms,,772.3907657091489
+2012,Telecoms,,891.3706786383655
+2013,Telecoms,,852.364880645296
+2014,Telecoms,,763.492961745718
+2015,Telecoms,,804.1166658775628
+2016,Telecoms,,793.0763442105358
+2010,Telecoms,,683.0324025736642
+2011,Telecoms,,786.7507739269536
+2012,Telecoms,,892.269075399153
+2013,Telecoms,,1050.0121878183973
+2014,Telecoms,,1327.057476108655
+2015,Telecoms,,5351.18574513875
+2016,Telecoms,,5277.715296840223
+2010,Telecoms,,-540.4782593984105
+2011,Telecoms,,-496.2882386029652
+2012,Telecoms,,-507.65740040963163
+2013,Telecoms,,-460.5932921030107
+2014,Telecoms,,-322.80141621019936
+2015,Telecoms,,-237.0553918672062
+2016,Telecoms,,-233.8006803431503
+2010,Telecoms,,24083.03713804381
+2011,Telecoms,,24391.146698966866
+2012,Telecoms,,24737.01764637211
+2013,Telecoms,,26639.216223639316
+2014,Telecoms,,28244.250978355823
+2015,Telecoms,,24453.75298085089
+2016,Telecoms,,24118.00903929239
+2010,Gambling,,8401.0
+2011,Gambling,,9290.0
+2012,Gambling,,9883.0
+2013,Gambling,,9970.0
+2014,Gambling,,10389.0
+2015,Gambling,,11051.0
+2016,Gambling,,10647.0
+2010,Sport,,208.46780506573916
+2011,Sport,,216.51238964578508
+2012,Sport,,221.47627110019866
+2013,Sport,,250.44514580539982
+2014,Sport,,230.0862110237601
+2015,Sport,,294.64622849064375
+2016,Sport,,337.5944607087283
+2010,Sport,,1526.0572656028698
+2011,Sport,,1412.6050972243606
+2012,Sport,,1859.411953163199
+2013,Sport,,1803.020479971192
+2014,Sport,,2276.8269780931323
+2015,Sport,,2321.0562130819953
+2016,Sport,,2402.0386065472703
+2010,Sport,,1038.853700286217
+2011,Sport,,946.6448474710608
+2012,Sport,,1202.2582395279471
+2013,Sport,,886.1624577544218
+2014,Sport,,817.984596724461
+2015,Sport,,975.9759581700197
+2016,Sport,,1055.6953157142375
+2010,Sport,,2085.7661914819896
+2011,Sport,,2060.438744886984
+2012,Sport,,2657.7224285900156
+2013,Sport,,2128.0231011050237
+2014,Sport,,2288.3253490826883
+2015,Sport,,2512.2404792187135
+2016,Sport,,2717.4445063500916
+2010,Sport,,291.19935603012743
+2011,Sport,,329.85737353006925
+2012,Sport,,435.7935318547748
+2013,Sport,,355.6004476356759
+2014,Sport,,343.56487194605694
+2015,Sport,,438.59353868249843
+2016,Sport,,474.4185964968046
+2010,Sport,,198.29808724822817
+2011,Sport,,190.3520641566824
+2012,Sport,,0.0
+2013,Sport,,419.17503391205076
+2014,Sport,,279.29878177994306
+2015,Sport,,391.80658689801874
+2016,Sport,,423.8100078098089
+2010,Sport,,165.74092410285328
+2011,Sport,,150.23959647942146
+2012,Sport,,193.17286566228944
+2013,Sport,,213.60513400795335
+2014,Sport,,195.5762562855623
+2015,Sport,,235.24109583140998
+2016,Sport,,246.29503155792136
+2010,Sport,,1321.8924531251803
+2011,Sport,,1832.8784418525236
+2012,Sport,,1022.1458506277039
+2013,Sport,,1201.7490924900626
+2014,Sport,,1108.7575309694653
+2015,Sport,,1178.1515506611108
+2016,Sport,,1149.1759226722904
+2010,Sport,,189.20840114940566
+2011,Sport,,257.34519106647844
+2012,Sport,,288.86890341664235
+2013,Sport,,232.7945137926878
+2014,Sport,,212.00623332150116
+2015,Sport,,262.4681375582046
+2016,Sport,,229.02116208782448
+2010,UK,All,1422028.0
+2010,All DCMS sectors,All,192670.3360477817
+2010,Civil Society (Non-market charities),All,19250.284461995827
+2010,Creative Industries,All,63424.601748337205
+2010,Cultural Sector,All,21063.533991147386
+2010,Digital Sector,All,94502.71789062666
+2010,Gambling,All,8401.0
+2010,Sport,All,7025.484184092611
+2010,Telecoms,All,24745.0
+2010,Tourism,All,49150.0
+2011,UK,All,1458820.0
+2011,All DCMS sectors,All,205188.6170605847
+2011,Civil Society (Non-market charities),All,19646.63754675642
+2011,Creative Industries,All,67248.00827918322
+2011,Cultural Sector,All,21741.415678116064
+2011,Digital Sector,All,99551.15878865345
+2011,Gambling,All,9290.0
+2011,Sport,All,7396.873746313365
+2011,Telecoms,All,25454.000000000004
+2011,Tourism,All,53947.0
+2012,UK,All,1505718.0
+2012,All DCMS sectors,All,209878.60844598862
+2012,Civil Society (Non-market charities),All,16106.395054909925
+2012,Creative Industries,All,70722.61088991257
+2012,Cultural Sector,All,22624.8604833235
+2012,Digital Sector,All,101730.32675038166
+2012,Gambling,All,9883.0
+2012,Sport,All,7880.850043942772
+2012,Telecoms,All,26012.999999999996
+2012,Tourism,All,57343.0
+2013,UK,All,1564430.0
+2013,All DCMS sectors,All,220826.24581930536
+2013,Civil Society (Non-market charities),All,18666.076947443893
+2013,Creative Industries,All,74867.72474520678
+2013,Cultural Sector,All,23306.141336269742
+2013,Digital Sector,All,106800.37554932809
+2013,Gambling,All,9970.0
+2013,Sport,All,7490.575406474468
+2013,Telecoms,All,28081.0
+2013,Tourism,All,58997.0
+2014,UK,All,1638722.0
+2014,All DCMS sectors,All,227497.65655705237
+2014,Civil Society (Non-market charities),All,19784.23915509961
+2014,Creative Industries,All,79952.82436018197
+2014,Cultural Sector,All,24520.892758842205
+2014,Digital Sector,All,108393.6567066025
+2014,Gambling,All,10389.0
+2014,Sport,All,7752.42680922657
+2014,Telecoms,All,30011.999999999996
+2014,Tourism,All,60437.57113000001
+2015,UK,All,1684937.0
+2015,All DCMS sectors,All,239836.04226754134
+2015,Civil Society (Non-market charities),All,21286.846982696163
+2015,Creative Industries,All,85307.85135925226
+2015,Cultural Sector,All,25637.396025509894
+2015,Digital Sector,All,110155.44792005862
+2015,Gambling,All,11051.0
+2015,Sport,All,8610.179788592615
+2015,Telecoms,All,30372.0
+2015,Tourism,All,64641.538795635555
+2016,UK,All,1744435.0
+2016,All DCMS sectors,All,248515.262953181
+2016,Civil Society (Non-market charities),All,20933.22
+2016,Creative Industries,All,91828.29923770105
+2016,Cultural Sector,All,26765.844655528694
+2016,Digital Sector,All,116493.52158675782
+2016,Gambling,All,10647.0
+2016,Sport,All,9035.493609944977
+2016,Telecoms,All,29954.999999999996
+2016,Tourism,All,66064.88602018874
