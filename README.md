@@ -76,19 +76,18 @@ In most cases, users will want to clone the package so that they add updates to 
 1. Open the Anconda Navigator application and then launch jupyterlab.
 1. To run an existing publication, in the left hand pane, navigate to myprojects/gva/publications/Nov_2016 and open the notebook 'publication_2016.ipynb'. To run a code block, click on it and hit shift + enter.
 1. To produce a new publication, create a copy of publications/Nov_2016, rename for example to publications/Nov_2017 (the name must not start with a number), and then update the notebook accordingly - for example point to new data.
-1. If you need to make changes to the package functions used by the notebook, for example changing what data is read in by the read_abs() function, open the file /src/functions.py, update the read_abs() function, save the notebook, 
+1. If you need to make changes to the package functions used by the notebook, for example changing what data is read in by the read_abs() function, open the file /src/functions.py, update the read_abs() function, save the notebook, and rerun the code in the notebook. The code:
+   ```python
+   %load_ext autoreload
+   %autoreload 2
+   ```
+   at the top of the notebook ensures the package is reloaded so that any changes made are included. You might find it easiest to copy the code from the function into a new notebook to experiment with, before copying back to functions.py.
 
+### QA, git commit, and git push to github.
+Use `git commit` to [log a snapshot](https://github.com/DCMSstats/gva/commits/master) of the code, once you are happy with it. However, will only be recorded on your machine, use `git push origin master` to add your commit to the Github repository. Software carpentary has a good [tutorial](https://swcarpentry.github.io/git-novice/) on using Git. Before pushing to Github where everything is publically viewable, QA needs to take place to ensure the files you are committing do not contain any sensitive data.
 
-Installation
-Running - To simple run the code
-pip install gva
-
-
-
-Useage
-either run make_publication 2016
-or
-open walkthrough.ipynb and run cells
+### Other
+To run the code without cloning the repository or using raw data, run pip install dcms_gva, and download this example notebook. - not yet implemented.
 
 ## Description of the contents of this repo
 ### README.md
