@@ -21,7 +21,7 @@ In this repo we use a [Jupyter](http://jupyter.org/) notebook for each publicati
 * Easy visualisation and documentation for [literate programming](https://en.wikipedia.org/wiki/Literate_programming).
 * Adoption by most tech companies, including: [Google](https://cloud.google.com/datalab/) [(also)](https://research.google.com/colaboratory/), Microsoft, Bloomberg, [Netflix](https://medium.com/@NetflixTechBlog/notebook-innovation-591ee3221233), [IBM](https://www.ibm.com/cloud/pixiedust)
 
-### Requirements/design philosphy:
+### Design philosophy/requirements:
 * Reproducibility  
   Individual notebooks or scripts that can be rerun to accurately reproduce ALL outputs for ANY given publication. Recording version number for where breakding changes are made to code and version number is incremented. For example provide requirements.txt specifying what packages are used.
 * Testing  
@@ -31,15 +31,16 @@ In this repo we use a [Jupyter](http://jupyter.org/) notebook for each publicati
 * Simplicity
   Make project as simple as possible in order to make it as easy as possible be understood users and get up to speed.
 * Reliability
-  Use best practices to improve reliability of code, for example using code that will work across operating systems.
+  Ensure publication code can be reliably run by users without errors. Use best practices to improve reliability of code, for example using code that will work across operating systems.
 * Modularisation
-  Make code modular to allow code to be more easily maintained and reused.
-
-version controlling
-debugging
-unit/integration testing
-literate programming, transparency, clean code - ideally presenting code logic in jupyter notebook with markdown cells explaining logic.
-removing the posibility of commiting sensitive data to the public github repository - https://conferences.oreilly.com/jupyter/jup-ny/public/schedule/detail/69986
+  Make code modular to allow code to be more easily maintained and reused. This includes splitting code different purposes into separate scripts, e.g. testing code in a separate script. Also, where sensible, break code with scripts into functions
+* Safety/security
+  Remove the posibility of commiting sensitive data to the public github repository. 
+  Cases:
+   * Committing raw data excel file: Designing the repo so that the sensitive data is referenced in place rather than copied to the repo itself, and git ignoring all xlsx and xls files unless specifically exempt.
+   * Including sensitive data as output cells in jupyter notebooks. Currently, this relies on users not printing out sensitive data to output cells and then commiting the notebook with the output cells. The output in ouput cells is clearly displayed in notebooks so this is easily avoided, however, still relies on the user which is not ideal. In future implementations, git hooks could be used to ensure [output is stripped from notebooks](https://github.com/kynan/nbstripout) on commit, however a more sophisticated implementation of the repo will be necessary to ensure git hooks are used, probably using [docker](https://www.docker.com/)
+   * Including sensitve data in aggregate data csv. The data in this file should be at sector level and anonymised, however it is still conceiveably possible to include senstive sic level data in the csv which is then committed to the repo. As with the previous point, the same QA checks that are usually applied to statistical publications before they are published, can be applied here. Also, code can be written that will check the form of the data and stop the code with and error before the CSV is written, reducing the chance of creating and then comitting a CSV containing sensitive data.
+<!--- https://conferences.oreilly.com/jupyter/jup-ny/public/schedule/detail/69986 --->
 
 ### Approach
 
