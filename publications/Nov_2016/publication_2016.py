@@ -21,7 +21,7 @@ import sys
 if os.path.exists(os.path.abspath(os.path.join('src'))):
     module_path = os.path.abspath(os.path.join(''))
 else: 
-    module_path = os.path.abspath(os.path.join('..'))
+    module_path = os.path.abspath(os.path.join('../..'))
 
 # add root directory to sys.path so that package can be found
 if module_path not in sys.path:
@@ -64,7 +64,7 @@ combined_gva = combine_gva(abs, gva, sic91)
 
 # #### Aggregate data to sector level
 
-# In[5]:
+# In[4]:
 
 
 agg = aggregate_data(combined_gva, gva, tourism, charities)
@@ -73,7 +73,7 @@ agg
 
 # #### Save aggregated data to ouputs directory
 
-# In[ ]:
+# In[5]:
 
 
 agg.to_csv(os.path.join(output_dir, 'gva_aggregate_data_2016.csv'), index=False)
@@ -83,7 +83,7 @@ agg.to_csv(os.path.join(output_dir, 'gva_aggregate_data_2016.csv'), index=False)
 
 # #### Read in aggregate data (This is so Part 1 doesn't need to be rerun)
 
-# In[4]:
+# In[6]:
 
 
 agg = pd.read_csv(os.path.join(output_dir, 'gva_aggregate_data_2016.csv'))
@@ -91,7 +91,7 @@ agg = pd.read_csv(os.path.join(output_dir, 'gva_aggregate_data_2016.csv'))
 
 # #### Create some summary tables
 
-# In[5]:
+# In[7]:
 
 
 make_table(agg, 'All')
@@ -99,7 +99,7 @@ make_table(agg, 'All')
 
 # #### Save summary tables to a dictionary so they can be easily used by the test script
 
-# In[6]:
+# In[8]:
 
 
 summary_tables = {
