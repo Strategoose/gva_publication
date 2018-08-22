@@ -52,8 +52,23 @@ Use docker to allow sharing of config files e.g.jupyter_notebook_config.py which
 ## Using the package
 In most cases, users will want to clone the package so that they add updates to the package and save the changes to github. For following steps should be used as a workflow for making updates to the package.
 
-1. clone the repository. 
-Navigate to the folder where you want to store the repo on your machine. For Windows
+1. Clone the repository
+ * Install [Git](https://git-scm.com/downloads)
+ * Navigate to the folder where you want to store the repo on your machine. For Windows users - open the 'Git Bash' application, for Mac users open the terminal. Then use pwd to find the current directory, ls to display the folders within the current directory, and cd to enter one of those directories, then pwd again to confirm the new current directory. For example:
+ ```bash
+ user$ pwd
+ C:/user.name/documents/
+ user$ ls
+ myprojects/ otherfolder/ anotherfolder/
+ user$ cd myprojects/
+ user$ pwd
+ C:/user.name/documents/myprojects/
+ ```
+ This shows sucessfully navigating to the myprojects/ directory.
+ * download the repo from github using by running
+ ```bash
+ user$ git clone https://github.com/DCMSstats/gva.git
+ ```
 
 
 Installation
@@ -90,4 +105,6 @@ jupyter notebook
 
 ## Other points
 Where possible I have linked to reputable sources to explain ideas or make cases for use of a particular tool/approach. This is in order to make the reasoning more convincing and help paint the repo in a wider context.
+
+As this repo is replicated for other publications, a lot of the information in this README will be stripped out and stored somewhere more centrally.
 
