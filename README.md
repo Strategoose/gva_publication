@@ -109,6 +109,10 @@ tests
 publication  
 jupyter notebook  
 
+## Notes
+The raw data is provided in £m's and the cleaned output data is also given in £m's to preserve as much numerical precision as possible.
+
+  
 ## Other points
 Where possible I have linked to reputable sources to explain ideas or make cases for use of a particular tool/approach. This is in order to make the reasoning more convincing and help paint the repo in a wider context.
 
