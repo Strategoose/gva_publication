@@ -110,7 +110,7 @@ publication
 jupyter notebook  
 
 ## Notes
-The raw data is provided in £m's and the cleaned output data is also given in £m's to preserve as much numerical precision as possible.
+The raw data is provided in £m's and the cleaned output data is also given in £m's to preserve as much numerical precision as possible. For example, this is necessary for testing against excel publications, as converting to actual values then back to millions for testing looses too much precision and tests do not pass.
 
   
 ## Other points
