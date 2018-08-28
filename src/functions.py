@@ -190,6 +190,9 @@ def aggregate_data(combined_gva, gva, tourism, charities):
     df = df.reset_index(drop=True)
     df = df[['year', 'sector', 'sub-sector', 'gva']]
     
+    # drop sports, telecoms, etc subsectors that are not used.
+    df = df.loc[df['sub-sector'].notnull()]
+    
     return df
 
 # create aggregate data CSV
