@@ -59,6 +59,25 @@ Use `git commit` to [log a snapshot](https://github.com/DCMSstats/gva/commits/ma
 To run the code without cloning the repository or using raw data, run pip install dcms_gva, and download this example notebook. - not yet implemented.
 
 
+## Versioning
+Important motivations for bundling statistical publication production into a Python repo, is that we can ensure reproducibility, and consistency of data processing method between publications. Reproducibility is critical to ensure publications are auditable and trustworty. Consistency of approach for each publication is also critical to ensure statistics are accurate, transparent, reliable, trustworthy etc.
+Problems with traditional approaches:
+Reproducibility: Data processing with excel files means that files might be stored in different places, there can be errors in the excel files, if someone changes something in a dependent excel file unknowlingly, it could alter the output of the pipeline.
+Consistency: If we add new functionality for a new publication which is built on top of the existing functionality, we have no way of rerunning previous publications to check that numbers produced are the same, so we have no way of knowing if the new functionality is calculating statistics on the same basis as previous publications.
+
+The solution is to use the same code for every publication. The code should be comprised of generalised functions that can be re-used for every publication. This code is referred to as source code and is resued for every publication. We then have separate jupyter notebooks for each publication. Each publication notebook has different inputs specific to that publication, for example file paths to the latest raw data. This way we know that the stats for each publication are being calculated on the same basis, as the same source code is being used. 
+Once a publication has been released, we write automated tests that mean with a single command we can rerun the publication notebook, and check the outputs are the same as those produced for the released publication. This means that when new functionaility is added to the source code for future publications, we can run the automated tests using the upadted source code to ensure that the same outputs are being produced and therefore statistics in the new publication are being calculated on the same basis as previously. What if there is a change in methodology or another reason that updates to the source mean that we don't expect it to produce previous publications on the same basis? We increment the major release number of the [repos version number](https://github.com/DCMSstats/gva/releases). Using [software versioning](https://en.wikipedia.org/wiki/Software_versioning) is a standard software development practice and helps us clearly record the different version of our repo.
+Say the current iteration of our code is v1.0.2 can be read as major.minor.patch
+the version number represents major: breaking change, minor: feature number, 2: bug fix number
+
+If we fix a bug in our code, we can then release this as v1.0.3. Note that if the bug affects the actual value of the statistics being produced, we would either want to re-release previous publications with the bug fixed - and update automated tests accordingly, or if not re-releasing, you should increment the major version number to v2.0.2 to signify that this source code is on a different basis to versions for previous publications and is not expected to proudce the same results. Typically this might be a formatting issue that is rectified but doesn't affect the statistical output that is checked by the automated tests.
+
+If we add a new feature to our code we increment the minor number giving us v1.1.2.
+
+If we update the source code so that calculations are on a different basis, so that we do not expect the code to be able to accurately reproduce statistics in previous publications (for example because of a change in methodology) then we increment the the major number and reset minor and patch numbers: v2.0.0.
+
+This may seem complicated but it is a very widely used, standised approach to managing software versioning.
+
 ## Design philosophy/requirements:
 * Reproducibility  
   Individual notebooks or scripts that can be rerun to accurately reproduce ALL outputs for ANY given publication. Recording version number for where breakding changes are made to code and version number is incremented. For example provide requirements.txt specifying what packages are used.
@@ -118,3 +137,4 @@ Where possible I have linked to reputable sources to explain ideas or make cases
 
 As this repo is replicated for other publications, a lot of the information in this README will be stripped out and stored somewhere more centrally.
 
+We keep the notebooks, tests etc, and the source code in the same repository to make the code base easier for developers to work with.
