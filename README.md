@@ -61,6 +61,9 @@ Use `git commit` to [log a snapshot](https://github.com/DCMSstats/gva/commits/ma
 #### Other
 To run the code without cloning the repository or using raw data, run pip install dcms_gva, and download this example notebook. - not yet implemented.
 
+#### Reproducing outputs for previous releases
+Check which major version of the package was used to produce the release in question here (link to releases). Install that version using pip install git ...
+
 
 ## Versioning
 Important motivations for bundling statistical publication production into a Python repo, is that we can ensure reproducibility, and consistency of data processing method between publications. Reproducibility is critical to ensure publications are auditable and trustworty. Consistency of approach for each publication is also critical to ensure statistics are accurate, transparent, reliable, trustworthy etc.
@@ -80,6 +83,8 @@ If we add a new feature to our code we increment the minor number giving us v1.1
 If we update the source code so that calculations are on a different basis, so that we do not expect the code to be able to accurately reproduce statistics in previous publications (for example because of a change in methodology) then we increment the the major number and reset minor and patch numbers: v2.0.0.
 
 This may seem complicated but it is a very widely used, standised approach to managing software versioning.
+
+What if we are just adding an extra column? this won't pass test for previous releases but doesn't seem like a good enough reason for a major release since the rest of the information will still be accurate? maybe it is a good enough reason? or maybe the tests should know to just check whatever information was actually included in the release - yes.
 
 ## Design philosophy/requirements:
 * Reproducibility  
