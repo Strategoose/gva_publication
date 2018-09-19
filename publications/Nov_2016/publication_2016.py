@@ -5,7 +5,7 @@
 
 # #### Import packages and define paths to directories
 
-# In[1]:
+# In[ ]:
 
 
 # this will automatically reload the gva package when changes have been made
@@ -44,7 +44,7 @@ path = '/Volumes/Data/EAU/Statistics/Economic Estimates/2017 publications/Novemb
 
 # #### Read in and clean up raw data in excel file
 
-# In[2]:
+# In[ ]:
 
 
 abs = read_abs(path)
@@ -56,7 +56,7 @@ sic91 = read_sic91(path)
 
 # #### Combine sic level data read in above into a single dataset
 
-# In[3]:
+# In[ ]:
 
 
 combined_gva = combine_gva(abs, gva, sic91)
@@ -64,7 +64,7 @@ combined_gva = combine_gva(abs, gva, sic91)
 
 # #### Aggregate data to sector level
 
-# In[4]:
+# In[ ]:
 
 
 agg = aggregate_data(combined_gva, gva, tourism, charities)
@@ -73,7 +73,7 @@ agg
 
 # #### Save aggregated data to ouputs directory
 
-# In[5]:
+# In[ ]:
 
 
 agg.to_csv(os.path.join(output_dir, 'gva_aggregate_data_2016.csv'), index=False)
@@ -83,7 +83,7 @@ agg.to_csv(os.path.join(output_dir, 'gva_aggregate_data_2016.csv'), index=False)
 
 # #### Read in aggregate data (This is so Part 1 doesn't need to be rerun)
 
-# In[6]:
+# In[ ]:
 
 
 agg = pd.read_csv(os.path.join(output_dir, 'gva_aggregate_data_2016.csv'))
@@ -91,7 +91,7 @@ agg = pd.read_csv(os.path.join(output_dir, 'gva_aggregate_data_2016.csv'))
 
 # #### Create some summary tables
 
-# In[7]:
+# In[ ]:
 
 
 make_table(agg, 'All')
@@ -99,7 +99,7 @@ make_table(agg, 'All')
 
 # #### Save summary tables to a dictionary so they can be easily used by the test script
 
-# In[8]:
+# In[ ]:
 
 
 summary_tables = {
