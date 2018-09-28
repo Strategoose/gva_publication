@@ -3,9 +3,20 @@
 
 # # 2016 GVA Publication
 
+# In[88]:
+
+
+# the cwd is the directory where the notebook is located
+# this means that need to make sure that any paths in the notebook are not relative, 
+# else they will fail when used by pytest.
+# I think this is a better approach than changing the cwd to  gva/ 
+import os
+os.getcwd()
+
+
 # #### Import packages and define paths to directories
 
-# In[ ]:
+# In[1]:
 
 
 # this will automatically reload the gva package when changes have been made
@@ -23,7 +34,7 @@ if os.path.exists(os.path.abspath(os.path.join('src'))):
 else: 
     module_path = os.path.abspath(os.path.join('../..'))
 
-# add root directory to sys.path so that package can be found
+# add root directory to sys.path so we that our packages can be found
 if module_path not in sys.path:
     sys.path.append(module_path)
         
@@ -44,7 +55,7 @@ path = '/Volumes/Data/EAU/Statistics/Economic Estimates/2017 publications/Novemb
 
 # #### Read in and clean up raw data in excel file
 
-# In[ ]:
+# In[2]:
 
 
 abs = read_abs(path)
@@ -56,7 +67,7 @@ sic91 = read_sic91(path)
 
 # #### Combine sic level data read in above into a single dataset
 
-# In[ ]:
+# In[3]:
 
 
 combined_gva = combine_gva(abs, gva, sic91)
@@ -64,7 +75,7 @@ combined_gva = combine_gva(abs, gva, sic91)
 
 # #### Aggregate data to sector level
 
-# In[ ]:
+# In[4]:
 
 
 agg = aggregate_data(combined_gva, gva, tourism, charities)
@@ -73,7 +84,7 @@ agg
 
 # #### Save aggregated data to ouputs directory
 
-# In[ ]:
+# In[5]:
 
 
 agg.to_csv(os.path.join(output_dir, 'gva_aggregate_data_2016.csv'), index=False)
@@ -83,7 +94,7 @@ agg.to_csv(os.path.join(output_dir, 'gva_aggregate_data_2016.csv'), index=False)
 
 # #### Read in aggregate data (This is so Part 1 doesn't need to be rerun)
 
-# In[ ]:
+# In[6]:
 
 
 agg = pd.read_csv(os.path.join(output_dir, 'gva_aggregate_data_2016.csv'))
@@ -91,15 +102,9 @@ agg = pd.read_csv(os.path.join(output_dir, 'gva_aggregate_data_2016.csv'))
 
 # #### Create some summary tables
 
-# In[ ]:
+# #### Dictionary of summary tables for use by the test script
 
-
-make_table(agg, 'All')
-
-
-# #### Save summary tables to a dictionary so they can be easily used by the test script
-
-# In[ ]:
+# In[7]:
 
 
 summary_tables = {
@@ -109,4 +114,76 @@ summary_tables = {
     'digital': make_table(agg, 'Digital Sector'),
     'culture': make_table(agg, 'Cultural Sector'),
 }
+
+
+# #### Assign all individual stats, and dataframes, used by publication outputs
+
+# In[8]:
+
+
+summary_tables = {
+    'gva_current': make_table(agg, 'All'),
+    'gva_current_indexed': make_table(agg, 'All', indexed=True),
+    'creative': make_table(agg, 'Creative Industries'),
+    'digital': make_table(agg, 'Digital Sector'),
+    'culture': make_table(agg, 'Cultural Sector'),
+}
+
+
+# In[9]:
+
+
+uk_current_total = summary_tables['gva_current'].loc['UK', 2016]
+
+
+# ## Build Report
+
+# In[10]:
+
+
+#%load_ext autoreload
+#%autoreload 2
+
+
+# In[12]:
+
+
+from report_maker import build
+# from report_maker import build (the function) create_app
+context = {
+    'global': {'hello':  'nothing'},
+    'money_bag': {'text': '£994'},
+    'donut': {'text': '19.2'},
+    'up_arrow_1': {'text': '20.6%'},
+    'up_arrow_2': {'text': '40.6%'},
+    'dcms_cont': uk_current_total,
+}
+build.all(context)
+
+
+# In[46]:
+
+
+from report_maker import testing
+
+
+# In[47]:
+
+
+testing.PATH
+
+
+# In[ ]:
+
+
+from report_maker import app
+#app.run()
+
+
+# In[85]:
+
+
+import os
+cwd = os.getcwd()
+os.path.join(cwd, "deep")
 
