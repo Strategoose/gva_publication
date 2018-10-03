@@ -18,8 +18,8 @@ For the UK, GVA in current prices (ABML, nominal GVA, not adjusted for inflation
 
 **Figure 2.1: Indexed growth in GVA (expressed in current prices, 2010 =100) in DCMS sectors and UK: 2010-2016**
 
-{{ figure_2_1 }}
-
+<div id="vis">{{ figure_2_1 }}</div>
+    
 &nbsp;
 
 **Table 2.1: GVA contribution (£bn, expressed in current prices) by DCMS sectors: 2010 - 2016**

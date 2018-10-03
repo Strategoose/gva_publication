@@ -6,12 +6,10 @@
     <link rel= "stylesheet" type= "text/css" href= "static/styles/style.css">
     <meta charset="utf-8">
 
-    <script src="https://cdn.jsdelivr.net/npm/vega@3"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@4.2.0/build/vega.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc6/build/vega-lite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.19.2/build/vega-embed.js"></script>
   
-    <script src="https://vega.github.io/datalib/datalib.min.js"></script>
-
 </head>
 <body>
     <div id="header">
@@ -180,7 +178,8 @@ It is estimated that in 2016 the contribution of DCMS sectors to the UK economy 
 <p>For the UK, GVA in current prices (ABML, nominal GVA, not adjusted for inflation) increased by 22.9 per cent between 2010 and 2016 and 3.7 per cent between 2015 and 2016, compared with an increase of 12.2 per cent for GVA in constant prices (ABMM, real GVA, adjusted for inflation) between 2010 and 2016 and 1.6 per cent between 2015 and 2016.), or 14.2 per cent of UK GVA. The GVA of DCMS sectors has grown at a faster rate than the economy as a whole, increasing by 3.6 per cent since 2015 (£240bn in 2015), and 29.0 per cent since 2010 (£193bn in 2010). This compares to increases of 3.5 per cent and 22.7 per cent respectively for the UK economy as a whole. Figure 2.1 shows the growth rate for DCMS sectors as a whole, whilst Table 2.1 outlines the GVA contribution in £billions for each of DCMS sectors.</p>
 <p>&nbsp;</p>
 <p><strong>Figure 2.1: Indexed growth in GVA (expressed in current prices, 2010 =100) in DCMS sectors and UK: 2010-2016</strong></p>
-<p></p>
+<div id="vis"></div>
+
 <p>&nbsp;</p>
 <p><strong>Table 2.1: GVA contribution (£bn, expressed in current prices) by DCMS sectors: 2010 - 2016</strong></p>
 <p></p>
@@ -209,6 +208,9 @@ It is estimated that in 2016 the contribution of DCMS sectors to the UK economy 
 <p></p>
 <p>&nbsp;</p>
 <p>The Digital Sector alone made up nearly half of the DCMS sectors’ GVA in 2016 (6.7% of UK GVA), whilst Creative Industries represented over a third (5.3% of UK GVA). There is considerable overlap between the DCMS sectors, for example 3.6 per cent of UK GVA is in both the Creative Industries and the Digital Sector. The overlap between sectors is represented in Figure 1 on the first page of this report, and means that the individual sectors cannot be summed to get an estimate of the GVA for all DCMS sectors combined.</p></div>
-        
+    <h1>Template for Embedding Vega-Lite Visualization</h1>
+
+
+    <script src="static/js/chart1.js"></script>
 </body>
 </html>

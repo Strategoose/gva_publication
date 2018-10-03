@@ -1,6 +1,15 @@
 
 # coding: utf-8
 
+# In[21]:
+
+
+# this tells jupyter to reload our packages every time we run import, so that any changes are included
+if __name__ == "__main__":
+    get_ipython().run_line_magic('load_ext', 'autoreload')
+    get_ipython().run_line_magic('autoreload', '2')
+
+
 # # 2016 GVA Publication
 
 # In[88]:
@@ -74,12 +83,18 @@ combined_gva = combine_gva(abs, gva, sic91)
 
 
 # #### Aggregate data to sector level
+# we want the data all in a single dataset so that sector totals can be easily added to subsector breakdowns, and we do not have to store the values twice, which could be confusing.
 
-# In[4]:
+# In[139]:
 
 
 agg = aggregate_data(combined_gva, gva, tourism, charities)
-agg
+
+
+# In[144]:
+
+
+#pd.pivot_table(agg, values='gva', index=['sector', 'sub-sector'], columns=['year'], aggfunc=np.sum)
 
 
 # #### Save aggregated data to ouputs directory
@@ -92,7 +107,9 @@ agg.to_csv(os.path.join(output_dir, 'gva_aggregate_data_2016.csv'), index=False)
 
 # ## Part 2 - Produce outputs
 
-# #### Read in aggregate data (This is so Part 1 doesn't need to be rerun)
+# #### Read in aggregate data
+
+# This demonstrates that, once the CSV has been generated and published, all the the publication outputs can be created from it, using the below code.
 
 # In[6]:
 
@@ -101,24 +118,11 @@ agg = pd.read_csv(os.path.join(output_dir, 'gva_aggregate_data_2016.csv'))
 
 
 # #### Create some summary tables
-
-# #### Dictionary of summary tables for use by the test script
-
-# In[7]:
-
-
-summary_tables = {
-    'gva_current': make_table(agg, 'All'),
-    'gva_current_indexed': make_table(agg, 'All', indexed=True),
-    'creative': make_table(agg, 'Creative Industries'),
-    'digital': make_table(agg, 'Digital Sector'),
-    'culture': make_table(agg, 'Cultural Sector'),
-}
-
+# the `make_table()` function simply make time series for different subsets of the data
 
 # #### Assign all individual stats, and dataframes, used by publication outputs
 
-# In[8]:
+# In[80]:
 
 
 summary_tables = {
@@ -136,16 +140,26 @@ summary_tables = {
 uk_current_total = summary_tables['gva_current'].loc['UK', 2016]
 
 
-# ## Build Report
-
-# In[10]:
+# In[262]:
 
 
-#%load_ext autoreload
-#%autoreload 2
+totals = make_table(agg, 'All', indexed=True).loc[['All DCMS sectors', 'UK']]
+totals = round(totals, 1)
+totals = totals.stack()
+totals.name = 'value'
+totals = totals.reset_index()
+totals['year'] = pd.to_datetime(totals['year'], format='%Y')
+#totals_ts_data['year']
+totals.columns = ["symbol", "date", "price"]
+totals = totals.to_json(orient='records')
+totals
 
 
-# In[12]:
+# ### Build Written Report
+
+# read json template in as python dict - update according, then convert back to json.
+
+# In[269]:
 
 
 from report_maker import build
@@ -157,6 +171,7 @@ context = {
     'up_arrow_1': {'text': '20.6%'},
     'up_arrow_2': {'text': '40.6%'},
     'dcms_cont': uk_current_total,
+    'totals_chart_data': totals
 }
 build.all(context)
 
@@ -177,7 +192,8 @@ testing.PATH
 
 
 from report_maker import app
-#app.run()
+if __name__ == "__main__":
+    app.run()
 
 
 # In[85]:
@@ -186,4 +202,28 @@ from report_maker import app
 import os
 cwd = os.getcwd()
 os.path.join(cwd, "deep")
+
+
+# In[19]:
+
+
+print(__name__)
+
+
+# ### Create Excel Tables
+
+# ## Testing
+
+# #### Dictionary of summary tables for use by the test script
+
+# In[7]:
+
+
+summary_tables = {
+    'gva_current': make_table(agg, 'All'),
+    'gva_current_indexed': make_table(agg, 'All', indexed=True),
+    'creative': make_table(agg, 'Creative Industries'),
+    'digital': make_table(agg, 'Digital Sector'),
+    'culture': make_table(agg, 'Cultural Sector'),
+}
 
