@@ -60,36 +60,19 @@ publications/
             index.html
             templates/
                 svg/
-                    infographic_template1.svg
-                    ...
                 markdown/
-                    chapter1.md
-                    ...
                 js/
-                    chart_template1.js
-                    ...
             static/
                 css/
-                    style.css
                 js/
-                    script.js
             output/
                 index.html
                 css/
-                    style.css
-                    ...
                 js/
-                    chart1.js
-                    chart2.js
-                    ...
         spreadsheets/
             templates/
-                excel_tables_template1.xlsx
-                ...
             output/
-                excel_tables1.xlsx
-                ...
-        processeddata/
+        processed_data/
             gva_2016.csv
         tests/
     Sep15/
