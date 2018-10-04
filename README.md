@@ -57,8 +57,8 @@ publications/
     Nov16/
         run_publication.ipynb
         reports/
-            index.html
             templates/
+                index.html
                 svg/
                 markdown/
                 js/
