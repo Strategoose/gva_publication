@@ -55,7 +55,7 @@ src/
     ...
 publications/
     Nov16/
-        publication.ipynb
+        run_publication.ipynb
         reports/
             index.html
             templates/
