@@ -46,6 +46,8 @@ hi
 This structure does not exactly match the contents of the repo and is simply for illustrative purposes. For example, it fakes a longer time period to help illustrate how the structure will grow over time, and ignores files that are not important in general use of the repo. Notice that there is no folder for raw data. Raw data should never be stored
 
 ```
+README.md
+requirements.txt
 src/
     read_data.py
     clean_data.py
@@ -94,7 +96,6 @@ publications/
       ...
     Nov14/
       ...
-requirements.txt
 ```
 
 Notice how the publications requirements.txt records the versions of public, and dcms_packages to be used. This way future improvements and breaking changes to
