@@ -10,6 +10,8 @@ Some exampless of HTML statistics publications:
 
 First the index.html is populated with all of the separate SVG and markdown - see temp_index.html. This completes the overall struture with remaining Jinja variables like {{ value }} which are populated by values stored in the context dictionary passed to build().
 
+So basically first we process all the different files types to create one big index.html that is a regular jinja template that we can view as temp_index.html.
+
 Write intermediate steps to make debugging easier.
 
 Build steps
