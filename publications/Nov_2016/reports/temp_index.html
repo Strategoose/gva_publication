@@ -67,7 +67,7 @@ Gross Value Added</div>
             <div id="summary-overlap-chart"></div>
         </div>
         <div id="side_text">
-            <p>BRUCEY BABEY This release provides estimates of the contribution of DCMS sectors to the UK economy, measured by gross value added (GVA). Other economic measures, such as employment and trade, are available in separate publications. These releases enable stakeholders to value the economic contribution of DCMS sectors, which are not traditional National Account sectors, and to understand how current and future policy interventions can be most effective. The DCMS sectors cover:</p>
+            <p>This release provides estimates of the contribution of DCMS sectors to the UK economy, measured by gross value added (GVA). Other economic measures, such as employment and trade, are available in separate publications. These releases enable stakeholders to value the economic contribution of DCMS sectors, which are not traditional National Account sectors, and to understand how current and future policy interventions can be most effective. The DCMS sectors cover:</p>
 <ol>
 <li>Civil Society</li>
 <li>Creative Industries</li>
@@ -109,7 +109,7 @@ DCMS Sector Economic Estimates is an Official Statistic and has been produced to
 <p>&nbsp;</p>
 <p><strong>Background</strong></p>
 <p>&nbsp;</p>
-<p>Released: 29 November 2017</p>
+<p>Released: {{ release_date }}</p>
 <p>&nbsp;</p>
 <p>Geographic Coverage: United Kingdom </p>
 <p>&nbsp;</p>
@@ -175,14 +175,29 @@ DCMS aims to continuously improve the quality of estimates and better meet user 
 <p><strong>Summary</strong>
 It is estimated that in 2016 the contribution of DCMS sectors to the UK economy (GVA) was {{ dcms_cont }}</p>
 <p>(hover over here to show: All estimates of GVA in this chapter are shown in current prices (i.e. not adjusted for inflation). </p>
-<p>For the UK, GVA in current prices (ABML, nominal GVA, not adjusted for inflation) increased by 22.9 per cent between 2010 and 2016 and 3.7 per cent between 2015 and 2016, compared with an increase of 12.2 per cent for GVA in constant prices (ABMM, real GVA, adjusted for inflation) between 2010 and 2016 and 1.6 per cent between 2015 and 2016.), or 14.2 per cent of UK GVA. The GVA of DCMS sectors has grown at a faster rate than the economy as a whole, increasing by 3.6 per cent since 2015 (£240bn in 2015), and 29.0 per cent since 2010 (£193bn in 2010). This compares to increases of 3.5 per cent and 22.7 per cent respectively for the UK economy as a whole. Figure 2.1 shows the growth rate for DCMS sectors as a whole, whilst Table 2.1 outlines the GVA contribution in £billions for each of DCMS sectors.</p>
-<p>&nbsp;</p>
-<p><strong>Figure 2.1: Indexed growth in GVA (expressed in current prices, 2010 =100) in DCMS sectors and UK: 2010-2016</strong></p>
-<div id="vis">{{ figure_2_1 }}</div>
+<p>For the UK, GVA in current prices (ABML, nominal GVA, not adjusted for inflation) increased by {{ uk_change_2010 }} per cent between 2010 and 2016 and {{ uk_change_last_year }} per cent between 2015 and 2016, compared with an increase of {{ uk_change_2010_cvm }} per cent for GVA in constant prices (ABMM, real GVA, adjusted for inflation) between 2010 and 2016 and {{ uk_change_last_year_cvm }} per cent between 2015 and 2016.), or 14.2 per cent of UK GVA. The GVA of DCMS sectors has grown at a faster rate than the economy as a whole, increasing by 3.6 per cent since 2015 (£240bn in 2015), and 29.0 per cent since 2010 (£193bn in 2010). This compares to increases of 3.5 per cent and 22.7 per cent respectively for the UK economy as a whole. Figure 2.1 shows the growth rate for DCMS sectors as a whole, whilst Table 2.1 outlines the GVA contribution in £billions for each of DCMS sectors.</p>
+<div class="chart">
+    <p class="chart-title">Figure 2.1: Indexed growth in GVA (expressed in current prices, 2010 =100) in DCMS sectors and UK: 2010-2016</p>
+    <div id="figure_2_1"></div>
+</div>
 
-<p>&nbsp;</p>
-<p><strong>Table 2.1: GVA contribution (£bn, expressed in current prices) by DCMS sectors: 2010 - 2016</strong></p>
-<p>{{ table_2_1 }}</p>
+<div class="chart">
+    <p class="chart-title">Table 2.1: GVA contribution (£bn, expressed in current prices) by DCMS sectors: 2010 - 2016</p>
+    <table id="table_2_1">
+          <col width="300">
+          <col width="80">
+          <col width="80">
+          <col width="80">
+          <col width="80">
+          <col width="80">
+          <col width="80">
+          <col width="80">
+          <col width="120">
+          <col width="120">
+          <col width="120">
+    </table>
+</div>
+
 <p>&nbsp;</p>
 <p><strong>Notes</strong>
 1. 2016 GVA is based on the output measure of GVA to allow consistency with the sector measures for 2016. This is aligned to average GVA up to and including 2015 (last Supply Use balanced year) but then uses growth in the output measure as a proxy for GVA beyond that. The 2016 figure therefore differs from the ONS series named ABML (GVA in current prices). 2010 – 2015 GVA estimates are balanced GVA at current prices (ABML). The 2016 GVA figure will be revised next year, once the Supply Use tables have been balanced. This approach is different for Civil Society where the average proportion of the UK economy that is attributed to NPISH for 2010 to 2015 is assumed to be the same for 2016.
@@ -208,9 +223,8 @@ It is estimated that in 2016 the contribution of DCMS sectors to the UK economy 
 <p>{{ figure_2_2 }}</p>
 <p>&nbsp;</p>
 <p>The Digital Sector alone made up nearly half of the DCMS sectors’ GVA in 2016 (6.7% of UK GVA), whilst Creative Industries represented over a third (5.3% of UK GVA). There is considerable overlap between the DCMS sectors, for example 3.6 per cent of UK GVA is in both the Creative Industries and the Digital Sector. The overlap between sectors is represented in Figure 1 on the first page of this report, and means that the individual sectors cannot be summed to get an estimate of the GVA for all DCMS sectors combined.</p></div>
-    <h1>Template for Embedding Vega-Lite Visualization</h1>
 
-
+    <script src="static/js/table.js"></script>
     <script src="static/js/chart1.js"></script>
 </body>
 </html>

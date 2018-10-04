@@ -51,6 +51,27 @@ a, a:visited {
 
 }
 
+
+table {
+  border-collapse: collapse;
+}
+th,
+td {
+  border-bottom: 1px solid #cecfd5;
+  padding: 10px 15px;
+}
+tfoot tr:last-child td {
+  border-bottom: 0;
+}
+
+.chart {
+    padding-top: 50px;
+}
+.chart-title {
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
 /*
 text[style] {
    font-size: 16px !important;
@@ -60,7 +81,7 @@ text[style] {
 
 body {
   padding: 30px;
-  color: black;
+  color: rgb(36, 41, 46);
   font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 

@@ -22,6 +22,9 @@ else:
 # reasoning: the markdown will be written by the user, so it can be peppered with stats like uk_total etc. However, for the SVGs we don't want to have to edit the code, so any parameters we want to be adjusted, e.g. color, text etc should be specified in a dict and the key is the name of the SVG file.
 
 def all(context):
+    
+    # populate js templates
+    
     #PATH = os.path.dirname(os.path.abspath(__file__))
     js_env = Environment(
         autoescape=False,
@@ -39,6 +42,9 @@ def all(context):
         js = render_js('chart1.js', context)
         f.write(js)    
     
+    with open(template_dir + 'static/js/table.js', 'w') as f:
+        js = render_js('table.js', context)
+        f.write(js)    
 
     
     #PATH = os.path.dirname(os.path.abspath(__file__))
@@ -121,9 +127,13 @@ def all(context):
       link['href'] = link['href'].replace("static/styles/style.css", "{{ url_for('static',filename='styles/style.css') }}")
 
     # replace js chart links with url_for
+    js_templates = ['chart1.js', 'table.js']
+    js_templates2 = ['static/js/' + i for i in js_templates]
     for script in soup.findAll('script'):
-        if script['src'] == "static/js/chart1.js":
-            script['src'] = script['src'].replace("static/js/chart1.js", "{{ url_for('static',filename='js/chart1.js') }}")
+        if script.get('src') in js_templates2:
+            string = script['src']
+            fn = os.path.basename(string)
+            script['src'] = script['src'].replace(string, "{{ url_for('static',filename='js/" + fn + "') }}")
 
     # replace img link with url_for
     for img in soup.findAll('img'):

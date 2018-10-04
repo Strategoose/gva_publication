@@ -1,4 +1,4 @@
-BRUCEY BABEY This release provides estimates of the contribution of DCMS sectors to the UK economy, measured by gross value added (GVA). Other economic measures, such as employment and trade, are available in separate publications. These releases enable stakeholders to value the economic contribution of DCMS sectors, which are not traditional National Account sectors, and to understand how current and future policy interventions can be most effective. The DCMS sectors cover:
+This release provides estimates of the contribution of DCMS sectors to the UK economy, measured by gross value added (GVA). Other economic measures, such as employment and trade, are available in separate publications. These releases enable stakeholders to value the economic contribution of DCMS sectors, which are not traditional National Account sectors, and to understand how current and future policy interventions can be most effective. The DCMS sectors cover:
 
 1. Civil Society
 1. Creative Industries

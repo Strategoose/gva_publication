@@ -118,4 +118,4 @@ var vlSpec =
 };
 
 // Embed the visualization in the container with id `vis`
-vegaEmbed("#vis", vlSpec, opt = { "actions": false, "renderer": "svg" });
+vegaEmbed("#figure_2_1", vlSpec, opt = { "actions": false, "renderer": "svg" });

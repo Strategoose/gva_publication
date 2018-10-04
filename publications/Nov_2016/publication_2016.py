@@ -61,6 +61,7 @@ path = '/Volumes/Data/EAU/Statistics/Economic Estimates/2017 publications/Novemb
 
 
 # ## Part 1 - Read in, clean, and aggregate data
+# This section makes use of the source code in the GVA package's src folder
 
 # #### Read in and clean up raw data in excel file
 
@@ -105,7 +106,8 @@ agg = aggregate_data(combined_gva, gva, tourism, charities)
 agg.to_csv(os.path.join(output_dir, 'gva_aggregate_data_2016.csv'), index=False)
 
 
-# ## Part 2 - Produce outputs
+# ## Part 2 - Produce written reports
+# This section makes used of the report_maker package
 
 # #### Read in aggregate data
 
@@ -120,27 +122,56 @@ agg = pd.read_csv(os.path.join(output_dir, 'gva_aggregate_data_2016.csv'))
 # #### Create some summary tables
 # the `make_table()` function simply make time series for different subsets of the data
 
-# #### Assign all individual stats, and dataframes, used by publication outputs
+# ## Create dictionary to be populate html template
 
-# In[80]:
-
-
-summary_tables = {
-    'gva_current': make_table(agg, 'All'),
-    'gva_current_indexed': make_table(agg, 'All', indexed=True),
-    'creative': make_table(agg, 'Creative Industries'),
-    'digital': make_table(agg, 'Digital Sector'),
-    'culture': make_table(agg, 'Cultural Sector'),
-}
+# In[312]:
 
 
-# In[9]:
+context = {}
 
 
-uk_current_total = summary_tables['gva_current'].loc['UK', 2016]
+# #### Define tables
+
+# In[320]:
 
 
-# In[262]:
+gva_current = make_table(agg, 'All')
+gva_current_indexed = make_table(agg, 'All', indexed=True)
+creative = make_table(agg, 'Creative Industries')
+digital = make_table(agg, 'Digital Sector')
+culture = make_table(agg, 'Cultural Sector')
+
+
+# #### Define individual stats
+
+# In[383]:
+
+
+perc_change_2010 = (gva_current.loc[:,2016] / gva_current.loc[:,2010] - 1) * 100
+perc_change_last_year = (gva_current.loc[:,2016] / gva_current.loc[:,2015] - 1) * 100
+perc_of_uk = (gva_current.loc[:, 2016] / gva_current.loc['UK', 2016]) * 100
+uk_current_total = gva_current.loc['UK', 2016]
+
+
+# #### Extended tables
+
+# In[365]:
+
+
+gva_current_extended = round(make_table(agg, 'All'), 1)
+gva_current_extended['% change 2015-2016'] = round(perc_change_last_year, 1)
+gva_current_extended['% change 2010-2016'] = round(perc_change_2010, 1)
+gva_current_extended['% of UK GVA 2016'] = round(perc_of_uk, 1)
+gva_current_extended = gva_current_extended.reset_index()
+# convert column names to strings to ensure order is maintained
+#gva_current_extended.columns = [str(i) for i in list(gva_current_extended.columns)]
+gva_current_extended_json = gva_current_extended.to_json(orient='split', index=False)
+gva_current_extended_json
+
+
+# #### Convert data for charts
+
+# In[351]:
 
 
 totals = make_table(agg, 'All', indexed=True).loc[['All DCMS sectors', 'UK']]
@@ -152,26 +183,42 @@ totals['year'] = pd.to_datetime(totals['year'], format='%Y')
 #totals_ts_data['year']
 totals.columns = ["symbol", "date", "price"]
 totals = totals.to_json(orient='records')
-totals
 
 
 # ### Build Written Report
 
 # read json template in as python dict - update according, then convert back to json.
 
-# In[269]:
+# In[385]:
 
 
 from report_maker import build
 # from report_maker import build (the function) create_app
+# add inits to packages
+# considering just passing the global environment to build so we don't have to specify this, or do all of the
+# above within a new environment to convert to dict. use context.append().
 context = {
-    'global': {'hello':  'nothing'},
+    # publication info
+    'release_date': '29 November 2017',
+    
+    # individual stats
+    'uk_change_2010': round(perc_change_2010['UK'], 1),
+    'uk_change_last_year': round(perc_change_last_year['UK'], 1),
+    'uk_change_2010_cvm': 'NOT AVAILABLE',
+    'uk_change_last_year_cvm': 'NOT AVAILABLE',
+    'dcms_perc_uk': round(perc_of_uk['All DCMS sectors']),
+    'dcms_total': uk_current_total,
+    
+    # infographics
     'money_bag': {'text': '£994'},
     'donut': {'text': '19.2'},
     'up_arrow_1': {'text': '20.6%'},
     'up_arrow_2': {'text': '40.6%'},
-    'dcms_cont': uk_current_total,
-    'totals_chart_data': totals
+    
+    # json data
+    'totals_chart_data': totals,
+    'gva_current_extended_json': gva_current_extended_json,
+    
 }
 build.all(context)
 
@@ -210,7 +257,9 @@ os.path.join(cwd, "deep")
 print(__name__)
 
 
-# ### Create Excel Tables
+# ## Part 3 - Create Excel Tables
+# This section makes use of the spreadsheet_maker package. By default it will look for templates in publication_dir/spreadsheets/templates
+# https://github.com/pytest-dev/pytest/issues/2268
 
 # ## Testing
 

@@ -12,19 +12,30 @@ It is estimated that in 2016 the contribution of DCMS sectors to the UK economy 
 
 (hover over here to show: All estimates of GVA in this chapter are shown in current prices (i.e. not adjusted for inflation). 
 
-For the UK, GVA in current prices (ABML, nominal GVA, not adjusted for inflation) increased by 22.9 per cent between 2010 and 2016 and 3.7 per cent between 2015 and 2016, compared with an increase of 12.2 per cent for GVA in constant prices (ABMM, real GVA, adjusted for inflation) between 2010 and 2016 and 1.6 per cent between 2015 and 2016.), or 14.2 per cent of UK GVA. The GVA of DCMS sectors has grown at a faster rate than the economy as a whole, increasing by 3.6 per cent since 2015 (£240bn in 2015), and 29.0 per cent since 2010 (£193bn in 2010). This compares to increases of 3.5 per cent and 22.7 per cent respectively for the UK economy as a whole. Figure 2.1 shows the growth rate for DCMS sectors as a whole, whilst Table 2.1 outlines the GVA contribution in £billions for each of DCMS sectors.
+For the UK, GVA in current prices (ABML, nominal GVA, not adjusted for inflation) increased by {{ uk_change_2010 }} per cent between 2010 and 2016 and {{ uk_change_last_year }} per cent between 2015 and 2016, compared with an increase of {{ uk_change_2010_cvm }} per cent for GVA in constant prices (ABMM, real GVA, adjusted for inflation) between 2010 and 2016 and {{ uk_change_last_year_cvm }} per cent between 2015 and 2016.), or 14.2 per cent of UK GVA. The GVA of DCMS sectors has grown at a faster rate than the economy as a whole, increasing by 3.6 per cent since 2015 (£240bn in 2015), and 29.0 per cent since 2010 (£193bn in 2010). This compares to increases of 3.5 per cent and 22.7 per cent respectively for the UK economy as a whole. Figure 2.1 shows the growth rate for DCMS sectors as a whole, whilst Table 2.1 outlines the GVA contribution in £billions for each of DCMS sectors.
 
-&nbsp;
-
-**Figure 2.1: Indexed growth in GVA (expressed in current prices, 2010 =100) in DCMS sectors and UK: 2010-2016**
-
-<div id="vis">{{ figure_2_1 }}</div>
+<div class="chart">
+    <p class="chart-title">Figure 2.1: Indexed growth in GVA (expressed in current prices, 2010 =100) in DCMS sectors and UK: 2010-2016</p>
+    <div id="figure_2_1"></div>
+</div>
     
-&nbsp;
 
-**Table 2.1: GVA contribution (£bn, expressed in current prices) by DCMS sectors: 2010 - 2016**
-
-{{ table_2_1 }}
+<div class="chart">
+    <p class="chart-title">Table 2.1: GVA contribution (£bn, expressed in current prices) by DCMS sectors: 2010 - 2016</p>
+    <table id="table_2_1">
+          <col width="300">
+          <col width="80">
+          <col width="80">
+          <col width="80">
+          <col width="80">
+          <col width="80">
+          <col width="80">
+          <col width="80">
+          <col width="120">
+          <col width="120">
+          <col width="120">
+    </table>
+</div>
 
 &nbsp;
 

@@ -12,7 +12,7 @@ DCMS Sector Economic Estimates is an Official Statistic and has been produced to
 
 &nbsp;
 
-Released: 29 November 2017
+Released: {{ release_date }}
 
 &nbsp;
 
