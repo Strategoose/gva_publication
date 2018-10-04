@@ -4,8 +4,14 @@
 [![GitHub release](https://img.shields.io/github/release/DCMSstats/eegva.svg)](https://github.com/DCMSstats/eeegva/releases)
 <img src="https://github.com/ukgovdatascience/rap_companion/raw/master/images/rap_hex.png" align="right" width="150" height="150"/>
 # Reproducible Analytical Pipeline
-### DCMS Sector Ecomonic Estimates: GVA
-https://www.gov.uk/government/collections/dcms-sectors-economic-estimates
+### [DCMS Sector Ecomonic Estimates Publications: GVA](https://www.gov.uk/government/collections/dcms-sectors-economic-estimates)
+
+## Contents
+* [About](#about)
+* [Using the package](#using-the-package)
+  * [Installation]
+* [Design Philosphy]
+  * [Versioning]
 
 ## About
 This package is part of GDS's [RAP](https://ukgovdatascience.github.io/rap_companion/) (Reproducible Analytical Pipeline) initiative, which aims to create higher quality data analysis pipelines within government.
@@ -32,6 +38,8 @@ Part 5 - Run tests to ensure all outputs from all publications can be reproduced
 
 ## Using the package
 In most cases, users will want to clone the package so that they add updates to the package and save the changes to github. For following steps should be used as a workflow for making updates to the package.
+
+### Installation and pre-requisites
 
 #### Clone the repository
 1. Install [Git](https://git-scm.com/downloads)
