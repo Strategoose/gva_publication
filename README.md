@@ -13,7 +13,7 @@
   * [Versioning]
 
 ## About
-This package's design is based on GDS's [RAP](https://ukgovdatascience.github.io/rap_companion/) (Reproducible Analytical Pipeline) initiative, which aims to create higher quality, reproducible, data analysis pipelines within government.
+This repository's design is based on GDS's [RAP](https://ukgovdatascience.github.io/rap_companion/) (Reproducible Analytical Pipeline) initiative, which aims to create higher quality, reproducible, data analysis pipelines within government.
 
 The code is published in the [open](https://www.gov.uk/service-manual/technology/making-source-code-open-and-reusable), and aligns with the [Open Government National Action Plan](https://www.gov.uk/government/publications/uk-open-government-national-action-plan-2016-18/uk-open-government-national-action-plan-2016-18). This helps make the information provided in statistical publications more transparent, for example by sharing how anonymisation and rounding has taken place.
 
