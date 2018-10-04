@@ -19,11 +19,16 @@ In this repo we use a [Jupyter](http://jupyter.org/) notebook for each publicati
 * Adoption by most tech companies, including: [Google](https://cloud.google.com/datalab/) [(also)](https://research.google.com/colaboratory/), Microsoft, Bloomberg, [Netflix](https://medium.com/@NetflixTechBlog/notebook-innovation-591ee3221233), [IBM](https://www.ibm.com/cloud/pixiedust)
 
 Publication notebooks will generally follow the following format:
-part 1 - Produces the aggregated, non-sensitive CSV, using the [GVA packge](package). Access to the sensitive, raw data is required to perform this step. However, the rest of the notebook can still be run using the published CSV.
-Part 2 - Produce written reports from the aggregate CSV, using the [report_maker](www.report_maker.com) package.
-Part 3 - Produce spreadsheet files from the aggregate CSV, using the [spreadsheet_maker](www.report_maker.com) package.
-Part 4 - (in development) Update [dashboard]() with aggregate CSV. First, in local development environment for testing, then deploy update to live version.
-Part 5 - Run tests to ensure all outputs from all publications can be reproduced - according to [create an anchor](#anchors-in-markdown)
+
+part 1 - Produces the aggregated, non-sensitive CSV, using the [GVA packge](https://github.com/DCMSstats/gva/tree/master/src). Access to the sensitive, raw data is required to perform this step. However, the rest of the notebook can still be run using the published CSV.
+
+Part 2 - Produce written reports from the aggregate CSV, using the [report_maker](https://github.com/DCMSstats/gva/tree/master/report_maker) package.
+
+Part 3 - Produce spreadsheet files from the aggregate CSV, using the [spreadsheet_maker](www.spreadsheet_maker.com) package.
+
+Part 4 - (in development) Update [dashboard](https://gva-dot-dcms-statistics-internal.appspot.com/) with aggregate CSV. First, in local development environment for testing, then deploy update to live version.
+
+Part 5 - Run tests to ensure all outputs from all publications can be reproduced - according to [create an anchor](#Reproducible-Analytical-Pipeline)
 
 
 The publication makes use of some other DCMS packages:
