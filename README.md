@@ -18,6 +18,19 @@ In this repo we use a [Jupyter](http://jupyter.org/) notebook for each publicati
 * Easy visualisation and documentation for [literate programming](https://en.wikipedia.org/wiki/Literate_programming).
 * Adoption by most tech companies, including: [Google](https://cloud.google.com/datalab/) [(also)](https://research.google.com/colaboratory/), Microsoft, Bloomberg, [Netflix](https://medium.com/@NetflixTechBlog/notebook-innovation-591ee3221233), [IBM](https://www.ibm.com/cloud/pixiedust)
 
+Publication notebooks will generally follow the following format:
+part 1 - Produces the aggregated, non-sensitive CSV, using the [GVA packge](package). Access to the sensitive, raw data is required to perform this step. However, the rest of the notebook can still be run using the published CSV.
+Part 2 - Produce written reports from the aggregate CSV, using the [report_maker](www.report_maker.com) package.
+Part 3 - Produce spreadsheet files from the aggregate CSV, using the [spreadsheet_maker](www.report_maker.com) package.
+Part 4 - (in development) Update [dashboard]() with aggregate CSV. First, in local development environment for testing, then deploy update to live version.
+Part 5 - Run tests to ensure all outputs from all publications can be reproduced - according to [create an anchor](#anchors-in-markdown)
+
+
+The publication makes use of some other DCMS packages:
+report_maker
+
+
+
 ## Using the package
 In most cases, users will want to clone the package so that they add updates to the package and save the changes to github. For following steps should be used as a workflow for making updates to the package.
 
