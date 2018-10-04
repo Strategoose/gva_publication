@@ -134,6 +134,9 @@ Check which major version of the package was used to produce the release in ques
 ## Rounding
 All outputs from the source code should be unrounded, and all rounding should be done within the publication notebook since rounding should be considered presentational and not part of the analysis that needs to be versioned.
 
+## Testing
+The test command (pytest) runs the test for all publications where tests have been created. This will typically be published publications, where after publication, tests are written to compare output with the published results. The test scripts download publication outputs directly from distribution channel (and cached to imporve test run times?) e.g. gov.uk and publication code is run and then both copies are compared to check they are identical.
+
 ## Versioning
 Important motivations for bundling statistical publication production into a Python repo, is that we can ensure reproducibility, and consistency of data processing method between publications. Reproducibility is critical to ensure publications are auditable and trustworty. Consistency of approach for each publication is also critical to ensure statistics are accurate, transparent, reliable, trustworthy etc.
 Problems with traditional approaches:
