@@ -22,7 +22,7 @@ This repo follows a template that that is suitable for most python projects in t
 
 In this repo we use a [Jupyter](http://jupyter.org/) notebook for each publication to run the package source code and create the publications's outputs. Jupyter benefits include:
 * Easy visualisation and documentation for [literate programming](https://en.wikipedia.org/wiki/Literate_programming).
-* Adoption by most tech companies, including: [Google](https://cloud.google.com/datalab/) [(also)](https://research.google.com/colaboratory/), Microsoft, Bloomberg, [Netflix](https://medium.com/@NetflixTechBlog/notebook-innovation-591ee3221233), [IBM](https://www.ibm.com/cloud/pixiedust)
+* Adoption by major tech companies, including: [Google](https://cloud.google.com/datalab/) [(also)](https://research.google.com/colaboratory/), Microsoft, Bloomberg, [Netflix](https://medium.com/@NetflixTechBlog/notebook-innovation-591ee3221233), [IBM](https://www.ibm.com/cloud/pixiedust)
 
 Publication notebooks will generally follow the following format:
 
