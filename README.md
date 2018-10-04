@@ -39,27 +39,60 @@ Part 5 - Run tests to ensure all outputs from all publications can be reproduced
 ## Using the package
 In most cases, users will want to clone the package so that they add updates to the package and save the changes to github. For following steps should be used as a workflow for making updates to the package.
 
+hello
+hi
+
 ### repo structure
 This structure does not exactly match the contents of the repo and is simply for illustrative purposes. For example, it fakes a longer time period to help illustrate how the structure will grow over time, and ignores files that are not important in general use of the repo. Notice that there is no folder for raw data. Raw data should never be stored
 
 src/
-  read_data.py
-  clean_data.py
-  ...
+    read_data.py
+    clean_data.py
+    make_summaries.py
+    ...
 publications/
-  Nov16/
-    publication.ipynb
-    reports/
-      
-    spreadsheets/
-      templates
-    processeddata/
-    output/
-    tests/
-  Sep15/
-    ...
-  Nov14/
-    ...
+    Nov16/
+        publication.ipynb
+        reports/
+            index.html
+            templates/
+                svg/
+                    infographic_template1.svg
+                    ...
+                markdown/
+                    chapter1.md
+                    ...
+                js/
+                    chart_template1.js
+                    ...
+            static/
+                css/
+                    style.css
+                js/
+                    script.js
+            output/
+                index.html
+                css/
+                    style.css
+                    ...
+                js/
+                    chart1.js
+                    chart2.js
+                    ...
+        spreadsheets/
+            templates/
+                excel_tables_template1.xlsx
+                ...
+            output/
+                excel_tables1.xlsx
+                ...
+        processeddata/
+            gva_2016.csv
+        tests/
+    Sep15/
+      ...
+    Nov14/
+      ...
 requirements.txt
 
 Notice how the publications requirements.txt records the versions of public, and dcms_packages to be used. This way future improvements and breaking changes to
