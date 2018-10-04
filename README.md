@@ -28,7 +28,7 @@ Part 3 - Produce spreadsheet files from the aggregate CSV, using the [spreadshee
 
 Part 4 - (in development) Update [dashboard](https://gva-dot-dcms-statistics-internal.appspot.com/) with aggregate CSV. First, in local development environment for testing, then deploy update to live version.
 
-Part 5 - Run tests to ensure all outputs from all publications can be reproduced - according to [create an anchor](#Reproducible-Analytical-Pipeline)
+Part 5 - Run tests to ensure all outputs from all publications can be reproduced - according to [create an anchor](#Versioning)
 
 
 The publication makes use of some other DCMS packages:
