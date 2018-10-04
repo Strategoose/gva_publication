@@ -39,6 +39,35 @@ Part 5 - Run tests to ensure all outputs from all publications can be reproduced
 ## Using the package
 In most cases, users will want to clone the package so that they add updates to the package and save the changes to github. For following steps should be used as a workflow for making updates to the package.
 
+### repo structure
+This structure does not exactly match the contents of the repo and is simply for illustrative purposes. For example, it fakes a longer time period to help illustrate how the structure will grow over time, and ignores files that are not important in general use of the repo. Notice that there is no folder for raw data. Raw data should never be stored
+
+src/
+  read_data.py
+  clean_data.py
+  ...
+publications/
+  Nov16/
+    publication.ipynb
+    reports/
+      
+    spreadsheets/
+      templates
+    processeddata/
+    output/
+    tests/
+  Sep15/
+    ...
+  Nov14/
+    ...
+requirements.txt
+
+Notice how the publications requirements.txt records the versions of public, and dcms_packages to be used. This way future improvements and breaking changes to
+
+
+Since reproducibility tests require access to raw data and therefore cannot be run online in a straight forward way using services like TravisCI, we will have two branches. There is the main development branch which is pushed to. Then, periodically, the test suite is run locally for the current state of this branch, and if it passes, then is merged into the master branch. Developers should be testing locally before commiting so this process should be straight forward, and is simply a means of avoiding situations caused by developers forgetting to test locally before pushing. Whilst this system is manual and imperfect, it works for now, and once our systems and data are moved to cloud services, we will have the opportunity to implement automated secure testing on our own cloud servers, with sensitive data.
+
+
 ### Installation and pre-requisites
 
 #### Clone the repository
@@ -166,3 +195,8 @@ Where possible I have linked to reputable sources to explain ideas or make cases
 As this repo is replicated for other publications, a lot of the information in this README will be stripped out and stored somewhere more centrally.
 
 We keep the notebooks, tests etc, and the source code in the same repository to make the code base easier for developers to work with.
+
+What is the purpose of this? Why do statistical publications even need to be reproducible? Arguably, it is more important that the analysis that is based on statistical data and goes on to inform policy decisions is reproducible - for accuracy, transparency, QA etc, to ensure that policy decisions are and were made based on quality analysis. Is it important for the underlying statistical to be reproducible? Less so. But there are other reasons to use RAP for statistical publications: 
+Its sets a standard of reproducibility for the analysis that uses it. 
+Some statistical publications are actually closer to analysis pieces themselves, so require reproducibility for the reasons listed for analysis.
+As statistical outputs become more tecnhologically sophisticated, for example creating HTML report websites, and interactive web applications, it is important that statistical outputs that the services rely on are produced in an automated, tested way, to ensure the consistency, metadata etc, that these sorts of services require. Manually produced outputs are to automated outputs, what free text fields are to dropdown boxes on forms - far less usable and harder to work with, but just as flexible given the proper design.
