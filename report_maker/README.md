@@ -1,5 +1,11 @@
 ## Approach
 
+report_maker populates html templates with content wrtien in:
+markdown for text content
+svg for bespoke graphics
+javascript for charts
+
+
 Some exampless of HTML statistics publications:
 
 First the index.html is populated with all of the separate SVG and markdown - see temp_index.html. This completes the overall struture with remaining Jinja variables like {{ value }} which are populated by values stored in the context dictionary passed to build().
