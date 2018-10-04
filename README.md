@@ -131,6 +131,8 @@ To run the code without cloning the repository or using raw data, run pip instal
 #### Reproducing outputs for previous releases
 Check which major version of the package was used to produce the release in question here (link to releases). Install that version using pip install git ...
 
+## Rounding
+All outputs from the source code should be unrounded, and all rounding should be done within the publication notebook since rounding should be considered presentational and not part of the analysis that needs to be versioned.
 
 ## Versioning
 Important motivations for bundling statistical publication production into a Python repo, is that we can ensure reproducibility, and consistency of data processing method between publications. Reproducibility is critical to ensure publications are auditable and trustworty. Consistency of approach for each publication is also critical to ensure statistics are accurate, transparent, reliable, trustworthy etc.
