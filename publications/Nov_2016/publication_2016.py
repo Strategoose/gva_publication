@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[21]:
+# In[ ]:
 
 
 # this tells jupyter to reload our packages every time we run import, so that any changes are included
@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
 # # 2016 GVA Publication
 
-# In[88]:
+# In[ ]:
 
 
 # the cwd is the directory where the notebook is located
@@ -25,7 +25,7 @@ os.getcwd()
 
 # #### Import packages and define paths to directories
 
-# In[1]:
+# In[ ]:
 
 
 # this will automatically reload the gva package when changes have been made
@@ -65,7 +65,7 @@ path = '/Volumes/Data/EAU/Statistics/Economic Estimates/2017 publications/Novemb
 
 # #### Read in and clean up raw data in excel file
 
-# In[2]:
+# In[ ]:
 
 
 abs = read_abs(path)
@@ -77,7 +77,7 @@ sic91 = read_sic91(path)
 
 # #### Combine sic level data read in above into a single dataset
 
-# In[3]:
+# In[ ]:
 
 
 combined_gva = combine_gva(abs, gva, sic91)
@@ -86,13 +86,14 @@ combined_gva = combine_gva(abs, gva, sic91)
 # #### Aggregate data to sector level
 # we want the data all in a single dataset so that sector totals can be easily added to subsector breakdowns, and we do not have to store the values twice, which could be confusing.
 
-# In[139]:
+# In[ ]:
 
 
 agg = aggregate_data(combined_gva, gva, tourism, charities)
+agg
 
 
-# In[144]:
+# In[ ]:
 
 
 #pd.pivot_table(agg, values='gva', index=['sector', 'sub-sector'], columns=['year'], aggfunc=np.sum)
@@ -100,7 +101,7 @@ agg = aggregate_data(combined_gva, gva, tourism, charities)
 
 # #### Save aggregated data to ouputs directory
 
-# In[5]:
+# In[ ]:
 
 
 agg.to_csv(os.path.join(output_dir, 'gva_aggregate_data_2016.csv'), index=False)
@@ -113,7 +114,7 @@ agg.to_csv(os.path.join(output_dir, 'gva_aggregate_data_2016.csv'), index=False)
 
 # This demonstrates that, once the CSV has been generated and published, all the the publication outputs can be created from it, using the below code.
 
-# In[6]:
+# In[ ]:
 
 
 agg = pd.read_csv(os.path.join(output_dir, 'gva_aggregate_data_2016.csv'))
@@ -124,7 +125,7 @@ agg = pd.read_csv(os.path.join(output_dir, 'gva_aggregate_data_2016.csv'))
 
 # ## Create dictionary to be populate html template
 
-# In[312]:
+# In[ ]:
 
 
 context = {}
@@ -132,7 +133,7 @@ context = {}
 
 # #### Define tables
 
-# In[320]:
+# In[ ]:
 
 
 gva_current = make_table(agg, 'All')
@@ -140,11 +141,12 @@ gva_current_indexed = make_table(agg, 'All', indexed=True)
 creative = make_table(agg, 'Creative Industries')
 digital = make_table(agg, 'Digital Sector')
 culture = make_table(agg, 'Cultural Sector')
+gva_current.loc['Sport', 2016]
 
 
 # #### Define individual stats
 
-# In[383]:
+# In[ ]:
 
 
 perc_change_2010 = (gva_current.loc[:,2016] / gva_current.loc[:,2010] - 1) * 100
@@ -155,7 +157,7 @@ uk_current_total = gva_current.loc['UK', 2016]
 
 # #### Extended tables
 
-# In[365]:
+# In[ ]:
 
 
 gva_current_extended = round(make_table(agg, 'All'), 1)
@@ -166,12 +168,11 @@ gva_current_extended = gva_current_extended.reset_index()
 # convert column names to strings to ensure order is maintained
 #gva_current_extended.columns = [str(i) for i in list(gva_current_extended.columns)]
 gva_current_extended_json = gva_current_extended.to_json(orient='split', index=False)
-gva_current_extended_json
 
 
 # #### Convert data for charts
 
-# In[351]:
+# In[ ]:
 
 
 totals = make_table(agg, 'All', indexed=True).loc[['All DCMS sectors', 'UK']]
@@ -189,7 +190,7 @@ totals = totals.to_json(orient='records')
 
 # read json template in as python dict - update according, then convert back to json.
 
-# In[385]:
+# In[ ]:
 
 
 from report_maker import build
@@ -223,13 +224,13 @@ context = {
 build.all(context)
 
 
-# In[46]:
+# In[ ]:
 
 
 from report_maker import testing
 
 
-# In[47]:
+# In[ ]:
 
 
 testing.PATH
@@ -243,7 +244,7 @@ if __name__ == "__main__":
     app.run()
 
 
-# In[85]:
+# In[ ]:
 
 
 import os
@@ -251,7 +252,7 @@ cwd = os.getcwd()
 os.path.join(cwd, "deep")
 
 
-# In[19]:
+# In[ ]:
 
 
 print(__name__)
@@ -261,11 +262,11 @@ print(__name__)
 # This section makes use of the spreadsheet_maker package. By default it will look for templates in publication_dir/spreadsheets/templates
 # https://github.com/pytest-dev/pytest/issues/2268
 
-# ## Testing
+# ## Part 4 - Testing
 
 # #### Dictionary of summary tables for use by the test script
 
-# In[7]:
+# In[ ]:
 
 
 summary_tables = {

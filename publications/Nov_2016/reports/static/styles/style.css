@@ -72,6 +72,16 @@ tfoot tr:last-child td {
     font-weight: bold;
 }
 
+#summary-text {
+    font-size: 18px;
+    line-height: 40px;
+    color: black;
+}
+
+#summary-text li {
+    padding-top: 30px;
+}
+
 /*
 text[style] {
    font-size: 16px !important;
@@ -212,9 +222,13 @@ body {
   list-style-position: inside;
 }
 
-#chapter-1, #chapter-2 {
+#chapter-1, #chapter-2, #chapter-3, #chapter-4, #annex-a {
   padding: 100px 0px 0 0px;
-  list-style-position: inside;
+}
+
+#chapter-1 ul, #chapter-2 ul, #chapter-3 ul, #chapter-4 ul, #annex-a ul
+#chapter-1 ol, #chapter-2 ol, #chapter-3 ol, #chapter-4 ol, #annex-a ol {
+  padding-left: 20px;
 }
 
 
