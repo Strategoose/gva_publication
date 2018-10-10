@@ -136,7 +136,6 @@ To run an existing publication:
 simply run the data cleaning workbook, followed by the make_output workbook, and outputs will be written to the outputs/ folder
 
 
-
 #### Clone the repository
 1. Install [Git](https://git-scm.com/downloads)
 1. Navigate to the folder where you want to store the repo on your machine. For Windows users - open the 'Git Bash' application, for Mac users open the terminal. Then use pwd to find the current directory, ls to display the folders within the current directory, and cd to enter one of those directories, then pwd again to confirm the new current directory. For example:
