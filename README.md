@@ -88,6 +88,55 @@ Since reproducibility tests require access to raw data and therefore cannot be r
 
 ### Installation and pre-requisites
 
+#### Prerequisites and dependencies
+ensure git and python 3.6 or higher are installed
+
+The following guide assumes a basic understand of git, bash, and python. See below for tutorials. If you have never used these tools before, it is strongly recommend that you first gain some experience via full tutorials so provide some context, before continuing.
+git cloning
+using bash
+pip
+virtual environments
+jupyterlab (recommended) or another IDE that can run notebooks e.g. jupyter, ipython, vscode, spyder, pycharm.
+
+#### Installation
+step 1
+clone this repo and navigate to
+git clone
+cd gva_publication/
+
+step 2
+create and activate a virtual environment:
+python3 -m venv env
+source env/bin/activate
+
+step 3
+if rerunning a publication or continuing development of an existing publication, install it's dependencies with
+pip install -r path/to/publication/requirements.txt
+
+or
+
+if starting a new publication, create a new directory in publications/ and install the latest version of dependency packages used in the previous publication with
+pip install -r -U path/to/latest/publication/requirements.txt
+then save these dependencies to a requirements.txt file with
+pip freeze > path/to/new/publication/requirements.txt
+
+step 4
+install ipython kernel so it can be used in IDE
+ipython kernel install --user --name=publication_name
+
+
+#### Making a publication
+Open the project in the IDE of your choice. Ensure that the notebook is using the kernel created in step 4. If using jupyterlab (recommeneded) this can be selected in the top right 
+
+
+To develop a publication:
+to develop publication packages such as gva_cleaning and report_maker, clone local copies of these and add containing directory to python system path, as described at the top of the notebooks.
+
+To run an existing publication:
+simply run the data cleaning workbook, followed by the make_output workbook, and outputs will be written to the outputs/ folder
+
+
+
 #### Clone the repository
 1. Install [Git](https://git-scm.com/downloads)
 1. Navigate to the folder where you want to store the repo on your machine. For Windows users - open the 'Git Bash' application, for Mac users open the terminal. Then use pwd to find the current directory, ls to display the folders within the current directory, and cd to enter one of those directories, then pwd again to confirm the new current directory. For example:
@@ -210,6 +259,9 @@ jupyter notebook
 
 ## Notes
 The raw data is provided in £m's and the cleaned output data is also given in £m's to preserve as much numerical precision as possible. For example, this is necessary for testing against excel publications, as converting to actual values then back to millions for testing looses too much precision and tests do not pass.
+
+## Design decisions
+report_maker - copy all outputs to output/ which is inline with other similar packages like pelican.
 
   
 ## Other points
