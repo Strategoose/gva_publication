@@ -7,8 +7,25 @@ import pandas as pd
 import numpy as np
 import pytest
 
-from publications.Nov_2016.publication_2016 import summary_tables
-excel_dir = 'publications/Nov_2016/tests'
+# append function which allows notebooks to be imported as modules
+from utilities import NotebookFinder
+sys.meta_path.append(NotebookFinder())
+
+# change cwd to mimic running notebook from publication dir so that notebook runs as intended
+path_og = __file__
+#path_og = '/Users/max.unsted/projects/gva_publication/publications/nov_2016/tests/test_2016publication.py'
+path = path_og
+from pathlib import Path
+doop = Path(path_og)
+for i in range(len(doop.parts)):
+    path = os.path.dirname(path)
+    if os.path.split(os.path.dirname(path))[1] == 'publications':
+        break
+
+os.chdir(path)
+
+from publications.nov_2016.publication_2016 import summary_tables
+excel_dir = 'tests'
 
 test_cases = {}
 for k in summary_tables:

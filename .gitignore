@@ -1,3 +1,11 @@
+# Ignore all CSV, xls, and xlsx files unless explicitly negated
+*.csv
+*.xlsx
+*.xls
+!GVA_sector_tables_template.xlsx
+!GVA_subsector_tables_template.xlsx
+
+
 # Mac OS hidden files
 .DS_Store
 

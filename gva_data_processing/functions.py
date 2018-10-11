@@ -1,3 +1,5 @@
+__all__ = ['read_abs', 'read_charities', 'read_tourism', 'read_gva', 'read_sic91', 'combine_gva', 'aggregate_data', 'make_table']
+
 import os
 import pandas as pd
 import numpy as np
@@ -163,7 +165,7 @@ def aggregate_data(combined_gva, gva, tourism, charities):
     subsector_agg = df.copy()
     
     # append data
-    df = pd.concat([subsector_agg, sector_agg], axis=0)
+    df = pd.concat([subsector_agg, sector_agg], axis=0, sort=True)
     
     # remove pre 2010 data
     current_year = gva.year.max()

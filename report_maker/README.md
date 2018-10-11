@@ -5,6 +5,14 @@ markdown for text content
 svg for bespoke graphics
 javascript for charts
 
+assumes files to be arranged in a certain structure.
+
+features
+auto reloading upon run
+
+future
+auto reloading triggered upon file save
+
 
 Some exampless of HTML statistics publications:
 

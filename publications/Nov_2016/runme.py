@@ -2,7 +2,7 @@ import sys
 import os
 
 # find path to root directory
-if os.path.exists(os.path.abspath(os.path.join('src'))):
+if os.path.exists(os.path.abspath(os.path.join('publications'))):
     module_path = os.path.abspath(os.path.join(''))
 else: 
     module_path = os.path.abspath(os.path.join('../..'))
@@ -12,8 +12,9 @@ if module_path not in sys.path:
     sys.path.append(module_path)
 
 from report_maker.app import create_app
-
 app = create_app()
+app.run(debug=True)
+
 
 print(app.instance_path)
 print(app.root_path)
@@ -23,4 +24,3 @@ print(app.static_url_path)
 print(app.template_folder)
 
 
-app.run(debug=True)
