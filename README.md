@@ -261,6 +261,7 @@ The raw data is provided in Â£m's and the cleaned output data is also given in Â
 
 ## Design decisions
 report_maker - copy all outputs to output/ which is inline with other similar packages like pelican.
+avoid file names unique to publication, so that publication folders can be easily duplicated for subsequent releases.
 
   
 ## Other points
