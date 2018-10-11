@@ -130,7 +130,7 @@ Open the project in the IDE of your choice. Ensure that the notebook is using th
 
 
 To develop a publication:
-to develop publication packages such as gva_cleaning and report_maker, clone local copies of these and add containing directory to python system path, as described at the top of the notebooks.
+to develop publication packages such as gva_cleaning and report_maker, clone local copies of these and add containing directory to python system path, as described at the top of the notebooks. Use requirements_dev.txt?
 
 To run an existing publication:
 simply run the data cleaning workbook, followed by the make_output workbook, and outputs will be written to the outputs/ folder
