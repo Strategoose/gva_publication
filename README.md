@@ -263,6 +263,9 @@ The raw data is provided in Â£m's and the cleaned output data is also given in Â
 report_maker - copy all outputs to output/ which is inline with other similar packages like pelican.
 avoid file names unique to publication, so that publication folders can be easily duplicated for subsequent releases.
 strip output cells from outptus notebook also, since might have accidently processed data incorrectly and so could be commiting this, although this would mean the output csv is also bad. solution is to find a way to ensure we never commit/work with a sensitive csv.
+also, we won't necessarily want to publish csv straight away so need some sort of flag to say if pub is in development
+store csv locally if required, don't commit csv, and strip output from all notebooks
+if pub is live, commit csv, run tests, keep cell outputs in output notebook.
 
   
 ## Other points
