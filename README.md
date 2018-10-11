@@ -266,6 +266,7 @@ strip output cells from outptus notebook also, since might have accidently proce
 also, we won't necessarily want to publish csv straight away so need some sort of flag to say if pub is in development
 store csv locally if required, don't commit csv, and strip output from all notebooks
 if pub is live, commit csv, run tests, keep cell outputs in output notebook.
+would we ever want to run flask from notebook, since this probably depends heavily an the IDE being used? just accept it needs to be run from terminal in virtual environment?
 
   
 ## Other points
