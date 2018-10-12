@@ -1,12 +1,17 @@
 from openpyxl import Workbook, load_workbook
 from openpyxl.drawing.image import Image
 import os
+import string
+import pandas as pd
 
 __all__ = ['make_template', 'populate_template']
 
 def make_template(fn, sheets=None, overwrite=False):
     # suffix file name with _template. this helps it to be associated programatically, and means both files can be opened in MS excel for comparison.
-    fn = os.path.join('spreadsheets/excel_templates/', fn)
+    name, ext = os.path.splitext(fn)
+    template_fn = "{name}{suffix}{ext}".format(name=name, suffix='_template', ext=ext)
+
+    fn = os.path.join('spreadsheets/excel_templates/', template_fn)
     wb = Workbook()
     if sheets:
         if type(sheets) == str:
@@ -24,7 +29,7 @@ def make_template(fn, sheets=None, overwrite=False):
 
         for i, sh in enumerate(sheets):
             myrow = str(21 + i)
-            ws1['B' + myrow] = '=HYPERLINK("#' + sh + '!A1","' + sh + '")'
+            # ws1['B' + myrow] = '=HYPERLINK("#' + sh + '!A1","' + sh + '")'
             ws1['B' + myrow] = sh
 
     if os.path.exists(fn) and not overwrite:
@@ -34,18 +39,28 @@ def make_template(fn, sheets=None, overwrite=False):
         wb.save(filename = fn)
 
 
-def populate_template(fn, tables=None):
+def populate_template(fn, cell='A6', tables={}):
     name, ext = os.path.splitext(fn)
     template_fn = "{name}{suffix}{ext}".format(name=name, suffix='_template', ext=ext)
 
+    s_row = int(cell[1])
+    s_col = string.ascii_uppercase.index(cell[0]) + 1
+
     wb = load_workbook(filename = os.path.join('spreadsheets/excel_templates/', template_fn))
+
     for k in tables:
         ws = wb[k]
-        ws['A6'] = tables[k]
+        if isinstance(tables[k], pd.DataFrame):
+            df_dict = tables[k].reset_index().to_dict('list')
+            for col_idx, col in enumerate(df_dict):
+                ws.cell(row=s_row, column=s_col + col_idx, value=col)
+                for row_idx, row in enumerate(df_dict[col]):
+                    ws.cell(row=s_row + row_idx + 1, column=s_col + col_idx, value=row)
     wb.save(filename = os.path.join('spreadsheets/outputs/', fn))
 
 
 if __name__ == '__main__':
+    os.chdir('publications/nov_2016')
     make_template(
         fn = 'GVA_sector_tables_template.xlsx',
         sheets=[
@@ -65,11 +80,12 @@ if __name__ == '__main__':
             "6 - Digital Sector-CVM",
             "7 - Cultural Sector-CVM",],
         overwrite=True)
-
+    import pandas as pd
+    df=pd.DataFrame({'hi': [5,6], 'hello': [6,7], 'chunky': ['oops', 'babes']})
     populate_template(
         fn = 'GVA_sector_tables.xlsx',
         tables={
-            "1.1 - GVA current (£bn)": 'ho',
+            "1.1 - GVA current (£bn)": df,
             "1.1a - GVA current (2010=100)": 'hi',
             "2.1 - GVA CVM (£bn)": 'lo',
             "2.1a - GVA CVM (2010=100)": 'sho',
