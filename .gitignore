@@ -93,7 +93,7 @@ Thumbs.db
 # negate data files here
 !GVA_sector_tables_template.xlsx
 !GVA_subsector_tables_template.xlsx
-
+!sic_mappings.csv
 
 
 
