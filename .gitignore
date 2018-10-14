@@ -88,11 +88,15 @@ ehthumbs.db
 Thumbs.db
 
 
+# negate data files here
+# remember, once you commit a file, you can't then ignore it.
+
 # above excel rule doesn't seem to be working
 *.xlsx
-# negate data files here
-!GVA_sector_tables_template.xlsx
-!GVA_subsector_tables_template.xlsx
+
+# !GVA_sector_tables_template.xlsx
+# !GVA_subsector_tables_template.xlsx
+# !gva_aggregate_data_2016.csv
 !sic_mappings.csv
 
 
@@ -196,3 +200,4 @@ ENV/
 
 # Vscode
 .vscode/
+

@@ -21,12 +21,18 @@ else:
 
 def build(context):
     
+    # make sure temp folder exists
+    os.makedirs(os.path.dirname(os.path.join(template_dir, 'temp')), exist_ok=True)
+    os.makedirs(os.path.dirname(os.path.join(template_dir, 'temp/js/')), exist_ok=True)
+    os.makedirs(os.path.dirname(os.path.join(template_dir, 'temp/svg/')), exist_ok=True)
+    os.makedirs(os.path.dirname(os.path.join(template_dir, 'temp/flask/')), exist_ok=True)
+
     # populate js templates
-    
+
     #PATH = os.path.dirname(os.path.abspath(__file__))
     js_env = Environment(
         autoescape=False,
-        loader=FileSystemLoader(os.path.join(template_dir, 'js_templates')),
+        loader=FileSystemLoader(os.path.join(template_dir, 'templates/js')),
         trim_blocks=False)
 
     # populate js templates with data and save to static
@@ -36,35 +42,38 @@ def build(context):
     
     # populates index with markdown (not populated) and svg (populated)
     # save to temporay file so we can see what it looks like
-    with open(template_dir + 'static/js/chart1.js', 'w') as f:
+    
+    with open(template_dir + 'temp/js/chart1.js', 'w') as f:
         js = render_js('chart1.js', context)
         f.write(js)    
     
-    with open(template_dir + 'static/js/table.js', 'w') as f:
+    with open(template_dir + 'temp/js/table.js', 'w') as f:
         js = render_js('table.js', context)
         f.write(js)    
 
-    
+    # this is for index.html i guess???
     #PATH = os.path.dirname(os.path.abspath(__file__))
     TEMPLATE_ENVIRONMENT = Environment(
         autoescape=False,
         loader=FileSystemLoader(os.path.join(template_dir, 'templates')),
         trim_blocks=False)
     
+
     # read all markdown, convert to html, and save into a dict
+    
     md_html = {}
-    for md in os.listdir(template_dir + 'markdown'):
+    for md in os.listdir(template_dir + 'templates/markdown'):
         if os.path.splitext(md)[1] == ".md":
-            with open(template_dir + 'markdown/' + md, 'r') as myfile:
+            with open(template_dir + 'templates/markdown/' + md, 'r') as myfile:
               data = myfile.read()
               md_html[os.path.splitext(md)[0]] = Markup(markdown.markdown(data))
 
     value = float(context['donut']['text'].replace('%', ''))
     mystring = str(value) + ' ' + str(100 - value)
     # read in svg and update - need to use xpath for text and get/set for attributes
-    for img in os.listdir(template_dir + 'raw_svg'):
+    for img in os.listdir(template_dir + 'templates/svg'):
         myname = os.path.splitext(img)[0]
-        tree = etree.parse(template_dir + 'raw_svg/' + img)
+        tree = etree.parse(template_dir + 'templates/svg/' + img)
         root = tree.getroot()
 
         # update text
@@ -86,9 +95,9 @@ def build(context):
                     element.set('stroke-dasharray', mystring)
 
 
-        tree.write(template_dir + 'static/svg/' + img)
+        tree.write(template_dir + 'temp/svg/' + img)
 
-        with open(template_dir + 'static/svg/' + img, 'r') as myfile:
+        with open(template_dir + 'temp/svg/' + img, 'r') as myfile:
             thingy = myfile.read()
         md_html[myname] = thingy
 
@@ -102,7 +111,7 @@ def build(context):
     # populates index with markdown (not populated) and svg (populated)
     def index_with_markdown():
         # save to temporay file so we can see what it looks like
-        with open(template_dir + 'temp_index.html', 'w') as f:
+        with open(template_dir + 'temp/temp_index.html', 'w') as f:
             html = my_render_template('index.html', md_html)
             f.write(html)    
         return my_render_template('index.html', md_html)
@@ -122,7 +131,7 @@ def build(context):
     # replace css link with url_for
     soup = BeautifulSoup(data, "html.parser")
     for link in soup.findAll('link'):
-      link['href'] = link['href'].replace("static/styles/style.css", "{{ url_for('static',filename='styles/style.css') }}")
+      link['href'] = link['href'].replace("static/css/style.css", "{{ url_for('static',filename='css/style.css') }}")
 
     # replace js chart links with url_for
     js_templates = ['chart1.js', 'table.js']
@@ -133,12 +142,12 @@ def build(context):
             fn = os.path.basename(string)
             script['src'] = script['src'].replace(string, "{{ url_for('static',filename='js/" + fn + "') }}")
 
-    # replace img link with url_for
-    for img in soup.findAll('img'):
-        if img['id'] == 'money-bag':
-            img['src'] = img['src'].replace("static/svg/money_bag.svg", "{{ url_for('static',filename='svg/money_bag.svg') }}")
+    # # replace img link with url_for
+    # for img in soup.findAll('img'):
+    #     if img['id'] == 'money-bag':
+    #         img['src'] = img['src'].replace("static/svg/money_bag.svg", "{{ url_for('static',filename='svg/money_bag.svg') }}")
 
-    with open(template_dir + "flask/index.html", "w") as file:
+    with open(template_dir + "temp/flask/index.html", "w") as file:
         file.write(str(soup))
 
  

@@ -12,7 +12,7 @@ def create_app():
 #    app = Flask(__name__, instance_relative_config=True)
     
 
-    app = Flask(__name__, root_path=os.path.join(cwd, "reports"), template_folder="flask")
+    app = Flask(__name__, root_path=os.path.join(cwd, "reports"), template_folder="temp/flask/")
 
     # appened static content with version number to overcome caching
     @app.context_processor

@@ -8,6 +8,9 @@ __all__ = ['make_template', 'populate_template']
 
 def make_template(fn, sheets=None, overwrite=False):
     # suffix file name with _template. this helps it to be associated programatically, and means both files can be opened in MS excel for comparison.
+    
+    os.makedirs(os.path.dirname('spreadsheets/excel_templates/'), exist_ok=True)
+    
     name, ext = os.path.splitext(fn)
     template_fn = "{name}{suffix}{ext}".format(name=name, suffix='_template', ext=ext)
 
@@ -40,6 +43,7 @@ def make_template(fn, sheets=None, overwrite=False):
 
 
 def populate_template(fn, cell='A6', tables={}):
+    os.makedirs(os.path.dirname('spreadsheets/outputs/'), exist_ok=True)
     name, ext = os.path.splitext(fn)
     template_fn = "{name}{suffix}{ext}".format(name=name, suffix='_template', ext=ext)
 
