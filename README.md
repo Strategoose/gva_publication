@@ -6,10 +6,13 @@
 ## Contents
 * [About](#about)
 * [Using the package](#using-the-package)
-  * [Installation](#installation-and-pre-requisites)
+  * [Package Structure](#package-structure)
   * [Versioning](#versioning)
-* [Design Philosphy]
-  * [Versioning]
+  * [Prerequisites and dependencies](#prerequisites-and-dependencies)
+  * [Installation](#installation)
+  * [Develop or run a publication](#develop-or-run-a-publication)
+* [Package design](#package-design)
+  * [Requirements](#requirements)
 
 ## About
 This package stems from GDS's [RAP](https://ukgovdatascience.github.io/rap_companion/) (Reproducible Analytical Pipeline) initiative, which aims to create higher quality, reproducible, data analysis pipelines within government.
@@ -30,7 +33,7 @@ Each publication will generally follow the following format:
 1. Publish all outputs, tool automatically points to most up to date CSV so automatically updates.
 
 ## Using the package
-### package structure
+### Package Structure
 This structure does not exactly match the contents of the repo and is simply for illustrative purposes. For example, it fakes a longer time period to help illustrate how the structure will grow over time. Notice that there is no folder for raw data, since it should never be stored in the package.
 
 ```
@@ -79,10 +82,7 @@ Since reproducibility tests require access to raw data and therefore cannot be r
 
 When developing a publication, we need all packages to be using the same versions of dependencies, so should use the same requirements.txt. However, each publication needs it's own requirements.txt, which will specify the different versions of our dcms packages.
 
-
-### Installation and pre-requisites
-
-#### Prerequisites and dependencies
+### Prerequisites and dependencies
 Ensure git and python 3.6 (or Anaconda) or higher are installed.
 
 The following guide assumes a basic understand of git, bash, and python. See below for tutorials. If you have never used these tools before, it is strongly recommend that you first gain some experience through completing tutorials, to provide some context, before continuing.
@@ -93,7 +93,7 @@ pip
 virtual environments
 jupyterlab (recommended) or another IDE that can run notebooks e.g. jupyter, ipython, vscode, spyder, pycharm.
 
-#### Installation
+### Installation
 In most cases, users will want to clone the package so that they add updates to the package and save the changes to github. 
 clone this repo and navigate to
 
@@ -127,7 +127,7 @@ install ipython kernel so it can be used in IDE
 ipython kernel install --user --name=publication_name
 
 
-#### Develop/run a publication
+### Develop or run a publication
 For following steps should be used as a workflow for developing a publication and making updates to the package.
 Step 1
 If not already done so, navigate to, and activate the virtual environment that should have been created in step 2 of the installtion instructions.
@@ -153,7 +153,7 @@ Write tests.
  
    
 
-## Package design:
+## Package design
 
 ### Requirements
 * Reproducibility  
