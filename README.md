@@ -1,5 +1,3 @@
-[![Travis-CI Build Status](https://travis-ci.org/DCMSstats/eegva.svg?branch=master)](https://travis-ci.org/DCMSstats/eegva)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/DCMSstats/eegva?branch=master&svg=true)](https://ci.appveyor.com/project/DCMSstats/eegva)
 [![Coverage Status](https://img.shields.io/codecov/c/github/DCMSstats/eegva/master.svg)](https://codecov.io/github/DCMSstats/eegva?branch=master)
 [![GitHub release](https://img.shields.io/github/release/DCMSstats/eegva.svg)](https://github.com/DCMSstats/eeegva/releases)
 <img src="https://github.com/ukgovdatascience/rap_companion/raw/master/images/rap_hex.png" align="right" width="150" height="150"/>
@@ -19,26 +17,24 @@ The code is published in the [open](https://www.gov.uk/service-manual/technology
 
 In this repo we use a [Jupyter/Ipython?](http://jupyter.org/) notebook for each publication to run source code contained in separate packages and create the publications's outputs. Jupyter allows for easy visualisation and documentation for [literate programming](https://en.wikipedia.org/wiki/Literate_programming), and has been adopted by major tech companies, including: [Google](https://cloud.google.com/datalab/) [(also)](https://research.google.com/colaboratory/), Microsoft, Bloomberg, [Netflix](https://medium.com/@NetflixTechBlog/notebook-innovation-591ee3221233), [IBM](https://www.ibm.com/cloud/pixiedust). Storing the source separately allows different aspects of the publications to be independtly version controlled.
 
-Publication will generally follow the following format:
+Each publication will generally follow the following format:
 
 Create a new folder in the publications/ directory (for example by duplicating a previous publication) which contains a publication.ipynb.
 
 In publication.ipynb:
-    part 1 - Processes raw, sensitive, data to produces the aggregated, non-sensitive CSV, using the [gva_data_processing package](https://github.com/DCMSstats/gva/tree/master/gva_data_processing). Access to the sensitive, raw data is required to perform this step. However, the rest of the notebook can still be run using the aggregate CSV once it has been published.
+  part 1 - Processes raw, sensitive, data to produces the aggregated, non-sensitive CSV, using the [gva_data_processing package](https://github.com/DCMSstats/gva/tree/master/gva_data_processing). Access to the sensitive, raw data is required to perform this step. However, the rest of the notebook can still be run using the aggregate CSV once it has been published.
 
-    Part 2 - Produce written reports from the aggregate CSV, using the [report_maker](https://github.com/DCMSstats/gva/tree/master/report_maker) package.
+  Part 2 - Produce written reports from the aggregate CSV, using the [report_maker](https://github.com/DCMSstats/gva/tree/master/report_maker) package.
 
-    Part 3 - Produce spreadsheet files from the aggregate CSV, using the [spreadsheet_maker](www.spreadsheet_maker.com) package.
+  Part 3 - Produce spreadsheet files from the aggregate CSV, using the [spreadsheet_maker](www.spreadsheet_maker.com) package.
 
-    Part 4 - Pass data to test scripts which ensure all outputs from all publications can be reproduced - according to the [Versioning](#versioning) section.
+  Part 4 - Pass data to test scripts which ensure all outputs from all publications can be reproduced - according to the [Versioning](#versioning) section.
 
 Test [dashboard](https://gva-dot-dcms-statistics-internal.appspot.com/) with aggregate CSV in local development environment.
 
 Publish all outputs, tool automatically points to most up to date CSV so automatically updates.
 
 ## Using the package
-In most cases, users will want to clone the package so that they add updates to the package and save the changes to github. For following steps should be used as a workflow for making updates to the package.
-
 ### package structure
 This structure does not exactly match the contents of the repo and is simply for illustrative purposes. For example, it fakes a longer time period to help illustrate how the structure will grow over time. Notice that there is no folder for raw data, since it should never be stored in the package.
 
@@ -102,16 +98,19 @@ virtual environments
 jupyterlab (recommended) or another IDE that can run notebooks e.g. jupyter, ipython, vscode, spyder, pycharm.
 
 #### Installation
-step 1
+In most cases, users will want to clone the package so that they add updates to the package and save the changes to github. 
 clone this repo and navigate to
-```
+
 git clone
-cd gva_publication/
+step 1 - Installation
+```
+git clone https://github.com/DCMSstats/gva_publication.git
 ```
 
 step 2
-create and activate a virtual environment
+naviagte to directory then create and activate a virtual environment
 ```
+cd gva_publication/
 python3 -m venv env
 source env/bin/activate
 ```
@@ -132,16 +131,29 @@ install ipython kernel so it can be used in IDE
 ipython kernel install --user --name=publication_name
 
 
-#### Making a publication
-Open the project in the IDE of your choice. Ensure that the notebook is using the kernel created in step 4. If using jupyterlab (recommeneded) this can be selected in the top right 
+#### Develop/run a publication
+For following steps should be used as a workflow for developing a publication and making updates to the package.
+Step 1
+If not already done so, navigate to, and activate the virtual environment that should have been created in step 2 of the installtion instructions.
+
+Step 2
+Open the project in the IDE of your choice - jupyterlab is recommended. Ensure that the notebook is using the kernel created in step 4 of the installation instructions. If using jupyterlab this can be selected in the top right 
+
+<!--- To develop a publication:
+to develop publication packages such as gva_cleaning and report_maker, clone local copies of these and add containing directory to python system path, as described at the top of the notebooks. Use requirements_dev.txt? -->
+
+To run an existing publication simply run all cells in the `publication.ipynb` notebook, and outputs will be written to the output folders in `processed_data/`, `reports/`, and `spreadsheets/`. To develop a publication continue with the following steps.
+
+Step 3
+Update data cleaning source code
+To change the data cleaning and processing code, open the relevant file in the `gva_data_processing/` folder.
+
+Step 4
+Run source code from `publication.ipynb` notebook.
 
 
-To develop a publication:
-to develop publication packages such as gva_cleaning and report_maker, clone local copies of these and add containing directory to python system path, as described at the top of the notebooks. Use requirements_dev.txt?
-
-To run an existing publication:
-simply run the data cleaning workbook, followed by the make_output workbook, and outputs will be written to the outputs/ folder
-
+Step 4
+Write tests.
  
    
 
