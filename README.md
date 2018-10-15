@@ -21,10 +21,10 @@ Each publication will generally follow the following format:
 
 1. Create a new folder in the publications/ directory (for example by duplicating a previous publication) which contains a publication.ipynb.
 1. In publication.ipynb:
-  * part 1 - Processes raw, sensitive, data to produces the aggregated, non-sensitive CSV, using the [gva_data_processing package](https://github.com/DCMSstats/gva/tree/master/gva_data_processing). Access to the sensitive, raw data is required to perform this step. However, the rest of the notebook can still be run using the aggregate CSV once it has been published.
-  * Part 2 - Produce written reports from the aggregate CSV, using the [report_maker](https://github.com/DCMSstats/gva/tree/master/report_maker) package.
-  * Part 3 - Produce spreadsheet files from the aggregate CSV, using the [spreadsheet_maker](www.spreadsheet_maker.com) package.
-  * Part 4 - Pass data to test scripts which ensure all outputs from all publications can be reproduced - according to the [Versioning](#versioning) section.
+    * part 1 - Processes raw, sensitive, data to produces the aggregated, non-sensitive CSV, using the [gva_data_processing package](https://github.com/DCMSstats/gva/tree/master/gva_data_processing). Access to the sensitive, raw data is required to perform this step. However, the rest of the notebook can still be run using the aggregate CSV once it has been published.
+    * Part 2 - Produce written reports from the aggregate CSV, using the [report_maker](https://github.com/DCMSstats/gva/tree/master/report_maker) package.
+    * Part 3 - Produce spreadsheet files from the aggregate CSV, using the [spreadsheet_maker](www.spreadsheet_maker.com) package.
+    * Part 4 - Pass data to test scripts which ensure all outputs from all publications can be reproduced - according to the [Versioning](#versioning) section.
 1. Test [dashboard](https://gva-dot-dcms-statistics-internal.appspot.com/) with aggregate CSV in local development environment.
 1. Publish all outputs, tool automatically points to most up to date CSV so automatically updates.
 
