@@ -6,7 +6,8 @@
 ## Contents
 * [About](#about)
 * [Using the package](#using-the-package)
-  * [Installation]
+  * [Installation](#installation-and-pre-requisites)
+  * [Versioning](#versioning)
 * [Design Philosphy]
   * [Versioning]
 
@@ -69,7 +70,7 @@ publications/
       ...
 ```
 
-#### Versioning
+### Versioning
 each publicatino has a it's own requiments.txt. 
 
 Notice how the publications requirements.txt records the versions of public, and dcms_packages to be used. This way future improvements and breaking changes to
