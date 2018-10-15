@@ -48,3 +48,10 @@ pip is used to install python packages for extra functionality, in the same way 
 
 To create a virtual environment, navigate to the project folder and run `python3 -m venv env` to create a virtual environment. To activate the virtual environment (this needs to be done everytime you close and then restart the Command Line) run `source env/bin/activate`. Now when you can use pip to install packages for example `pip install pandas` which will only install pandas into your virtual environment for that project (although pandas is already globally installed by Anaconda). Most packages instructions for installing using pip for example [pandas](https://pandas.pydata.org/)
 
+## Python Packages
+[Pandas](https://pandas.pydata.org/) is the data analysis package for python. it lets you read in dataframes and then do operations like in SQL or R, for example make a new column, join to data frames, aggregation, etc.
+
+[Dash](https://plot.ly/products/dash/) is a Python package for creating dashboards, similar to Rshiny.
+
+
+
