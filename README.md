@@ -79,18 +79,22 @@ publications/
       ...
 ```
 
+#### Versioning
+each publicatino has a it's own requiments.txt. 
+
 Notice how the publications requirements.txt records the versions of public, and dcms_packages to be used. This way future improvements and breaking changes to
 
-
 Since reproducibility tests require access to raw data and therefore cannot be run online in a straight forward way using services like TravisCI, we will have two branches. There is the main development branch which is pushed to. Then, periodically, the test suite is run locally for the current state of this branch, and if it passes, then is merged into the master branch. Developers should be testing locally before commiting so this process should be straight forward, and is simply a means of avoiding situations caused by developers forgetting to test locally before pushing. Whilst this system is manual and imperfect, it works for now, and once our systems and data are moved to cloud services, we will have the opportunity to implement automated secure testing on our own cloud servers, with sensitive data.
+
+When developing a publication, we need all packages to be using the same versions of dependencies, so should use the same requirements.txt. However, each publication needs it's own requirements.txt, which will specify the different versions of our dcms packages.
 
 
 ### Installation and pre-requisites
 
 #### Prerequisites and dependencies
-ensure git and python 3.6 or higher are installed
+Ensure git and python 3.6 (or Anaconda) or higher are installed.
 
-The following guide assumes a basic understand of git, bash, and python. See below for tutorials. If you have never used these tools before, it is strongly recommend that you first gain some experience via full tutorials so provide some context, before continuing.
+The following guide assumes a basic understand of git, bash, and python. See below for tutorials. If you have never used these tools before, it is strongly recommend that you first gain some experience through completing tutorials, to provide some context, before continuing.
 git cloning
 using bash
 pip
@@ -100,13 +104,17 @@ jupyterlab (recommended) or another IDE that can run notebooks e.g. jupyter, ipy
 #### Installation
 step 1
 clone this repo and navigate to
+```
 git clone
 cd gva_publication/
+```
 
 step 2
-create and activate a virtual environment:
+create and activate a virtual environment
+```
 python3 -m venv env
 source env/bin/activate
+```
 
 step 3
 if rerunning a publication or continuing development of an existing publication, install it's dependencies with
@@ -134,57 +142,44 @@ to develop publication packages such as gva_cleaning and report_maker, clone loc
 To run an existing publication:
 simply run the data cleaning workbook, followed by the make_output workbook, and outputs will be written to the outputs/ folder
 
-
-#### Clone the repository
-1. Install [Git](https://git-scm.com/downloads)
-1. Navigate to the folder where you want to store the repo on your machine. For Windows users - open the 'Git Bash' application, for Mac users open the terminal. Then use pwd to find the current directory, ls to display the folders within the current directory, and cd to enter one of those directories, then pwd again to confirm the new current directory. For example:
-   ```bash
-   user$ pwd
-   C:/user.name/documents/
-   user$ ls
-   myprojects/ otherfolder/ anotherfolder/
-   user$ cd myprojects/
-   user$ pwd
-   C:/user.name/documents/myprojects/
-   ```
-   This shows sucessfully navigating to the myprojects/ directory. 
- 1. Download the repo from github using by running:
-    ```bash
-    user$ git clone https://github.com/DCMSstats/gva.git
-    ```
-    This will create a folder called gva within the myprojects/ folder.
  
-#### Updating and running the code
-1. Install [Anaconda](https://anaconda.org/), which can be installed via the DCMS software centre.
-1. Open the Anconda Navigator application and then launch jupyterlab.
-1. To run an existing publication, in the left hand pane, navigate to myprojects/gva/publications/Nov_2016 and open the notebook 'publication_2016.ipynb'. To run a code block, click on it and hit shift + enter.
-1. To produce a new publication, create a copy of publications/Nov_2016, rename for example to publications/Nov_2017 (the name must not start with a number), and then update the notebook accordingly - for example point to new data.
-1. If you need to make changes to the package functions used by the notebook, for example changing what data is read in by the read_abs() function, open the file /src/functions.py, update the read_abs() function, save the notebook, and rerun the code in the notebook. The code:
-   ```python
-   %load_ext autoreload
-   %autoreload 2
-   ```
-   at the top of the notebook ensures the package is reloaded so that any changes made are included. You might find it easiest to copy the code from the function into a new notebook to experiment with, before copying back to functions.py.
    
-#### Outputs
+
+## Package design:
+
+### Requirements
+* Reproducibility  
+  Individual notebooks that can be run to accurately reproduce ALL outputs for ANY given publication. 
+  This requires:
+    * Version controlling the publication package and it's dependencies.
+    * Automated testing to confirm that previous publication outputs can still be accurately reproduced after updating source code, and alterting when a breaking change has been made, requiring an increment in version number.
+* Outputs
+  Functionality to produce excel, csv, and html/pdf outputs.
+* Simplicity
+  Make project as simple as possible in order to make it as easy as possible be understood by users.
+* Reliability
+  Ensure publication code can be reliably run by users without errors. Use best practices to improve reliability of code, for example using code that will work across operating systems.
+* Modularisation
+  Make code modular to allow code to be more readable, easily maintained, and reused. This includes splitting code different purposes into separate scripts, e.g. testing code in a separate script. Also, where sensible, break code with scripts into functions
+* Safety/security
+  Minimise posibility of commiting sensitive data to the public github repository. 
+  Cases:
+   * Committing raw data files  
+     Designing the repo so that the sensitive data is referenced in place rather than copied to the repo itself, and git ignoring all xlsx and xls files unless specifically exempt.
+   * Including sensitive data as output cells in jupyter notebooks. Currently, this relies on users not printing out sensitive data to output cells and then commiting the notebook with the output cells. The output in ouput cells is clearly displayed in notebooks so this is easily avoided, however, still relies on the user which is not ideal. In future implementations, git hooks could be used to ensure [output is stripped from notebooks](https://github.com/kynan/nbstripout) on commit, however a more sophisticated implementation of the repo will be necessary to ensure git hooks are used, probably using [docker](https://www.docker.com/).
+   * Including sensitve data in aggregate data csv. The data in this file should be at sector level and anonymised, however it is still conceiveably possible to include senstive sic level data in the csv which is then committed to the repo. As with the previous point, the same QA checks that are usually applied to statistical publications before they are published, can be applied here. Also, code can be written that will check the form of the data and stop the code with and error before the CSV is written, reducing the chance of creating and then comitting a CSV containing sensitive data.
+<!--- https://conferences.oreilly.com/jupyter/jup-ny/public/schedule/detail/69986 --->
+
+### Outputs
 [html](https://gds.blog.gov.uk/2018/07/16/why-gov-uk-content-should-be-published-in-html-and-not-pdf/)
 
-#### QA, git commit, and git push to github.
-Use `git commit` to [log a snapshot](https://github.com/DCMSstats/gva/commits/master) of the code, once you are happy with it. However, will only be recorded on your machine, use `git push origin master` to add your commit to the Github repository. Software carpentary has a good [tutorial](https://swcarpentry.github.io/git-novice/) on using Git. Before pushing to Github where everything is publically viewable, QA needs to take place to ensure the files you are committing do not contain any sensitive data.
-
-#### Other
-To run the code without cloning the repository or using raw data, run pip install dcms_gva, and download this example notebook. - not yet implemented.
-
-#### Reproducing outputs for previous releases
-Check which major version of the package was used to produce the release in question here (link to releases). Install that version using pip install git ...
-
-## Rounding
+### Rounding
 All outputs from the source code should be unrounded, and all rounding should be done within the publication notebook since rounding should be considered presentational and not part of the analysis that needs to be versioned.
 
-## Testing
+### Testing
 The test command (pytest) runs the test for all publications where tests have been created. This will typically be published publications, where after publication, tests are written to compare output with the published results. The test scripts download publication outputs directly from distribution channel (and cached to imporve test run times?) e.g. gov.uk and publication code is run and then both copies are compared to check they are identical.
 
-## Versioning
+### Versioning
 Important motivations for bundling statistical publication production into a Python repo, is that we can ensure reproducibility, and consistency of data processing method between publications. Reproducibility is critical to ensure publications are auditable and trustworty. Consistency of approach for each publication is also critical to ensure statistics are accurate, transparent, reliable, trustworthy etc.
 Problems with traditional approaches:
 Reproducibility: Data processing with excel files means that files might be stored in different places, there can be errors in the excel files, if someone changes something in a dependent excel file unknowlingly, it could alter the output of the pipeline.
@@ -205,49 +200,18 @@ This may seem complicated but it is a very widely used, standised approach to ma
 
 What if we are just adding an extra column? this won't pass test for previous releases but doesn't seem like a good enough reason for a major release since the rest of the information will still be accurate? maybe it is a good enough reason? or maybe the tests should know to just check whatever information was actually included in the release - yes.
 
-## Design philosophy/requirements:
-* Reproducibility  
-  Individual notebooks or scripts that can be rerun to accurately reproduce ALL outputs for ANY given publication. Recording version number for where breakding changes are made to code and version number is incremented. For example provide requirements.txt specifying what packages are used.
-* Testing  
-  Functionality to confirm that previous publication outputs can be accurately reproduced, and alterting when a breaking change has been made, requiring an increment in version number.
-* Outputs
-  Functionality to produce excel, csv, html/pdf, outputs.
-* Simplicity
-  Make project as simple as possible in order to make it as easy as possible be understood users and get up to speed.
-* Reliability
-  Ensure publication code can be reliably run by users without errors. Use best practices to improve reliability of code, for example using code that will work across operating systems.
-* Modularisation
-  Make code modular to allow code to be more easily maintained and reused. This includes splitting code different purposes into separate scripts, e.g. testing code in a separate script. Also, where sensible, break code with scripts into functions
-* Safety/security
-  Remove the posibility of commiting sensitive data to the public github repository. 
-  Cases:
-   * Committing raw data excel file: Designing the repo so that the sensitive data is referenced in place rather than copied to the repo itself, and git ignoring all xlsx and xls files unless specifically exempt.
-   * Including sensitive data as output cells in jupyter notebooks. Currently, this relies on users not printing out sensitive data to output cells and then commiting the notebook with the output cells. The output in ouput cells is clearly displayed in notebooks so this is easily avoided, however, still relies on the user which is not ideal. In future implementations, git hooks could be used to ensure [output is stripped from notebooks](https://github.com/kynan/nbstripout) on commit, however a more sophisticated implementation of the repo will be necessary to ensure git hooks are used, probably using [docker](https://www.docker.com/).
-   * Including sensitve data in aggregate data csv. The data in this file should be at sector level and anonymised, however it is still conceiveably possible to include senstive sic level data in the csv which is then committed to the repo. As with the previous point, the same QA checks that are usually applied to statistical publications before they are published, can be applied here. Also, code can be written that will check the form of the data and stop the code with and error before the CSV is written, reducing the chance of creating and then comitting a CSV containing sensitive data.
-<!--- https://conferences.oreilly.com/jupyter/jup-ny/public/schedule/detail/69986 --->
-
-#### Approach
+### Approach
 * Separate source code from publications. We want to use the same code (source code) each time a publication is produced, so that we know that statistics are being calculated on the same basis for every publication. However, each publication will require different inputs, settings, and outputs. We use a Jupyter notebook for each individual publication to store the code specific to that publication, which reads in the 'source code' which is consistent across all publication. Notebooks are used for documenting and explaining functionality and any logic or notes about that publication. Source code will be for things like how the raw data is cleaned and merged together, etc. The jupyter notebook publication code will contain things like what years we want to display, paths to the relevant year's raw data, etc.
 * Make .py python script copy of publication notebook, to allow easier integration with pytest and easy debugging.
 
-#### Future developments
+### Future developments
 Use docker to allow sharing of config files e.g.jupyter_notebook_config.py which would allow for things like automatically creating .py scripts upon .ipynb saves, and extra safety measure to be put in place. Also it will remove the need for users to install packages or set up virtual environments. Also could possibly have jupyterlab image hosted on GCP so users can remote in without needing ANY software installed locally.
 
-
-## Description of the contents of this repo
-#### README.md
-It is convention to include this markdown document in repositories to provide an explanation of the repo. Also, for repos hosted on Github, the README is rendered and displayed on the repo's page (this is what you are reading!). For the most part, markdown syntax is universal, however there are different implementations with slight difference. Github uses (Github Flavored Markdown)[https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet].
-
-#### .gitignore
-
-#### src/
-This directory contains the packages source code.
-
-#### publications/
-This directory contains different folders for each publication. Within the individual publication folders are the jupyter notebook used to run the source code in src and create the various outputs for that publication. There is also a copy of the notebook as a regular python script, this is to make it more simple to run the tests in the tests/ folder. The test/ folder contains tests which check that when the publication script is run, it matches the previously produced outputs for the publications. This is useful for when we update the source code, we can check that the code will still accurately reproduce outputs for previous publications.
+To run the code without cloning the repository or using raw data, run pip install dcms_gva, and download this example notebook. - not yet implemented.
 
 
-## Glossary
+## Other Information
+### Glossary
 Source code  
 package  
 repo  
@@ -255,13 +219,13 @@ tests
 publication  
 jupyter notebook  
 
-## Assumptions
+### Assumptions
 That every publication has a ipython notebook called publication.ipynb.
 
-## Notes
+### Notes
 The raw data is provided in £m's and the cleaned output data is also given in £m's to preserve as much numerical precision as possible. For example, this is necessary for testing against excel publications, as converting to actual values then back to millions for testing looses too much precision and tests do not pass.
 
-## Design decisions
+### Design decisions
 report_maker - copy all outputs to output/ which is inline with other similar packages like pelican.
 
 avoid file names unique to publication, so that publication folders can be easily duplicated for subsequent releases.
@@ -274,7 +238,7 @@ would be nice to have unique names for when we have two publication notebooks op
 would we ever want to run flask from notebook, since this probably depends heavily an the IDE being used? just accept it needs to be run from terminal in virtual environment?
 
   
-## Other points
+### Other points
 Where possible I have linked to reputable sources to explain ideas or make cases for use of a particular tool/approach. This is in order to make the reasoning more convincing and help paint the repo in a wider context.
 
 As this repo is replicated for other publications, a lot of the information in this README will be stripped out and stored somewhere more centrally.
@@ -285,3 +249,6 @@ What is the purpose of this? Why do statistical publications even need to be rep
 Its sets a standard of reproducibility for the analysis that uses it. 
 Some statistical publications are actually closer to analysis pieces themselves, so require reproducibility for the reasons listed for analysis.
 As statistical outputs become more tecnhologically sophisticated, for example creating HTML report websites, and interactive web applications, it is important that statistical outputs that the services rely on are produced in an automated, tested way, to ensure the consistency, metadata etc, that these sorts of services require. Manually produced outputs are to automated outputs, what free text fields are to dropdown boxes on forms - far less usable and harder to work with, but just as flexible given the proper design.
+
+### Help
+It is convention to include this markdown document in repositories to provide an explanation of the repo. Also, for repos hosted on Github, the README is rendered and displayed on the repo's page (this is what you are reading!). For the most part, markdown syntax is universal, however there are different implementations with slight difference. Github uses (Github Flavored Markdown)[https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet].
