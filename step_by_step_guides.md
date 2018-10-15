@@ -40,10 +40,5 @@ Use `git commit` to [log a snapshot](https://github.com/DCMSstats/gva_publicatio
 1. Open the Anconda Navigator application and then launch jupyterlab.
 1. To run an existing publication, in the left hand pane, navigate to myprojects/gva/publications/Nov_2016 and open the notebook 'publication.ipynb'. To run a code block, click on it and hit shift + enter.
 1. To produce a new publication, create a copy of publications/nov_2016, rename for example to publications/nov_2017 (the name must not start with a number), and then update the notebook accordingly - for example point to new data.
-1. If you need to make changes to the package functions used by the notebook, for example changing what data is read in by the read_abs() function, open the file /src/functions.py, update the read_abs() function, save the notebook, and rerun the code in the notebook. The code:
-   ```python
-   %load_ext autoreload
-   %autoreload 2
-   ```
-   at the top of the notebook ensures the package is reloaded so that any changes made are included. You might find it easiest to copy the code from the function into a new notebook to experiment with, before copying back to functions.py.
+1. If you need to make changes to the package functions used by the notebook, for example changing what data is read in by the read_abs() function, open the file /src/functions.py, update the read_abs() function, save the notebook, and rerun the code in the notebook.
 
