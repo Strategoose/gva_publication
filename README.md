@@ -13,45 +13,44 @@
   * [Versioning]
 
 ## About
-This repository's design is based on GDS's [RAP](https://ukgovdatascience.github.io/rap_companion/) (Reproducible Analytical Pipeline) initiative, which aims to create higher quality, reproducible, data analysis pipelines within government.
+This package stems from GDS's [RAP](https://ukgovdatascience.github.io/rap_companion/) (Reproducible Analytical Pipeline) initiative, which aims to create higher quality, reproducible, data analysis pipelines within government.
 
-The code is published in the [open](https://www.gov.uk/service-manual/technology/making-source-code-open-and-reusable), and aligns with the [Open Government National Action Plan](https://www.gov.uk/government/publications/uk-open-government-national-action-plan-2016-18/uk-open-government-national-action-plan-2016-18). This helps make the information provided in statistical publications more transparent, for example by sharing how anonymisation and rounding has taken place.
+The code is published in the [open](https://www.gov.uk/service-manual/technology/making-source-code-open-and-reusable), and aligns with the [Open Government National Action Plan](https://www.gov.uk/government/publications/uk-open-government-national-action-plan-2016-18/uk-open-government-national-action-plan-2016-18). This helps make the information provided in statistical publications more transparent, for example by showing how anonymisation and rounding has taken place.
 
-This repo follows a template that that is suitable for most python projects in the department, providing consistency across repos. The package template is loosely based on the [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/) template. The package is structured to be modular, to allow code to be more easily maintained and reused - see [here](https://realpython.com/python-modules-packages/) for more explanation.
+In this repo we use a [Jupyter/Ipython?](http://jupyter.org/) notebook for each publication to run source code contained in separate packages and create the publications's outputs. Jupyter allows for easy visualisation and documentation for [literate programming](https://en.wikipedia.org/wiki/Literate_programming), and has been adopted by major tech companies, including: [Google](https://cloud.google.com/datalab/) [(also)](https://research.google.com/colaboratory/), Microsoft, Bloomberg, [Netflix](https://medium.com/@NetflixTechBlog/notebook-innovation-591ee3221233), [IBM](https://www.ibm.com/cloud/pixiedust). Storing the source separately allows different aspects of the publications to be independtly version controlled.
 
-In this repo we use a [Jupyter](http://jupyter.org/) notebook for each publication to run the package source code and create the publications's outputs. Jupyter benefits include:
-* Easy visualisation and documentation for [literate programming](https://en.wikipedia.org/wiki/Literate_programming).
-* Adoption by major tech companies, including: [Google](https://cloud.google.com/datalab/) [(also)](https://research.google.com/colaboratory/), Microsoft, Bloomberg, [Netflix](https://medium.com/@NetflixTechBlog/notebook-innovation-591ee3221233), [IBM](https://www.ibm.com/cloud/pixiedust)
+Publication will generally follow the following format:
 
-Publication notebooks will generally follow the following format:
+Create a new folder in the publications/ directory (for example by duplicating a previous publication) which contains a publication.ipynb.
 
-part 1 - Produces the aggregated, non-sensitive CSV, using the [GVA packge](https://github.com/DCMSstats/gva/tree/master/src). Access to the sensitive, raw data is required to perform this step. However, the rest of the notebook can still be run using the published CSV.
+In publication.ipynb:
+    part 1 - Processes raw, sensitive, data to produces the aggregated, non-sensitive CSV, using the [gva_data_processing package](https://github.com/DCMSstats/gva/tree/master/gva_data_processing). Access to the sensitive, raw data is required to perform this step. However, the rest of the notebook can still be run using the aggregate CSV once it has been published.
 
-Part 2 - Produce written reports from the aggregate CSV, using the [report_maker](https://github.com/DCMSstats/gva/tree/master/report_maker) package.
+    Part 2 - Produce written reports from the aggregate CSV, using the [report_maker](https://github.com/DCMSstats/gva/tree/master/report_maker) package.
 
-Part 3 - Produce spreadsheet files from the aggregate CSV, using the [spreadsheet_maker](www.spreadsheet_maker.com) package.
+    Part 3 - Produce spreadsheet files from the aggregate CSV, using the [spreadsheet_maker](www.spreadsheet_maker.com) package.
 
-Part 4 - (in development) Update [dashboard](https://gva-dot-dcms-statistics-internal.appspot.com/) with aggregate CSV. First, in local development environment for testing, then deploy update to live version.
+    Part 4 - Pass data to test scripts which ensure all outputs from all publications can be reproduced - according to the [Versioning](#versioning) section.
 
-Part 5 - Run tests to ensure all outputs from all publications can be reproduced - according to the [Versioning](#versioning) section.
+Test [dashboard](https://gva-dot-dcms-statistics-internal.appspot.com/) with aggregate CSV in local development environment.
+
+Publish all outputs, tool automatically points to most up to date CSV so automatically updates.
 
 ## Using the package
 In most cases, users will want to clone the package so that they add updates to the package and save the changes to github. For following steps should be used as a workflow for making updates to the package.
 
-hello
-hi
-
-### repo structure
-This structure does not exactly match the contents of the repo and is simply for illustrative purposes. For example, it fakes a longer time period to help illustrate how the structure will grow over time, and ignores files that are not important in general use of the repo. Notice that there is no folder for raw data. Raw data should never be stored
+### package structure
+This structure does not exactly match the contents of the repo and is simply for illustrative purposes. For example, it fakes a longer time period to help illustrate how the structure will grow over time. Notice that there is no folder for raw data, since it should never be stored in the package.
 
 ```
-README.md
-requirements.txt
-src/
+gva_data_processing/
     read_data.py
     clean_data.py
     make_summaries.py
     ...
+
+README.md
+requirements.txt
 publications/
     Nov16/
         run_publication.ipynb
@@ -255,6 +254,9 @@ repo
 tests  
 publication  
 jupyter notebook  
+
+## Assumptions
+That every publication has a ipython notebook called publication.ipynb.
 
 ## Notes
 The raw data is provided in £m's and the cleaned output data is also given in £m's to preserve as much numerical precision as possible. For example, this is necessary for testing against excel publications, as converting to actual values then back to millions for testing looses too much precision and tests do not pass.
