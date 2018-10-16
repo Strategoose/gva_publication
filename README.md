@@ -181,36 +181,35 @@ Write tests.
 ### Outputs
 [html](https://gds.blog.gov.uk/2018/07/16/why-gov-uk-content-should-be-published-in-html-and-not-pdf/)
 
-### Rounding
-All outputs from the source code should be unrounded, and all rounding should be done within the publication notebook since rounding should be considered presentational and not part of the analysis that needs to be versioned.
-
 ### Testing
 The test command (pytest) runs the test for all publications where tests have been created. This will typically be published publications, where after publication, tests are written to compare output with the published results. The test scripts download publication outputs directly from distribution channel (and cached to imporve test run times?) e.g. gov.uk and publication code is run and then both copies are compared to check they are identical.
 
-### Versioning
-Important motivations for bundling statistical publication production into a Python repo, is that we can ensure reproducibility, and consistency of data processing method between publications. Reproducibility is critical to ensure publications are auditable and trustworty. Consistency of approach for each publication is also critical to ensure statistics are accurate, transparent, reliable, trustworthy etc.
+### Reproducibility and Consistency
+An important motivations for bundling statistical publication production into a Python repo, is that we can ensure reproducibility, and consistency of data processing method between publications. Reproducibility is critical to ensure publications are auditable. Consistency of approach for each publication is also critical to ensure statistics are being produced on the same basis from publciation to publication. This all goes to making publications accurate, transparent, reliable, trustworthy etc.
+
 Problems with traditional approaches:
 Reproducibility: Data processing with excel files means that files might be stored in different places, there can be errors in the excel files, if someone changes something in a dependent excel file unknowlingly, it could alter the output of the pipeline.
-Consistency: If we add new functionality for a new publication which is built on top of the existing functionality, we have no way of rerunning previous publications to check that numbers produced are the same, so we have no way of knowing if the new functionality is calculating statistics on the same basis as previous publications.
+Consistency: Typically, to add new functionality to a pipeline we would add make it directly in the excel files, or SPSS code. The problem is that when we add in new functionality or generally make any changes to the pipeline, we might have accidently changed how the statistcs are produced. For example we might round in a different place giving different results. Sometimes this will get picked up, for example if we are producing time series and historic figures differ from previous publications, sometimes it will not. It is not usually straight forward or even possible to re-run all previous publications with the new updated pipeline, in order to check we are still calculating statistics on the same basis.
 
-The solution is to use the same code for every publication. The code should be comprised of generalised functions that can be re-used for every publication. This code is referred to as source code and is resued for every publication. We then have separate jupyter notebooks for each publication. Each publication notebook has different inputs specific to that publication, for example file paths to the latest raw data. This way we know that the stats for each publication are being calculated on the same basis, as the same source code is being used. 
-Once a publication has been released, we write automated tests that mean with a single command we can rerun the publication notebook, and check the outputs are the same as those produced for the released publication. This means that when new functionaility is added to the source code for future publications, we can run the automated tests using the upadted source code to ensure that the same outputs are being produced and therefore statistics in the new publication are being calculated on the same basis as previously. What if there is a change in methodology or another reason that updates to the source mean that we don't expect it to produce previous publications on the same basis? We increment the major release number of the [repos version number](https://github.com/DCMSstats/gva/releases). Using [software versioning](https://en.wikipedia.org/wiki/Software_versioning) is a standard software development practice and helps us clearly record the different version of our repo.
-Say the current iteration of our code is v1.0.2 can be read as major.minor.patch
+Solution:
+The solution is to codify the pipeline, and use the same code for every publication. The code should be comprised of generalised functions that can be re-used for every publication. This code is referred to as source code and is reused for every publication. We then have separate jupyter notebooks for each publication. Notebooks are used for documenting and explaining any logic or notes about that publication. Each publication notebook has different inputs and outputs specific to that publication, for example file paths to the latest raw data and summary tables broken down in different ways. This way we know that the stats for each publication are being calculated on the same basis, as the same source code is being used.
+
+Once a publication has been released, we write automated tests that mean with a single command we can rerun the publication notebook, and check the outputs are the same as those produced for the released publication. This means that when new functionaility is added to the source code for future publications, we can run the automated tests using the updated source code to ensure that the same outputs are being produced and therefore statistics in the new publication are being calculated on the same basis as previously.
+
+What if there is a change in methodology or another reason that updates to the source mean that we don't expect it to produce previous publications on the same basis? We increment the major release number of the [repos version number](https://github.com/DCMSstats/gva_publication/releases). Using [software versioning](https://en.wikipedia.org/wiki/Software_versioning) is a standard software development practice and helps us clearly record the different versions of our repo.
+Say the current iteration of our code is v1.0.2, which is read as major.minor.patch.
 the version number represents major: breaking change, minor: feature number, 2: bug fix number
 
-If we fix a bug in our code, we can then release this as v1.0.3. Note that if the bug affects the actual value of the statistics being produced, we would either want to re-release previous publications with the bug fixed - and update automated tests accordingly, or if not re-releasing, you should increment the major version number to v2.0.2 to signify that this source code is on a different basis to versions for previous publications and is not expected to proudce the same results. Typically this might be a formatting issue that is rectified but doesn't affect the statistical output that is checked by the automated tests.
+If we fix a bug in our code, we can then release this as v1.0.3. Note that if the bug affects the actual value of the statistics being produced, we would either want to re-release previous publications with the bug fixed - and update automated tests accordingly, or if not re-releasing, you should increment the major version number to v2.0.2 to signify that this source code is on a different basis to versions for previous publications and is not expected to proudce the same results. However, the bug could simply be be a formatting issue that is rectified but doesn't affect the statistical output that is checked by the automated tests.
 
-If we add a new feature to our code we increment the minor number giving us v1.1.2.
+If we add a new feature to our code we should increment the minor number giving us v1.1.2.
 
 If we update the source code so that calculations are on a different basis, so that we do not expect the code to be able to accurately reproduce statistics in previous publications (for example because of a change in methodology) then we increment the the major number and reset minor and patch numbers: v2.0.0.
 
 This may seem complicated but it is a very widely used, standised approach to managing software versioning.
 
-What if we are just adding an extra column? this won't pass test for previous releases but doesn't seem like a good enough reason for a major release since the rest of the information will still be accurate? maybe it is a good enough reason? or maybe the tests should know to just check whatever information was actually included in the release - yes.
+What if we are just adding an extra column? this won't pass test for previous releases but doesn't seem like a good enough reason for a major release since the rest of the information will still be accurate? the tests should know to just check whatever information was actually included in the release
 
-### Approach
-* Separate source code from publications. We want to use the same code (source code) each time a publication is produced, so that we know that statistics are being calculated on the same basis for every publication. However, each publication will require different inputs, settings, and outputs. We use a Jupyter notebook for each individual publication to store the code specific to that publication, which reads in the 'source code' which is consistent across all publication. Notebooks are used for documenting and explaining functionality and any logic or notes about that publication. Source code will be for things like how the raw data is cleaned and merged together, etc. The jupyter notebook publication code will contain things like what years we want to display, paths to the relevant year's raw data, etc.
-* Make .py python script copy of publication notebook, to allow easier integration with pytest and easy debugging.
 
 ### Future developments
 Use docker to allow sharing of config files e.g.jupyter_notebook_config.py which would allow for things like automatically creating .py scripts upon .ipynb saves, and extra safety measure to be put in place. Also it will remove the need for users to install packages or set up virtual environments. Also could possibly have jupyterlab image hosted on GCP so users can remote in without needing ANY software installed locally.
@@ -219,13 +218,6 @@ To run the code without cloning the repository or using raw data, run pip instal
 
 
 ## Other Information
-### Glossary
-Source code  
-package  
-repo  
-tests  
-publication  
-jupyter notebook  
 
 ### Assumptions
 That every publication has a ipython notebook called publication.ipynb.
@@ -245,6 +237,7 @@ would be nice to have unique names for when we have two publication notebooks op
 
 would we ever want to run flask from notebook, since this probably depends heavily an the IDE being used? just accept it needs to be run from terminal in virtual environment?
 
+The CSV should be unrounded or always rounded to a consistent point (better to keep it unrounded so it is easier to pick up when there has been changes to the data processing), and then rounded by the make_table() function.
   
 ### Other points
 Where possible I have linked to reputable sources to explain ideas or make cases for use of a particular tool/approach. This is in order to make the reasoning more convincing and help paint the repo in a wider context.
@@ -258,5 +251,5 @@ Its sets a standard of reproducibility for the analysis that uses it.
 Some statistical publications are actually closer to analysis pieces themselves, so require reproducibility for the reasons listed for analysis.
 As statistical outputs become more tecnhologically sophisticated, for example creating HTML report websites, and interactive web applications, it is important that statistical outputs that the services rely on are produced in an automated, tested way, to ensure the consistency, metadata etc, that these sorts of services require. Manually produced outputs are to automated outputs, what free text fields are to dropdown boxes on forms - far less usable and harder to work with, but just as flexible given the proper design.
 
-### Help
+### Help - move to stepbystepguide
 It is convention to include this markdown document in repositories to provide an explanation of the repo. Also, for repos hosted on Github, the README is rendered and displayed on the repo's page (this is what you are reading!). For the most part, markdown syntax is universal, however there are different implementations with slight difference. Github uses (Github Flavored Markdown)[https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet].
