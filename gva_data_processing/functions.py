@@ -12,8 +12,8 @@ sic_mappings = pd.read_csv(os.path.join(package_dir,'lookups/sic_mappings.csv'),
 
 
 # note: both sections of data contain sic 92 so one needs removing
-def read_abs(path):
-    df = pd.read_excel(path, sheet_name = 'NEW ABS DATA (2)', usecols=list(range(12, 21)))
+def read_abs(path, cols=[]):
+    df = pd.read_excel(path, sheet_name = 'NEW ABS DATA (2)', usecols=cols)
     df = df.iloc[pd.np.r_[4:81, 82:86, 88, 90:161], :]
     df = df.rename(columns={'Checks': 'sic'}).reset_index(drop=True)
     df.sic = df.sic.astype(str) #for some reason 62.011 was being held as a number so need to convert to str
@@ -21,9 +21,9 @@ def read_abs(path):
     df.year = df.year.astype(int)
     return df
 
-def read_charities(path):
+def read_charities(path, rows=[]):
     df = pd.read_excel(path, sheet_name = 'Charities', usecols=list(range(0, 5)), skiprows=[0])
-    df = df.iloc[0:7, :]
+    df = df.iloc[rows, :]
     df.columns = ['year', 'gva', 'total', 'perc', 'overlap']
     df.year = df.year.astype(int)
     return df
@@ -33,9 +33,9 @@ def read_tourism(path):
     df.columns = ['year', 'gva', 'total', 'perc', 'overlap']
     return df
 
-def read_gva(path):
+def read_gva(path, rows=[]):
     df = pd.read_excel(path, sheet_name = 'CP Millions', skiprows=[0,1,2,3])
-    df = df.iloc[9:36, 2:].set_index('Unnamed: 2')
+    df = df.iloc[rows, 2:].set_index('Unnamed: 2')
     df = df.T.reset_index().rename(columns={'index': 'sic'})
     df.iloc[0,0] = 'year_total'
     s = sic_mappings.sic2.append(pd.Series('year_total'))
@@ -275,3 +275,12 @@ def make_table(df, sector, indexed=False):
     
     return tb
 
+if __name__ == '__main__':
+    path = '/Volumes/Data/EAU/Statistics/Economic Estimates/2017 publications/November publication/GVA - current/Working_file_dcms_V11 2016 Data.xlsx'
+    path = '/Volumes/Data/EAU/Statistics/Economic Estimates/2018 publications/GVA/Working tables/DP_Working_file_dcms_V11 2018 Data.xlsx'
+    abs = read_abs(path, cols=list(range(12, 21)))
+    charities = read_charities(path, rows=list(range(0,7)))
+    tourism = read_tourism(path)
+    gva = read_gva(path, rows=list(range(9,36)))
+    sic91 = read_sic91(path)
+    
