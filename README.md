@@ -19,7 +19,7 @@ This package stems from GDS's [RAP](https://ukgovdatascience.github.io/rap_compa
 
 The code is published in the [open](https://www.gov.uk/service-manual/technology/making-source-code-open-and-reusable), and aligns with the [Open Government National Action Plan](https://www.gov.uk/government/publications/uk-open-government-national-action-plan-2016-18/uk-open-government-national-action-plan-2016-18). This helps make the information provided in statistical publications more transparent, for example by showing how anonymisation and rounding has taken place.
 
-In this repo we use a [Jupyter](http://jupyter.org/) notebook for each publication to run source code contained in separate packages and create the publications's outputs. Jupyter allows for easy visualisation and documentation for [literate programming](https://en.wikipedia.org/wiki/Literate_programming), and has been adopted by major tech companies, including: [Google](https://cloud.google.com/datalab/) [(also)](https://research.google.com/colaboratory/), Microsoft, Bloomberg, [Netflix](https://medium.com/@NetflixTechBlog/notebook-innovation-591ee3221233), [IBM](https://www.ibm.com/cloud/pixiedust). Storing the source separately allows different aspects of the publications to be independtly version controlled.
+In this repo we use a [Jupyter](http://jupyter.org/) notebook for each publication to run source code contained in separate packages and create the publications's outputs. Jupyter allows for easy visualisation and documentation for [literate programming](https://en.wikipedia.org/wiki/Literate_programming), and has been adopted by major tech companies, including: [Google](https://cloud.google.com/datalab/) [(also)](https://research.google.com/colaboratory/), Microsoft, Bloomberg, [Netflix](https://medium.com/@NetflixTechBlog/notebook-innovation-591ee3221233), [IBM](https://www.ibm.com/cloud/pixiedust). Storing the source separately allows different aspects of the publications to be independtly version controlled, and consistency between each publication.
 
 Each publication will generally follow the following format:
 
@@ -47,7 +47,7 @@ README.md
 requirements.txt
 publications/
     Nov16/
-        run_publication.ipynb
+        publication.ipynb
         reports/
             templates/
                 index.html
@@ -72,15 +72,6 @@ publications/
     Nov14/
       ...
 ```
-
-### Versioning
-each publicatino has a it's own requiments.txt. 
-
-Notice how the publications requirements.txt records the versions of public, and dcms_packages to be used. This way future improvements and breaking changes to
-
-Since reproducibility tests require access to raw data and therefore cannot be run online in a straight forward way using services like TravisCI, we will have two branches. There is the main development branch which is pushed to. Then, periodically, the test suite is run locally for the current state of this branch, and if it passes, then is merged into the master branch. Developers should be testing locally before commiting so this process should be straight forward, and is simply a means of avoiding situations caused by developers forgetting to test locally before pushing. Whilst this system is manual and imperfect, it works for now, and once our systems and data are moved to cloud services, we will have the opportunity to implement automated secure testing on our own cloud servers, with sensitive data.
-
-When developing a publication, we need all packages to be using the same versions of dependencies, so should use the same requirements.txt. However, each publication needs it's own requirements.txt, which will specify the different versions of our dcms packages.
 
 ### Prerequisites and dependencies
 Ensure git and python 3.6 (or Anaconda) or higher are installed.
@@ -184,7 +175,11 @@ Write tests.
 ### Testing
 The test command (pytest) runs the test for all publications where tests have been created. This will typically be published publications, where after publication, tests are written to compare output with the published results. The test scripts download publication outputs directly from distribution channel (and cached to imporve test run times?) e.g. gov.uk and publication code is run and then both copies are compared to check they are identical.
 
+idea: Since reproducibility tests require access to raw data and therefore cannot be run online in a straight forward way using services like TravisCI, we will have two branches. There is the main development branch which is pushed to. Then, periodically, the test suite is run locally for the current state of this branch, and if it passes, then is merged into the master branch. Developers should be testing locally before commiting so this process should be straight forward, and is simply a means of avoiding situations caused by developers forgetting to test locally before pushing. Whilst this system is manual and imperfect, it works for now, and once our systems and data are moved to cloud services, we will have the opportunity to implement automated secure testing on our own cloud servers, with sensitive data.
+
 ### Reproducibility and Consistency
+Note: When developing a publication, we need all packages to be using the same versions of dependencies, so should use the same requirements.txt. However, each publication needs it's own requirements.txt, which will specify the different versions of our dcms packages.
+
 An important motivations for bundling statistical publication production into a Python repo, is that we can ensure reproducibility, and consistency of data processing method between publications. Reproducibility is critical to ensure publications are auditable. Consistency of approach for each publication is also critical to ensure statistics are being produced on the same basis from publciation to publication. This all goes to making publications accurate, transparent, reliable, trustworthy etc.
 
 Problems with traditional approaches:
