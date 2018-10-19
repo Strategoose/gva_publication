@@ -76,13 +76,13 @@ publications/
 ### Prerequisites and dependencies
 Ensure git and python 3.6 (or Anaconda) or higher are installed.
 
-The following guide assumes a basic understand of git, bash, and python. See below for tutorials. If you have never used these tools before, it is strongly recommend that you first gain some experience through completing tutorials, to provide some context, before continuing.
-[Anaconda](https://docs.anaconda.com/anaconda/)
-[Anaconda on Windows](https://www.datacamp.com/community/tutorials/installing-anaconda-windows)
-[Using the command line, git, and github](https://github.com/DCMSstats/gva_publication/blob/master/step_by_step_guides.md)
-pip
-virtual environments
-jupyterlab (recommended) or another IDE that can run notebooks e.g. jupyter, ipython, vscode, spyder, pycharm.
+The following guide assumes a basic understand of git, bash, and python. See below for tutorials. If you have never used these tools before, it is strongly recommend that you first gain some experience through completing tutorials, to provide some context, before continuing.  
+[Anaconda](https://docs.anaconda.com/anaconda/)  
+[Anaconda on Windows](https://www.datacamp.com/community/tutorials/installing-anaconda-windows)  
+[Using the command line, git, and github](https://github.com/DCMSstats/gva_publication/blob/master/step_by_step_guides.md)  
+pip  
+virtual environments  
+jupyterlab (recommended) or another IDE that can run notebooks e.g. jupyter, ipython, vscode, spyder, pycharm.  
 
 ### Installation
 In most cases, users will want to clone the package so that they add updates to the package and save the changes to github. 
