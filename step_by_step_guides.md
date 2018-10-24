@@ -1,5 +1,9 @@
 # RAP tool guides
 
+## Respository structure and files
+### README.md
+It is convention to include this markdown document in repositories to provide an explanation of the repo. Also, for repos hosted on Github, the README is rendered and displayed on the repo's page. For the most part, markdown syntax is universal, however there are different implementations with slight difference. Github uses [Github Flavored Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). Rather than editing markdown locally in your text editor of choice, it is usually more convenient to edit and commit change to .md files directly in Github, since the editor provides an option to preview the rendered markdown.
+
 ## Git
 
 Git is simply version control software installed on your laptop that allows you to take snapshots of the files in your projects folder, rather than saving different versions of files as say myfile_v1.py, myfile_v2.py, etc etc.
