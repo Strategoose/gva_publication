@@ -10,7 +10,7 @@ import markdown
 from flask import Markup
 from lxml import etree
 
-if os.getcwd() == '/Users/max.unsted/projects/gva_publication/publications/nov_2016' or os.getcwd() == 'C:\\Users\\davita.patel\\Documents\\projects\\gva_publication\\publications\\nov_2016':
+if os.getcwd() == '/Users/max.unsted/projects/gva_publication/publications/nov_2016' or os.getcwd() == 'C:\\Users\\davita.patel\\Documents\\projects\\gva_publication\\publications\\nov_2016' or '/Users/max.unsted/projects/gva_publication/publications/nov_2017' or os.getcwd() == 'C:\\Users\\davita.patel\\Documents\\projects\\gva_publication\\publications\\nov_2017':
     template_dir = 'reports/'
 else:
     template_dir = 'publications/nov_2016/reports/'
