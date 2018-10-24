@@ -10,11 +10,13 @@ import markdown
 from flask import Markup
 from lxml import etree
 
-if os.getcwd() == '/Users/max.unsted/projects/gva_publication/publications/nov_2016':
+if os.getcwd() == '/Users/max.unsted/projects/gva_publication/publications/nov_2016' or os.getcwd() == 'C:\\Users\\davita.patel\\Documents\\projects\\gva_publication\\publications\\nov_2016':
     template_dir = 'reports/'
 else:
     template_dir = 'publications/nov_2016/reports/'
 
+print(template_dir)
+print('hi')
 # how we dilineate between a {{value}} in markdown or svg and a {{markdown}} or {{svg}} to embed into index.html
 
 # reasoning: the markdown will be written by the user, so it can be peppered with stats like uk_total etc. However, for the SVGs we don't want to have to edit the code, so any parameters we want to be adjusted, e.g. color, text etc should be specified in a dict and the key is the name of the SVG file.
@@ -68,7 +70,7 @@ def build(context):
     md_html = {}
     for md in os.listdir(template_dir + 'templates/markdown'):
         if os.path.splitext(md)[1] == ".md":
-            with open(template_dir + 'templates/markdown/' + md, 'r') as myfile:
+            with open(template_dir + 'templates/markdown/' + md, 'r', encoding='utf8', errors='ignore') as myfile:
               data = myfile.read()
               md_html[os.path.splitext(md)[0]] = Markup(markdown.markdown(data))
 
@@ -115,21 +117,21 @@ def build(context):
     # populates index with markdown (not populated) and svg (populated)
     def index_with_markdown():
         # save to temporay file so we can see what it looks like
-        with open(template_dir + 'temp/temp_index.html', 'w') as f:
+        with open(template_dir + 'temp/temp_index.html', 'w', encoding='utf8', errors='ignore') as f:
             html = my_render_template('index.html', md_html)
             f.write(html)    
         return my_render_template('index.html', md_html)
     
     # populates temp_index with remaining (non SVG) stuff in context (jinja vars in markdown)
     fname = template_dir + "output/index.html"
-    with open(fname, 'w') as f:
+    with open(fname, 'w', encoding='utf8', errors='ignore') as f:
         html = Template(index_with_markdown()).render(context)
         f.write(html)
 
         
     # replace static links with url_for links
 
-    with open(template_dir + 'output/index.html', 'r') as myfile:
+    with open(template_dir + 'output/index.html', 'r', encoding='utf8', errors='ignore') as myfile:
         data = myfile.read()
 
     # replace css link with url_for
@@ -151,7 +153,7 @@ def build(context):
     #     if img['id'] == 'money-bag':
     #         img['src'] = img['src'].replace("static/svg/money_bag.svg", "{{ url_for('static',filename='svg/money_bag.svg') }}")
 
-    with open(template_dir + "temp/flask/index.html", "w") as file:
+    with open(template_dir + "temp/flask/index.html", "w", encoding='utf8', errors='ignore') as file:
         file.write(str(soup))
 
  
