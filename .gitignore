@@ -1,3 +1,9 @@
+# Ignore certain project folders
+temp/
+
+
+
+
 # Ignore all files that might contain sensitive data
 # Incorporates some of https://gist.github.com/octocat/9257657 #
 

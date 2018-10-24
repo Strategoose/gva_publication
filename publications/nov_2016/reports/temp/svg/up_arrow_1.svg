@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" baseProfile="full" width="300" height="300" viewBox="0 0 200 200" id="dcms-change">
-
-    <polygon points="100 0 150 50 125 50 125 200 75 200 75 50 50 50" stroke="green" fill="#ce4b99" stroke-width="0" transform="translate(-20, 20) scale(1.2, 0.8)"/>
-    <text x="100" y="125" font-family="arial" font-size="48px" text-anchor="middle" fill="black">20.6%</text>
-
-</svg>
