@@ -22,7 +22,7 @@ print('hi')
 # reasoning: the markdown will be written by the user, so it can be peppered with stats like uk_total etc. However, for the SVGs we don't want to have to edit the code, so any parameters we want to be adjusted, e.g. color, text etc should be specified in a dict and the key is the name of the SVG file.
 
 
-# in order to make it sensible to store outputs in git, need to delete contents of output and static/js prior to running this.
+# in order to make it sensible to store outputs in git, need to delete contents of output and static/js (which have been made from templates - maybe have a folder called generated js) prior to running this.
 
 def build(context):
     
