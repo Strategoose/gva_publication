@@ -13,13 +13,41 @@ var chart = c3.generate({
       }
   },
   axis: {
-      x: {
-          // type: 'timeseries',
-          // tick: {
-          //     format: function (x) {
-          //         return x.getFullYear();
-          //     }
-          // }
-      }
-  }
+    y: {
+        tick: {
+            // values: [50, 100, 150, 200, 250],
+            outer: false
+        },
+        // max: 100,
+        padding: {
+            top: 0,
+            bottom: 0
+        },
+        min: -10
+    },
+    x: {
+        tick: {
+            culling: false,
+            outer: false
+        }
+        // height: 80
+    }
+},
+  size: {
+    width: 640,
+    height: 500
+  },
+  padding: {
+    top: 10,
+    right: 50,
+    bottom: 20,
+    left: 50,
+  },
+  grid: {
+    x: {
+    },
+    y: {
+        show: true
+    }
+}
 });
