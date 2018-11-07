@@ -18,7 +18,17 @@
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="static/js/gumshoe.js"></script>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+    <!-- datatables files -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
   
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+  
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
 </head>
 <body>
     <div id="wrapper">
@@ -107,8 +117,30 @@
         gumshoe.init();
         window.mdc.autoInit();
         const button = document.querySelector('.button3');
-        mdc.ripple.MDCRipple.attachTo(button);
-
+        // mdc.ripple.MDCRipple.attachTo(button);
+        
+        $(document).ready(function () {
+            $('#table_2_1').DataTable({
+                paging: false,
+                searching: false,
+                bInfo: false,
+                aaSorting: [],
+                columnDefs: [{ "width": "8%", "targets": [1, 2, 3, 4, 5, 6, 7] },
+                             { "width": "13%", "targets": [8, 9, 10] },
+                             { "width": "17%", "targets": [0] },
+                             { className: "dt-head-center", targets: [ 0 ] },]
+                // hover: true
+                // columns: [
+                //     null,
+                //     { "width": "5%" },
+                //     null,
+                //     null,
+                //     null,
+                //     null
+                // ]
+                // columnDefs: [{"className": "dt-center", "targets": "_all"}]
+            });
+        });
     </script>
 </body>
 </html>

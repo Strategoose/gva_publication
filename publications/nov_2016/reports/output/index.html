@@ -18,7 +18,17 @@
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="static/js/gumshoe.js"></script>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+    <!-- datatables files -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
   
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+  
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
 </head>
 <body>
     <div id="wrapper">
@@ -218,25 +228,14 @@ DCMS aims to continuously improve the quality of estimates and better meet user 
 It is estimated that in 2016 the contribution of DCMS sectors to the UK economy (GVA) was </p>
 <p>(hover over here to show: All estimates of GVA in this chapter are shown in current prices (i.e. not adjusted for inflation). </p>
 <p>For the UK, GVA in current prices (ABML, nominal GVA, not adjusted for inflation) increased by 22.7 per cent between 2010 and 2016 and 3.5 per cent between 2015 and 2016, compared with an increase of NOT AVAILABLE per cent for GVA in constant prices (ABMM, real GVA, adjusted for inflation) between 2010 and 2016 and NOT AVAILABLE per cent between 2015 and 2016.), or 14.2 per cent of UK GVA. The GVA of DCMS sectors has grown at a faster rate than the economy as a whole, increasing by 3.6 per cent since 2015 (£240bn in 2015), and 29.0 per cent since 2010 (£193bn in 2010). This compares to increases of 3.5 per cent and 22.7 per cent respectively for the UK economy as a whole. Figure 2.1 shows the growth rate for DCMS sectors as a whole, whilst Table 2.1 outlines the GVA contribution in £billions for each of DCMS sectors.</p>
-<div class="chart">
+<div class="chart mdc-elevation--z3">
     <p class="chart-title">Figure 2.1: Indexed growth in GVA (expressed in current prices, 2010 =100) in DCMS sectors and UK: 2010-2016</p>
     <div id="figure_2_1"></div>
 </div>
 
-<div class="chart">
+<div class="mytable mdc-elevation--z3">
     <p class="chart-title">Table 2.1: GVA contribution (£bn, expressed in current prices) by DCMS sectors: 2010 - 2016</p>
-    <table id="table_2_1">
-          <col width="300">
-          <col width="80">
-          <col width="80">
-          <col width="80">
-          <col width="80">
-          <col width="80">
-          <col width="80">
-          <col width="80">
-          <col width="120">
-          <col width="120">
-          <col width="120">
+    <table id="table_2_1" class="hover">
     </table>
 </div>
 
@@ -360,8 +359,30 @@ SW1A 2BQ
         gumshoe.init();
         window.mdc.autoInit();
         const button = document.querySelector('.button3');
-        mdc.ripple.MDCRipple.attachTo(button);
-
+        // mdc.ripple.MDCRipple.attachTo(button);
+        
+        $(document).ready(function () {
+            $('#table_2_1').DataTable({
+                paging: false,
+                searching: false,
+                bInfo: false,
+                aaSorting: [],
+                columnDefs: [{ "width": "8%", "targets": [1, 2, 3, 4, 5, 6, 7] },
+                             { "width": "13%", "targets": [8, 9, 10] },
+                             { "width": "17%", "targets": [0] },
+                             { className: "dt-head-center", targets: [ 0 ] },]
+                // hover: true
+                // columns: [
+                //     null,
+                //     { "width": "5%" },
+                //     null,
+                //     null,
+                //     null,
+                //     null
+                // ]
+                // columnDefs: [{"className": "dt-center", "targets": "_all"}]
+            });
+        });
     </script>
 </body>
 </html>

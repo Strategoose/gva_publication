@@ -33,6 +33,17 @@ var chart = c3.generate({
         // height: 80
     }
 },
+legend: {
+    // amount of padding to put between each legend element
+    padding: 5,
+    // define custom height and width for the legend item tile
+    item: {
+        tile: {
+            width: 15,
+            height: 2
+        }
+    }
+},
   size: {
     width: 640,
     height: 500

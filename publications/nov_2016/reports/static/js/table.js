@@ -5,7 +5,9 @@ df = {"columns":["sector",2010,2011,2012,2013,2014,2015,2016,"% change 2015-2016
 
 // creates a <table> element and a <tbody> element
 var tbl = document.getElementById("table_2_1");
+var tblHead = document.createElement("thead");
 var tblBody = document.createElement("tbody");
+var tblFoot = document.createElement("tfoot")
 
 // creating all cells
 for (var i = 0; i < df['data'].length + 1; i++) {
@@ -17,22 +19,32 @@ for (var i = 0; i < df['data'].length + 1; i++) {
         // Create a <td> element and a text node, make the text
         // node the contents of the <td>, and put the <td> at
         // the end of the table row
-        var cell = document.createElement("td");
         if (i < 1) {
+                var cell = document.createElement("th");
                 var cellText = document.createTextNode(colnames[j]);
         } else {
+                var cell = document.createElement("td");
                 var cellText = document.createTextNode(df['data'][i - 1][j]);
         }
         cell.appendChild(cellText);
+        cell.classList.add("dt-center");
         row.appendChild(cell);
     }
 
     // add the row to the end of the table body
-    tblBody.appendChild(row);
+    if (i < 1) {
+        tblHead.appendChild(row);
+    } else if (i < 9) {
+        tblBody.appendChild(row);
+    } else {
+        tblFoot.appendChild(row)
+    }
 }
 
-// put the <tbody> in the <table>
+// put the <thead> and <tbody> in the <table>
+tbl.appendChild(tblHead);
 tbl.appendChild(tblBody);
+tbl.appendChild(tblFoot);
 
 // sets the border attribute of tbl to 2;
-tbl.setAttribute("border", "2");
+// tbl.setAttribute("border", "2");
