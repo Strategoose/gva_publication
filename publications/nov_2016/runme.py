@@ -15,11 +15,11 @@ from report_maker.app import create_app
 app = create_app()
 #print(os.listdir(app.static_folder + '/js'))
 print('static folder is: ' + app.static_folder)
+print('root path is: ' + app.root_path)
 app.run(debug=True)
 
 
 print(app.instance_path)
-print(app.root_path)
 print(app.has_static_folder)
 print(app.static_url_path)
 print(app.template_folder)
