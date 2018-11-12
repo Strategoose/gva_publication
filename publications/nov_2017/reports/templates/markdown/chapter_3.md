@@ -1,67 +1,132 @@
-##Chapter 3: GVA – chained volume measures
+##Chapter 2: GVA – current prices
 ***
 
 &nbsp;
 
+This chapter builds on the analysis in chapter 2, providing more context and looking at the estimates for each individual sector. There is significant overlap between DCMS sectors so users should be aware that the estimate for “DCMS Sectors Total” is lower than the sum of the individual sectors. It is also worth noting that those larger SIC codes, which are found within multiple sectors, for example in Creative Industries and Cultural Sector, are likely to drive the trends in the same way for both sectors. Data tables accompanying this chapter (for sector and sub-sector) are available at **xxxxx**
 
-This chapter presents UK GVA estimates for each DCMS sector at a headline level. All estimates of GVA are shown in chained volume measures (i.e. adjusted for inflation) . These experimental estimates meet user demand and enable DCMS to produce productivity estimates (to be published in February). These estimates of GVA are based on a similar methodology as used in the UK National Accounts, which describe volume measures derived by linking to the current monetary value in 2015. Further information on the methodology is available in the associated methodology note. These estimates are experimental, building on a methodology derived by the Office for National Statistics producing deflators for DCMS sectors. Feedback to evidence@culture.gov.uk is therefore welcome on the methodology.
+&nbsp;
 
-Summary
-It is estimated that in 2016 the contribution of DCMS sectors to the UK economy (GVA) was £223bn , or 12.9   per cent of UK GVA, expressed in chained volume measures (CVM). The GVA of DCMS sectors  has grown at a faster rate than the economy as a whole, increasing by 2.4 per cent since 2015 (£217bn), and 17.2 per cent since 2010 (£190bn). This compares to increases of 2.3 per cent and 13.1 per cent respectively for the UK economy as a whole. Figure 3.1 shows the growth rate for DCMS sectors as a whole, whilst Table 3.1 outlines the GVA contribution in £billions for each of DCMS sectors.
+**Civil Society**
 
+* Key Findings 
 
-
-
-
-
+Civil Society **contributed {{ ci_2017 }}** to the UK economy in 2017, accounting for **{{1.3%}} of UK GVA**. This sector saw an increase of {{24.1%}} since 2010 (at {{£19.0bn}}) although declined by {{3.7%}} since 2016 ({{£24.4bn}} in 2016). 
 
 
+**Figure 3.1: Index of GVA growth for the Civil Society Sector and for total UK: 2010 to 2017 (2010=100) **
 
 
+**Volunteering** is a key element of the Civil Society sector. However it has not been included in the above figures due to volunteering being part of the informal economy, and therefore not captured in the ONS's methodology for calculating GVA. Any overlaps between other DCMS sectors and volunteering cannot be calculated. If we were to include volunteering in the GVA figure, then you would also need to include other unpaid home production such as child and adult care in the UK GVA total. It is estimated that in 2017, volunteering contributed £31.5bn, 1.7% to the UK economy1. This includes both formal and informal volunteering activities. 
+
+&nbsp;
+
+&ast; To calculate the volunteering estimates - The total number of hours are taken from the Community Life Survey (2017/18) and multiplied by an appropriate wage rate from the ASHE survey to estimate output of frequent volunteering. Currently, we are unable to identify intermediate consumption of the voluntary activity, and have therefore assumed, the gross value added (GVA) is equal to output.
+
+&nbsp;
+
+**Creative Industries**
+
+* Key Findings 
+
+The Creative Industries **contributed £101.5bn** to the UK economy in 2017, accounting for **5.5% of GVA in the UK**.
+
+&nbsp;
+
+Between 2010 and 2017, the Creative Industries GVA increased by 53.1% (£66.3bn in 2010) – **increasing nearly twice as fast as the UK economy** (28.7% increase in the UK between 2010 and 2017). 
+
+&nbsp;
+
+The Creative Industries had the greatest percentage increase compared to other DCMS sectors since 2010, increasing by 53.1% from £66.3bn in 2010 to £101.5bn in 2017. 
+
+&nbsp;
+
+The IT, software and computer services sub-sector drove this growth in the Creative Industries (accounting for £40.6bn in 2017), a 9.1% increase from 2016 and 2017, and a 59.9% increase since 2010. This sub-sector contributed over a third (40.0%) of the Creative Industries GVA in 2017. 
+
+The Film, TV, video, radio and photography sub-sector accounted for 16.5% of Creative Industries GVA at £16.6bn and the Advertising and Marketing sub-sector accounted for 14.1% of Creative Industries GVA. Both these sub-sectors have increased from 8.9% and 5.8% respectively since 2016. 
 
 
+**Figure 3.2: Index of GVA growth for Creative Industries and for total UK: 2010 to 2017 (2010=100) **
+
+&nbsp;
+
+**Cultural Sector**
+
+* Key Findings
+
+The Cultural Sector **contributed £29.5bn** to the UK economy in 2017 and accounted for **1.6% of UK GVA**. The Cultural Sector increased by 7.2% between 2016 and 2017, and by 38.5% since 2010. 
 
 
+&nbsp;
+
+Over three fifths (60.2%) of the Cultural Sector GVA was in the Film, TV and music sub-sector (contributing £17.8bn in 2017), where GVA increased by 9.4% between 2016 and 2017, and 39.0% since 2010.
+
+Nearly a quarter (24.8%) of Cultural Sector GVA was accounted for by the Arts sub-sector. This sub-sector increased by 62.6% since 2010, from £4.5bn in 2010 to £7.3bn in 2017. 
 
 
+**Figure 3.3: Index of GVA growth for the Cultural Sector and for total UK: 2010 to 2017 (2010=100)**
 
-Figure 3.1: Indexed growth in GVA (expressed in chained volume measures, 2010 =100) in DCMS sectors (excl. Civil Society) and UK: 2010-2016
- 
+&nbsp;
 
+**Digital Sector**
 
-Table 3.1: GVA contribution (£bn, expressed in chained volume measures) by DCMS sectors (excl. Civil Society): 2010 - 2016 
-Sector	2010	2011	2012	2013	2014	2015	2016 (p)1	% change 
-2015 - 2016	% change 2010-2016	% of UK
-GVA 2016
-Creative Industries	           69.2 	         71.5 	         74.2 	         76.9 	         80.3 	         82.6 	         88.2 	6.7	27.4	5.1
-Cultural Sector	           23.1 	         23.2 	         23.8 	         23.9 	         24.8 	         25.2 	         25.8 	2.5	12.0	1.5
-Digital Sector	         100.3 	       103.5 	       104.9 	       108.2 	       108.3 	       110.2 	       115.0 	4.4	14.6	6.7
-Gambling	             9.8 	         10.4 	         10.7 	         10.5 	         10.7 	         11.1 	         10.3 	-6.4	5.7	0.6
-Sport	             7.8 	           8.0 	           8.4 	           7.7 	           7.8 	           8.3 	           8.5 	3.4	9.5	0.5
-Telecoms	           24.6 	         25.3 	         25.9 	         27.7 	         29.7 	         30.4 	         29.1 	-4.3	18.0	1.7
-Tourism	           51.9 	         55.0 	         57.3 	         58.0 	         57.5 	         60.3 	         60.2 	-0.1	16.1	3.5
-All DCMS sectors2	         189.9 	       198.1 	       203.8 	       208.3 	       210.1 	       217.4 	          223 	2.4	17.2	12.9
-UK	         1,525 	       1,546 	       1,565 	       1,588 	       1,644 	       1,685 	       1,724 	2.3	13.1	100.0
-Notes 
-1. 2016 GVA is based on the output measure of GVA to allow consistency with the sector measures for 2016. This is aligned to average GVA up to and including 2015 (last Supply Use balanced year) but then uses growth in the output measure as a proxy for GVA beyond that. The 2016 figure therefore differs from ABMM. 2010 – 2015 GVA estimates use balanced GVA in chained volume measures (ABMM).
-2. DCMS sector total is lower than the sum of individual DCMS sectors because of overlaps between sectors.
-3. Data are in chained volume measures (i.e. have been adjusted for inflation).
-4. (p) = provisional.
-5. Data are not available for Civil Society at present.
-The Creative Industries had the greatest percentage increase between 2015 and 2016 (6.7%), and since 2010 (27.4%). Gambling, Telecoms and Tourism all saw decreases between 2015 and 2016 (-6.4%, -4.3% and -0.1% respectively). However all DCMS sectors showed an increase since 2010. Figure 3.2 shows the growth rate for each DCMS sector from 2010 to 2016. 
+* Key Findings
 
-Figure 3.2: Indexed growth in GVA (expressed in chained volume measures, 2010 = 100) in each DCMS sector: 2010-2016
-       
-The Digital Sector made up half of the DCMS sectors’ GVA in 2016 (6.7% of UK GVA), whilst Creative Industries represented nearly two fifths (5.1% of UK GVA). There is considerable overlap between the DCMS sectors for example 3.5 per cent of UK GVA is in both Creative Industries and the Digital Sector. The overlap between sectors is represented in Figure 3.3 below, and means that the individual sectors cannot be summed to get an estimate of the GVA for all DCMS sectors combined. 
+The Digital Sector **contributed £130.5bn** to the UK economy in 2017, accounting for **7.1% of UK GVA**. This sector had the greatest percentage increase in the DCMS sectors between 2016 and 2017 (7.3%). This is faster than the total UK GVA, which increased by 4.8%. This Sector has also increased by 32.9% since 2010.
 
-Figure 3.3: GVA (expressed in chained volume measures) overlaps in DCMS sectors: 2016
- 
+&nbsp;
+There has been a steady growth in the Computer programming, consultancy and related activities sub-sector in 2017. This sub-sector contributed over a third (37.1%) of the Digital Sector GVA in 2017, an increase of 9.4% since 2016, and 44.2% since 2010.
 
- 
+The Telecommunications sub-sector accounted for a quarter (25.0%) of Digital Sector GVA in 2017, contributing £32.6bn in 2017, an increase of 3.6% since 2016 and 63.1% since 2010. 
 
- 
+&nbsp;
+
+**Figure 3.4: Index of GVA growth for the Digital Sector and for total UK: 2010 to 2017 (2010=100)**
 
 
+&nbsp;
+
+**Gambling**
+
+* Key Findings
+
+The Gambling Sector **contributed £9.3bn** to the UK economy in 2017. This is a decrease of £10.1bn since 2016 and accounted for **0.5% of UK GVA** in 2017. Since 2010, the Gambling Sector has increased by 10.3% (£8.4bn in 2010).
+
+&nbsp;
+
+The Gambling Sector is a small industry and therefore can lead to some data volatility each year due to the sample size of businesses. The decline in GVA since 2015 is partly due to the restructure of businesses in this sector.  
+
+**Figure 3.5: Index of GVA growth for the Gambling Sector and for total UK: 2010 to 2017 (2010=100)**
+
+&nbsp;
+
+**Sport**
+
+* Key Findings
+
+The Sports Sector **contributed £9.8bn** to the UK economy in 2017, accounting for **0.5% of UK GVA**. This is an increase of 5.3% since 2016 (£9.3bn in 2016) and a 40.0% increase since 2010 (£7.0bn in 2010) 
+
+**Figure 3.6: Index of GVA growth for the Sports Sector and for total UK: 2010 to 2017 (2010=100)**
 
 
- 
+&nbsp;
+
+**Telecoms**
+
+* Key Findings
+
+The Telecoms Sector **contributed £32.6bn** to the UK economy in 2017, accounting for **1.8% of UK GVA**. This is an increase of 3.6% since 2016 (31.4bn in 2016) and a 31.6% increase since 2010 (£24.8bn in 2010). 
+
+&nbsp;
+
+**Figure 3.7: Index of GVA growth for the Telecoms Sector and for total UK: 2010 to 2017 (2010=100)**
+
+&nbsp;
+
+**Tourism**
+
+* Key Findings
+
+The Tourism Sector **contributed £67.7bn** to the UK economy in 2017, accounting for **3.7% of UK GVA**. This is a slight decline of 0.9% since 2016 (68.3bn in 2016) and a 37.7% increase since 2010 (£49.2bn in 2010). 
+
+**Figure 3.8: Index of GVA growth for the Tourism Sector and for total UK: 2010 to 2017 (2010=100)**
