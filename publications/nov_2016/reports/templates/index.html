@@ -5,47 +5,142 @@
     <title>DCMS GVA</title>
     <link rel= "stylesheet" type= "text/css" href= "static/css/style.css">
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="static/css/c3.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" />
 
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="static/js/c3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega@4.2.0/build/vega.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc6/build/vega-lite.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.19.2/build/vega-embed.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="static/js/gumshoe.js"></script>
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+    <!-- datatables files -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
   
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+  
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
 </head>
 <body>
-    <div id="header">
-        <a href="https://www.gov.uk/government/organisations/department-for-digital-culture-media-sport"><img id="dcms-logo" src="https://raw.githubusercontent.com/DCMSstats/images/master/DCMS18_D-266x183.png"></a>
-        <div id="header-text">DCMS Sectors Economic Estimates 2016:<br>
-Gross Value Added</div>
-    </div>
-    <div id="cover-sheet">
-        <div id="summary">
-            <div id="infographics">
-                <div id="money-bag-title" class="ig-title">GVA 2016<br>current prices</div>
-                <div id="donut-title" class="ig-title">% of UK Economy</div>
-                <div id="dcms-change-title" class="ig-title">DCMS Sectors</div>
-                <div id="uk-change-title" class="ig-title">UK</div>
-                <div id="money-bag">{{money_bag}}</div>
-                <div id="donut">{{donut}}</div>
-                {{up_arrow_1}}
-                {{up_arrow_2}}
+    <div id="wrapper">
+        <div id="navbar" class="mdc-elevation--z6">
+            <a href="https://www.gov.uk/government/organisations/department-for-digital-culture-media-sport"><img id="dcms-logo" src="https://github.com/DCMSstats/images/raw/master/DCMSWHITELOGO-1.png"></a>
+            <div id="header-text">DCMS Sector Economic Estimates: GVA</div>
+        </div>
+        
+        <div>
+            <div id="sidenav" class="mdc-elevation--z3" data-gumshoe-header>
+                <!-- <p><strong>Contents</strong></p> -->
+                <ul data-gumshoe>
+                    <li><a href="#summary">Summary</a></li>
+                    <li><a href="#chapter-1">Chapter 1. Introduction</a></li>
+                    <li><a href="#chapter-2">Chapter 2. GVA – current prices</a></li>
+                    <li><a href="#chapter-3">Chapter 3. GVA – chained volume measures</a></li>
+                    <li><a href="#chapter-4">Chapter 4. Next Steps</a></li>
+                    <li><a href="#annex-a">Annex A: Further information</a></li>
+                </ul>
+                <!-- <button class="button3 mdc-button mdc-button--raised">
+                    <i class="material-icons mdc-button__icon" aria-hidden="true">sync</i>
+                    Raised
+                </button>
+
+                <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                    <input class="mdc-text-field__input" type="text" id="input">
+                    <label for="input" class="mdc-floating-label">Input Label</label>
+                    <div class="mdc-line-ripple"></div>
+                </div>
+
+                <div class="mdc-elevation--z3">hi</div> -->
             </div>
-            <div id="summary-text">{{summary}}</div>
-            <div id="summary-overlap-chart"></div>
         </div>
-        <div id="side_text">
-            {{side_text}}<br>
-            <p><strong>Contents</strong></p>
-            <a href="#chapter-1">1. Introduction</a><br>
-            <a href="#chapter-2">2. GVA – current prices</a>
+
+        <div id="main">
+                <div id="cover-sheet">
+                    <div id="summary">
+                        <div id="infographics">
+                            <div id="money-bag-title" class="ig-title">GVA 2016<br>current prices</div>
+                            <div id="donut-title" class="ig-title">% of UK Economy</div>
+                            <div id="dcms-change-title" class="ig-title">DCMS Sectors</div>
+                            <div id="uk-change-title" class="ig-title">UK</div>
+                            <div id="money-bag">{{money_bag}}</div>
+                            <div id="donut">{{donut}}</div>
+                            {{up_arrow_1}}
+                            {{up_arrow_2}}
+                        </div>
+                        <div id="summary-text">{{summary}}</div>
+                        <div id="summary-overlap-chart"></div>
+                    </div>
+                    <div id="side_text" class="mdc-elevation--z3">
+                        {{side_text}}
+                        <a href="https://twitter.com/dcmsinsight"><img width="32" height="32" src="https://github.com/DCMSstats/images/raw/master/Twitter_Social_Icon_Circle_Color.png"></a>
+                        <a href="https://github.com/DCMSstats"><img width="32" height="32" src="https://github.com/DCMSstats/images/raw/master/GitHub-Mark-64px.png"></a>
+                    </div>
+                </div>
+                <div id="chapter-1">{{chapter_1}}</div>
+                <div id="chapter-2">{{chapter_2}}</div>
+                <div id="chapter-3">{{chapter_3}}</div>
+                <div id="chapter-4">{{chapter_4}}</div>
+                <div id="annex-a">{{annex_a}}</div>
+            </div>
         </div>
-    </div>
-    <div id="chapter-1">{{chapter_1}}</div>
-    <div id="chapter-2">{{chapter_2}}</div>
-    <div id="chapter-3">{{chapter_3}}</div>
-    <div id="chapter-4">{{chapter_4}}</div>
-    <div id="annex-a">{{annex_a}}</div>
+
+        <footer>comments</footer>
 
     <script src="static/js/table.js"></script>
     <script src="static/js/chart1.js"></script>
+    <!-- <script>
+        /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+        } else {
+            document.getElementById("navbar").style.top = "-120px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+    </script> -->
+    <script>
+        var scroll = new SmoothScroll('a[href*="#"]');
+    </script>
+    <script>
+        gumshoe.init();
+        window.mdc.autoInit();
+        const button = document.querySelector('.button3');
+        // mdc.ripple.MDCRipple.attachTo(button);
+        
+        $(document).ready(function () {
+            $('#table_2_1').DataTable({
+                paging: false,
+                searching: false,
+                bInfo: false,
+                aaSorting: [],
+                columnDefs: [{ "width": "8%", "targets": [1, 2, 3, 4, 5, 6, 7] },
+                             { "width": "13%", "targets": [8, 9, 10] },
+                             { "width": "17%", "targets": [0] },
+                             { className: "dt-head-center", targets: [ 0 ] },]
+                // hover: true
+                // columns: [
+                //     null,
+                //     { "width": "5%" },
+                //     null,
+                //     null,
+                //     null,
+                //     null
+                // ]
+                // columnDefs: [{"className": "dt-center", "targets": "_all"}]
+            });
+        });
+    </script>
 </body>
 </html>

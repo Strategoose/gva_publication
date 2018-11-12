@@ -5,26 +5,73 @@
     <title>DCMS GVA</title>
     <link rel= "stylesheet" type= "text/css" href= "static/css/style.css">
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="static/css/c3.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" />
 
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="static/js/c3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega@4.2.0/build/vega.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@3.0.0-rc6/build/vega-lite.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.19.2/build/vega-embed.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="static/js/gumshoe.js"></script>
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+    <!-- datatables files -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
   
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+  
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
 </head>
 <body>
-    <div id="header">
-        <a href="https://www.gov.uk/government/organisations/department-for-digital-culture-media-sport"><img id="dcms-logo" src="https://raw.githubusercontent.com/DCMSstats/images/master/DCMS18_D-266x183.png"></a>
-        <div id="header-text">DCMS Sectors Economic Estimates 2016:<br>
-Gross Value Added</div>
-    </div>
-    <div id="cover-sheet">
-        <div id="summary">
-            <div id="infographics">
-                <div id="money-bag-title" class="ig-title">GVA 2016<br>current prices</div>
-                <div id="donut-title" class="ig-title">% of UK Economy</div>
-                <div id="dcms-change-title" class="ig-title">DCMS Sectors</div>
-                <div id="uk-change-title" class="ig-title">UK</div>
-                <div id="money-bag"><svg xmlns="http://www.w3.org/2000/svg" id="money_bag" version="1.1" baseProfile="full" width="400" height="400" viewBox="0 0 200 200">
+    <div id="wrapper">
+        <div id="navbar" class="mdc-elevation--z6">
+            <a href="https://www.gov.uk/government/organisations/department-for-digital-culture-media-sport"><img id="dcms-logo" src="https://github.com/DCMSstats/images/raw/master/DCMSWHITELOGO-1.png"></a>
+            <div id="header-text">DCMS Sector Economic Estimates: GVA</div>
+        </div>
+        
+        <div>
+            <div id="sidenav" class="mdc-elevation--z3" data-gumshoe-header>
+                <!-- <p><strong>Contents</strong></p> -->
+                <ul data-gumshoe>
+                    <li><a href="#summary">Summary</a></li>
+                    <li><a href="#chapter-1">Chapter 1. Introduction</a></li>
+                    <li><a href="#chapter-2">Chapter 2. GVA – current prices</a></li>
+                    <li><a href="#chapter-3">Chapter 3. GVA – chained volume measures</a></li>
+                    <li><a href="#chapter-4">Chapter 4. Next Steps</a></li>
+                    <li><a href="#annex-a">Annex A: Further information</a></li>
+                </ul>
+                <!-- <button class="button3 mdc-button mdc-button--raised">
+                    <i class="material-icons mdc-button__icon" aria-hidden="true">sync</i>
+                    Raised
+                </button>
+
+                <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                    <input class="mdc-text-field__input" type="text" id="input">
+                    <label for="input" class="mdc-floating-label">Input Label</label>
+                    <div class="mdc-line-ripple"></div>
+                </div>
+
+                <div class="mdc-elevation--z3">hi</div> -->
+            </div>
+        </div>
+
+        <div id="main">
+                <div id="cover-sheet">
+                    <div id="summary">
+                        <div id="infographics">
+                            <div id="money-bag-title" class="ig-title">GVA 2016<br>current prices</div>
+                            <div id="donut-title" class="ig-title">% of UK Economy</div>
+                            <div id="dcms-change-title" class="ig-title">DCMS Sectors</div>
+                            <div id="uk-change-title" class="ig-title">UK</div>
+                            <div id="money-bag"><svg xmlns="http://www.w3.org/2000/svg" id="money_bag" version="1.1" baseProfile="full" width="400" height="400" viewBox="0 0 200 200">
   <g id="layer1">
     <g id="paths" transform="scale(1,0.7) translate(-9,-7)">
     <path style="fill:#ce4b99;fill-opacity:1;stroke:#ce4b99;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 75.780785,111.20661 c -2.313405,1.64919 -12.350758,13.86177 -13.650903,16.28243 -16.37854,30.49419 -26.851433,51.64852 -29.376505,86.81367 -0.753144,18.93232 7.377791,40.3357 25.290811,48.13083 32.512023,11.74487 67.154302,9.23505 101.262472,5.2841 13.30932,-3.16613 19.49293,-23.23829 20.31121,-36.72774 0.40693,-3.44065 0.61666,-6.8012 0.64076,-10.09164 0.0944,-12.88365 -2.65702,-24.69255 -7.55882,-36.02668 -7.54191,-19.32872 -12.82328,-22.90809 -22.63282,-40.07225 -5.86717,-8.5898 -18.20339,-33.9828 -18.20339,-33.9828 -4.88898,1.26989 -11.59645,2.28825 -16.94246,3.02726 -0.73974,0.10225 11.29973,29.29959 10.55009,29.40388 -1.13393,0.15777 -14.7716,-29.00575 -14.7716,-29.00575 -1.30419,-0.47317 1.4009,0.0295 0,0 -1.12947,-0.0238 -16.287549,-0.32098 -25.247775,-1.18563 -0.725835,-0.07 -16.819328,17.71899 -17.408249,17.66115 -1.55328,-0.15256 13.729455,-18.25863 13.485654,-18.29272" id="path3717"/>
@@ -36,7 +83,7 @@ Gross Value Added</div>
      </text>
   </g>
 </svg></div>
-                <div id="donut"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 42 42" class="donut">
+                            <div id="donut"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 42 42" class="donut">
   <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#fff"/>
   <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" stroke-width="6"/>
 
@@ -46,20 +93,20 @@ Gross Value Added</div>
     <text x="50%" y="50%" class="chart-number" font-size="11px" text-anchor="middle" alignment-baseline="middle">19.2</text>
   </g>
 </svg></div>
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" baseProfile="full" width="300" height="300" viewBox="0 0 200 200" id="dcms-change">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" baseProfile="full" width="300" height="300" viewBox="0 0 200 200" id="dcms-change">
 
     <polygon points="100 0 150 50 125 50 125 200 75 200 75 50 50 50" stroke="green" fill="#ce4b99" stroke-width="0" transform="translate(-20, 20) scale(1.2, 0.8)"/>
     <text x="100" y="125" font-family="arial" font-size="48px" text-anchor="middle" fill="black">20.6%</text>
 
 </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" baseProfile="full" width="300" height="300" viewBox="0 0 200 200" id="uk-change">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" baseProfile="full" width="300" height="300" viewBox="0 0 200 200" id="uk-change">
 
     <polygon points="100 0 150 50 125 50 125 200 75 200 75 50 50 50" stroke="green" fill="pink" stroke-width="0" transform="translate(-20, 20) scale(1.2, 0.8)"/>
     <text x="100" y="125" font-family="arial" font-size="48px" text-anchor="middle" fill="black">40.6%</text>
 
 </svg>
-            </div>
-            <div id="summary-text"><ul>
+                        </div>
+                        <div id="summary-text"><ul>
 <li>
 <p>In 2016, DCMS sectors contributed £249bn to the UK economy, or 14.2 per cent of UK GVA (expressed in current prices).</p>
 </li>
@@ -70,10 +117,10 @@ Gross Value Added</div>
 <p>The Creative Industries had the greatest percentage increase between 2015 and 2016 (7.6%). Civil Society (non-market charities), Gambling and Telecoms all saw decreases between 2015 and 2016.</p>
 </li>
 </ul></div>
-            <div id="summary-overlap-chart"></div>
-        </div>
-        <div id="side_text">
-            <p>This release provides estimates of the contribution of DCMS sectors to the UK economy, measured by gross value added (GVA). Other economic measures, such as employment and trade, are available in separate publications. These releases enable stakeholders to value the economic contribution of DCMS sectors, which are not traditional National Account sectors, and to understand how current and future policy interventions can be most effective. The DCMS sectors cover:</p>
+                        <div id="summary-overlap-chart"></div>
+                    </div>
+                    <div id="side_text" class="mdc-elevation--z3">
+                        <p>This release provides estimates of the contribution of DCMS sectors to the UK economy, measured by gross value added (GVA). Other economic measures, such as employment and trade, are available in separate publications. These releases enable stakeholders to value the economic contribution of DCMS sectors, which are not traditional National Account sectors, and to understand how current and future policy interventions can be most effective. The DCMS sectors cover:</p>
 <ol>
 <li>Civil Society</li>
 <li>Creative Industries</li>
@@ -101,13 +148,12 @@ Gross Value Added</div>
 <p>&nbsp;</p>
 <p><strong>Media enquiries:</strong></p>
 <p>020 7211 2210</p>
-<p>&nbsp;</p><br>
-            <p><strong>Contents</strong></p>
-            <a href="#chapter-1">1. Introduction</a><br>
-            <a href="#chapter-2">2. GVA – current prices</a>
-        </div>
-    </div>
-    <div id="chapter-1"><h2>Chapter 1:    Introduction</h2>
+<p>&nbsp;</p>
+                        <a href="https://twitter.com/dcmsinsight"><img width="32" height="32" src="https://github.com/DCMSstats/images/raw/master/Twitter_Social_Icon_Circle_Color.png"></a>
+                        <a href="https://github.com/DCMSstats"><img width="32" height="32" src="https://github.com/DCMSstats/images/raw/master/GitHub-Mark-64px.png"></a>
+                    </div>
+                </div>
+                <div id="chapter-1"><h2>Chapter 1:    Introduction</h2>
 <hr />
 <p>&nbsp;</p>
 <p><strong>Code of Practice for Official Statistics</strong>
@@ -173,7 +219,7 @@ More details of limitations are available in the <a href="https://www.gov.uk/gov
 <p>&nbsp;</p>
 <p><strong>Feedback and consultation</strong>
 DCMS aims to continuously improve the quality of estimates and better meet user needs. In response to user requests, this release includes experimental statistics on Gross value added estimates in chained volume measures, i.e. taking into account inflation, for the first time. DCMS particularly welcomes feedback on this element of the release. Feedback and responses should be sent to DCMS via email at <a href="mailto:evidence@culture.gov.uk">evidence@culture.gov.uk</a> by 31 January 2018.</p></div>
-    <div id="chapter-2"><h2>Chapter 2: GVA – current prices</h2>
+                <div id="chapter-2"><h2>Chapter 2: GVA – current prices</h2>
 <hr />
 <p>&nbsp;</p>
 <p>This chapter presents UK GVA estimates for each DCMS sector at a headline level. All estimates of GVA are shown in current prices (i.e. not adjusted for inflation). GVA estimates are consistent with the Office for National Statistics National Accounts. Where data are not available directly from the Supply and Use tables, the Annual Business Survey (ABS) has been used to allocate GVA within the categories available in the Supply and Use tables. Further information on the methodology is available in the associated <a href="https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology">methodology note</a>.</p>
@@ -182,25 +228,14 @@ DCMS aims to continuously improve the quality of estimates and better meet user 
 It is estimated that in 2016 the contribution of DCMS sectors to the UK economy (GVA) was </p>
 <p>(hover over here to show: All estimates of GVA in this chapter are shown in current prices (i.e. not adjusted for inflation). </p>
 <p>For the UK, GVA in current prices (ABML, nominal GVA, not adjusted for inflation) increased by 22.7 per cent between 2010 and 2016 and 3.5 per cent between 2015 and 2016, compared with an increase of NOT AVAILABLE per cent for GVA in constant prices (ABMM, real GVA, adjusted for inflation) between 2010 and 2016 and NOT AVAILABLE per cent between 2015 and 2016.), or 14.2 per cent of UK GVA. The GVA of DCMS sectors has grown at a faster rate than the economy as a whole, increasing by 3.6 per cent since 2015 (£240bn in 2015), and 29.0 per cent since 2010 (£193bn in 2010). This compares to increases of 3.5 per cent and 22.7 per cent respectively for the UK economy as a whole. Figure 2.1 shows the growth rate for DCMS sectors as a whole, whilst Table 2.1 outlines the GVA contribution in £billions for each of DCMS sectors.</p>
-<div class="chart">
+<div class="chart mdc-elevation--z3">
     <p class="chart-title">Figure 2.1: Indexed growth in GVA (expressed in current prices, 2010 =100) in DCMS sectors and UK: 2010-2016</p>
     <div id="figure_2_1"></div>
 </div>
 
-<div class="chart">
+<div class="mytable mdc-elevation--z3">
     <p class="chart-title">Table 2.1: GVA contribution (£bn, expressed in current prices) by DCMS sectors: 2010 - 2016</p>
-    <table id="table_2_1">
-          <col width="300">
-          <col width="80">
-          <col width="80">
-          <col width="80">
-          <col width="80">
-          <col width="80">
-          <col width="80">
-          <col width="80">
-          <col width="120">
-          <col width="120">
-          <col width="120">
+    <table id="table_2_1" class="hover">
     </table>
 </div>
 
@@ -229,7 +264,7 @@ It is estimated that in 2016 the contribution of DCMS sectors to the UK economy 
 <p></p>
 <p>&nbsp;</p>
 <p>The Digital Sector alone made up nearly half of the DCMS sectors’ GVA in 2016 (6.7% of UK GVA), whilst Creative Industries represented over a third (5.3% of UK GVA). There is considerable overlap between the DCMS sectors, for example 3.6 per cent of UK GVA is in both the Creative Industries and the Digital Sector. The overlap between sectors is represented in Figure 1 on the first page of this report, and means that the individual sectors cannot be summed to get an estimate of the GVA for all DCMS sectors combined.</p></div>
-    <div id="chapter-3"><h2>Chapter 3: GVA – chained volume measures</h2>
+                <div id="chapter-3"><h2>Chapter 3: GVA – chained volume measures</h2>
 <hr />
 <p>&nbsp;</p>
 <p>This chapter presents UK GVA estimates for each DCMS sector at a headline level. All estimates of GVA are shown in chained volume measures (i.e. adjusted for inflation) . These experimental estimates meet user demand and enable DCMS to produce productivity estimates (to be published in February). These estimates of GVA are based on a similar methodology as used in the UK National Accounts, which describe volume measures derived by linking to the current monetary value in 2015. Further information on the methodology is available in the associated methodology note. These estimates are experimental, building on a methodology derived by the Office for National Statistics producing deflators for DCMS sectors. Feedback to evidence@culture.gov.uk is therefore welcome on the methodology.</p>
@@ -259,7 +294,7 @@ The Creative Industries had the greatest percentage increase between 2015 and 20
 <p>Figure 3.2: Indexed growth in GVA (expressed in chained volume measures, 2010 = 100) in each DCMS sector: 2010-2016</p>
 <p>The Digital Sector made up half of the DCMS sectors’ GVA in 2016 (6.7% of UK GVA), whilst Creative Industries represented nearly two fifths (5.1% of UK GVA). There is considerable overlap between the DCMS sectors for example 3.5 per cent of UK GVA is in both Creative Industries and the Digital Sector. The overlap between sectors is represented in Figure 3.3 below, and means that the individual sectors cannot be summed to get an estimate of the GVA for all DCMS sectors combined. </p>
 <p>Figure 3.3: GVA (expressed in chained volume measures) overlaps in DCMS sectors: 2016</p></div>
-    <div id="chapter-4"><h2>Chapter 4: Next Steps</h2>
+                <div id="chapter-4"><h2>Chapter 4: Next Steps</h2>
 <hr />
 <p>&nbsp;</p>
 <p>DCMS will continue to take forward work to develop our economic estimates for DCMS sectors further:</p>
@@ -272,7 +307,7 @@ The Creative Industries had the greatest percentage increase between 2015 and 20
 </ul>
 <p>The next publication of DCMS Sectors Economic Estimates will be on 20th December 2017 and will include Business Characteristics in DCMS sectors. 
  </p></div>
-    <div id="annex-a"><h2>Annex A: Further information</h2>
+                <div id="annex-a"><h2>Annex A: Further information</h2>
 <hr />
 <p>&nbsp;</p>
 <ol>
@@ -297,8 +332,57 @@ SW1A 2BQ
 <p>The Economic estimates of DCMS Sectors release is an Official Statistics publication and has been produced to the standards set out in the Code of Practice for Official Statistics. For more information, see http://www.statisticsauthority.gov.uk/ assessment/code-of-practice/code-of-practice-for-official-statistics.pdf.  Details of the pre-release access arrangements for this dataset have been published alongside this release.</p>
 </li>
 </ol></div>
+            </div>
+        </div>
+
+        <footer>comments</footer>
 
     <script src="static/js/table.js"></script>
     <script src="static/js/chart1.js"></script>
+    <!-- <script>
+        /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+        } else {
+            document.getElementById("navbar").style.top = "-120px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+    </script> -->
+    <script>
+        var scroll = new SmoothScroll('a[href*="#"]');
+    </script>
+    <script>
+        gumshoe.init();
+        window.mdc.autoInit();
+        const button = document.querySelector('.button3');
+        // mdc.ripple.MDCRipple.attachTo(button);
+        
+        $(document).ready(function () {
+            $('#table_2_1').DataTable({
+                paging: false,
+                searching: false,
+                bInfo: false,
+                aaSorting: [],
+                columnDefs: [{ "width": "8%", "targets": [1, 2, 3, 4, 5, 6, 7] },
+                             { "width": "13%", "targets": [8, 9, 10] },
+                             { "width": "17%", "targets": [0] },
+                             { className: "dt-head-center", targets: [ 0 ] },]
+                // hover: true
+                // columns: [
+                //     null,
+                //     { "width": "5%" },
+                //     null,
+                //     null,
+                //     null,
+                //     null
+                // ]
+                // columnDefs: [{"className": "dt-center", "targets": "_all"}]
+            });
+        });
+    </script>
 </body>
 </html>
