@@ -9,4 +9,3 @@
 * The Cultural Sector contributed £29.5bn to the UK economy in 2017, an increase of 7.2% from 2016 (£27.5bn). 
 
 * The Telecoms and Sports Sector saw increases of 3.6% and 5.3% respectively since 2016. Civil Society (non-market charities), Gambling and the Tourism sector saw decreases between 2016 and 2017.
-

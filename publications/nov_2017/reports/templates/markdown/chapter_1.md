@@ -3,12 +3,12 @@
 
 &nbsp;
 
-**Code of Practice for Official Statistics**
+### Code of Practice for Official Statistics
 DCMS Sector Economic Estimates is an Official Statistic and has been produced to the standards set out in the Code of Practice for Official Statistics. **The statistical series have undergone National Statistics assessment this year. The Office for Statistical Regulation have published a report outlining their recommendations.**
 
 &nbsp;
 
-**Background**
+### Background
 
 &nbsp;
 
@@ -30,20 +30,22 @@ This release provides estimates for the contribution of DCMS sectors to the UK e
 &nbsp;
 
 Both of these estimates are available from 2010 to 2017. The same data sources are used for DCMS estimates as for national estimates, enabling comparisons to be made on a consistent basis. The time lag between the publication date and the reference period for the statistics is due to the time it takes to collect and process the data.
+
 &nbsp;
 
+<div id="chapter_1_box" class="mytextboxleft mdc-elevation--z3">
 The DCMS sectors cover:
-
-&nbsp;
-
-* Civil Society
-* Creative Industries
-* Cultural Sector
-* Digital Sector
-* Gambling
-* Sport
-* Telecoms
-* Tourism
+<ul>
+    <li>Civil Society</li>
+    <li>Creative Industries</li>
+    <li>Cultural Sector</li>
+    <li>Digital Sector</li>
+    <li>Gambling</li>
+    <li>Sport</li>
+    <li>Telecoms</li>
+    <li>Tourism</li>
+</ul>
+</div>
 
 
 The contribution of the sectors covered by the Office for Civil Society are included in the current price GVA estimates. The GVA expressed in chained volume measures does not currently include the industries covered by the Office for Civil Society. This may be developed in the future if there is sufficient user demand. 
@@ -68,6 +70,5 @@ In summary, the data presented in this report on GVA:
 - National Accounts (supply and use tables) not being balanced for 2017 until 2019
 - The supply and use tables are re-balanced each year and therefore revisions can be made for the back time series. These are planned revisions and part of the annual adjustment and balancing process.
 - The Annual Business Survey only being available up to 2016 at the time of carrying out the analysis. 
-
 
 

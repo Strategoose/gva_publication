@@ -3,38 +3,38 @@
 
 &nbsp;
 
+<div id="chapter_2_box" class="mytextboxright mdc-elevation--z3">
+How accurate are these data?
+<ol>
+    <li>The supply and use tables are currently constructed from various data sources, some of which are not based on random samples or do not have published sampling and non-sampling errors available, making it very difficult to measure both error aspects and their impact on GVA. A measure of the sampling and non-sampling error associated with national accounts (supply and use tables) are therefore not available.</li>
+    <li>As in all surveys, the estimates from the ABS are subject to various sources of error. Sampling errors are available at a 4 digit level. Further information on the quality of the ABS are published by ONS.</li>
+</ol>
+</div>
+
+
+
 This chapter presents UK GVA estimates for each DCMS sector at a headline level. All estimates of GVA in this chapter are shown in current prices (i.e. not adjusted for inflation). GVA estimates are consistent with the Office for National Statistics National Accounts. Where data are not available directly from the Supply and Use tables, the Annual Business Survey (ABS) has been used to allocate GVA within the categories available in the Supply and Use tables. Further information on the methodology, including strengths and limitations of this approach, is available in Annex A of the report and the associated  [methodology notes](https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology).
 
 &nbsp;
 
 **Summary**
-In 2017, the contribution of DCMS sectors to the UK economy (GVA) was estimated to be at {{ dcms_cont }}, or {{14.6%}} of UK GVA. The GVA of DCMS sectors has grown at a faster rate than the economy as a whole, increasing by {{36.4%}} since 2010 ({{£196.3bn}} in 2010). This compares to an increase of {{uk_change_2010}} for the UK economy as a whole. {{ uk_current_total }}
+In 2017, the contribution of DCMS sectors to the UK economy (GVA) was estimated to be at ???????, or ???????? of UK GVA. The GVA of DCMS sectors has grown at a faster rate than the economy as a whole, increasing by ?????? since 2010 (????????? in 2010). This compares to an increase of ???????????????? for the UK economy as a whole.
 
 
 (hover over here to show: All estimates of GVA in this chapter are shown in current prices (i.e. not adjusted for inflation). 
 
 Figure 2.1 shows the growth rate for DCMS sectors as a whole, whilst Table 2.1 outlines the GVA contribution in £billions for each of DCMS sectors.
 
-<div class="chart">
-    <p class="chart-title">Figure 2.1: Indexed growth in GVA (expressed in current prices, 2010 =100) in DCMS sectors and UK: 2010-2017</p>
+<div class="clear"></div>
+<div class="chart mdc-elevation--z3">
+    <p class="chart-title">Figure 2.1: Indexed growth in GVA (expressed in current prices, 2010 =100) in DCMS sectors and UK: 2010-2016</p>
     <div id="figure_2_1"></div>
 </div>
     
 
-<div class="chart">
-    <p class="chart-title">Table 2.1: GVA contribution (£bn, expressed in current prices) by DCMS sectors: 2010 - 2017</p>
-    <table id="table_2_1">
-          <col width="300">
-          <col width="80">
-          <col width="80">
-          <col width="80">
-          <col width="80">
-          <col width="80">
-          <col width="80">
-          <col width="80">
-          <col width="120">
-          <col width="120">
-          <col width="120">
+<div class="mytable mdc-elevation--z3">
+    <p class="chart-title">Table 2.1: GVA contribution (£bn, expressed in current prices) by DCMS sectors: 2010 - 2016</p>
+    <table id="table_2_1" class="hover">
     </table>
 </div>
 
@@ -60,34 +60,18 @@ With the exception of Tourism and Civil Society[^2], all these definitions are b
 
 [^2] For Tourism, a proportion of several SIC codes are used to identify the element of the industry that is directly represented by tourism. For the GVA value for Civil Society, non-market charities in the NPISH (non-profit institutions serving households) sector are defined using SIC codes. Both of these sectors therefore enable us to identify overlap with the other DCMS sectors based on SIC codes.
 
-
-**Figure 2.2: GVA and overlaps in DCMS Sectors, 2017**
-
-
-
-
-
-
-
-
-
+<div class="chart mdc-elevation--z3">
+    <p class="chart-title">Figure 2.2: GVA and overlaps in DCMS Sectors, 2017</p>
+    <img src="static/images/fig_2_2.png">
+</div>
 
 Note: There is a very small (less than 0.5%) overlap between Civil Society and Tourism, and Tourism and Sport which cannot visually be identified in Figure 2.2 above. 
 
-**Table 2.2: GVA and overlaps in DCMS Sectors, 2017**
-
-
-| **Sector 1**            | **Sector 2**            | **GVA overlap (£m)** | **% of DCMS total** | **% of UK total** |
-|---------------------|---------------------|------------------|-----------------|---------------|
-| Creative Industries | Digital Sector      | 70.1             | 26.2%           | 3.8%          |
-| Creative Industries | Cultural Sector     | 28               | 10.5%           | 1.5%          |
-| Digital Sector      | Cultural Sector     | 17.9             | 6.7%            | 1.0%          |
-| Digital Sector      | Telecoms            | 32.6             | 12.2%           | 1.8%          |
-| Tourism             | Cultural Sector     | 2.4              | 0.9%            | 0.1%          |
-| Tourism             | Sport               | 0.4              | 0.2%            | 0.0%          |
-| Tourism             | Gambling            | 1.8              | 0.7%            | 0.1%          |
-| Tourism             | Creative Industries | 2.1              | 0.8%            | 0.1%          |
-| Civil Society       | Cultural Sector     | 1                | 0.4%            | 0.1%          |
+<div class="mytable mdc-elevation--z3">
+    <p class="chart-title">Table 2.2: GVA and overlaps in DCMS Sectors, 2017</p>
+    <table id="table_2_2" class="hover">
+    </table>
+</div>
 
 
 

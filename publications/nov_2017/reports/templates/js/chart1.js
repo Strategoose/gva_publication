@@ -1,121 +1,80 @@
-//var totals_ts_data = 
+  
+    //{{ gva_current_extended_json }},
+chartdata = {{ fig_2_1 }}
+seriesnames = Object.keys(chartdata[0]).slice(1,-1)
 
-// Assign the specification to a local variable vlSpec.
-var vlSpec =
-{
-  "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
-  "data": {
-    "values": {{ totals_chart_data }}
-  },
-  "width": 450,
-  "height": 250,
-  "layer": [
-    {
-      "encoding": {
-        "x": {
-          "field": "date", "type": "temporal",
-          "axis": {
-            "title": null,
-            "labelAngle": 0,
-            "ticks": false,
-            "grid": false,
-            "domain": false,
-            "titleFontSize": 16,
-            "labelFontSize": 16,
-            "offset": 15
-          },
-          "scale": { "domain": [1252304000000, 1451606400000] }
-        },
-        "y": {
-          "field": "price", "type": "quantitative", 
-          "axis": { "title": "GVA, Index: 2010=100", "ticks": false, "domain": false, "titleFontSize": 16, "labelFontSize": 16, "offset": 5, "titlePadding": 10},
-          "scale": { "domain": [90, 140] }
-        },
-        "color": { "field": "symbol", "type": "nominal", "legend": { "title": null, "labelFontSize": 16, "symbolType": "M0,0 L2,0", "columnPadding": 100, "padding": 20 } }
+mychart = function(id, data, yaxismin, yaxismax) {
+    seriesnames = Object.keys(data[0])
+    var chart = c3.generate({
+      bindto: id,
+      data: {
+          json: data,
+          keys: {
+              x: 'year',
+              value: seriesnames
+          }
       },
-      "layer": [{
-        "mark": "line"
-      }, {
-        "selection": {
-          "tooltip": {
-            "type": "single",
-            "nearest": true,
-            "on": "mouseover",
-            "encodings": [
-              "x"
-            ],
-            "empty": "none"
-          }
-        },
-        "mark": "point",
-        "encoding": {
-          "opacity": {
-            "condition": {
-              "selection": "tooltip",
-              "value": 1
+      axis: {
+        y: {
+            tick: {
+                // values: [50, 100, 150, 200, 250],
+                outer: false
+                // culling: {max: 4}
             },
-            "value": 0
-          }
+            // max: 100,
+            padding: {
+                top: 0,
+                bottom: 0
+            },
+            max: yaxismax,
+            min: yaxismin
+        },
+        x: {
+            tick: {
+                culling: false,
+                outer: false
+            }
+            // height: 80
         }
-      }]
     },
-    {
-      "transform": [
-        {
-          "filter": {
-            "selection": "tooltip"
-          }
+    legend: {
+        // amount of padding to put between each legend element
+        padding: 5,
+        // define custom height and width for the legend item tile
+        item: {
+            tile: {
+                width: 15,
+                height: 2
+            }
         }
-      ],
-      "layer": [{
-        "mark": {
-          "type": "rule",
-          "color": "gray"
+    },
+      size: {
+        width: 640,
+        height: 500
+      },
+      padding: {
+        top: 10,
+        right: 50,
+        bottom: 20,
+        left: 50,
+      },
+      grid: {
+        x: {
         },
-        "encoding": {
-          "x": {
-            "type": "temporal",
-            "field": "date"
-          }
+        y: {
+            show: true
         }
-      }, {
-        "mark": {
-          "type": "text",
-          "align": "left",
-          "dx": 5,
-          "dy": -5,
-          "fontSize": 16
-        },
-        "encoding": {
-          "text": {
-            "type": "quantitative",
-            "field": "price"
-          },
-          "color": {
-            "type": "nominal",
-            "field": "symbol",
-            "legend": { "title": null }
-          },
-          "x": {
-            "type": "temporal",
-            "field": "date"
-          },
-          "y": {
-            "type": "quantitative",
-            "field": "price"
-          }
-        }
-      }]
     }
-  ],
-  "config": {
-    "style": {
-      "cell": {
-        "stroke": "transparent"
-      }
-    }
-  }
-};
-
-// Embed the visualization in the container with id `vis`
-vegaEmbed("#figure_2_1", vlSpec, opt = { "actions": false, "renderer": "svg" });
+    });
+}
+mychart('#figure_2_1', {{ fig_2_1 }}, 80, 160)
+mychart('#figure_3_1', {{ fig_3_1 }}, 80, 160)
+mychart('#figure_3_2', {{ fig_3_2 }}, 80, 160)
+mychart('#figure_3_3', {{ fig_3_3 }}, 80, 160)
+mychart('#figure_3_4', {{ fig_3_4 }}, 80, 160)
+mychart('#figure_3_5', {{ fig_3_5 }}, 80, 160)
+mychart('#figure_3_6', {{ fig_3_6 }}, 80, 160)
+mychart('#figure_3_7', {{ fig_3_7 }}, 80, 160)
+mychart('#figure_3_8', {{ fig_3_8 }}, 80, 160)
+mychart('#figure_4_1', {{ fig_4_1 }}, 80, 160)
+mychart('#figure_4_2', {{ fig_4_2 }}, 80, 160)

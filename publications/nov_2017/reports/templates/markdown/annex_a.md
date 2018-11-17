@@ -63,4 +63,3 @@ An estimate for the Office for Civil Society **has not been included** in the GV
 **Classifications** - Estimates have been constructed from ONS Official Statistics which use international classifications. This is an important element of the methodology due to availability of data and to enable international comparability. The ability to produce consistent figures each year also allows trends over time to be measured. However, as a result there are substantial limitations to the underlying classifications. As the balance and make-up of the economy changes the international classifications are less able to provide the detail for important elements of the UK economy related to DCMS sectors, and therefore best fit SIC codes have been used to produce these estimates. 
 More details of limitations are available in the [methodology note](https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology). 
 
-

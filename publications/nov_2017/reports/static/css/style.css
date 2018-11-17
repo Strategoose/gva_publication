@@ -1,4 +1,86 @@
-/* Reset CSS */
+/*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  /* list-style: none; */
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+img,
+embed,
+iframe,
+object,
+audio,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+  text-align: left;
+}
+
+/* My Reset CSS */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -43,17 +125,48 @@ a:hover, a:active {
 h2 {
   font-size: 50px;
 }
+h3 {
+  font-size: 20px;
+}
+
+li {
+  padding: 5px 0 5px 0;
+}
+
 a, a:visited {
   color: #ce4b99;
+}
+
+#sidenav a {
+  color: #757575;
 }
 
 .marks {
 
 }
+#annex-c {
+  margin: 0 0 300px 0;
+}
 
+h2 {
+  padding: 100px 0 0 0;
+}
+
+.chapter-infographics {
+  display: flex;
+  align-items: center;
+}
+
+#sidenav .active, .active, #sidenav li:hover {
+  background-color: #f2c9d6;
+  color: #a03155;
+}
 
 table {
   border-collapse: collapse;
+  table-layout: fixed;
+  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 11px;
 }
 th,
 td {
@@ -63,13 +176,48 @@ td {
 tfoot tr:last-child td {
   border-bottom: 0;
 }
+/* .mytable thead tr th.dt-center, td.dt-center,
+.mytable tbody tr td.dt-center, td.dt-center,
+{ text-align: center; } */
+
+ol {
+  padding: 0 0 0 30px;
+}
+
+.mytable {
+  padding: 20px 20px 20px 20px;
+  margin: 40px 40px 15px 0;
+  width: 900px;
+  /* float: left; */
+}
+.mytable th {
+  vertical-align: middle;
+}
+.mytable .chart-title {
+  padding-bottom: 20px;
+  /* font-weight: bold; */
+}
 
 .chart {
-    padding-top: 50px;
+    padding: 20px 0 20px 0;
+    margin: 40px 40px 15px 0;
+    width: 650px;
+    /* clear: both; */
+    /* float: left; */
 }
-.chart-title {
-    padding-bottom: 10px;
-    font-weight: bold;
+.clear {
+  clear: both;
+}
+.chart img {
+  padding: 0 15px 0 15px;
+}
+.chart .chart-title {
+    padding: 0 20px 10px 20px;
+    /* text-align: center; */
+    /* font-weight: bold; */
+}
+.png-chart {
+  width: 900px;
 }
 
 #summary-text {
@@ -79,7 +227,7 @@ tfoot tr:last-child td {
 }
 
 #summary-text li {
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
 /*
@@ -89,20 +237,28 @@ text[style] {
 }
 */
 
+
 body {
-  padding: 30px;
   color: rgb(36, 41, 46);
   font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
 }
 
-#header {
-  padding-bottom: 30px;
-  grid-area: summary;
+#navbar {
+  background-color: rgb(50, 49, 50);
+  color: rgb(255, 255, 255);
+  height: 120px;
+  /* position: fixed; */
+  /* top: 0; */
+  /* transition: top 0.5s ease-in-out; */
+  width: 100%;
+  padding: 10px 0 0 10px;
+  grid-area: navbar;
   display: grid;
   grid-template-columns: 270px auto;
   grid-template-rows: auto;
   grid-template-areas: 
-    "dcms-logo header-text";
+  "dcms-logo header-text";
 }
 #dcms-logo {
   grid-area: dcms-logo;
@@ -117,20 +273,54 @@ body {
   align-self: center;
 }
 
+#wrapper {
+  grid-area: wrapper;
+  display: grid;
+  grid-template-columns: 350px auto;
+  grid-template-rows: 120px auto;
+  grid-template-areas:
+  "navbar navbar"
+  "sidenav main";
+  grid-gap: 20px;
+  
+}
+
+#sidenav {
+  /* padding-top: 120px; */
+  grid-area: sidenav;
+  position: sticky;
+  top: 20px;
+  padding: 10px 0 10px 0;
+  /* position: fixed; */
+}
+#sidenav ul {
+  padding-left: 0;
+}
+#sidenav a {
+  padding: 0 10px 0 10px;
+}
+
+#main {
+  /* padding-top: 120px; */
+  grid-area: main;
+  padding: 0 10px 0 0;
+  max-width: 960px;
+}
+
 #cover-sheet {
   grid-area: summary;
-  grid-gap: 30px;
+  /* grid-gap: 30px; */
   display: grid;
-  grid-template-columns: 800px auto;
+  grid-template-columns: 650px auto;
   grid-template-rows: auto;
   grid-template-areas: 
-    "summary side-text";
+  "summary side-text";
 }
 
 #summary {
   grid-area: summary;
-  padding-top: 40px;
-  border: 1px solid black;
+  /* padding-top: 40px; */
+  /* border: 1px solid black; */
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
@@ -149,7 +339,7 @@ body {
 #infographics {
   grid-area: infographics;
   display: grid;
-  grid-template-columns: 200px 200px 200px 200px;
+  grid-template-columns: 200px 200px 200px;
   grid-template-rows: 50px 200px;
   grid-template-areas: 
     "money-bag-title donut-title dcms-change-title uk-change-title"
@@ -222,12 +412,34 @@ body {
   list-style-position: inside;
 }
 
-#chapter-1, #chapter-2, #chapter-3, #chapter-4, #annex-a {
-  padding: 100px 0px 0 0px;
+.mytextboxleft {
+  background-color: pink;
+  padding: 15px;
+  margin: 5px 20px 10px 0;
+  list-style-position: inside;
+  float: left;
+  max-width: 400px;
+}
+.mytextboxright {
+  background-color: pink;
+  padding: 15px;
+  margin: 25px 0 10px 20px;
+  list-style-position: inside;
+  float: right;
+  max-width: 350px;
 }
 
-#chapter-1 ul, #chapter-2 ul, #chapter-3 ul, #chapter-4 ul, #annex-a ul
+
+#chapter-1, #chapter-2, #chapter-3, #chapter-4, #annex-a {
+  /* padding: 100px 0px 0 0px; */
+}
+
+/* #chapter-1 ul, #chapter-2 ul, #chapter-3 ul, #chapter-4 ul, #annex-a ul
 #chapter-1 ol, #chapter-2 ol, #chapter-3 ol, #chapter-4 ol, #annex-a ol {
+  padding-left: 20px;
+} */
+
+ul, ol {
   padding-left: 20px;
 }
 
@@ -236,4 +448,86 @@ body {
 .chart-text {
 }
 
+.c3-axis-y text, .c3-axis-x text, .c3-legend-item text {
+  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 11px;
+}
+.c3-legend-item {
+  margin: 0 50px 0 50px;
+}
 
+/* table.c3-tooltip{
+  font-size:150px;
+  } */
+
+  /* .c3-tooltip td {
+    font-size:13px;
+    padding: 3px 6px;
+    background-color:red;
+    border-left:1px dotted #999;
+    color: #000;
+    } */
+
+
+    .c3-xgrid-line line {
+      stroke: blue;
+  }
+
+/* font color */
+.c3-axis .tick {
+  fill: rgb(102, 102, 102);
+}
+.c3-ygrids .c3-ygrid {
+  /* stroke-dasharray: 20 !important; */
+  stroke-dasharray: 99999;
+  stroke: rgb(230, 230, 230);
+}
+
+#figure_2_1 .c3-line {
+  stroke-width: 2px;
+}
+
+/* y axis */
+.c3-axis-y .domain {
+  display: none;
+}
+.c3-axis-y .tick line {
+  display: none;
+}
+
+/* x axis */
+.c3-axis-x .domain {
+  stroke: rgb(204, 214, 235);
+}
+.c3-axis-x .tick line {
+  stroke: rgb(204, 214, 235);
+}
+
+/* legend */
+/* .c3-legend-item-tile {
+  shape-rendering: auto;
+  stroke-linecap: round;
+  stroke-dasharray: 0.1 10;
+  stroke-width: 8;
+  transform: translate(6px, 1px);
+  padding: 10px 10px 10px 10px;
+} */
+
+/* #figure_2_1 .c3-line-Gambling {
+  stroke-width: 10px;
+} */
+
+footer {
+  background: rgb(222, 224, 226);
+  border-top: 1px solid rgb(191, 193, 195);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  /* justify-content: start; */
+}
+footer img {
+  padding: 0 20px 0 0;
+}

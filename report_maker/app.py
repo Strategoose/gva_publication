@@ -4,7 +4,7 @@ from flask import Flask, render_template, url_for
 #app = Flask(__name__)
 import os
 cwd = os.getcwd()
-print(cwd)
+print('flask cwd is:' + cwd)
 
 def create_app():
     
