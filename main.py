@@ -29,7 +29,7 @@ def dated_url_for(endpoint, **values):
 def hello():
     return flask.redirect("https://www.gov.uk/government/organisations/department-for-digital-culture-media-sport/about/statistics")
 
-@app.route('/gva-2017')
+@app.route('/publications/gva-2017')
 def index():
     """Render home page."""
     return render_template('index.html')  # we can render templates as usual

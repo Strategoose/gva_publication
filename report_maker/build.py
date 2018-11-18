@@ -138,9 +138,10 @@ def build(context):
     soup = BeautifulSoup(data, "html.parser")
     for link in soup.findAll('link'):
       link['href'] = link['href'].replace("static/css/style.css", "{{ url_for('static',filename='css/style.css') }}")
+      link['href'] = link['href'].replace("static/css/c3.css", "{{ url_for('static',filename='css/c3.css') }}")
 
     # replace js chart links with url_for
-    js_templates = ['chart1.js', 'table.js']
+    js_templates = ['chart1.js', 'table.js', 'c3.min.js', 'gumshoe.js']
     js_templates2 = ['static/js/' + i for i in js_templates]
     for script in soup.findAll('script'):
         if script.get('src') in js_templates2:
@@ -148,10 +149,11 @@ def build(context):
             fn = os.path.basename(string)
             script['src'] = script['src'].replace(string, "{{ url_for('static',filename='js/" + fn + "') }}")
 
-    # # replace img link with url_for
-    # for img in soup.findAll('img'):
-    #     if img['id'] == 'money-bag':
-    #         img['src'] = img['src'].replace("static/svg/money_bag.svg", "{{ url_for('static',filename='svg/money_bag.svg') }}")
+    # replace img link with url_for
+    for img in soup.findAll('img'):
+        img['src'] = img['src'].replace("static/images/fig_2_2.png", "{{ url_for('static',filename='images/fig_2_2.png') }}")
+        img['src'] = img['src'].replace("static/images/ch_3_pound.png", "{{ url_for('static',filename='images/ch_3_pound.png') }}")
+        img['src'] = img['src'].replace("static/images/ch_3_arrow.png", "{{ url_for('static',filename='images/ch_3_arrow.png') }}")
 
     with open(template_dir + "temp/flask/index.html", "w", encoding='utf8', errors='ignore') as file:
         file.write(str(soup))
