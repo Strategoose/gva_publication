@@ -238,16 +238,78 @@ text[style] {
 */
 
 
+#cs-pound #path0 {
+  fill: #e95c28;
+}
+#cs-arrow polygon {
+  fill: #e95c28;
+  /* height: 10; */
+}
+
 #ci-pound #path0 {
   fill: #f13232;
 }
 #ci-arrow polygon {
   fill: #f13232;
-  /* height: 10; */
 }
 
-/* #ffcd3f */
+#ci-pound #path0 {
+  fill: #f13232;
+}
+#ci-arrow polygon {
+  fill: #f13232;
+}
 
+#culture-pound #path0 {
+fill: #ffcd3f;
+}
+#culture-arrow polygon {
+fill: #ffcd3f;
+}
+
+#digital-pound #path0 {
+fill: #fcaa6c;
+}
+#digital-arrow polygon {
+fill: #fcaa6c;
+}
+
+#gambling-pound #path0 {
+fill: #d40072;
+}
+#gambling-arrow polygon {
+fill: #d40072;
+}
+
+#sport-pound #path0 {
+fill: #70405e;
+}
+#sport-arrow polygon {
+fill: #70405e;
+}
+.c3-target-Sport .c3-line-Sport {
+  stroke: #70405e !important;
+}
+
+
+
+#telecoms-pound #path0 {
+fill: #37aac9;
+}
+#telecoms-arrow polygon {
+fill: #37aac9;
+}
+
+#tourism-pound #path0 {
+fill: #c092ae;
+}
+#tourism-arrow polygon {
+fill: #c092ae;
+}
+                                          
+
+
+  
 
 body {
   color: rgb(36, 41, 46);

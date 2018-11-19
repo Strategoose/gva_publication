@@ -81,6 +81,18 @@ mychart('#figure_4_2', {{ fig_4_2 }}, 80, 160)
 
 
 
+// civil society
+d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/pound_chart.svg").mimeType("image/svg+xml").get(function(error, xml) {
+   if (error) throw error;
+   d3.select("#cs-pound").node().appendChild(xml.documentElement);
+});
+d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/up_arrow.svg").mimeType("image/svg+xml").get(function(error, xml) {
+   if (error) throw error;
+   d3.select("#cs-arrow").node().appendChild(xml.documentElement);
+});
+
+
+// creative industries
 d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/pound_chart.svg").mimeType("image/svg+xml").get(function(error, xml) {
    if (error) throw error;
    d3.select("#ci-pound").node().appendChild(xml.documentElement);
@@ -89,5 +101,76 @@ d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/up_arrow.svg")
    if (error) throw error;
    d3.select("#ci-arrow").node().appendChild(xml.documentElement);
 });
+
+// culture
+d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/pound_chart.svg").mimeType("image/svg+xml").get(function(error, xml) {
+   if (error) throw error;
+   d3.select("#culture-pound").node().appendChild(xml.documentElement);
+});
+d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/up_arrow.svg").mimeType("image/svg+xml").get(function(error, xml) {
+   if (error) throw error;
+   d3.select("#culture-arrow").node().appendChild(xml.documentElement);
+});
+
+
+// digital
+d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/pound_chart.svg").mimeType("image/svg+xml").get(function(error, xml) {
+   if (error) throw error;
+   d3.select("#digital-pound").node().appendChild(xml.documentElement);
+});
+d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/up_arrow.svg").mimeType("image/svg+xml").get(function(error, xml) {
+   if (error) throw error;
+   d3.select("#digital-arrow").node().appendChild(xml.documentElement);
+});
+
+// gambling
+d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/pound_chart.svg").mimeType("image/svg+xml").get(function(error, xml) {
+   if (error) throw error;
+   d3.select("#gambling-pound").node().appendChild(xml.documentElement);
+});
+d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/up_arrow.svg").mimeType("image/svg+xml").get(function(error, xml) {
+   if (error) throw error;
+   d3.select("#gambling-arrow").node().appendChild(xml.documentElement);
+});
+
+
+
+// sport
+d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/pound_chart.svg").mimeType("image/svg+xml").get(function(error, xml) {
+   if (error) throw error;
+   d3.select("#sport-pound").node().appendChild(xml.documentElement);
+});
+d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/up_arrow.svg").mimeType("image/svg+xml").get(function(error, xml) {
+   if (error) throw error;
+   d3.select("#sport-arrow").node().appendChild(xml.documentElement);
+});
+
+
+// telecoms
+d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/pound_chart.svg").mimeType("image/svg+xml").get(function(error, xml) {
+   if (error) throw error;
+   d3.select("#telecoms-pound").node().appendChild(xml.documentElement);
+});
+d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/up_arrow.svg").mimeType("image/svg+xml").get(function(error, xml) {
+   if (error) throw error;
+   d3.select("#telecoms-arrow").node().appendChild(xml.documentElement);
+});
+
+
+
+// tourism
+d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/pound_chart.svg").mimeType("image/svg+xml").get(function(error, xml) {
+   if (error) throw error;
+   d3.select("#tourism-pound").node().appendChild(xml.documentElement);
+});
+d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/up_arrow.svg").mimeType("image/svg+xml").get(function(error, xml) {
+   if (error) throw error;
+   d3.select("#tourism-arrow").node().appendChild(xml.documentElement);
+});
+
+
+
+
+
 
 // var play = d3.select("#path0").style("fill", "green");

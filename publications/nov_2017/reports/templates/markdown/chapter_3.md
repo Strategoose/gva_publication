@@ -25,9 +25,9 @@ More information on the Civil Society definition can be found in Annex A.
 &nbsp;
 
 <div class="chapter-infographics">
-<div id="ci-pound"></div>
+<div id="cs-pound"></div>
 <p class="ig-title">£23.5bn<br>in 2017</p>
-<div id="ci-arrow"></div>
+<div id="cs-arrow"></div>
 <p class="ig-title">3.7% decrease<br>since 2016</p>
 </div>
 
@@ -74,6 +74,14 @@ The DCMS definition is a UK definition based on international industrial codes. 
 ### Creative Industries
 &nbsp;
 
+<div class="chapter-infographics">
+<div id="ci-pound"></div>
+<p class="ig-title">£23.5bn<br>in 2017</p>
+<div id="ci-arrow"></div>
+<p class="ig-title">3.7% decrease<br>since 2016</p>
+</div>
+
+
 * Key Findings 
 
 The Creative Industries **contributed £101.5bn** to the UK economy in 2017, accounting for **5.5% of GVA in the UK**.
@@ -104,6 +112,14 @@ The Film, TV, video, radio and photography sub-sector accounted for 16.5% of Cre
 
 ### Cultural Sector
 
+&nbsp;
+<div class="chapter-infographics">
+<div id="culture-pound"></div>
+<p class="ig-title">£23.5bn<br>in 2017</p>
+<div id="culture-arrow"></div>
+<p class="ig-title">3.7% decrease<br>since 2016</p>
+</div>
+
 * Key Findings
 
 The Cultural Sector **contributed £29.5bn** to the UK economy in 2017 and accounted for **1.6% of UK GVA**. The Cultural Sector increased by 7.2% between 2016 and 2017, and by 38.5% since 2010. 
@@ -125,6 +141,15 @@ Nearly a quarter (24.8%) of Cultural Sector GVA was accounted for by the Arts su
 &nbsp;
 
 ### Digital Sector
+
+&nbsp;
+<div class="chapter-infographics">
+<div id="digital-pound"></div>
+<p class="ig-title">£23.5bn<br>in 2017</p>
+<div id="digital-arrow"></div>
+<p class="ig-title">3.7% decrease<br>since 2016</p>
+</div>
+
 
 * Key Findings
 
@@ -149,6 +174,15 @@ The Telecommunications sub-sector accounted for a quarter (25.0%) of Digital Sec
 
 ### Gambling
 
+&nbsp;
+<div class="chapter-infographics">
+<div id="gambling-pound"></div>
+<p class="ig-title">£23.5bn<br>in 2017</p>
+<div id="gambling-arrow"></div>
+<p class="ig-title">3.7% decrease<br>since 2016</p>
+</div>
+
+
 * Key Findings
 
 The Gambling Sector **contributed £9.3bn** to the UK economy in 2017. This is a decrease of £10.1bn since 2016 and accounted for **0.5% of UK GVA** in 2017. Since 2010, the Gambling Sector has increased by 10.3% (£8.4bn in 2010).
@@ -168,6 +202,14 @@ The Gambling Sector is a small industry and therefore can lead to some data vola
 
 ### Sport
 
+&nbsp;
+<div class="chapter-infographics">
+<div id="sport-pound"></div>
+<p class="ig-title">£23.5bn<br>in 2017</p>
+<div id="sport-arrow"></div>
+<p class="ig-title">3.7% decrease<br>since 2016</p>
+</div>
+
 * Key Findings
 
 The Sports Sector **contributed £9.8bn** to the UK economy in 2017, accounting for **0.5% of UK GVA**. This is an increase of 5.3% since 2016 (£9.3bn in 2016) and a 40.0% increase since 2010 (£7.0bn in 2010) 
@@ -182,6 +224,14 @@ The Sports Sector **contributed £9.8bn** to the UK economy in 2017, accounting 
 &nbsp;
 
 ### Telecoms
+
+&nbsp;
+<div class="chapter-infographics">
+<div id="telecoms-pound"></div>
+<p class="ig-title">£23.5bn<br>in 2017</p>
+<div id="telecoms-arrow"></div>
+<p class="ig-title">3.7% decrease<br>since 2016</p>
+</div>
 
 * Key Findings
 
@@ -199,6 +249,14 @@ The Telecoms Sector **contributed £32.6bn** to the UK economy in 2017, accounti
 &nbsp;
 
 ### Tourism
+
+&nbsp;
+<div class="chapter-infographics">
+<div id="tourism-pound"></div>
+<p class="ig-title">£23.5bn<br>in 2017</p>
+<div id="tourism-arrow"></div>
+<p class="ig-title">3.7% decrease<br>since 2016</p>
+</div>
 
 * Key Findings
 
