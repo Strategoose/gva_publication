@@ -78,3 +78,16 @@ mychart('#figure_3_7', {{ fig_3_7 }}, 80, 160)
 mychart('#figure_3_8', {{ fig_3_8 }}, 80, 160)
 mychart('#figure_4_1', {{ fig_4_1 }}, 80, 160)
 mychart('#figure_4_2', {{ fig_4_2 }}, 80, 160)
+
+
+
+d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/pound_chart.svg").mimeType("image/svg+xml").get(function(error, xml) {
+   if (error) throw error;
+   d3.select("#ci-pound").node().appendChild(xml.documentElement);
+});
+d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/up_arrow.svg").mimeType("image/svg+xml").get(function(error, xml) {
+   if (error) throw error;
+   d3.select("#ci-arrow").node().appendChild(xml.documentElement);
+});
+
+// var play = d3.select("#path0").style("fill", "green");

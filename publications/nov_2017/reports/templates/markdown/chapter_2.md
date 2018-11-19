@@ -1,4 +1,4 @@
-##Chapter 2: GVA in DCMS Sectors – current prices
+## Chapter 2: GVA in DCMS Sectors – current prices
 ***
 
 &nbsp;
@@ -12,12 +12,11 @@ How accurate are these data?
 </div>
 
 
-
-This chapter presents UK GVA estimates for each DCMS sector at a headline level. All estimates of GVA in this chapter are shown in current prices (i.e. not adjusted for inflation). GVA estimates are consistent with the Office for National Statistics National Accounts. Where data are not available directly from the Supply and Use tables, the Annual Business Survey (ABS) has been used to allocate GVA within the categories available in the Supply and Use tables. Further information on the methodology, including strengths and limitations of this approach, is available in Annex A of the report and the associated  [methodology notes](https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology).
+This<sup>1</sup> chapter presents UK GVA estimates for each DCMS sector at a headline level. All estimates of GVA in this chapter are shown in current prices (i.e. not adjusted for inflation). GVA estimates are consistent with the Office for National Statistics National Accounts. Where data are not available directly from the Supply and Use tables, the Annual Business Survey (ABS) has been used to allocate GVA within the categories available in the Supply and Use tables. Further information on the methodology, including strengths and limitations of this approach, is available in Annex A of the report and the associated  [methodology notes](https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology).
 
 &nbsp;
 
-**Summary**
+#### Summary
 In 2017, the contribution of DCMS sectors to the UK economy (GVA) was estimated to be at ???????, or ???????? of UK GVA. The GVA of DCMS sectors has grown at a faster rate than the economy as a whole, increasing by ?????? since 2010 (????????? in 2010). This compares to an increase of ???????????????? for the UK economy as a whole.
 
 
@@ -26,6 +25,7 @@ In 2017, the contribution of DCMS sectors to the UK economy (GVA) was estimated 
 Figure 2.1 shows the growth rate for DCMS sectors as a whole, whilst Table 2.1 outlines the GVA contribution in £billions for each of DCMS sectors.
 
 <div class="clear"></div>
+
 <div class="chart mdc-elevation--z3">
     <p class="chart-title">Figure 2.1: Indexed growth in GVA (expressed in current prices, 2010 =100) in DCMS sectors and UK: 2010-2016</p>
     <div id="figure_2_1"></div>
@@ -41,8 +41,8 @@ Figure 2.1 shows the growth rate for DCMS sectors as a whole, whilst Table 2.1 o
 &nbsp;
 
 **Notes**
-1. 2017 GVA is based on the output measure of GVA to allow consistency with the sector measures for 2017. This is aligned to average GVA up to and including 2016 (last Supply Use balanced year) but then uses growth in the output measure as a proxy for GVA beyond that. The 2017 GVA figure will be revised next year, once the Supply Use tables have been balanced. This approach is different for Civil Society where the average proportion of the UK economy that is attributed to NPISH for 2010 to 2016 is assumed to be the same for 2017. This assumption seems reliable given the proportion does not vary much (from 1.2% to 1.4% over these years).
-2. Civil Society in this table represents non-market charities sitting in the Non-profit Institutions Serving Households (NPISH) sector. This is an underestimate for the sector and does not include market provider charities who have passed the market test and therefore sit in the corporate sector, social enterprises and mutuals.
+#### 1. 2017 GVA is based on the output measure of GVA to allow consistency with the sector measures for 2017. This is aligned to average GVA up to and including 2016 (last Supply Use balanced year) but then uses growth in the output measure as a proxy for GVA beyond that. The 2017 GVA figure will be revised next year, once the Supply Use tables have been balanced. This approach is different for Civil Society where the average proportion of the UK economy that is attributed to NPISH for 2010 to 2016 is assumed to be the same for 2017. This assumption seems reliable given the proportion does not vary much (from 1.2% to 1.4% over these years).  
+#### 2. Civil Society in this table represents non-market charities sitting in the Non-profit Institutions Serving Households (NPISH) sector. This is an underestimate for the sector and does not include market provider charities who have passed the market test and therefore sit in the corporate sector, social enterprises and mutuals.
 3. DCMS sector total is lower than the sum of individual DCMS sectors because of overlaps between sectors.
 4. (p) = provisional
 5. (r) = revised. Text in red show where the data have been revised due to the balancing of Supply and Use tables.
@@ -64,6 +64,7 @@ With the exception of Tourism and Civil Society[^2], all these definitions are b
     <p class="chart-title">Figure 2.2: GVA and overlaps in DCMS Sectors, 2017</p>
     <img src="static/images/fig_2_2.png">
 </div>
+
 
 Note: There is a very small (less than 0.5%) overlap between Civil Society and Tourism, and Tourism and Sport which cannot visually be identified in Figure 2.2 above. 
 

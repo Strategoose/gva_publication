@@ -238,6 +238,17 @@ text[style] {
 */
 
 
+#ci-pound #path0 {
+  fill: #f13232;
+}
+#ci-arrow polygon {
+  fill: #f13232;
+  /* height: 10; */
+}
+
+/* #ffcd3f */
+
+
 body {
   color: rgb(36, 41, 46);
   font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;

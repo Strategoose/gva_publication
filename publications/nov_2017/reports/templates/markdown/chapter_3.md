@@ -25,11 +25,12 @@ More information on the Civil Society definition can be found in Annex A.
 &nbsp;
 
 <div class="chapter-infographics">
-<img class="pound-png" src="static/images/ch_3_pound.png">
+<div id="ci-pound"></div>
 <p class="ig-title">£23.5bn<br>in 2017</p>
-<img class="arrow-png" src="static/images/ch_3_arrow.png">
+<div id="ci-arrow"></div>
 <p class="ig-title">3.7% decrease<br>since 2016</p>
 </div>
+
 
 
 * Key Findings 
