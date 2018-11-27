@@ -43,12 +43,12 @@
                 <ul data-gumshoe>
                     <li><a href="#summary">Summary</a></li>
                     <li><a href="#chapter-1">Chapter 1. Introduction</a></li>
-                    <li><a href="#chapter-2">Chapter 2. GVA – current prices</a></li>
-                    <li><a href="#chapter-3">Chapter 3. GVA – chained volume measures</a></li>
-                    <li><a href="#chapter-4">Chapter 4. Next Steps</a></li>
+                    <li><a href="#chapter-2">Chapter 2. GVA in current prices</a></li>
+                    <li><a href="#chapter-3">Chapter 3. GVA for Individual DCMS Sectors - current prices</a></li>
+                    <li><a href="#chapter-4">Chapter 4. GVA in Chained Volume Measures</a></li>
                     <li><a href="#chapter-5">Chapter 5. Next Steps</a></li>
-                    <li><a href="#annex-a">Annex A: Further information</a></li>
-                    <li><a href="#annex-b">Annex B: Further information</a></li>
+                    <li><a href="#annex-a">Annex A: Limitations</a></li>
+                    <li><a href="#annex-b">Annex B: External data sources</a></li>
                     <li><a href="#annex-c">Annex C: Further information</a></li>
                 </ul>
 
@@ -93,22 +93,28 @@
                         </div>
                         <div id="summary-text"><ul>
 <li>
-<p>In 2017, DCMS sectors contributed £267.7bn to the UK economy, accounting for 14.6% of UK GVA (expressed in current prices).  </p>
+<p>In 2017, All DCMS Sectors contributed £267.7bn to the UK economy, accounting for 14.6% of UK GVA (expressed in current prices).  </p>
 </li>
 <li>
-<p>The GVA of DCMS sectors has grown at a faster rate than the UK economy, increasing by 36.4% since 2010 (£196.3bn in 2010) compared to 28.7% for the UK economy as a whole.</p>
+<p>The GVA of DCMS Sectors has seen an increase of 3.4% since 2016 (£258.9bn in 2016) compared to 4.8% for the UK economy as a whole.</p>
 </li>
 <li>
-<p>The Digital Sector contributed £130.5bn to the UK economy in 2017, accounting for 7.1% of UK GVA. This sector had the greatest percentage increase between 2016 and 2017 (7.3%). </p>
+<p>The Digital Sector contributed £130.5bn to the UK economy in 2017, accounting for 7.1% of UK GVA. The contribution from this sector has increased by a third since 2010 (£98.2bn in 2010). </p>
 </li>
 <li>
-<p>The Creative Industries contributed £101.5bn to the UK economy in 2017, an increase of 7.1% from 2016 (£94.8bn). </p>
+<p>The Creative Industries contributed £101.5bn to the UK economy in 2017, an increase of 53.1% since 2010 (£66.3bn). </p>
 </li>
 <li>
-<p>The Cultural Sector contributed £29.5bn to the UK economy in 2017, an increase of 7.2% from 2016 (£27.5bn). </p>
+<p>The Cultural Sector contributed £29.5bn to the UK economy in 2017, an increase of 38.5% since 2010 (£21.3bn). </p>
 </li>
 <li>
-<p>The Telecoms and Sports Sector saw increases of 3.6% and 5.3% respectively since 2016. Civil Society (non-market charities), Gambling and the Tourism sector saw decreases between 2016 and 2017.</p>
+<p>The Telecoms and Sports sectors saw increases of 31.6% and 40.0% respectively since 2010.</p>
+</li>
+<li>
+<p>The Gambling and Civil Society (non-market charities) sectors increased by 10.3% and 24.1% respectively since 2010.</p>
+</li>
+<li>
+<p>The Tourism Sector contributed £67.7bn to the UK economy in 2017, accounting for 3.7% of UK GVA. </p>
 </li>
 </ul></div>
                         <div id="summary-overlap-chart"></div>
@@ -143,6 +149,10 @@
 <p><strong>Media enquiries:</strong></p>
 <p>020 7211 2210</p>
 <p>&nbsp;</p>
+<p>This is the first interactive web report developed by DCMS which will allow users to click through the data they are interested in. The alternative PDF report and tables can be accessed <a href="https://www.gov.uk/government/statistics/dcms-sectors-economic-estimates-2017-gva">here</a>.  </p>
+<p>&nbsp;</p>
+<p>As this is the first release incorporating an interactive tool, feedback is welcome on this approach. Please send any comments to evidence@culture.gov.uk    </p>
+<p>&nbsp;</p>
                         <a href="https://twitter.com/dcmsinsight"><img width="32" height="32" src="https://github.com/DCMSstats/images/raw/master/Twitter_Social_Icon_Circle_Color.png"></a>
                         <a href="https://github.com/DCMSstats"><img width="32" height="32" src="https://github.com/DCMSstats/images/raw/master/GitHub-Mark-64px.png"></a>
                     </div>
@@ -151,11 +161,11 @@
 <hr />
 <p>&nbsp;</p>
 <h3>Code of Practice for Official Statistics</h3>
-<p>DCMS Sector Economic Estimates is an Official Statistic and has been produced to the standards set out in the Code of Practice for Official Statistics. <strong>The statistical series have undergone National Statistics assessment this year. The Office for Statistical Regulation have published a report outlining their recommendations.</strong></p>
+<p>DCMS Sector Economic Estimates series is an Official Statistic and has been produced to the standards set out in the Code of Practice for Statistics. The statistical series has undergone National Statistics assessment this year. The Office for Statistics Regulation are expected to publish a report in December 2018.</p>
 <p>&nbsp;</p>
 <h3>Background</h3>
 <p>&nbsp;</p>
-<p>Released: {{ release_date }}</p>
+<p>Released: 28 November 2018</p>
 <p>&nbsp;</p>
 <p>Geographic Coverage: United Kingdom </p>
 <p>&nbsp;</p>
@@ -171,7 +181,7 @@
 <div id="chapter_1_box" class="mytextboxleft mdc-elevation--z3">
 The DCMS sectors cover:
 <ul>
-    <li>Civil Society</li>
+    <li>Civil Society*</li>
     <li>Creative Industries</li>
     <li>Cultural Sector</li>
     <li>Digital Sector</li>
@@ -182,42 +192,86 @@ The DCMS sectors cover:
 </ul>
 </div>
 
-<p>The contribution of the sectors covered by the Office for Civil Society are included in the current price GVA estimates. The GVA expressed in chained volume measures does not currently include the industries covered by the Office for Civil Society. This may be developed in the future if there is sufficient user demand. </p>
 <p>&nbsp;</p>
-<p>A definition for each sector is available in the associated <a href="https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology">methodology note</a>, along with details of methods and data limitations. There is significant overlap between DCMS sectors so users should be aware that the estimate for <strong>“DCMS sectors total” is lower than the sum of the individual sectors.</strong> There are always different ways to define sectors, but their relevance depends on what they are needed for. Government generally favours classification systems which are rigorously measured, internationally comparable, nationally consistent, and ideally applicable to specific policy interventions. DCMS accept that alternative definitions can be useful where a policy-relevant grouping of businesses crosses existing Standard Industrial Classification (SIC) codes. DCMS are aware of other estimates of DCMS sectors. These estimates use varying methodologies and can be useful for serving several purposes, e.g. monitoring progress under specific policy themes or measuring activities subsumed across a range of SICs. While potentially useful, the quality of the data depends on that of the evidence used to estimate the appropriate share of existing SICs. Further information on additional estimates from our Arms Length Bodies are available in Annex B. </p>
+<p>A definition for each sector is available in the associated <a href="https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology">methodology note</a>, along with details of methods and data limitations. There is significant overlap between DCMS sectors so users should be aware that the estimate for <strong>“DCMS sectors total” is lower than the sum of the individual sectors.</strong> </p>
 <p>&nbsp;</p>
-<p>In summary, the data presented in this report on GVA:</p>
-<ol>
-<li>Are based on official statistics data sources</li>
-<li>Are based on internationally-harmonised codes, meaning the estimates are:</li>
-<li>Comparable at both a national and international level. </li>
-<li>Comparable over time, allowing trends to be measured and monitored.</li>
-<li>Subject to limitations of the underlying classifications around reflecting the current balance and make-up of the UK economy. For example, the SIC codes were developed in 2007 and have not been revised since. Emerging Sectors, such as Artificial Intelligence, are therefore hard-to-capture and may be excluded or mis-coded.  </li>
-<li>Are based on survey data (Annual Business Survey and national accounts) and, as with all data from surveys, there will be an associated error margin surrounding these estimates . </li>
-<li>This means we cannot say an estimate of, for example, 20% is very accurate for the whole population. Our best estimates, from the survey sample, suggest that the figure is 20%, but due to the degree of error, the true population figure could perhaps be 18% or 23%. </li>
-<li>This is not an issue with the quality of the data or analysis; rather it is an inherent principle when using survey data to inform estimates. </li>
-<li>Are using the most up to date data and making assumptions to estimate the value for 2017 where this is not possible. The approach is robust but will have inherent errors due to:</li>
-<li>National Accounts (supply and use tables) not being balanced for 2017 until 2019</li>
-<li>The supply and use tables are re-balanced each year and therefore revisions can be made for the back time series. These are planned revisions and part of the annual adjustment and balancing process.</li>
-<li>The Annual Business Survey only being available up to 2016 at the time of carrying out the analysis. </li>
-</ol></div>
+<p><font size="-4">
+*The contribution of the sectors covered by the Office for Civil Society are included in the current price GVA estimates. The GVA expressed in chained volume measures does not currently include the industries covered by the Office for Civil Society. This may be developed in the future if there is sufficient user demand. </font></p>
+<p>&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;
+&nbsp;</p>
+<p>&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;
+&nbsp;</p>
+<p>&nbsp;</p>
+<p>In summary, the data presented in this report on GVA:
+&nbsp;</p>
+<OL>
+<LI>Are based on Official Satistics data sources
+<LI>Are based on internationally-harmonised codes, meaning the estimates are:
+<UL>
+     <LI>Comparable at both a national and international level.
+     <LI>Comparable over time, allowing trends to be measured and monitored.
+     <LI>Subject to limitations of the underlying classifications around reflecting the current balance and make-up of the UK economy. For example, the SIC codes were developed in 2007 and have not been revised since. Emerging sectors, such as Artificial Intelligence, are therefore hard to capture and may be excluded or mis-coded.  
+</UL>
+<LI> Are based on survey data (Annual Business Survey and National Accounts) and, as with all data from surveys, there will be an associated error margin surrounding these estimates*
+<UL>
+     <LI>This means we cannot say an estimate of, for example, 20% is very accurate for the whole population. Our best estimates, from the survey sample, suggest that the figure is 20%, but due to the degree of error, the true population figure could perhaps be 18% or 22%. 
+     <LI>This is not an issue with the quality of the data or analysis; rather it is an inherent principle when using survey data to inform estimates. 
+</UL>
+
+<font size="-4">
+*Sampling error is the error caused by observing a sample (as in a survey) instead of the whole population (as in a census). While each sample is designed to produce the “best” estimate of the true population value, a number of equal-sized samples covering the population would generally produce varying population estimates. </font>
+ <LI>  Are using the most up to date data and making assumptions to estimate the value for 2017 where this is not possible. Whilst robust, this approach will have future revisions for the reasons outlined below:
+  <UL>   
+    <LI> National Accounts (supply and use tables) for 2017 are not balanced until 2019
+   <LI>  The supply and use tables are re-balanced each year and therefore revisions can be made for the back series. These are planned revisions and part of the annual adjustment and balancing process.
+   <LI> At the time of analysis, the Annual Business Survey data were available up to 2016 only. Therefore, the 2017 data are based on 2016 proportions.
+</OL>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Alternative economic measures of DCMS Sectors are produced by others organisations, including DCMS’s Arm’s Length Bodies. A summary of these statistics and the varying methodologies used is available in Annex B of this report.     </p>
+<p>&nbsp;</p></div>
                 <div id="chapter-2"><h2>Chapter 2: GVA in DCMS Sectors – current prices</h2>
 <hr />
 <p>&nbsp;</p>
 <div id="chapter_2_box" class="mytextboxright mdc-elevation--z3">
-How accurate are these data?
+<h3>How accurate are these data? </h3>
+&nbsp; 
 <ol>
-    <li>The supply and use tables are currently constructed from various data sources, some of which are not based on random samples or do not have published sampling and non-sampling errors available, making it very difficult to measure both error aspects and their impact on GVA. A measure of the sampling and non-sampling error associated with national accounts (supply and use tables) are therefore not available.</li>
-    <li>As in all surveys, the estimates from the ABS are subject to various sources of error. Sampling errors are available at a 4 digit level. Further information on the quality of the ABS are published by ONS.</li>
+    <li>The supply and use tables are currently constructed from various data sources, some of which are not based on random samples or do not have published sampling and non-sampling errors available, making it difficult to measure both error aspects and their impact on GVA. A measure of the sampling and non-sampling error associated with National Accounts (supply and use tables) are therefore not available. </li>
+    <li>As in all surveys, the estimates from the ABS are subject to various sources of error. Sampling errors are available at a 4 digit level. Further information on the quality of the ABS data is published by the ONS. </li>
 </ol>
 </div>
 
-<p>This<sup>1</sup> chapter presents UK GVA estimates for each DCMS sector at a headline level. All estimates of GVA in this chapter are shown in current prices (i.e. not adjusted for inflation). GVA estimates are consistent with the Office for National Statistics National Accounts. Where data are not available directly from the Supply and Use tables, the Annual Business Survey (ABS) has been used to allocate GVA within the categories available in the Supply and Use tables. Further information on the methodology, including strengths and limitations of this approach, is available in Annex A of the report and the associated  <a href="https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology">methodology notes</a>.</p>
 <p>&nbsp;</p>
-<h4>Summary</h4>
-<p>In 2017, the contribution of DCMS sectors to the UK economy (GVA) was estimated to be at ???????, or ???????? of UK GVA. The GVA of DCMS sectors has grown at a faster rate than the economy as a whole, increasing by ?????? since 2010 (????????? in 2010). This compares to an increase of ???????????????? for the UK economy as a whole.</p>
+<p>This chapter presents UK GVA estimates for each DCMS sector at a headline level. All estimates of GVA in this chapter are shown in current prices (i.e. not adjusted for inflation). </p>
+<p>&nbsp;</p>
+<p>As mentioned in Chapter 1, these estimates are based on survey data from the ONS Annual Business Survey (ABS) and National Accounts. Further information on the methodology, including strengths and limitations of this approach, is available in Annex A of the report and the associated <a href="https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology">methodology notes</a>.</p>
+<p>&nbsp;</p>
+<p>Please note that there has been a <strong>methodology change for the Tourism estimates in 2015 which means data prior to 2015 are not comparable</strong>. More information is available in Table 2.1 of this report.For this reason, estimates are produced in this chapter for DCMS Sectors (excluding Tourism sector) where applicable. This does not affect data after 2015 which are comparable for all sectors.</p>
+<p>&nbsp;</p>
+<h4><strong>Summary</strong></h4>
+<p>&nbsp;</p>
+<p>In 2017, the contribution of DCMS Sectors to the UK economy (GVA) was estimated to be at <strong>£267.7bn</strong>, or <strong>14.6% of UK GVA</strong>.</p>
+<p>&nbsp;</p>
+<p>In 2016, DCMS Sectors accounted for 14.7% of UK GVA. These sectors saw slower growth over the past year than for the UK economy as a whole increasing by 3.4% since 2016 (£258.9bn), compared to 4.8% for the UK economy as a whole.</p>
+<p>&nbsp;</p>
+<p>Looking at the trend since 2010, DCMS Sectors (excluding Tourism) increased by 36.0% compared to a 28.7% growth for the UK economy as a whole in the same period. DCMS Sectors (excluding Tourism) contributed 10.9% of UK GVA, at £200.1bn in 2017. This is a 4.9% increase since 2016 (£190.7bn) compared to a 4.8% growth for the UK economy since 2016.  </p>
 <p>(hover over here to show: All estimates of GVA in this chapter are shown in current prices (i.e. not adjusted for inflation). </p>
-<p>Figure 2.1 shows the growth rate for DCMS sectors as a whole, whilst Table 2.1 outlines the GVA contribution in £billions for each of DCMS sectors.</p>
+<p>Figure 2.1 shows the growth rate for DCMS sectors (excluding Tourism) as a whole, whilst Table 2.1 outlines the GVA contribution in £billions for each of DCMS sectors.</p>
 <div class="clear"></div>
 
 <div class="chart mdc-elevation--z3">
@@ -232,38 +286,61 @@ How accurate are these data?
 </div>
 
 <p>&nbsp;</p>
-<p><strong>Notes</strong></p>
-<h4>1. 2017 GVA is based on the output measure of GVA to allow consistency with the sector measures for 2017. This is aligned to average GVA up to and including 2016 (last Supply Use balanced year) but then uses growth in the output measure as a proxy for GVA beyond that. The 2017 GVA figure will be revised next year, once the Supply Use tables have been balanced. This approach is different for Civil Society where the average proportion of the UK economy that is attributed to NPISH for 2010 to 2016 is assumed to be the same for 2017. This assumption seems reliable given the proportion does not vary much (from 1.2% to 1.4% over these years).</h4>
-<h4>2. Civil Society in this table represents non-market charities sitting in the Non-profit Institutions Serving Households (NPISH) sector. This is an underestimate for the sector and does not include market provider charities who have passed the market test and therefore sit in the corporate sector, social enterprises and mutuals.</h4>
-<ol>
-<li>DCMS sector total is lower than the sum of individual DCMS sectors because of overlaps between sectors.</li>
-<li>(p) = provisional</li>
-<li>(r) = revised. Text in red show where the data have been revised due to the balancing of Supply and Use tables.</li>
-<li>Data are in current prices (i.e. have not been adjusted for inflation).</li>
-</ol>
+<p><strong>Notes</strong>
+&nbsp;
+<font size="-4"> <br />
+1.2017 GVA is based on the output measure of GVA to allow consistency with the sector measures for 2017. This is aligned to average GVA up to and including 2016 (last Supply Use balanced year) but then uses growth in the output measure as a proxy for GVA beyond that. The 2017 GVA figure will be revised next year, once the Supply Use tables have been balanced. This approach is different for Civil Society where the average proportion of the UK economy that is attributed to NPISH for 2010 to 2016 is assumed to be the same for 2017. This assumption seems reliable given the proportion does not vary much (from 1.2% to 1.4% over these years). </font>
+&nbsp;
+<font size="-4">  <br />
+2.The Civil Society figure covers non-market charities in the NPISH (non-profit institutions serving households) sector. It does not include market provider charities who have passed the market test and therefore sit in the corporate sector (these data are not currently measured by ONS on a National Accounts basis), mutuals, social enterprises or community interest companies. Therefore, this is an underestimate for the sector.</font> 
+&nbsp;
+<font size="-4">  <br />
+3.DCMS sector total is lower than the sum of individual DCMS sectors because of overlaps between sectors.</font>
+&nbsp;
+<font size="-4">      <br />
+4.(p) = provisional </font>
+&nbsp;
+<font size="-4"><br />
+5.(r) = revised.</font>
+&nbsp;
+ <font size="-4"><br />
+6.Data are in current prices (i.e. have not been adjusted for inflation).</font>
+&nbsp;
+  <font size="-4">  <br />
+7.Estimates for Tourism are based on a different methodology to all other sectors, as they are taken from the Tourism Satellite Account. Several methodology improvements were made for the 2016 Tourism data, which resulted in the 2015 data being revised. In 2016, several improvements were made to the Great Britain Day Visits Survey (GBDVS). More information on these changes can be found in Chapter 3 of the <a href="https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology">methodology note</a>. As a result of these changes, a 15% increase was observed in the levels of visits reported by respondents. The 2015 data have been revised in line with the increased level of reporting of day visits. This change has not yet been implemented in the data prior to 2015. ONS plan to implement these changes in 2019 and therefore, caution should be taken when comparing data from 2015 onwards with previous years. </font></p>
 <p>&nbsp;</p>
-<p>Of all the DCMS sectors, the Digital Sector accounted for the largest proportion of GVA – just under half (48.7%) of all the DCMS GVA in 2017. The Creative Industries were the second largest, being responsible for 37.9% of DCMS GVA in 2017. However, it should be taken into account that there is significant overlap between DCMS sectors, as represented in Figure 1 below. For example, 26% of the Digital Sector GVA in 2017 (including things like motion picture production, or software publishing) was also within the Creative Industries GVA.</p>
+<p><strong>Understanding DCMS Sector overlaps</strong></p>
 <p>&nbsp;</p>
-<p>With the exception of Tourism and Civil Society[^2], all these definitions are based on the Standard Industrial Classification 2007 (SIC) codes. However, for each DCMS sector, definitions were developed individually based on internal, UK or international best practice/standards for that sector. Therefore, bringing the sectors together creates overlap between them (so, using the previous example, the definition of the Creative Industries sector, and the Digital Sector, both separately included software publishing for example). Figure 2.2 and Table 2.3 show these overlaps and how they sum to make 100% of DCMS total. Due to these overlaps, adding up the individual sector GVA proportions would give a total greater than 100%.</p>
-<p>[^2] For Tourism, a proportion of several SIC codes are used to identify the element of the industry that is directly represented by tourism. For the GVA value for Civil Society, non-market charities in the NPISH (non-profit institutions serving households) sector are defined using SIC codes. Both of these sectors therefore enable us to identify overlap with the other DCMS sectors based on SIC codes.</p>
+<p>For each DCMS Sector, definitions were developed individually based on internal, UK or international best practice/standards for that sector. With the exception of Tourism and Civil Society* , all these definitions are based on the Standard Industrial Classification 2007 (SIC) codes. Therefore, bringing the sectors together creates overlap between them. Figure 2.2 shows these overlaps and how each sector contributes to the DCMS total</p>
+<p>Due to these overlaps, adding up the individual sector GVA proportions would give a total greater than the actual value.</p>
+<p>&nbsp;</p>
+<p><font size="-4"> 
+*For Tourism, a proportion of several SIC codes are used to identify the element of the industry that is directly represented by tourism. For the GVA value for Civil Society, non-market charities in the NPISH (non-profit institutions serving households) sector are defined using SIC codes. Both of these sectors therefore enable us to identify overlap with the other DCMS sectors based on SIC codes.</font></p>
 <div class="chart mdc-elevation--z3">
     <p class="chart-title">Figure 2.2: GVA and overlaps in DCMS Sectors, 2017</p>
     <img src="static/images/fig_2_2.png">
 </div>
 
-<p>Note: There is a very small (less than 0.5%) overlap between Civil Society and Tourism, and Tourism and Sport which cannot visually be identified in Figure 2.2 above. </p>
+<p>&nbsp;</p>
+<p>Table 2.2 outlines the overlaps shown in Figure 2.2 and the GVA contribution for these overlaps. As an example, 19.5% of the DCMS Sector GVA is within both the Creative Industries (as shown in the Sector 1 column) and the Digital Sector (as shown in the Sector 2 column) exclusively. Therefore, when calculating the DCMS Sector total, this is counted once. A further 6.7% of DCMS Sector GVA are accounted for by overlaps between the Creative Industries, Digital Sector and Cultural Sector (these include activities such as broadcasting and motion picture, video and TV production). These are shown in Sector 1, Sector 2 and Sector 3 columns which share this overlap, whereas only two sectors (Digital Sector and the Creative Industries) share the 19.5% overlap outlined above.</p>
+<p>&nbsp;</p>
+<p>There is a small overlap (0.7% of DCMS Sector GVA) between 4 of the DCMS Sectors i.e. Tourism, Cultural Sector, Creative Industries and Civil Society (shown as Sector 1, Sector 2, Sector 3 and Sector 4 in the table), contributing £1.8bn to the UK economy in 2017. </p>
 <div class="mytable mdc-elevation--z3">
     <p class="chart-title">Table 2.2: GVA and overlaps in DCMS Sectors, 2017</p>
     <table id="table_2_2" class="hover">
     </table>
 </div>
 
-<p>The <a href="https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology">methodology notes</a> visually outlines the overlap between SIC codes in DCMS sectors[^3] . From this, for example, users can see that the Cultural Sector is defined using SIC codes that are all within the Creative Industries except for 4 SIC codes (manufacture of musical instruments, retail sale of music and video recording in specialised stores, reproduction of recorded media, and operation of historical sites and buildings and similar visitor attractions), whilst the Telecoms Sector is completely within the Digital Sector. Users should note that this shows the overlap of SIC codes, but not the value of GVA within these overlaps. For the overlap between sectors in terms of the value of GVA, you should use Figure 2.2 in this document.</p>
-<p>[^3] See Figure 2.1 in the<a href="https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology">methodology notes</a></p></div>
-                <div id="chapter-3"><h2>Chapter 3: ???</h2>
+<p>For more information, Chapter 2 of the <a href="https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology">methodology notes</a> visually outlines the overlap between SIC codes in DCMS Sectors* , but not the value of GVA within these overlaps. For the overlap between sectors in terms of the value of GVA, you should use Figure 2.2 and Table 2.2 in this document.</p>
+<p>&nbsp;
+<font size="-4"> 
+*See Figure 2.1 in the <a href="https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology">methodology notes</a></font></p></div>
+                <div id="chapter-3"><h2>Chapter 3: GVA in individual DCMS Sectors – Current Prices</h2>
 <hr />
 <p>&nbsp;</p>
-<p>This chapter builds on the analysis in chapter 2, providing more context and looking at the estimates for each individual sector. There is significant overlap between DCMS sectors so users should be aware that the estimate for “DCMS Sectors Total” is lower than the sum of the individual sectors. It is also worth noting that those larger SIC codes, which are found within multiple sectors, for example in Creative Industries and Cultural Sector, are likely to drive the trends in the same way for both sectors. Data tables accompanying this chapter (for sector and sub-sector) are available at <strong>xxxxx</strong></p>
+<p>This chapter builds on the analysis in chapter 2, providing more context and looking at the estimates for each individual sector. There is significant overlap between DCMS Sectors so users should be aware that the estimate for “DCMS Sectors Total” is lower than the sum of the individual sectors. It is also worth noting that those larger sub-sectors, which are found within multiple sectors, for example in Creative Industries and Cultural Sector, are likely to drive the trends in the same way for both sectors. <strong>Estimates for the Tourism Sector have been included, taking into account the methodological changes mentioned in Chapter 2</strong>.</p>
+<p>&nbsp;</p>
+<p>Data tables accompanying this chapter (for sector and sub-sector) are available <a href="https://www.gov.uk/government/statistics/dcms-sectors-economic-estimates-2017-gva">here</a>. </p>
 <div id="chapter_3_box" class="mytextboxright mdc-elevation--z3">
 <h3>How is Civil Society defined?</h3>
 For GVA expressed in current prices, the estimate for the Civil Society covers non-market charities sitting in the NPISH (non-profit institutions serving households) sector. 
@@ -285,10 +362,9 @@ More information on the Civil Society definition can be found in Annex A.
 <p class="ig-title">3.7% decrease<br>since 2016</p>
 </div>
 
-<ul>
-<li>Key Findings </li>
-</ul>
-<p>Civil Society <strong>contributed ????</strong> to the UK economy in 2017, accounting for <strong>???? of UK GVA</strong>. This sector saw an increase of ?????? since 2010 (at ??????) although declined by ??????????? since 2016 (?????? in 2016). </p>
+<p><strong>Key Findings</strong> 
+&nbsp;</p>
+<p>Civil Society <strong>contributed £23.5bn</strong> to the UK economy in 2017, accounting for <strong>1.3% of UK GVA</strong>. This sector saw an increase of 24.1% since 2010 (at £19.0bn) although declined by 3.7% since 2016 (£24.4bn in 2016). </p>
 <div class="clear"></div>
 
 <div class="chart mdc-elevation--z3">
@@ -296,13 +372,11 @@ More information on the Civil Society definition can be found in Annex A.
     <div id="figure_3_1"></div>
 </div>
 
-<p><strong>Volunteering</strong> is a key element of the Civil Society sector. However it has not been included in the above figures due to volunteering being part of the informal economy, and therefore not captured in the ONS's methodology for calculating GVA. Any overlaps between other DCMS sectors and volunteering cannot be calculated. If we were to include volunteering in the GVA figure, then you would also need to include other unpaid home production such as child and adult care in the UK GVA total. It is estimated that in 2017, volunteering contributed £31.5bn, 1.7% to the UK economy1. This includes both formal and informal volunteering activities. </p>
+<p><strong>Volunteering</strong> is a key element of the Civil Society sector. However it has not been included in the above figures due to volunteering being part of the informal economy, and therefore not captured in the ONS's methodology for calculating GVA, as is the case also with other unpaid home production such as child and adult care. Any overlaps between other DCMS Sectors and volunteering cannot be calculated. As estimated in the ONS published <a href="https://www.ons.gov.uk/releases/theuktourismsatelliteaccountuktsa2016">Household Satellite Account</a>, volunteering contributed <strong>£24bn</strong> in 2016 (this includes only formal volunteering activities). </p>
 <p>&nbsp;</p>
-<p>&ast; To calculate the volunteering estimates - The total number of hours are taken from the Community Life Survey (2017/18) and multiplied by an appropriate wage rate from the ASHE survey to estimate output of frequent volunteering. Currently, we are unable to identify intermediate consumption of the voluntary activity, and have therefore assumed, the gross value added (GVA) is equal to output.</p>
 <p>&nbsp;</p>
 <div id="chapter_3_box" class="mytextboxright mdc-elevation--z3">
 <h3>How are the Creative Industries defined? </h3>
-How are the Creative Industries defined? 
 The Creative Industries were defined in the Government’s <a href="https://www.gov.uk/government/publications/creative-industries-mapping-documents-2001">2001 Creative Industries Mapping Document</a> as “those industries which have their origin in individual creativity, skill and talent and which have a potential for wealth and job creation through the generation and exploitation of intellectual property”. 
 The DCMS definition is a UK definition based on international industrial codes. It includes the following sub-sectors: 
 <ul>
@@ -323,22 +397,20 @@ The DCMS definition is a UK definition based on international industrial codes. 
 <p>&nbsp;</p>
 <div class="chapter-infographics">
 <div id="ci-pound"></div>
-<p class="ig-title">£23.5bn<br>in 2017</p>
+<p class="ig-title">£101.5bn<br>in 2017</p>
 <div id="ci-arrow"></div>
-<p class="ig-title">3.7% decrease<br>since 2016</p>
+<p class="ig-title">7.1% increase<br>since 2016</p>
 </div>
 
-<ul>
-<li>Key Findings </li>
-</ul>
+<p><strong>Key Findings</strong> 
+&nbsp;</p>
 <p>The Creative Industries <strong>contributed £101.5bn</strong> to the UK economy in 2017, accounting for <strong>5.5% of GVA in the UK</strong>.</p>
 <p>&nbsp;</p>
-<p>Between 2010 and 2017, the Creative Industries GVA increased by 53.1% (£66.3bn in 2010) – <strong>increasing nearly twice as fast as the UK economy</strong> (28.7% increase in the UK between 2010 and 2017). </p>
+<p>Between 2010 and 2017, the Creative Industries GVA increased by 53.1% (£66.3bn in 2010). This was the fastest growth among the DCMS sectors, and an <strong>increase nearly twice as fast as the UK economy</strong> (28.7% increase in the UK between 2010 and 2017). </p>
 <p>&nbsp;</p>
-<p>The Creative Industries had the greatest percentage increase compared to other DCMS sectors since 2010, increasing by 53.1% from £66.3bn in 2010 to £101.5bn in 2017. </p>
+<p>The 'IT, software and computer services’ sub-sector is the largest Creative Industries sub-sector, accounting for £40.6bn in 2017 (40.0% of Creative Industries GVA in 2017). It is also a key driver of growth in the sector, having grown 9.1% since 2016 and 59.9% since 2010. </p>
 <p>&nbsp;</p>
-<p>The IT, software and computer services sub-sector drove this growth in the Creative Industries (accounting for £40.6bn in 2017), a 9.1% increase from 2016 and 2017, and a 59.9% increase since 2010. This sub-sector contributed over a third (40.0%) of the Creative Industries GVA in 2017. </p>
-<p>The Film, TV, video, radio and photography sub-sector accounted for 16.5% of Creative Industries GVA at £16.6bn and the Advertising and Marketing sub-sector accounted for 14.1% of Creative Industries GVA. Both these sub-sectors have increased from 8.9% and 5.8% respectively since 2016. </p>
+<p>The ‘Film, TV, video, radio and photography’ sub-sector accounted for 16.5% of Creative Industries GVA in 2017 at £16.7bn. The ‘Advertising and marketing’ sub-sector accounted for 13.1% of Creative Industries GVA. These sub-sectors’ GVA values have increased by 8.9% and 5.8% respectively since 2016. </p>
 <div class="clear"></div>
 
 <div class="chart mdc-elevation--z3">
@@ -347,21 +419,39 @@ The DCMS definition is a UK definition based on international industrial codes. 
 </div>
 
 <p>&nbsp;</p>
+<div id="chapter_3_box" class="mytextboxright mdc-elevation--z3">
+<h3>How is the Cultural Sector defined? </h3>
+DCMS have defined the Cultural Sector as those industries with a cultural object at the centre of the industry.
+The DCMS definition is a UK definition based on international industrial codes. It includes the following sub-sectors: 
+<ul>
+<li>Arts;</li>
+<li>Film, TV, and music; </li>
+<li>Radio;</li>
+<li>Photography; </li>
+<li>Crafts; </li>
+<li>Museums and galleries; </li>
+<li>Library and archives;</li>
+<li>Cultural education; and</li>
+<li>Operation of historic buildings and similar visitor attractions.</li>
+</ul>
+</div>
+
+<p>&nbsp;</p>
 <h3>Cultural Sector</h3>
 <p>&nbsp;
 <div class="chapter-infographics">
 <div id="culture-pound"></div>
-<p class="ig-title">£23.5bn<br>in 2017</p>
+<p class="ig-title">£29.5bn<br>in 2017</p>
 <div id="culture-arrow"></div>
-<p class="ig-title">3.7% decrease<br>since 2016</p>
+<p class="ig-title">7.2% increase<br>since 2016</p>
 </div></p>
-<ul>
-<li>Key Findings</li>
-</ul>
-<p>The Cultural Sector <strong>contributed £29.5bn</strong> to the UK economy in 2017 and accounted for <strong>1.6% of UK GVA</strong>. The Cultural Sector increased by 7.2% between 2016 and 2017, and by 38.5% since 2010. </p>
+<p><strong>Key Findings</strong> </p>
 <p>&nbsp;</p>
-<p>Over three fifths (60.2%) of the Cultural Sector GVA was in the Film, TV and music sub-sector (contributing £17.8bn in 2017), where GVA increased by 9.4% between 2016 and 2017, and 39.0% since 2010.<br />
-Nearly a quarter (24.8%) of Cultural Sector GVA was accounted for by the Arts sub-sector. This sub-sector increased by 62.6% since 2010, from £4.5bn in 2010 to £7.3bn in 2017. </p>
+<p>The Cultural Sector <strong>contributed £29.5bn</strong> to the UK economy in 2017 and accounted for <strong>1.6% of UK GVA</strong>. The contribution of the Cultural Sector increased by 7.2% between 2016 and 2017, and by 38.5% since 2010. </p>
+<p>&nbsp;</p>
+<p>Over three fifths (60.2%) of the Cultural Sector GVA was in the ‘Film, TV and music’ sub-sector (contributing £17.8bn in 2017), where GVA increased by 9.4% between 2016 and 2017, and 39.0% since 2010.</p>
+<p>&nbsp;</p>
+<p>Nearly a quarter (24.8%) of Cultural Sector GVA was accounted for by the ‘Arts’ sub-sector. This sub-sector has increased by 62.6% since 2010, from £4.5bn in 2010 to £7.3bn in 2017, and increased by 6.2% since 2016 (£6.9bn in 2016).</p>
 <div class="clear"></div>
 
 <div class="chart mdc-elevation--z3">
@@ -370,21 +460,40 @@ Nearly a quarter (24.8%) of Cultural Sector GVA was accounted for by the Arts su
 </div>
 
 <p>&nbsp;</p>
+<p>&nbsp;</p>
+<div id="chapter_3_box" class="mytextboxright mdc-elevation--z3">
+<h3>How is the Digital Sector defined? </h3>
+The definition of the Digital Sector used in this release was developed by the OECD using the UN Standard Industrial Classifications (SICs). This gives it the advantage of international comparability. The definition includes the following sub-sectors: 
+<ul>
+<li>Manufacturing of electronics and computers;</li>
+<li>Wholesale of computers and electronics; </li>
+<li>Publishing (excluding translation and interpretation activities;</li>
+<li>Software publishing; </li>
+<li>Film, TV, video, radio and music; </li>
+<li>Telecoms; </li>
+<li>Computer programming, consultancy and related activities;</li>
+<li>Information service activities; and</li>
+<li>Repair of computers and communication equipment. 
+</li>
+</ul>
+</div>
+
+<p>&nbsp;</p>
 <h3>Digital Sector</h3>
 <p>&nbsp;
 <div class="chapter-infographics">
 <div id="digital-pound"></div>
-<p class="ig-title">£23.5bn<br>in 2017</p>
+<p class="ig-title">£130.5bn<br>in 2017</p>
 <div id="digital-arrow"></div>
-<p class="ig-title">3.7% decrease<br>since 2016</p>
+<p class="ig-title">7.3% increase<br>since 2016</p>
 </div></p>
-<ul>
-<li>Key Findings</li>
-</ul>
-<p>The Digital Sector <strong>contributed £130.5bn</strong> to the UK economy in 2017, accounting for <strong>7.1% of UK GVA</strong>. This sector had the greatest percentage increase in the DCMS sectors between 2016 and 2017 (7.3%). This is faster than the total UK GVA, which increased by 4.8%. This Sector has also increased by 32.9% since 2010.</p>
-<p>&nbsp;
-There has been a steady growth in the Computer programming, consultancy and related activities sub-sector in 2017. This sub-sector contributed over a third (37.1%) of the Digital Sector GVA in 2017, an increase of 9.4% since 2016, and 44.2% since 2010.</p>
-<p>The Telecommunications sub-sector accounted for a quarter (25.0%) of Digital Sector GVA in 2017, contributing £32.6bn in 2017, an increase of 3.6% since 2016 and 63.1% since 2010. </p>
+<p><strong>Key Findings</strong> </p>
+<p>&nbsp;</p>
+<p>The Digital Sector <strong>contributed £130.5bn</strong> to the UK economy in 2017, accounting for <strong>7.1% of UK GVA</strong>. This sector saw the greatest percentage increase of all DCMS Sectors between 2016 and 2017 (7.3%). This is faster than the GVA for the total UK economy, which increased by 4.8%. This Sector has also increased by 32.9% since 2010 (compared to 28.7% for the total UK economy).</p>
+<p>&nbsp;</p>
+<p>There has been a steady growth in the ‘Computer programming, consultancy and related activities’ sub-sector in 2017. This sub-sector, which contributed over a third (37.1%) of the Digital Sector GVA in 2017, saw an increase in GVA value of 9.4% since 2016, and of 44.2% since 2010.</p>
+<p>&nbsp;</p>
+<p>The ‘Telecoms’ sub-sector accounted for a quarter (25.0%) of Digital Sector GVA in 2017, contributing £32.6bn in 2017. This is an increase of 3.6% since 2016 and 31.6% since 2010.  </p>
 <p>&nbsp;</p>
 <div class="clear"></div>
 
@@ -394,18 +503,22 @@ There has been a steady growth in the Computer programming, consultancy and rela
 </div>
 
 <p>&nbsp;</p>
+<div id="chapter_3_box" class="mytextboxright mdc-elevation--z3">
+<h3>How is Gambling defined? </h3>
+The definition of gambling used in the DCMS Sectors Economic Estimates is consistent with the internationally agreed definition; SIC 92 - Gambling and betting activities. 
+</div>
+
 <h3>Gambling</h3>
 <p>&nbsp;
 <div class="chapter-infographics">
 <div id="gambling-pound"></div>
-<p class="ig-title">£23.5bn<br>in 2017</p>
+<p class="ig-title">£9.3bn<br>in 2017</p>
 <div id="gambling-arrow"></div>
-<p class="ig-title">3.7% decrease<br>since 2016</p>
+<p class="ig-title">8.2% decrease<br>since 2016</p>
 </div></p>
-<ul>
-<li>Key Findings</li>
-</ul>
-<p>The Gambling Sector <strong>contributed £9.3bn</strong> to the UK economy in 2017. This is a decrease of £10.1bn since 2016 and accounted for <strong>0.5% of UK GVA</strong> in 2017. Since 2010, the Gambling Sector has increased by 10.3% (£8.4bn in 2010).</p>
+<p><strong>Key Findings</strong> </p>
+<p>&nbsp;</p>
+<p>The Gambling Sector <strong>contributed £9.3bn</strong> to the UK economy in 2017, accounting for <strong>0.5% of UK GVA</strong>. This is a decrease of £10.1bn since 2016. Since 2010, the Gambling Sector has increased by 10.3% (£8.4bn in 2010).</p>
 <p>&nbsp;</p>
 <p>The Gambling Sector is a small industry and therefore can lead to some data volatility each year due to the sample size of businesses. The decline in GVA since 2015 is partly due to the restructure of businesses in this sector.  </p>
 <div class="clear"></div>
@@ -416,18 +529,25 @@ There has been a steady growth in the Computer programming, consultancy and rela
 </div>
 
 <p>&nbsp;</p>
+<div id="chapter_3_box" class="mytextboxright mdc-elevation--z3">
+<h3>How is Sport defined?  </h3>
+For the purposes of this publication the statistical definition of sport has been used, which incorporates only those activities which are predominately sport-related. The definition encompasses (among other activities): the manufacture and retail sale of sports goods and other goods relating to physical activities; the renting and leasing of sports and recreational goods; the operation of sports and fitness facilities; and activities of sports clubs.
+
+</div>
+
 <h3>Sport</h3>
 <p>&nbsp;
 <div class="chapter-infographics">
 <div id="sport-pound"></div>
-<p class="ig-title">£23.5bn<br>in 2017</p>
+<p class="ig-title">£9.8bn<br>in 2017</p>
 <div id="sport-arrow"></div>
-<p class="ig-title">3.7% decrease<br>since 2016</p>
+<p class="ig-title">5.3% increase<br>since 2016</p>
 </div></p>
-<ul>
-<li>Key Findings</li>
-</ul>
-<p>The Sports Sector <strong>contributed £9.8bn</strong> to the UK economy in 2017, accounting for <strong>0.5% of UK GVA</strong>. This is an increase of 5.3% since 2016 (£9.3bn in 2016) and a 40.0% increase since 2010 (£7.0bn in 2010) </p>
+<p><strong>Key Findings</strong> </p>
+<p>&nbsp;</p>
+<p>The Sports Sector <strong>contributed £9.8bn</strong> to the UK economy in 2017, accounting for <strong>0.5% of UK GVA</strong>. This is an increase of 5.3% since 2016 (£9.3bn in 2016).</p>
+<p>&nbsp;</p>
+<p>The Sports Sector GVA has increased by 40.0% since 2010 (£7.0bn in 2010), although it is worth noting a decline in the Sports Sector in 2013 is likely to be caused by the effects of the UK hosting the Olympic and Paralympic Games in 2012.</p>
 <div class="clear"></div>
 
 <div class="chart mdc-elevation--z3">
@@ -436,18 +556,28 @@ There has been a steady growth in the Computer programming, consultancy and rela
 </div>
 
 <p>&nbsp;</p>
+<div id="chapter_3_box" class="mytextboxright mdc-elevation--z3">
+<h3>How is Telecoms defined?  </h3>
+For the purposes of this publication the statistical definition of sport has been used, which incorporates only The definition of telecoms used in the DCMS Sectors Economic Estimates is consistent with the internationally agreed definition; SIC 61 - Telecommunications.
+
+&nbsp;
+
+Note that as well as appearing as a sector on its own, Telecoms is also entirely included within the Digital Sector as one of the sub-sectors.  
+
+
+</div>
+
 <h3>Telecoms</h3>
 <p>&nbsp;
 <div class="chapter-infographics">
 <div id="telecoms-pound"></div>
-<p class="ig-title">£23.5bn<br>in 2017</p>
+<p class="ig-title">£32.6bn<br>in 2017</p>
 <div id="telecoms-arrow"></div>
-<p class="ig-title">3.7% decrease<br>since 2016</p>
+<p class="ig-title">3.6% increase<br>since 2016</p>
 </div></p>
-<ul>
-<li>Key Findings</li>
-</ul>
-<p>The Telecoms Sector <strong>contributed £32.6bn</strong> to the UK economy in 2017, accounting for <strong>1.8% of UK GVA</strong>. This is an increase of 3.6% since 2016 (31.4bn in 2016) and a 31.6% increase since 2010 (£24.8bn in 2010). </p>
+<p><strong>Key Findings</strong> </p>
+<p>&nbsp;</p>
+<p>The Telecoms Sector <strong>contributed £32.6bn</strong> to the UK economy in 2017, accounting for <strong>1.8% of UK GVA</strong>. This is an increase of 3.6% since 2016 (£31.4bn in 2016) and a 31.6% increase since 2010 (£24.8bn in 2010).  </p>
 <p>&nbsp;</p>
 <div class="clear"></div>
 
@@ -457,18 +587,28 @@ There has been a steady growth in the Computer programming, consultancy and rela
 </div>
 
 <p>&nbsp;</p>
+<div id="chapter_3_box" class="mytextboxright mdc-elevation--z3">
+<h3>How is Tourism defined?  </h3>
+Estimates for tourism used in this publication are based on a different methodology to all other sectors, as they are taken from the Tourism Satellite Account. This is an internationally recommended methodology for measurement of the contribution of tourism to the economy.
+
+</div>
+
 <h3>Tourism</h3>
 <p>&nbsp;
 <div class="chapter-infographics">
 <div id="tourism-pound"></div>
-<p class="ig-title">£23.5bn<br>in 2017</p>
+<p class="ig-title">£67.7bn<br>in 2017</p>
 <div id="tourism-arrow"></div>
-<p class="ig-title">3.7% decrease<br>since 2016</p>
+<p class="ig-title">0.9% decrease<br>since 2016</p>
 </div></p>
-<ul>
-<li>Key Findings</li>
-</ul>
-<p>The Tourism Sector <strong>contributed £67.7bn</strong> to the UK economy in 2017, accounting for <strong>3.7% of UK GVA</strong>. This is a slight decline of 0.9% since 2016 (68.3bn in 2016) and a 37.7% increase since 2010 (£49.2bn in 2010). </p>
+<p><strong>Key Findings</strong> </p>
+<p>&nbsp;</p>
+<p>The Tourism Sector <strong>contributed £67.7bn</strong> to the UK economy in 2017, accounting for <strong>3.7% of UK GVA</strong>. This is a slight decline of 0.9% since 2016 (£68.3bn in 2016). </p>
+<p><strong>Notes</strong></p>
+<p>&nbsp;</p>
+<p><font size="-4">
+1. Estimates for Tourism are based on a different methodology to all other sectors, as they are taken from the Tourism Satellite Account. Several methodology improvements were made for the 2016 Tourism data, which resulted in the 2015 data being revised. In 2016, several improvements were made to the Great Britain Day Visits Survey (GBDVS). More information on these changes can be found in Chapter 3 of the methodology note. As a result of these changes, a 15% increase was observed in the levels of visits reported by respondents. The 2015 data have been revised in line with the increased level of reporting of day visits. This change has not yet been implemented in the data prior to 2015. ONS plan to implement these changes in 2019 and therefore, caution should be taken when comparing data from 2015 onwards with previous years.</font> </p>
+<p>&nbsp;</p>
 <div class="clear"></div>
 
 <div class="chart mdc-elevation--z3">
@@ -478,77 +618,125 @@ There has been a steady growth in the Computer programming, consultancy and rela
                 <div id="chapter-4"><h2>Chapter 4: GVA in Chained Volume Measures</h2>
 <hr />
 <p>&nbsp;</p>
-<p>This chapter presents UK GVA estimates for DCMS sectors shown in chained volume measures (i.e. adjusted for inflation) . These estimates of GVA are based on a similar methodology as used in the UK National Accounts, which describe volume measures derived by linking to the current monetary value in 2016. Further information on the methodology is available in the associated <a href="https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology">methodology notes</a>.</p>
+<p>This chapter presents UK GVA estimates for DCMS Sectors shown in chained volume measures (i.e. adjusted for inflation)* . These estimates of GVA are based on a similar methodology as used in the UK National Accounts, which describe volume measures derived by linking to the current monetary value in 2016. Further information on the methodology is available in the associated <a href="https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology">methodology notes</a>.</p>
+<p>&nbsp;</p>
+<p><font size="-4">
+*Chained Volume Measures (CVM) are different to constant prices. In CVM, the base period is updated each year, rather than the 5 year update. CVMs are created by linking together series with different base years. In this analysis we calculate Previous Year Prices and Current Year Prices (volume series in terms of last year's prices and current year prices). Constant Price is simply the current price data deflated using a price from a base period. Generally the base period is updated every 5 years (in this analysis it is 2010 as prices are based at 2010). It can be thought of as Constant Price Value. Further information on the difference in current price, constant price and chained volume measure is available <a href="https://webarchive.nationalarchives.gov.uk/20160107002820/http://www.ons.gov.uk/ons/guide-method/method-quality/specific/economy/national-accounts/faqs/gdp-questions/index.html">here</a>.  </font> </p>
+<p>&nbsp;</p>
+<p>Similar to Current Price estimates mentioned in Chapter 2, <strong>data for the Tourism Sector in Chained Volume Measures cannot be compared to data prior to 2015 due to a change in methodology</strong>. ONS will look to revise the previous years’ tourism data in the future. </p>
+<p>&nbsp;</p>
+<p>The GVA expressed in chained volume measures does not currently include the industries covered by the Office for Civil Society. This may be developed in the future if there is sufficient user demand.</p>
 <p>&nbsp;</p>
 <h3>Summary</h3>
-<p>It is estimated that in 2017, the contribution of DCMS sectors to the UK economy (GVA) was <strong>£239.8bn , or 13.4%  of UK GVA</strong>, expressed in chained volume measures (CVM). </p>
-<p>The GVA of DCMS sectors  has grown at a faster rate than the UK economy as a whole, increasing by 21.4% since 2010 (£197.6bn). This compares to an increases of 15.1% for the UK economy as a whole over the same time period. There has been a steady growth in DCMS sector GVA since 2016, increasing by 1.8% (£235.6bn), although this growth has been less than for the UK economy as a whole (2.3% growth since 2016). </p>
+<p>&nbsp;</p>
+<p>It is estimated that in 2017, the contribution of DCMS sectors to the UK economy (GVA) was <strong>£239.8bn* , or 13.4%  of UK GVA</strong>, expressed in chained volume measures (CVM).This represented a 1.8% increase since 2016, compared to 2.3% for the UK economy as a whole. </p>
+<p><font size="-4">
+*All estimates of GVA are shown in chained volume measures (i.e. adjusted for inflation). The GVA expressed in Chained Volume Measures is lower than in current prices because of the effects of inflation being taken into account, but mainly due to civil society not currently being included in the Chained Volume Measures estimate.</font> </p>
+<p>&nbsp;</p>
+<p>The GVA of DCMS Sectors*  (excluding Tourism) has grown at a faster rate than the UK economy as a whole, increasing by 23.2% since 2010 (£144.7bn). This compares to an increase of 15.1% for the UK economy as a whole over the same time period.</p>
+<p>&nbsp;</p>
+<p><font size="-4">
+*Excluding Civil Society. The GVA expressed in chained volume measures does not include an estimate for Civil Society. </font> </p>
 <p>&nbsp;</p>
 <p>Figure 4.1 shows the growth rate for DCMS sectors as a whole, whilst Table 4.1 outlines the GVA contribution in £billions for each of DCMS sectors.</p>
 <div class="clear"></div>
 
 <div class="chart mdc-elevation--z3">
-    <p class="chart-title">Figure 4.1: Indexed growth in GVA (expressed in chained volume measures, 2010 =100) in DCMS sectors (excl. Civil Society) and UK: 2010-2017</p>
+    <p class="chart-title">Figure 4.1: Indexed growth in GVA (expressed in chained volume measures, 2010 =100) in DCMS sectors (excluding Civil Society and Tourism) and UK: 2010-2017</p>
     <div id="figure_4_1"></div>
 </div>
 
 <div class="mytable mdc-elevation--z3">
-    <p class="chart-title">Table 4.1: GVA contribution (£bn, expressed in chained volume measures) by DCMS sectors (excl. Civil Society): 2010 – 2017</p>
+    <p class="chart-title">Table 4.1: GVA contribution (£bn, expressed in chained volume measures) by DCMS sectors (excluding Civil Society): 2010 – 2017</p>
     <table id="table_4_1" class="hover">
     </table>
 </div>
 
-<p>Notes 
-1. 2017 GVA is based on the output measure of GVA to allow consistency with the sector measures for 2017. This is aligned to average GVA up to and including 2016 (last Supply Use balanced year) but then uses growth in the output measure as a proxy for GVA beyond that. The 2017 figure therefore differs from ABMM. 2010 – 2016 GVA estimates use balanced GVA in chained volume measures (ABMM).
-2. DCMS sector total is lower than the sum of individual DCMS sectors because of overlaps between sectors.
-3. Data are in chained volume measures (i.e. have been adjusted for inflation).
-4. (p) = provisional.
-5. Data are not available for Civil Society at present.</p>
 <p>&nbsp;</p>
-<p>Within each of the DCMS sectors:</p>
+<p><strong>Notes</strong></p>
+<p>&nbsp;
+<font size="-4">
+1. 2017 GVA is based on the output measure of GVA to allow consistency with the sector measures for 2017. This is aligned to average GVA up to and including 2016 (last Supply Use balanced year) but then uses growth in the output measure as a proxy for GVA beyond that. The 2017 figure therefore differs from ABMM. 2010 – 2016 GVA estimates use balanced GVA in chained volume measures (ABMM).
+</font></p>
+<p>&nbsp;
+<font size="-4">
+2. DCMS sector total is lower than the sum of individual DCMS sectors because of overlaps between sectors.
+</font></p>
+<p>&nbsp;
+<font size="-4"> 
+3. Data are in chained volume measures (i.e. have been adjusted for inflation).
+</font></p>
+<p>&nbsp;
+<font size="-4"> 
+4. Data are not available for Civil Society at present.
+</font></p>
+<p>&nbsp;
+<font size="-4"> 
+5. p = provisional.
+</font></p>
+<p>&nbsp;
+<font size="-4"> 
+6. r = revised. These are planned revisions in line with National Accounts data published by ONS.
+</font></p>
+<p>&nbsp;
+<font size="-4"> 
+7. Estimates for Tourism are based on a different methodology to all other sectors, as they are taken from the Tourism Satellite Account. Several methodology improvements were made for the 2016 Tourism data, which resulted in the 2015 data being revised. In 2016, several improvements were made to the Great Britain Day Visits Survey (GBDVS). More information on these changes can be found in Chapter 3 of the <a href="https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology">methodology note</a>. As a result of these changes, a 15% increase was observed in the levels of visits reported by respondents. The 2015 data have been revised in line with the increased level of reporting of day visits. This change has not yet been implemented in the data prior to 2015. ONS plan to implement these changes in 2019 and therefore, caution should be taken when comparing data from 2015 onwards with previous years. 
+</font></p>
+<p>&nbsp;</p>
+<p>Of the DCMS sectors:</p>
 <ul>
 <li>Digital Sector contributed £127.2bn to the UK economy in 2017 in terms of chained volume measures, accounting for 7.1% of UK GVA. </li>
-<li>Cultural Sector contributed £28.9bn, 1.6% of UK economy GVA.</li>
 <li>Creative Industries contributed £99.0bn in 2017, accounting for 5.5% of UK GVA. </li>
+<li>Cultural Sector contributed £28.9bn, 1.6% of UK economy GVA.</li>
 </ul>
-<p>These sectors have increased by 4.6%, 4.9% and 4.5% respectively since 2016, almost double the UK economy growth in the same period (at 2.3%). They have all had strong growth since 2010 too, increasing by 20.3%, 21.4% and 35.7% respectively, compared to 15.1% for the UK as a whole.</p>
 <p>&nbsp;</p>
-<p>There has been a steady growth in GVA in chained volume measures in the Telecoms sector since 2010, increasing by 25.9% since 2010 and contributed £32.0bn to the UK economy in 2017. The Telecoms sector increased by 1.7% since 2016, slightly less than the growth seen over this time period for the UK as a whole. The Sports sector has increased by 3.1% since 2016 from £9.3bn to £9.6bn in 2017. It has also seen similar levels of growth since 2010 as the UK as a whole (15.5% increase since 2010).</p>
+<p>These sectors have increased by 4.6%, 4.5% and 4.9% respectively since 2016, around double the UK economy growth in the same period (at 2.3%). They have all had strong growth since 2010 too, increasing by 20.3%, 35.7% and 21.4% respectively, compared to 15.1% for the UK as a whole.</p>
 <p>&nbsp;</p>
-<p>The Gambling Sector decreased by 9.6% between 2016 and 2017 and 9.8% since 2010. As mentioned in Chapter 3, the Gambling Sector is a small industry and therefore can lead to some data volatility each year due to the sample size of businesses. The absolute change in GVA expressed in chained volume measures for the Gambling Sector is approximately £1 billion since 2010 and 2017. The Tourism Sector contributed £61.6bn to the UK economy in 2017, a decline of 2.7% since 2016 (£63.3bn in 2016), but an increase of 16.3% since 2010 (£53.0bn in 2010).. </p>
+<p>There has been a steady growth in GVA in chained volume measures in the Telecoms Sector since 2010, increasing by 25.9% since 2010 and contributing £32.0bn to the UK economy in 2017. The Telecoms Sector increased by 1.7% since 2016, slightly less than the growth seen over this time period for the UK as a whole. The Sports Sector has also increased by 3.1% since 2016 from £9.3bn to £9.6bn in 2017. It has also seen similar levels of growth since 2010 as the UK as a whole (15.5% increase since 2010). As mentioned in Chapter 3, the decline in this sector, in 2013 is likely to be caused by the effects of the UK hosting the Olympic and Paralympic Games in 2012.</p>
+<p>&nbsp;</p>
+<p>The Gambling Sector decreased by 9.6% between 2016 and 2017 and 9.8% since 2010. As mentioned in Chapter 3, the Gambling Sector is a small industry and therefore can lead to some data volatility each year due to the sample size of businesses. The absolute change in GVA expressed in chained volume measures for the Gambling Sector is approximately £1 billion between 2010 and 2017. The Tourism Sector contributed £61.6bn to the UK economy in 2017, a decline of 2.7% since 2016 (£63.3bn in 2016). </p>
 <div class="clear"></div>
 
 <div class="chart mdc-elevation--z3">
-    <p class="chart-title">Figure 4.2: Indexed growth in GVA (expressed in chained volume measures, 2010 = 100) in each DCMS sector: 2010-2017</p>
+    <p class="chart-title">Figure 4.2: Indexed growth in GVA (expressed in chained volume measures, 2010 = 100) in each DCMS Sector (excluding Civil Society): 2010-2017</p>
     <div id="figure_4_2"></div>
-</div></div>
+</div>
+
+<p>&nbsp;</p>
+<p><strong>Notes</strong></p>
+<p>&nbsp;
+<font size="-4">
+1. Estimates for Tourism are based on a different methodology to all other sectors, as they are taken from the Tourism Satellite Account. Several methodology improvements were made for the 2016 Tourism data, which resulted in the 2015 data being revised. In 2016, several improvements were made to the Great Britain Day Visits Survey (GBDVS). More information on these changes can be found in Chapter 3 of the <a href="https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology">methodology note</a>. As a result of these changes, a 15% increase was observed in the levels of visits reported by respondents. The 2015 data have been revised in line with the increased level of reporting of day visits. This change has not yet been implemented in the data prior to 2015. ONS plan to implement these changes in 2019 and therefore, caution should be taken when comparing data from 2015 onwards with previous years. </font></p></div>
                 <div id="chapter-5"><h2>Chapter 5: Next Steps</h2>
 <hr />
 <p>&nbsp;</p>
-<p>DCMS have developed a suite of economic estimates which help support policy and understand the economic impact our sectors have on the UK economy. The GVA estimates in this release are expected to be used by customers both within and outside the government. In combination with other economic indicators, GVA estimates help build a comprehensive picture of the UK economy, and of the DCMS sectors’ importance within it. </p>
+<p>DCMS have developed a suite of economic estimates which help support policy and understand the economic impact our sectors have on the UK economy. The GVA estimates in this release are expected to be used by customers both within and outside the government. In combination with other economic indicators, GVA estimates help build a comprehensive picture of the UK economy, and of the DCMS Sectors’ importance within it. </p>
 <p>&nbsp;</p>
-<p>DCMS will continue to take forward work to develop our economic estimates for DCMS sectors further. These include:</p>
+<p>Upcoming work in the DCMS Economic Estimates series includes:</p>
 <ul>
 <li>
 <p><strong>Business Demographics</strong> - In January 2019, DCMS will publish 2017 estimates of the number of businesses in DCMS sectors. </p>
 </li>
 <li>
-<p><strong>Earnings</strong> – In 2019, DCMS will introduce new analysis on earnings data for Digital Sector employees based on the Annual Survey of Hours and Earnings (ASHE) dataset provided by Office for National Statistics (ONS). There is a demand from digital policy colleagues to understand earnings between demographics. If there is sufficient interest in these statistics, DCMS plan to widen this analysis further in the future to include all DCMS sectors.  </p>
+<p><strong>Earnings</strong> – In 2019, DCMS will introduce new analysis on earnings data for Digital Sector employees based on the Annual Survey of Hours and Earnings (ASHE) dataset provided by Office for National Statistics (ONS). If there is sufficient interest in these statistics, DCMS plan to widen this analysis further in the future to include all DCMS Sectors.</p>
 </li>
 </ul>
 <p>&nbsp;</p>
-<p>The next publication of DCMS Sectors Economic Estimates will be in January 2019 and will include Business Demographics in DCMS sectors. The date for this publication will be announced via the DCMS statistical release calendar nearer the time.</p>
+<p>The date for these publications will be announced via the DCMS statistical release calendar nearer the time.</p>
 <p>&nbsp;</p>
 <h3>Feedback and consultation</h3>
-<p>DCMS aims to continuously improve the quality of estimates and better meet user needs. We encourage our users to engage with us so that we can improve our statistics and identify gaps in the statistics that we produce. If you would like to comment on these statistics or have any enquiries on the statistics please do get in touch at <a href="mailto:evidence@culture.gov.uk">evidence@culture.gov.uk</a>. </p></div>
+<p>DCMS aims to continuously improve the quality of estimates and better meet user needs. We encourage our users to engage with us so that we can improve our statistics and identify gaps in the statistics that we produce. If you would like to comment on these statistics or have any enquiries on the statistics please do get in touch at evidence@culture.gov.uk. </p>
+<p>&nbsp;</p>
+<p>DCMS Sector Economic Estimates is an Official Statistic and has been produced to the standards set out in the Code of Practice for Statistics. The statistical series have undergone National Statistics assessment this year. The Office for Statistics Regulation are expected to publish a report in December 2018. DCMS will work closely with the Office for Statistics Regulation to take forward any recommendations to improve the trustworthiness, quality and value of the series.  </p></div>
                 <div id="annex-a"><h2>Annex A: Limitations</h2>
 <hr />
 <p>&nbsp;
 The estimates set out in this report are robust but there are some limitations which users should be aware of:</p>
 <p>&nbsp;</p>
-<p><strong>ABS survey design changes</strong> – The ABS (Annual Business Survey) is used to break down the Supply and Use tables estimates to the 4 digit level. However, users should note that the ABS population was expanded in 2015 to include approximately 92,000 solely Pay As You Earn (PAYE)-based businesses. This led to an increase in the number of businesses in the overall population of approximately 4%. In 2015, these businesses increased the level of turnover by 0.4% and aGVA by 0.8%. </p>
+<p><strong>ABS survey design changes</strong> – The ABS (Annual Business Survey) is used to break down the Supply and Use Tables (SUT) estimates to the 4 digit level. However, users should note that the ABS population was expanded in 2015 which led to an increase in the number of businesses in the overall population of approximately 4%. In 2015, these businesses increased the level of turnover by 0.4% and aGVA by 0.8%. </p>
 <p>Users should also note that a sample re-optimisation has been included in the ABS estimates for 2016. This is carried out every five years to improve the efficiency of the sample estimation and reduce sampling variability as part of the regular process to improve estimates. </p>
 <p>Both of these survey design changes can have a possible impact on the DCMS GVA estimates although the ABS is only being used to provide a proportion of the SUT so these changes should have minimal impact on the overall figures.</p>
+<p>&nbsp;</p>
 <p><strong>Sport</strong> - For the purposes of this publication the statistical definition of sport has been used. This incorporates only those 4 digit Standard Industrial Classification (SIC) codes which are predominately sport (see methodology note Table 2.1). DCMS also publishes estimates of sport based on the EU agreed <a href="https://ec.europa.eu/eurostat/documents/6921402/0/Vilnius+Definition+Sport+CPA2008+official+2013_09_19.pdf">Vilnius definition</a>. The Vilnius definition is a more comprehensive measure of sport which considers the contribution of sport across a range of industries, for example sport advertising, and sport related construction. The methodology for the <a href="https://www.gov.uk/government/collections/sport-satellite-account-for-the-uk-statistics">DCMS Sport Satellite Account</a> is currently being reviewed and therefore has not been used in these estimates.</p>
 <p>&nbsp;</p>
 <p><strong>Tourism</strong> – Estimates for tourism used in this publication are based on a different methodology to all other sectors, as they are taken from the Tourism Satellite Account. This is an internationally recommended methodology for measurement of the contribution of tourism to the economy. The latest <a href="https://www.ons.gov.uk/releases/theuktourismsatelliteaccountuktsa2016">Tourism Satellite Account</a> was published by ONS on 28th November 2018, and includes the latest estimates for direct tourism GVA, employment and trade.</p>
@@ -561,7 +749,7 @@ The estimates set out in this report are robust but there are some limitations w
 <p>&nbsp;</p>
 <p>Responsibility for the Office for Civil Society (OCS) was transferred from Cabinet Office to DCMS on 21 July 2016. OCS leads cross-government work in support of the voluntary, community and social enterprise sector (VCSE). The estimates included in this report attempt to measure the contribution of the civil society sector in the UK economy. </p>
 <p>&nbsp;</p>
-<p>For GVA expressed in current prices, the estimate for the Civil Society covers non-market charities sitting in the NPISH (non-profit institutions serving households) sector. It does not include market provider charities who have passed the market test and therefore sit in the corporate sector (These data are not currently measured by ONS on a National Accounts basis), mutuals, social enterprises or community interest companies. An estimate of the economic contribution of volunteering is also included, but this is not included in the “All DCMS Sectors” total due to it being part of the informal economy and therefore not part of the traditional methodology of calculating GVA. </p>
+<p>For GVA expressed in current prices, the estimate for the Civil Society covers non-market charities sitting in the NPISH (non-profit institutions serving households) sector. It does not include market provider charities who have passed the market test and therefore sit in the corporate sector (these data are not currently measured by ONS on a National Accounts basis), mutuals, social enterprises or community interest companies. An estimate of the economic contribution of volunteering is also included, but this is not included in the “All DCMS Sectors” total due to it being part of the informal economy and therefore not part of the traditional methodology of calculating GVA. </p>
 <p>&nbsp;</p>
 <p>NPISH data includes non-market charities, universities, trade unions and political parties. Of these, OCS only covers charities. As balanced industry data are not available split by source (i.e. the 4 sources covering charities, universities, trade unions and political parties), we have assumed that the balancing adjustment and other inputs used during data processing, are applied in proportion to the underlying size of each source data. Furthermore, it is not possible to identify the overlap between NPISH sectors and DCMS sectors due to the way the data are processed, unless there is an exact 1:1 match. For example NPISH data are processed for SIC 90, which is also within the Cultural and Tourism sector, and therefore this overlap can be removed in the ‘All DCMS Sector’ value. Conversely, NPISH data are provided for SICs 68.1 and 68.2 combined and cannot be separated. SIC 68.1 is not a DCMS industry, but SIC 68.2 is, and therefore a slight overlap will be included in the ‘All DCMS Sector’ value.  It is estimated that the overlap is a maximum of 0.2% of total UK GVA. However given that the estimates for Civil Society as a whole are an underestimate for the sector (not including market provider charities, mutuals, social enterprises and community interest companies), the ‘All DCMS Sector’ value is not an overestimate even when compensating for this small overlap.    </p>
 <p>&nbsp;</p>
@@ -577,8 +765,8 @@ The estimates set out in this report are robust but there are some limitations w
 More details of limitations are available in the <a href="https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology">methodology note</a>. </p></div>
                 <div id="annex-b"><h2>Annex B: External Data Sources</h2>
 <hr />
-<p>&nbsp;
-It is recognised that there are always different ways to define sectors, but their relevance depends on what they are needed for. Government generally favours classification systems which are 
+<p>&nbsp;</p>
+<p>It is recognised that there are always different ways to define sectors, but their relevance depends on what they are needed for. Government generally favours classification systems which are 
 <em> rigorously measured, 
 </em> internationally comparable, 
 <em> nationally consistent, and 
@@ -615,7 +803,14 @@ SW1A 2BQ
 <li>
 <p>The Economic estimates of DCMS Sectors release is an Official Statistics publication and has been produced to the standards set out in the Code of Practice for Official Statistics. For more information, see http://www.statisticsauthority.gov.uk/ assessment/code-of-practice/code-of-practice-for-official-statistics.pdf.  Details of the pre-release access arrangements for this dataset have been published alongside this release.</p>
 </li>
-</ol></div>
+</ol>
+<p>&nbsp;</p>
+<p>© Crown copyright 2018</p>
+<p>&nbsp;</p>
+<p><font size="-4">
+You may re-use this information (not including logos) free of charge in any format or medium, under the terms of the Open Government Licence.</p>
+<p>&nbsp;</p>
+<p>To view this licence, visit www.nationalarchives.gov.uk/doc/open-government-licence/ or write to the Information Policy Team, The National Archives, Kew, London TW9 4DU, or email: psi@nationalarchives.gsi.gov.uk </font></p></div>
             </div>
         </div>
 

@@ -17,3 +17,16 @@ SW1A 2BQ
 4. DCMS statisticians can be followed on Twitter via @DCMSInsight.
 
 1. The Economic estimates of DCMS Sectors release is an Official Statistics publication and has been produced to the standards set out in the Code of Practice for Official Statistics. For more information, see http://www.statisticsauthority.gov.uk/ assessment/code-of-practice/code-of-practice-for-official-statistics.pdf.  Details of the pre-release access arrangements for this dataset have been published alongside this release.
+
+&nbsp;
+
+© Crown copyright 2018
+
+&nbsp;
+
+<font size="-4">
+You may re-use this information (not including logos) free of charge in any format or medium, under the terms of the Open Government Licence.
+
+&nbsp;
+
+To view this licence, visit www.nationalarchives.gov.uk/doc/open-government-licence/ or write to the Information Policy Team, The National Archives, Kew, London TW9 4DU, or email: psi@nationalarchives.gsi.gov.uk </font>

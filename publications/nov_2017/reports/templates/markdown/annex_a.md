@@ -6,11 +6,13 @@ The estimates set out in this report are robust but there are some limitations w
 
 &nbsp;
 
-**ABS survey design changes** – The ABS (Annual Business Survey) is used to break down the Supply and Use tables estimates to the 4 digit level. However, users should note that the ABS population was expanded in 2015 to include approximately 92,000 solely Pay As You Earn (PAYE)-based businesses. This led to an increase in the number of businesses in the overall population of approximately 4%. In 2015, these businesses increased the level of turnover by 0.4% and aGVA by 0.8%. 
+**ABS survey design changes** – The ABS (Annual Business Survey) is used to break down the Supply and Use Tables (SUT) estimates to the 4 digit level. However, users should note that the ABS population was expanded in 2015 which led to an increase in the number of businesses in the overall population of approximately 4%. In 2015, these businesses increased the level of turnover by 0.4% and aGVA by 0.8%. 
 
 Users should also note that a sample re-optimisation has been included in the ABS estimates for 2016. This is carried out every five years to improve the efficiency of the sample estimation and reduce sampling variability as part of the regular process to improve estimates. 
 
 Both of these survey design changes can have a possible impact on the DCMS GVA estimates although the ABS is only being used to provide a proportion of the SUT so these changes should have minimal impact on the overall figures.
+
+&nbsp;
 
 **Sport** - For the purposes of this publication the statistical definition of sport has been used. This incorporates only those 4 digit Standard Industrial Classification (SIC) codes which are predominately sport (see methodology note Table 2.1). DCMS also publishes estimates of sport based on the EU agreed [Vilnius definition](https://ec.europa.eu/eurostat/documents/6921402/0/Vilnius+Definition+Sport+CPA2008+official+2013_09_19.pdf). The Vilnius definition is a more comprehensive measure of sport which considers the contribution of sport across a range of industries, for example sport advertising, and sport related construction. The methodology for the [DCMS Sport Satellite Account](https://www.gov.uk/government/collections/sport-satellite-account-for-the-uk-statistics) is currently being reviewed and therefore has not been used in these estimates.
 
@@ -36,7 +38,7 @@ Responsibility for the Office for Civil Society (OCS) was transferred from Cabin
 
 &nbsp;
 
-For GVA expressed in current prices, the estimate for the Civil Society covers non-market charities sitting in the NPISH (non-profit institutions serving households) sector. It does not include market provider charities who have passed the market test and therefore sit in the corporate sector (These data are not currently measured by ONS on a National Accounts basis), mutuals, social enterprises or community interest companies. An estimate of the economic contribution of volunteering is also included, but this is not included in the “All DCMS Sectors” total due to it being part of the informal economy and therefore not part of the traditional methodology of calculating GVA. 
+For GVA expressed in current prices, the estimate for the Civil Society covers non-market charities sitting in the NPISH (non-profit institutions serving households) sector. It does not include market provider charities who have passed the market test and therefore sit in the corporate sector (these data are not currently measured by ONS on a National Accounts basis), mutuals, social enterprises or community interest companies. An estimate of the economic contribution of volunteering is also included, but this is not included in the “All DCMS Sectors” total due to it being part of the informal economy and therefore not part of the traditional methodology of calculating GVA. 
 
 &nbsp;
 

@@ -4,7 +4,7 @@
 &nbsp;
 
 ### Code of Practice for Official Statistics
-DCMS Sector Economic Estimates is an Official Statistic and has been produced to the standards set out in the Code of Practice for Official Statistics. **The statistical series have undergone National Statistics assessment this year. The Office for Statistical Regulation have published a report outlining their recommendations.**
+DCMS Sector Economic Estimates series is an Official Statistic and has been produced to the standards set out in the Code of Practice for Statistics. The statistical series has undergone National Statistics assessment this year. The Office for Statistics Regulation are expected to publish a report in December 2018.
 
 &nbsp;
 
@@ -12,7 +12,7 @@ DCMS Sector Economic Estimates is an Official Statistic and has been produced to
 
 &nbsp;
 
-Released: {{ release_date }}
+Released: 28 November 2018
 
 &nbsp;
 
@@ -36,7 +36,7 @@ Both of these estimates are available from 2010 to 2017. The same data sources a
 <div id="chapter_1_box" class="mytextboxleft mdc-elevation--z3">
 The DCMS sectors cover:
 <ul>
-    <li>Civil Society</li>
+    <li>Civil Society*</li>
     <li>Creative Industries</li>
     <li>Cultural Sector</li>
     <li>Digital Sector</li>
@@ -48,27 +48,81 @@ The DCMS sectors cover:
 </div>
 
 
-The contribution of the sectors covered by the Office for Civil Society are included in the current price GVA estimates. The GVA expressed in chained volume measures does not currently include the industries covered by the Office for Civil Society. This may be developed in the future if there is sufficient user demand. 
+&nbsp;
+
+A definition for each sector is available in the associated [methodology note](https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology), along with details of methods and data limitations. There is significant overlap between DCMS sectors so users should be aware that the estimate for **“DCMS sectors total” is lower than the sum of the individual sectors.** 
 
 &nbsp;
 
-A definition for each sector is available in the associated [methodology note](https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology), along with details of methods and data limitations. There is significant overlap between DCMS sectors so users should be aware that the estimate for **“DCMS sectors total” is lower than the sum of the individual sectors.** There are always different ways to define sectors, but their relevance depends on what they are needed for. Government generally favours classification systems which are rigorously measured, internationally comparable, nationally consistent, and ideally applicable to specific policy interventions. DCMS accept that alternative definitions can be useful where a policy-relevant grouping of businesses crosses existing Standard Industrial Classification (SIC) codes. DCMS are aware of other estimates of DCMS sectors. These estimates use varying methodologies and can be useful for serving several purposes, e.g. monitoring progress under specific policy themes or measuring activities subsumed across a range of SICs. While potentially useful, the quality of the data depends on that of the evidence used to estimate the appropriate share of existing SICs. Further information on additional estimates from our Arms Length Bodies are available in Annex B. 
+<font size="-4">
+*The contribution of the sectors covered by the Office for Civil Society are included in the current price GVA estimates. The GVA expressed in chained volume measures does not currently include the industries covered by the Office for Civil Society. This may be developed in the future if there is sufficient user demand. </font>
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+&nbsp;
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+&nbsp;
 
 &nbsp;
 
 In summary, the data presented in this report on GVA:
+&nbsp;
 
-1. Are based on official statistics data sources
-1. Are based on internationally-harmonised codes, meaning the estimates are:
- - Comparable at both a national and international level. 
- - Comparable over time, allowing trends to be measured and monitored.
- - Subject to limitations of the underlying classifications around reflecting the current balance and make-up of the UK economy. For example, the SIC codes were developed in 2007 and have not been revised since. Emerging Sectors, such as Artificial Intelligence, are therefore hard-to-capture and may be excluded or mis-coded.  
-1. Are based on survey data (Annual Business Survey and national accounts) and, as with all data from surveys, there will be an associated error margin surrounding these estimates . 
-- This means we cannot say an estimate of, for example, 20% is very accurate for the whole population. Our best estimates, from the survey sample, suggest that the figure is 20%, but due to the degree of error, the true population figure could perhaps be 18% or 23%. 
-- This is not an issue with the quality of the data or analysis; rather it is an inherent principle when using survey data to inform estimates. 
-1.  Are using the most up to date data and making assumptions to estimate the value for 2017 where this is not possible. The approach is robust but will have inherent errors due to:
-- National Accounts (supply and use tables) not being balanced for 2017 until 2019
-- The supply and use tables are re-balanced each year and therefore revisions can be made for the back time series. These are planned revisions and part of the annual adjustment and balancing process.
-- The Annual Business Survey only being available up to 2016 at the time of carrying out the analysis. 
+<OL>
+<LI>Are based on Official Satistics data sources
+<LI>Are based on internationally-harmonised codes, meaning the estimates are:
+<UL>
+     <LI>Comparable at both a national and international level.
+     <LI>Comparable over time, allowing trends to be measured and monitored.
+     <LI>Subject to limitations of the underlying classifications around reflecting the current balance and make-up of the UK economy. For example, the SIC codes were developed in 2007 and have not been revised since. Emerging sectors, such as Artificial Intelligence, are therefore hard to capture and may be excluded or mis-coded.  
+</UL>
+<LI> Are based on survey data (Annual Business Survey and National Accounts) and, as with all data from surveys, there will be an associated error margin surrounding these estimates*
+<UL>
+     <LI>This means we cannot say an estimate of, for example, 20% is very accurate for the whole population. Our best estimates, from the survey sample, suggest that the figure is 20%, but due to the degree of error, the true population figure could perhaps be 18% or 22%. 
+     <LI>This is not an issue with the quality of the data or analysis; rather it is an inherent principle when using survey data to inform estimates. 
+</UL>
+         
+<font size="-4">
+*Sampling error is the error caused by observing a sample (as in a survey) instead of the whole population (as in a census). While each sample is designed to produce the “best” estimate of the true population value, a number of equal-sized samples covering the population would generally produce varying population estimates. </font>
+ <LI>  Are using the most up to date data and making assumptions to estimate the value for 2017 where this is not possible. Whilst robust, this approach will have future revisions for the reasons outlined below:
+  <UL>   
+    <LI> National Accounts (supply and use tables) for 2017 are not balanced until 2019
+   <LI>  The supply and use tables are re-balanced each year and therefore revisions can be made for the back series. These are planned revisions and part of the annual adjustment and balancing process.
+   <LI> At the time of analysis, the Annual Business Survey data were available up to 2016 only. Therefore, the 2017 data are based on 2016 proportions.
+</OL>
+    
+&nbsp;
+    
+
+    
+&nbsp;
+
+
+ 
+
+Alternative economic measures of DCMS Sectors are produced by others organisations, including DCMS’s Arm’s Length Bodies. A summary of these statistics and the varying methodologies used is available in Annex B of this report.     
+
+&nbsp;
 
 

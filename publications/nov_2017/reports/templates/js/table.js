@@ -67,5 +67,5 @@ function make_html_tb(tbl_id, df) {
 
 make_html_tb("table_2_1", {{ tb_2_1 }});
 make_html_tb("table_2_2", {{ tb_2_2 }});
-make_html_tb("table_4_1", {{ tb_2_1 }});
+make_html_tb("table_4_1", {{ tb_4_1 }});
 make_html_tb("annex_b", {{ annex_b }});
