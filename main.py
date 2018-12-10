@@ -34,5 +34,12 @@ def index():
     """Render home page."""
     return render_template('index.html')  # we can render templates as usual
 
+@app.route('/data-tools/economic-estimates')
+def eetool():
+    """Render home page."""
+    return render_template('eetool.html')  # we can render templates as usual
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
