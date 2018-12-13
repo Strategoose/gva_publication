@@ -28,9 +28,9 @@ More information on the Civil Society definition can be found in Annex A.
 &nbsp;
 
 <div class="chapter-infographics">
-<div id="cs-pound"></div>
+<div class="pound-svg" id="cs-pound"></div>
 <p class="ig-title">£23.5bn<br>in 2017</p>
-<div id="cs-arrow"></div>
+<div class="arrow-svg" id="cs-arrow"></div>
 <p class="ig-title">3.7% decrease<br>since 2016</p>
 </div>
 
@@ -77,9 +77,9 @@ The DCMS definition is a UK definition based on international industrial codes. 
 &nbsp;
 
 <div class="chapter-infographics">
-<div id="ci-pound"></div>
+<div class="pound-svg" id="ci-pound"></div>
 <p class="ig-title">£101.5bn<br>in 2017</p>
-<div id="ci-arrow"></div>
+<div class="arrow-svg" id="ci-arrow"></div>
 <p class="ig-title">7.1% increase<br>since 2016</p>
 </div>
 
@@ -133,9 +133,9 @@ The DCMS definition is a UK definition based on international industrial codes. 
 
 &nbsp;
 <div class="chapter-infographics">
-<div id="culture-pound"></div>
+<div class="pound-svg" id="culture-pound"></div>
 <p class="ig-title">£29.5bn<br>in 2017</p>
-<div id="culture-arrow"></div>
+<div class="arrow-svg" id="culture-arrow"></div>
 <p class="ig-title">7.2% increase<br>since 2016</p>
 </div>
 
@@ -190,9 +190,9 @@ The definition of the Digital Sector used in this release was developed by the O
 
 &nbsp;
 <div class="chapter-infographics">
-<div id="digital-pound"></div>
+<div class="pound-svg" id="digital-pound"></div>
 <p class="ig-title">£130.5bn<br>in 2017</p>
-<div id="digital-arrow"></div>
+<div class="arrow-svg" id="digital-arrow"></div>
 <p class="ig-title">7.3% increase<br>since 2016</p>
 </div>
 
@@ -232,9 +232,9 @@ The definition of gambling used in the DCMS Sectors Economic Estimates is consis
 
 &nbsp;
 <div class="chapter-infographics">
-<div id="gambling-pound"></div>
+<div class="pound-svg" id="gambling-pound"></div>
 <p class="ig-title">£9.3bn<br>in 2017</p>
-<div id="gambling-arrow"></div>
+<div class="arrow-svg" id="gambling-arrow"></div>
 <p class="ig-title">8.2% decrease<br>since 2016</p>
 </div>
 
@@ -268,9 +268,9 @@ For the purposes of this publication the statistical definition of sport has bee
 
 &nbsp;
 <div class="chapter-infographics">
-<div id="sport-pound"></div>
+<div class="pound-svg" id="sport-pound"></div>
 <p class="ig-title">£9.8bn<br>in 2017</p>
-<div id="sport-arrow"></div>
+<div class="arrow-svg" id="sport-arrow"></div>
 <p class="ig-title">5.3% increase<br>since 2016</p>
 </div>
 
@@ -308,9 +308,9 @@ Note that as well as appearing as a sector on its own, Telecoms is also entirely
 
 &nbsp;
 <div class="chapter-infographics">
-<div id="telecoms-pound"></div>
+<div class="pound-svg" id="telecoms-pound"></div>
 <p class="ig-title">£32.6bn<br>in 2017</p>
-<div id="telecoms-arrow"></div>
+<div class="arrow-svg" id="telecoms-arrow"></div>
 <p class="ig-title">3.6% increase<br>since 2016</p>
 </div>
 
@@ -341,9 +341,9 @@ Estimates for tourism used in this publication are based on a different methodol
 
 &nbsp;
 <div class="chapter-infographics">
-<div id="tourism-pound"></div>
+<div class="pound-svg" id="tourism-pound"></div>
 <p class="ig-title">£67.7bn<br>in 2017</p>
-<div id="tourism-arrow"></div>
+<div class="pound-svg" id="tourism-arrow"></div>
 <p class="ig-title">0.9% decrease<br>since 2016</p>
 </div>
 
@@ -364,6 +364,6 @@ The Tourism Sector **contributed £67.7bn** to the UK economy in 2017, accountin
 
 <div class="clear"></div>
 <div class="chart mdc-elevation--z3">
-    <p class="chart-title">Figure 3.7: Index of GVA growth for the Telecoms Sector and for total UK: 2010 to 2017 (2010=100)</p>
+    <p class="chart-title">Figure 3.8 Index of GVA growth for the Tourism Sector and for total UK: 2010 to 2017 (2010=100)</p>
     <div id="figure_3_8"></div>
 </div>

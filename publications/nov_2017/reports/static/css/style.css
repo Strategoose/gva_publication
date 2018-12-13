@@ -142,7 +142,7 @@ a, a:visited {
 }
 
 .marks {
-
+  
 }
 #annex-c {
   margin: 0 0 300px 0;
@@ -152,10 +152,6 @@ h2 {
   padding: 100px 0 0 0;
 }
 
-.chapter-infographics {
-  display: flex;
-  align-items: center;
-}
 
 #sidenav .active, .active, #sidenav li:hover {
   background-color: #f2c9d6;
@@ -184,6 +180,11 @@ ol {
   padding: 0 0 0 30px;
 }
 
+sup { 
+  vertical-align: super;
+  font-size: smaller;
+}
+
 .mytable {
   padding: 20px 20px 20px 20px;
   margin: 40px 40px 15px 0;
@@ -199,11 +200,11 @@ ol {
 }
 
 .chart {
-    padding: 20px 0 20px 0;
-    margin: 40px 40px 15px 0;
-    width: 650px;
-    /* clear: both; */
-    /* float: left; */
+  padding: 20px 0 20px 0;
+  margin: 40px 40px 15px 0;
+  width: 650px;
+  /* clear: both; */
+  /* float: left; */
 }
 .clear {
   clear: both;
@@ -212,36 +213,44 @@ ol {
   padding: 0 15px 0 15px;
 }
 .chart .chart-title {
-    padding: 0 20px 10px 20px;
-    /* text-align: center; */
-    /* font-weight: bold; */
+  padding: 0 20px 10px 20px;
+  /* text-align: center; */
+  /* font-weight: bold; */
 }
 .png-chart {
   width: 900px;
 }
 
 #summary-text {
-    font-size: 18px;
-    line-height: 40px;
-    color: black;
+  font-size: 18px;
+  line-height: 40px;
+  color: black;
 }
 
 #summary-text li {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 /*
 text[style] {
-   font-size: 16px !important;
-   fill: blue !important;
+  font-size: 16px !important;
+  fill: blue !important;
 }
 */
+
+#summary-pound #path0 {
+  fill: #0a4edf;
+}
+#summary-arrow path {
+  fill: #0a4edf;
+  /* height: 10; */
+}
 
 
 #cs-pound #path0 {
   fill: #e95c28;
 }
-#cs-arrow polygon {
+#cs-arrow path {
   fill: #e95c28;
   /* height: 10; */
 }
@@ -249,43 +258,43 @@ text[style] {
 #ci-pound #path0 {
   fill: #f13232;
 }
-#ci-arrow polygon {
+#ci-arrow path {
   fill: #f13232;
 }
 
 #ci-pound #path0 {
   fill: #f13232;
 }
-#ci-arrow polygon {
+#ci-arrow path {
   fill: #f13232;
 }
 
 #culture-pound #path0 {
-fill: #ffcd3f;
+  fill: #ffcd3f;
 }
-#culture-arrow polygon {
-fill: #ffcd3f;
+#culture-arrow path {
+  fill: #ffcd3f;
 }
 
 #digital-pound #path0 {
-fill: #fcaa6c;
+  fill: #fcaa6c;
 }
-#digital-arrow polygon {
-fill: #fcaa6c;
+#digital-arrow path {
+  fill: #fcaa6c;
 }
 
 #gambling-pound #path0 {
-fill: #d40072;
+  fill: #d40072;
 }
-#gambling-arrow polygon {
-fill: #d40072;
+#gambling-arrow path {
+  fill: #d40072;
 }
 
 #sport-pound #path0 {
-fill: #70405e;
+  fill: #70405e;
 }
-#sport-arrow polygon {
-fill: #70405e;
+#sport-arrow path {
+  fill: #70405e;
 }
 .c3-target-Sport .c3-line-Sport {
   stroke: #70405e !important;
@@ -294,22 +303,22 @@ fill: #70405e;
 
 
 #telecoms-pound #path0 {
-fill: #37aac9;
+  fill: #37aac9;
 }
-#telecoms-arrow polygon {
-fill: #37aac9;
+#telecoms-arrow path {
+  fill: #37aac9;
 }
 
 #tourism-pound #path0 {
-fill: #c092ae;
+  fill: #c092ae;
 }
-#tourism-arrow polygon {
-fill: #c092ae;
+#tourism-arrow path {
+  fill: #c092ae;
 }
-                                          
 
 
-  
+
+
 
 body {
   color: rgb(36, 41, 46);
@@ -349,7 +358,7 @@ body {
 #wrapper {
   grid-area: wrapper;
   display: grid;
-  grid-template-columns: 350px auto;
+  grid-template-columns: 430px auto;
   grid-template-rows: 120px auto;
   grid-template-areas:
   "navbar navbar"
@@ -369,6 +378,10 @@ body {
 #sidenav ul {
   padding-left: 0;
 }
+#sidenav ul li a {
+  display:block;
+}
+
 #sidenav a {
   padding: 0 10px 0 10px;
 }
@@ -398,9 +411,9 @@ body {
   grid-template-columns: auto;
   grid-template-rows: auto;
   grid-template-areas: 
-    "infographics"
-    "summary-text"
-    "summary-overlap-chart";
+  "infographics"
+  "summary-text"
+  "summary-overlap-chart";
 }
 
 #summary-text {
@@ -408,15 +421,59 @@ body {
   padding: 0 70px 0 70px
 }
 
+#summary-perc-text {
+  align-self: center;
+}
 
+.arrow-svg {
+  /* height: 80px; */
+  /* width: 100%; */
+  width: 100px;
+  height: 100px;
+  
+}
+#summary-arrow {
+  align-self: end;
+  margin-bottom: 30px;
+}
+.chapter-infographics {
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  grid-template-columns: 100px auto 80px auto;
+  grid-template-rows: auto;
+}
+
+#summary-guage {
+  height: 60%;
+  width: 60%;
+  align-self: end;
+  margin-bottom: 20px;
+}
+#summary-pound {
+  height: 80px;
+  width: 80px;
+  align-self: end;
+  margin-bottom: 30px;
+}
+.pound-svg {
+  
+  height: 80px;
+  width: 80px;
+}
 #infographics {
   grid-area: infographics;
   display: grid;
-  grid-template-columns: 200px 200px 200px;
+  padding-right: 80px;
+  grid-template-columns: auto auto auto 10px;
+  grid-template-rows: auto auto;
+  justify-items: center;
+  align-items: start;
+  /* grid-template-columns: 200px 200px 200px;
   grid-template-rows: 50px 200px;
   grid-template-areas: 
     "money-bag-title donut-title dcms-change-title uk-change-title"
-    "money-bag donut dcms-change uk-change";
+    "money-bag donut dcms-change uk-change"; */
 }
 .ig-title {
   color: #A9A9A9;

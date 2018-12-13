@@ -2,7 +2,7 @@
   <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#fff"></circle>
   <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" stroke-width="6"></circle>
 
-  <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ce4b99" stroke-width="6" stroke-dasharray="50 50" stroke-dashoffset="25"></circle>
+  <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#0a4edf" stroke-width="6" stroke-dasharray="50 50" stroke-dashoffset="25"></circle>
   <!-- unused 10% -->
   <g class="chart-text">
     <text x="50%" y="50%" class="chart-number" font-size="11px" text-anchor="middle" alignment-baseline="middle">

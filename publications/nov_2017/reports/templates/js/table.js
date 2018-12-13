@@ -30,12 +30,16 @@ function make_html_tb(tbl_id, df) {
             // node the contents of the <td>, and put the <td> at
             // the end of the table row
             if (i < 1) {
+                if (6 == 6) {
+                    var cell = htmlToElement('<th>' + colnames[j] + '</th>');
+                } else {
                     var cell = document.createElement("th");
                     var cellText = document.createTextNode(colnames[j]);
                     cell.appendChild(cellText);
+                }
             } else {
                     if (typeof(df['data'][i - 1][j]) == 'string' && df['data'][i - 1][j].charAt(0) == '<') {
-                        var cell = htmlToElement('<td>' + df['data'][i - 1][j] + '</tf>');
+                        var cell = htmlToElement('<td>' + df['data'][i - 1][j] + '</td>');
                     } else {
                         var cell = document.createElement("td");
                         var cellText = document.createTextNode(df['data'][i - 1][j]);
