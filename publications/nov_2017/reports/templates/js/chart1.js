@@ -7,7 +7,7 @@ mychart = function(id, data, yaxismin, yaxismax) {
     // if (id == '#figure_3_7') {
     //     console.log(id == '#figure_3_7');
     // }
-    if (id == '#figure_3_8') {
+    if (id == '#figure_3_8' | id == '#figure_4_2') {
         grid_annotation = {
             lines: [
                 {value: 2015, text: 'Change in Toursim Methodology'},

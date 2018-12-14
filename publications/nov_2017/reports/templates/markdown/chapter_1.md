@@ -121,7 +121,7 @@ In summary, the data presented in this report on GVA:
 
  
 
-Alternative economic measures of DCMS Sectors are produced by others organisations, including DCMS’s Arm’s Length Bodies. A summary of these statistics and the varying methodologies used is available in Annex B of this report.     
+Alternative economic measures of DCMS Sectors are produced by others organisations, including DCMS’s Arm’s Length Bodies. A summary of these statistics and the varying methodologies used is available in <a href="#annex-b">Annex B</a> of this report.     
 
 &nbsp;
 

@@ -42,7 +42,14 @@ function make_html_tb(tbl_id, df) {
                         var cell = htmlToElement('<td>' + df['data'][i - 1][j] + '</td>');
                     } else {
                         var cell = document.createElement("td");
-                        var cellText = document.createTextNode(df['data'][i - 1][j]);
+                        var myval = df['data'][i - 1][j]
+                        if (myval == null) myval = '';
+                        try {
+                            myval = myval.toLocaleString('en', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+                          }
+                          catch(err) {
+                          }
+                        var cellText = document.createTextNode(myval);
                         cell.appendChild(cellText);
                     }
             }

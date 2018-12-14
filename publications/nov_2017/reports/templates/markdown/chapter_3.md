@@ -48,7 +48,9 @@ Civil Society **contributed £23.5bn** to the UK economy in 2017, accounting for
 </div>
 
 
+<div id="chapter_3_box" class="mytextbox mdc-elevation--z3">
 **Volunteering** is a key element of the Civil Society sector. However it has not been included in the above figures due to volunteering being part of the informal economy, and therefore not captured in the ONS's methodology for calculating GVA, as is the case also with other unpaid home production such as child and adult care. Any overlaps between other DCMS Sectors and volunteering cannot be calculated. As estimated in the ONS published [Household Satellite Account](https://www.ons.gov.uk/releases/theuktourismsatelliteaccountuktsa2016), volunteering contributed **£24bn** in 2016 (this includes only formal volunteering activities). 
+</div>
 
 &nbsp;
 
