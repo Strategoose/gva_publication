@@ -129,7 +129,7 @@ d3.xml("/static/images/pound_chart.svg").mimeType("image/svg+xml").get(function(
     if (error) throw error;
     d3.select("#summary-pound").node().appendChild(xml.documentElement);
 });
-d3.xml("/static/images/up_arrow.svg").mimeType("image/svg+xml").get(function(error, xml) {
+d3.xml("/static/images/up_arrow2.svg").mimeType("image/svg+xml").get(function(error, xml) {
     if (error) throw error;
     d3.select("#summary-arrow").node().appendChild(xml.documentElement);
 });
@@ -141,7 +141,7 @@ d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/pound_chart.sv
    if (error) throw error;
    d3.select("#cs-pound").node().appendChild(xml.documentElement);
 });
-d3.xml("/static/images/down_arrow.svg").mimeType("image/svg+xml").get(function(error, xml) {
+d3.xml("/static/images/down_arrow2.svg").mimeType("image/svg+xml").get(function(error, xml) {
    if (error) throw error;
    d3.select("#cs-arrow").node().appendChild(xml.documentElement);
 });
@@ -154,7 +154,7 @@ d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/pound_chart.sv
    if (error) throw error;
    d3.select("#ci-pound").node().appendChild(xml.documentElement);
 });
-d3.xml("/static/images/up_arrow.svg").mimeType("image/svg+xml").get(function(error, xml) {
+d3.xml("/static/images/up_arrow2.svg").mimeType("image/svg+xml").get(function(error, xml) {
    if (error) throw error;
    d3.select("#ci-arrow").node().appendChild(xml.documentElement);
 });
@@ -164,7 +164,7 @@ d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/pound_chart.sv
    if (error) throw error;
    d3.select("#culture-pound").node().appendChild(xml.documentElement);
 });
-d3.xml("/static/images/up_arrow.svg").mimeType("image/svg+xml").get(function(error, xml) {
+d3.xml("/static/images/up_arrow2.svg").mimeType("image/svg+xml").get(function(error, xml) {
    if (error) throw error;
    d3.select("#culture-arrow").node().appendChild(xml.documentElement);
 });
@@ -175,7 +175,7 @@ d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/pound_chart.sv
    if (error) throw error;
    d3.select("#digital-pound").node().appendChild(xml.documentElement);
 });
-d3.xml("/static/images/up_arrow.svg").mimeType("image/svg+xml").get(function(error, xml) {
+d3.xml("/static/images/up_arrow2.svg").mimeType("image/svg+xml").get(function(error, xml) {
    if (error) throw error;
    d3.select("#digital-arrow").node().appendChild(xml.documentElement);
 });
@@ -185,7 +185,7 @@ d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/pound_chart.sv
    if (error) throw error;
    d3.select("#gambling-pound").node().appendChild(xml.documentElement);
 });
-d3.xml("/static/images/down_arrow.svg").mimeType("image/svg+xml").get(function(error, xml) {
+d3.xml("/static/images/down_arrow2.svg").mimeType("image/svg+xml").get(function(error, xml) {
    if (error) throw error;
    d3.select("#gambling-arrow").node().appendChild(xml.documentElement);
 });
@@ -197,7 +197,7 @@ d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/pound_chart.sv
    if (error) throw error;
    d3.select("#sport-pound").node().appendChild(xml.documentElement);
 });
-d3.xml("/static/images/up_arrow.svg").mimeType("image/svg+xml").get(function(error, xml) {
+d3.xml("/static/images/up_arrow2.svg").mimeType("image/svg+xml").get(function(error, xml) {
    if (error) throw error;
    d3.select("#sport-arrow").node().appendChild(xml.documentElement);
 });
@@ -208,7 +208,7 @@ d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/pound_chart.sv
    if (error) throw error;
    d3.select("#telecoms-pound").node().appendChild(xml.documentElement);
 });
-d3.xml("/static/images/up_arrow.svg").mimeType("image/svg+xml").get(function(error, xml) {
+d3.xml("/static/images/up_arrow2.svg").mimeType("image/svg+xml").get(function(error, xml) {
    if (error) throw error;
    d3.select("#telecoms-arrow").node().appendChild(xml.documentElement);
 });
@@ -220,7 +220,7 @@ d3.xml("https://raw.githubusercontent.com/DCMSstats/images/master/pound_chart.sv
    if (error) throw error;
    d3.select("#tourism-pound").node().appendChild(xml.documentElement);
 });
-d3.xml("/static/images/down_arrow.svg").mimeType("image/svg+xml").get(function(error, xml) {
+d3.xml("/static/images/down_arrow2.svg").mimeType("image/svg+xml").get(function(error, xml) {
    if (error) throw error;
    d3.select("#tourism-arrow").node().appendChild(xml.documentElement);
 });
