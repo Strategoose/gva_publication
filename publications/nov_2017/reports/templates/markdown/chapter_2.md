@@ -4,8 +4,7 @@
 &nbsp;
 
 <div id="chapter_2_box" class="mytextboxright mdc-elevation--z3">
-<h3>How accurate are these data? </h3>
-&nbsp; 
+<h3>How accurate are these data?</h3>
 <ol>
     <li>The supply and use tables are currently constructed from various data sources, some of which are not based on random samples or do not have published sampling and non-sampling errors available, making it difficult to measure both error aspects and their impact on GVA. A measure of the sampling and non-sampling error associated with National Accounts (supply and use tables) are therefore not available. </li>
     <li>As in all surveys, the estimates from the ABS are subject to various sources of error. Sampling errors are available at a 4 digit level. Further information on the quality of the ABS data is published by the ONS. </li>
@@ -47,13 +46,13 @@ Figure 2.1 shows the growth rate for DCMS sectors (excluding Tourism) as a whole
 <div class="clear"></div>
 
 <div class="chart mdc-elevation--z3">
-    <p class="chart-title">Figure 2.1: Indexed growth in GVA (expressed in current prices, 2010 =100) in DCMS sectors and UK: 2010-2016</p>
+    <p class="chart-title">Figure 2.1: Indexed growth in GVA (expressed in current prices, 2010 =100) in DCMS sectors and UK: 2010-2017</p>
     <div id="figure_2_1"></div>
 </div>
     
 
 <div class="mytable mdc-elevation--z3">
-    <p class="chart-title">Table 2.1: GVA contribution (£bn, expressed in current prices) by DCMS sectors: 2010 - 2016</p>
+    <p class="chart-title">Table 2.1: GVA contribution (£bn, expressed in current prices) by DCMS sectors: 2010 - 2017</p>
     <table id="table_2_1" class="hover">
     </table>
 </div>
@@ -63,25 +62,29 @@ Figure 2.1 shows the growth rate for DCMS sectors (excluding Tourism) as a whole
 **Notes**
 &nbsp;
 <font size="-4">   
-1.2017 GVA is based on the output measure of GVA to allow consistency with the sector measures for 2017. This is aligned to average GVA up to and including 2016 (last Supply Use balanced year) but then uses growth in the output measure as a proxy for GVA beyond that. The 2017 GVA figure will be revised next year, once the Supply Use tables have been balanced. This approach is different for Civil Society where the average proportion of the UK economy that is attributed to NPISH for 2010 to 2016 is assumed to be the same for 2017. This assumption seems reliable given the proportion does not vary much (from 1.2% to 1.4% over these years). </font>
-&nbsp;
-<font size="-4">    
-2.The Civil Society figure covers non-market charities in the NPISH (non-profit institutions serving households) sector. It does not include market provider charities who have passed the market test and therefore sit in the corporate sector (these data are not currently measured by ONS on a National Accounts basis), mutuals, social enterprises or community interest companies. Therefore, this is an underestimate for the sector.</font> 
-&nbsp;
-<font size="-4">    
-3.DCMS sector total is lower than the sum of individual DCMS sectors because of overlaps between sectors.</font>
-&nbsp;
-<font size="-4">        
-4.(p) = provisional </font>
+1.2017 GVA is based on the output measure of GVA to allow consistency with the sector measures for 2017. This is aligned to average GVA up to and including 2016 (last Supply Use balanced year) but then uses growth in the output measure as a proxy for GVA beyond that. The 2017 GVA figure will be revised next year, once the Supply Use tables have been balanced. This approach is different for Civil Society where the average proportion of the UK economy that is attributed to NPISH for 2010 to 2016 is assumed to be the same for 2017. This assumption seems reliable given the proportion does not vary much (from 1.2% to 1.4% over these years).</font>
 &nbsp;
 <font size="-4">  
-5.(r) = revised.</font>
+2.The Civil Society figure covers non-market charities in the NPISH (non-profit institutions serving households) sector. It does not include market provider charities who have passed the market test and therefore sit in the corporate sector (these data are not currently measured by ONS on a National Accounts basis), mutuals, social enterprises or community interest companies. Therefore, this is an underestimate for the sector.</font>
+&nbsp;  
+<font size="-4"> 
+3.DCMS sector total is lower than the sum of individual DCMS sectors because of overlaps between sectors.</font>
+&nbsp;    
+<font size="-4">
+4.(p) = provisional.
+</font>
 &nbsp;
- <font size="-4">  
-6.Data are in current prices (i.e. have not been adjusted for inflation).</font>
+<font size="-4">  
+5.(r) = revised.
+</font>
 &nbsp;
-  <font size="-4">    
-7.Estimates for Tourism are based on a different methodology to all other sectors, as they are taken from the Tourism Satellite Account. Several methodology improvements were made for the 2016 Tourism data, which resulted in the 2015 data being revised. In 2016, several improvements were made to the Great Britain Day Visits Survey (GBDVS). More information on these changes can be found in Chapter 3 of the [methodology note](https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology). As a result of these changes, a 15% increase was observed in the levels of visits reported by respondents. The 2015 data have been revised in line with the increased level of reporting of day visits. This change has not yet been implemented in the data prior to 2015. ONS plan to implement these changes in 2019 and therefore, caution should be taken when comparing data from 2015 onwards with previous years. </font>
+<font size="-4">  
+6.Data are in current prices (i.e. have not been adjusted for inflation).
+</font>
+&nbsp;
+<font size="-4">    
+7.Estimates for Tourism are based on a different methodology to all other sectors, as they are taken from the Tourism Satellite Account. Several methodology improvements were made for the 2016 Tourism data, which resulted in the 2015 data being revised. In 2016, several improvements were made to the Great Britain Day Visits Survey (GBDVS). More information on these changes can be found in Chapter 3 of the [methodology note](https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology). As a result of these changes, a 15% increase was observed in the levels of visits reported by respondents. The 2015 data have been revised in line with the increased level of reporting of day visits. This change has not yet been implemented in the data prior to 2015. ONS plan to implement these changes in 2019 and therefore, caution should be taken when comparing data from 2015 onwards with previous years. 
+</font>
 
 &nbsp;
 

@@ -35,8 +35,10 @@ More information on the Civil Society definition can be found in Annex A.
 </div>
 
 
+&nbsp;
 
 **Key Findings** 
+
 &nbsp;
 
 Civil Society **contributed £23.5bn** to the UK economy in 2017, accounting for **1.3% of UK GVA**. This sector saw an increase of 24.1% since 2010 (at £19.0bn) although declined by 3.7% since 2016 (£24.4bn in 2016). 
@@ -47,9 +49,11 @@ Civil Society **contributed £23.5bn** to the UK economy in 2017, accounting for
     <div id="figure_3_1"></div>
 </div>
 
+&nbsp;
 
 <div id="chapter_3_box" class="mytextbox mdc-elevation--z3">
-**Volunteering** is a key element of the Civil Society sector. However it has not been included in the above figures due to volunteering being part of the informal economy, and therefore not captured in the ONS's methodology for calculating GVA, as is the case also with other unpaid home production such as child and adult care. Any overlaps between other DCMS Sectors and volunteering cannot be calculated. As estimated in the ONS published [Household Satellite Account](https://www.ons.gov.uk/releases/theuktourismsatelliteaccountuktsa2016), volunteering contributed **£24bn** in 2016 (this includes only formal volunteering activities). 
+    <strong>Volunteering</strong> is a key element of the Civil Society sector. However it has not been included in the above figures due to volunteering being part of the informal economy, and therefore not captured in the ONS's methodology for calculating GVA, as is the case also with other unpaid home production such as child and adult care. Any overlaps between other DCMS Sectors and volunteering cannot be calculated. As estimated in the ONS published <a href="https://www.ons.gov.uk/economy/nationalaccounts/satelliteaccounts/articles/householdsatelliteaccounts/2015and2016estimates">Household Satellite Account</a>, volunteering contributed £24bn in 2016 (this includes only formal volunteering activities).
+
 </div>
 
 &nbsp;
@@ -85,7 +89,10 @@ The DCMS definition is a UK definition based on international industrial codes. 
 <p class="ig-title">7.1% increase<br>since 2016</p>
 </div>
 
+&nbsp;
+
 **Key Findings** 
+
 &nbsp;
 
 The Creative Industries **contributed £101.5bn** to the UK economy in 2017, accounting for **5.5% of GVA in the UK**.
@@ -140,6 +147,8 @@ The DCMS definition is a UK definition based on international industrial codes. 
 <div class="arrow-svg" id="culture-arrow"></div>
 <p class="ig-title">7.2% increase<br>since 2016</p>
 </div>
+
+&nbsp;
 
 **Key Findings** 
 
@@ -198,6 +207,7 @@ The definition of the Digital Sector used in this release was developed by the O
 <p class="ig-title">7.3% increase<br>since 2016</p>
 </div>
 
+&nbsp;
 
 **Key Findings** 
 
@@ -241,6 +251,8 @@ The definition of gambling used in the DCMS Sectors Economic Estimates is consis
 </div>
 
 
+&nbsp;
+
 **Key Findings** 
 
 &nbsp;
@@ -275,6 +287,8 @@ For the purposes of this publication the statistical definition of sport has bee
 <div class="arrow-svg" id="sport-arrow"></div>
 <p class="ig-title">5.3% increase<br>since 2016</p>
 </div>
+
+&nbsp;
 
 **Key Findings** 
 
@@ -316,6 +330,8 @@ Note that as well as appearing as a sector on its own, Telecoms is also entirely
 <p class="ig-title">3.6% increase<br>since 2016</p>
 </div>
 
+&nbsp;
+
 **Key Findings** 
 
 &nbsp;
@@ -349,18 +365,14 @@ Estimates for tourism used in this publication are based on a different methodol
 <p class="ig-title">0.9% decrease<br>since 2016</p>
 </div>
 
+&nbsp;
+
 **Key Findings** 
 
 &nbsp;
 
 The Tourism Sector **contributed £67.7bn** to the UK economy in 2017, accounting for **3.7% of UK GVA**. This is a slight decline of 0.9% since 2016 (£68.3bn in 2016). 
 
-**Notes**
-
-&nbsp;
-
-<font size="-4">
-1. Estimates for Tourism are based on a different methodology to all other sectors, as they are taken from the Tourism Satellite Account. Several methodology improvements were made for the 2016 Tourism data, which resulted in the 2015 data being revised. In 2016, several improvements were made to the Great Britain Day Visits Survey (GBDVS). More information on these changes can be found in Chapter 3 of the methodology note. As a result of these changes, a 15% increase was observed in the levels of visits reported by respondents. The 2015 data have been revised in line with the increased level of reporting of day visits. This change has not yet been implemented in the data prior to 2015. ONS plan to implement these changes in 2019 and therefore, caution should be taken when comparing data from 2015 onwards with previous years.</font> 
 
 &nbsp;
 
@@ -369,3 +381,10 @@ The Tourism Sector **contributed £67.7bn** to the UK economy in 2017, accountin
     <p class="chart-title">Figure 3.8 Index of GVA growth for the Tourism Sector and for total UK: 2010 to 2017 (2010=100)</p>
     <div id="figure_3_8"></div>
 </div>
+
+&nbsp;
+
+**Notes**  
+
+<font size="-4">
+1. Estimates for Tourism are based on a different methodology to all other sectors, as they are taken from the Tourism Satellite Account. Several methodology improvements were made for the 2016 Tourism data, which resulted in the 2015 data being revised. In 2016, several improvements were made to the Great Britain Day Visits Survey (GBDVS). More information on these changes can be found in Chapter 3 of the methodology note. As a result of these changes, a 15% increase was observed in the levels of visits reported by respondents. The 2015 data have been revised in line with the increased level of reporting of day visits. This change has not yet been implemented in the data prior to 2015. ONS plan to implement these changes in 2019 and therefore, caution should be taken when comparing data from 2015 onwards with previous years.</font> 

@@ -42,6 +42,7 @@ mychart = function(id, data, yaxismin, yaxismax) {
             'Telecoms': '#37aac9',
             'Tourism': '#c092ae',
             'All DCMS sectors': '#0a4edf',
+            'All DCMS sectors (exc. Tourism)': '#0a4edf',
             'UK': '#AEAAAA'
         },
       },
