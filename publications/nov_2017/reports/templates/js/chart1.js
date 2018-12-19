@@ -1,21 +1,21 @@
   
     //{{ gva_current_extended_json }},
-chartdata = {{ fig_2_1 }}
-seriesnames = Object.keys(chartdata[0]).slice(1,-1)
+// chartdata = {{ fig_4_2 }}
+// seriesnames = Object.keys(chartdata[0]).slice(1,-1);
+// seriesnames.push('All DCMS sectors (exc. Tourism)');
 
 mychart = function(id, data, yaxismin, yaxismax) {
     // if (id == '#figure_3_7') {
     //     console.log(id == '#figure_3_7');
     // }
-    if (id == '#figure_3_8' | id == '#figure_4_2') {
-        grid_annotation = {
-            lines: [
-                {value: 2015, text: 'Change in Toursim Methodology'},
-            ]
-        };
-    } else {
-        grid_annotation = {};
-    }
+    grid_annotation = {};
+    // if (id == '#figure_3_8' | id == '#figure_4_2') {
+    //     grid_annotation = {
+    //         lines: [
+    //             {value: 2015, text: 'Change in Toursim Methodology'},
+    //         ]
+    //     };
+    // }
     // grid_annotation = {
     //     lines: [
     //         {value: 2011, text: 'Label 1'},
@@ -24,6 +24,12 @@ mychart = function(id, data, yaxismin, yaxismax) {
     //     ]
     // };
     seriesnames = Object.keys(data[0]);
+    // seriesnames.pop();
+    // seriesnames.push('All DCMS sectors (exc Tourism)');
+    // seriesnames.push('UK');
+    // console.log(seriesnames);
+    console.log('for ' + id + ' data is:');
+    console.log(JSON.stringify(data));
     var chart = c3.generate({
       bindto: id,
       data: {
@@ -42,7 +48,7 @@ mychart = function(id, data, yaxismin, yaxismax) {
             'Telecoms': '#37aac9',
             'Tourism': '#c092ae',
             'All DCMS sectors': '#0a4edf',
-            'All DCMS sectors (exc. Tourism)': '#0a4edf',
+            'All DCMS sectors (exc Tourism)': '#0a4edf',
             'UK': '#AEAAAA'
         },
       },
@@ -121,8 +127,22 @@ mychart('#figure_4_1', {{ fig_4_1 }}, 80, 160)
 mychart('#figure_4_2', {{ fig_4_2 }}, 80, 160)
 
 
+// var mydata = [{"year":2010,"All DCMS sectors (exc. Tourism)":100,"UK":100},{"year":2011,"All DCMS sectors (exc. Tourism)":105.8,"UK":102.7},{"year":2012,"All DCMS sectors (exc. Tourism)":108,"UK":106},{"year":2013,"All DCMS sectors (exc. Tourism)":113.5,"UK":110},{"year":2014,"All DCMS sectors (exc. Tourism)":118.1,"UK":115.1},{"year":2015,"All DCMS sectors (exc. Tourism)":124.7,"UK":118.4},{"year":2016,"All DCMS sectors (exc. Tourism)":129.6,"UK":122.8},{"year":2017,"All DCMS sectors (exc. Tourism)":136,"UK":128.7}]
 
-
+// var chart = c3.generate({
+//     bindto: '#figure_2_1',
+//     data: {
+//         json: [
+//             {"year": 2010, "www.site1.com": 100, "hello": 100},
+//             {"year": 2011, "www.site1.com": 140, "hello": 160},
+//             {"year": 2012, "www.site1.com": 170, "hello": 190}
+//         ],
+//         keys: {
+//             x: 'year',
+//             value: ["www.site1.com", "hello"]
+//         },
+//     },
+// });
 
 
 // all dcms

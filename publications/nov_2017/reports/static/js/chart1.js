@@ -1,21 +1,21 @@
   
     //,
-chartdata = [{"year": 2010, "All DCMS sectors (exc. Tourism)": 100.0, "UK": 100.0}, {"year": 2011, "All DCMS sectors (exc. Tourism)": 105.8, "UK": 102.7}, {"year": 2012, "All DCMS sectors (exc. Tourism)": 108.0, "UK": 106.0}, {"year": 2013, "All DCMS sectors (exc. Tourism)": 113.5, "UK": 110.0}, {"year": 2014, "All DCMS sectors (exc. Tourism)": 118.1, "UK": 115.1}, {"year": 2015, "All DCMS sectors (exc. Tourism)": 124.7, "UK": 118.4}, {"year": 2016, "All DCMS sectors (exc. Tourism)": 129.6, "UK": 122.8}, {"year": 2017, "All DCMS sectors (exc. Tourism)": 136.0, "UK": 128.7}]
-seriesnames = Object.keys(chartdata[0]).slice(1,-1)
-console.log(seriesnames);
+// chartdata = [{"year": 2010, "Civil Society (Non-market charities)": 100.0, "Creative Industries": 100.0, "Cultural Sector": 100.0, "Digital Sector": 100.0, "Gambling": 100.0, "Sport": 100.0, "Telecoms": 100.0, "Tourism": 100.0}, {"year": 2011, "Civil Society (Non-market charities)": 102.09322, "Creative Industries": 106.79102, "Cultural Sector": 104.23159, "Digital Sector": 105.7934, "Gambling": 110.5545, "Sport": 104.97024, "Telecoms": 102.85657, "Tourism": 109.75992}, {"year": 2012, "Civil Society (Non-market charities)": 93.27217, "Creative Industries": 112.08966, "Cultural Sector": 108.24526, "Digital Sector": 108.09461, "Gambling": 117.59876, "Sport": 112.06827, "Telecoms": 105.10707, "Tourism": 116.66938}, {"year": 2013, "Civil Society (Non-market charities)": 97.13698, "Creative Industries": 119.12788, "Cultural Sector": 112.61513, "Digital Sector": 113.45336, "Gambling": 118.62208, "Sport": 106.35852, "Telecoms": 113.44242, "Tourism": 120.03459}, {"year": 2014, "Civil Society (Non-market charities)": 109.73321, "Creative Industries": 127.26536, "Cultural Sector": 118.97411, "Digital Sector": 115.18618, "Gambling": 123.6197, "Sport": 110.73235, "Telecoms": 121.25253, "Tourism": 122.96556}, {"year": 2015, "Civil Society (Non-market charities)": 117.1992, "Creative Industries": 136.11023, "Cultural Sector": 126.91603, "Digital Sector": 117.09937, "Gambling": 122.44169, "Sport": 124.41903, "Telecoms": 122.71919, "Tourism": 138.40301}, {"year": 2016, "Civil Society (Non-market charities)": 128.90963, "Creative Industries": 142.92819, "Cultural Sector": 129.23997, "Digital Sector": 123.80158, "Gambling": 120.13327, "Sport": 132.97971, "Telecoms": 127.00202, "Tourism": 138.88466}, {"year": 2017, "Civil Society (Non-market charities)": 124.09894, "Creative Industries": 153.0547, "Cultural Sector": 138.52014, "Digital Sector": 132.89477, "Gambling": 110.26892, "Sport": 140.03751, "Telecoms": 131.55556, "Tourism": 137.65456}]
+// seriesnames = Object.keys(chartdata[0]).slice(1,-1);
+// seriesnames.push('All DCMS sectors (exc. Tourism)');
+
 mychart = function(id, data, yaxismin, yaxismax) {
     // if (id == '#figure_3_7') {
     //     console.log(id == '#figure_3_7');
     // }
-    if (id == '#figure_3_8' | id == '#figure_4_2') {
-        grid_annotation = {
-            lines: [
-                {value: 2015, text: 'Change in Tourism Methodology'},
-            ]
-        };
-    } else {
-        grid_annotation = {};
-    }
+    grid_annotation = {};
+    // if (id == '#figure_3_8' | id == '#figure_4_2') {
+    //     grid_annotation = {
+    //         lines: [
+    //             {value: 2015, text: 'Change in Toursim Methodology'},
+    //         ]
+    //     };
+    // }
     // grid_annotation = {
     //     lines: [
     //         {value: 2011, text: 'Label 1'},
@@ -24,6 +24,12 @@ mychart = function(id, data, yaxismin, yaxismax) {
     //     ]
     // };
     seriesnames = Object.keys(data[0]);
+    // seriesnames.pop();
+    // seriesnames.push('All DCMS sectors (exc Tourism)');
+    // seriesnames.push('UK');
+    // console.log(seriesnames);
+    console.log('for ' + id + ' data is:');
+    console.log(JSON.stringify(data));
     var chart = c3.generate({
       bindto: id,
       data: {
@@ -41,7 +47,8 @@ mychart = function(id, data, yaxismin, yaxismax) {
             'Sport': '#70405e',
             'Telecoms': '#37aac9',
             'Tourism': '#c092ae',
-            'All DCMS sectors (exc. Tourism)': '#0a4edf',
+            'All DCMS sectors': '#0a4edf',
+            'All DCMS sectors (exc Tourism)': '#0a4edf',
             'UK': '#AEAAAA'
         },
       },
@@ -107,7 +114,7 @@ mychart = function(id, data, yaxismin, yaxismax) {
     }
     });
 }
-mychart('#figure_2_1', [{"year": 2010, "All DCMS sectors (exc. Tourism)": 100.0, "UK": 100.0}, {"year": 2011, "All DCMS sectors (exc. Tourism)": 105.8, "UK": 102.7}, {"year": 2012, "All DCMS sectors (exc. Tourism)": 108.0, "UK": 106.0}, {"year": 2013, "All DCMS sectors (exc. Tourism)": 113.5, "UK": 110.0}, {"year": 2014, "All DCMS sectors (exc. Tourism)": 118.1, "UK": 115.1}, {"year": 2015, "All DCMS sectors (exc. Tourism)": 124.7, "UK": 118.4}, {"year": 2016, "All DCMS sectors (exc. Tourism)": 129.6, "UK": 122.8}, {"year": 2017, "All DCMS sectors (exc. Tourism)": 136.0, "UK": 128.7}], 80, 160)
+mychart('#figure_2_1', [{"year": 2010, "All DCMS sectors (excl Tourism)": 100.0, "UK": 100.0}, {"year": 2011, "All DCMS sectors (excl Tourism)": 105.8, "UK": 102.7}, {"year": 2012, "All DCMS sectors (excl Tourism)": 108.0, "UK": 106.0}, {"year": 2013, "All DCMS sectors (excl Tourism)": 113.5, "UK": 110.0}, {"year": 2014, "All DCMS sectors (excl Tourism)": 118.1, "UK": 115.1}, {"year": 2015, "All DCMS sectors (excl Tourism)": 124.7, "UK": 118.4}, {"year": 2016, "All DCMS sectors (excl Tourism)": 129.6, "UK": 122.8}, {"year": 2017, "All DCMS sectors (excl Tourism)": 136.0, "UK": 128.7}], 80, 160)
 mychart('#figure_3_1', [{"year": 2010, "Civil Society (Non-market charities)": 100.0, "UK": 100.0}, {"year": 2011, "Civil Society (Non-market charities)": 102.09322, "UK": 102.70715}, {"year": 2012, "Civil Society (Non-market charities)": 93.27217, "UK": 105.96585}, {"year": 2013, "Civil Society (Non-market charities)": 97.13698, "UK": 110.04476}, {"year": 2014, "Civil Society (Non-market charities)": 109.73321, "UK": 115.13226}, {"year": 2015, "Civil Society (Non-market charities)": 117.1992, "UK": 118.35577}, {"year": 2016, "Civil Society (Non-market charities)": 128.90963, "UK": 122.8329}, {"year": 2017, "Civil Society (Non-market charities)": 124.09894, "UK": 128.70012}], 80, 160)
 mychart('#figure_3_2', [{"year": 2010, "Creative Industries": 100.0, "UK": 100.0}, {"year": 2011, "Creative Industries": 106.79102, "UK": 102.70715}, {"year": 2012, "Creative Industries": 112.08966, "UK": 105.96585}, {"year": 2013, "Creative Industries": 119.12788, "UK": 110.04476}, {"year": 2014, "Creative Industries": 127.26536, "UK": 115.13226}, {"year": 2015, "Creative Industries": 136.11023, "UK": 118.35577}, {"year": 2016, "Creative Industries": 142.92819, "UK": 122.8329}, {"year": 2017, "Creative Industries": 153.0547, "UK": 128.70012}], 80, 160)
 mychart('#figure_3_3', [{"year": 2010, "Cultural Sector": 100.0, "UK": 100.0}, {"year": 2011, "Cultural Sector": 104.23159, "UK": 102.70715}, {"year": 2012, "Cultural Sector": 108.24526, "UK": 105.96585}, {"year": 2013, "Cultural Sector": 112.61513, "UK": 110.04476}, {"year": 2014, "Cultural Sector": 118.97411, "UK": 115.13226}, {"year": 2015, "Cultural Sector": 126.91603, "UK": 118.35577}, {"year": 2016, "Cultural Sector": 129.23997, "UK": 122.8329}, {"year": 2017, "Cultural Sector": 138.52014, "UK": 128.70012}], 80, 160)
@@ -116,12 +123,26 @@ mychart('#figure_3_5', [{"year": 2010, "Gambling": 100.0, "UK": 100.0}, {"year":
 mychart('#figure_3_6', [{"year": 2010, "Sport": 100.0, "UK": 100.0}, {"year": 2011, "Sport": 104.97024, "UK": 102.70715}, {"year": 2012, "Sport": 112.06827, "UK": 105.96585}, {"year": 2013, "Sport": 106.35852, "UK": 110.04476}, {"year": 2014, "Sport": 110.73235, "UK": 115.13226}, {"year": 2015, "Sport": 124.41903, "UK": 118.35577}, {"year": 2016, "Sport": 132.97971, "UK": 122.8329}, {"year": 2017, "Sport": 140.03751, "UK": 128.70012}], 80, 160)
 mychart('#figure_3_7', [{"year": 2010, "Telecoms": 100.0, "UK": 100.0}, {"year": 2011, "Telecoms": 102.85657, "UK": 102.70715}, {"year": 2012, "Telecoms": 105.10707, "UK": 105.96585}, {"year": 2013, "Telecoms": 113.44242, "UK": 110.04476}, {"year": 2014, "Telecoms": 121.25253, "UK": 115.13226}, {"year": 2015, "Telecoms": 122.71919, "UK": 118.35577}, {"year": 2016, "Telecoms": 127.00202, "UK": 122.8329}, {"year": 2017, "Telecoms": 131.55556, "UK": 128.70012}], 80, 160)
 mychart('#figure_3_8', [{"year": 2010, "Tourism": 100.0, "UK": 100.0}, {"year": 2011, "Tourism": 109.75992, "UK": 102.70715}, {"year": 2012, "Tourism": 116.66938, "UK": 105.96585}, {"year": 2013, "Tourism": 120.03459, "UK": 110.04476}, {"year": 2014, "Tourism": 122.96556, "UK": 115.13226}, {"year": 2015, "Tourism": 138.40301, "UK": 118.35577}, {"year": 2016, "Tourism": 138.88466, "UK": 122.8329}, {"year": 2017, "Tourism": 137.65456, "UK": 128.70012}], 80, 160)
-mychart('#figure_4_1', [{"index": 2010, "All DCMS sectors (exc. Tourism)": null, "UK": 1560.6}, {"index": 2011, "All DCMS sectors (exc. Tourism)": null, "UK": 1583.3}, {"index": 2012, "All DCMS sectors (exc. Tourism)": null, "UK": 1603.0}, {"index": 2013, "All DCMS sectors (exc. Tourism)": null, "UK": 1626.2}, {"index": 2014, "All DCMS sectors (exc. Tourism)": null, "UK": 1680.7}, {"index": 2015, "All DCMS sectors (exc. Tourism)": null, "UK": 1723.5}, {"index": 2016, "All DCMS sectors (exc. Tourism)": null, "UK": 1756.0}, {"index": 2017, "All DCMS sectors (exc. Tourism)": null, "UK": 1796.3}, {"index": "% change 2016 - 2017", "All DCMS sectors (exc. Tourism)": null, "UK": 2.3}, {"index": "% change 2010 - 2017", "All DCMS sectors (exc. Tourism)": null, "UK": 15.1}, {"index": "% of UK GVA 2017", "All DCMS sectors (exc. Tourism)": null, "UK": 100.0}], 80, 160)
-mychart('#figure_4_2', [{"year": 2010, "Civil Society (Non-market charities)": 100.0, "Creative Industries": 100.0, "Cultural Sector": 100.0, "Digital Sector": 100.0, "Gambling": 100.0, "Sport": 100.0, "Telecoms": 100.0, "Tourism": 100.0, "All DCMS sectors": 100.0, "UK": 100.0}, {"year": 2011, "Civil Society (Non-market charities)": 102.09322, "Creative Industries": 106.79102, "Cultural Sector": 104.23159, "Digital Sector": 105.7934, "Gambling": 110.5545, "Sport": 104.97024, "Telecoms": 102.85657, "Tourism": 109.75992, "All DCMS sectors": 106.8043, "UK": 102.70715}, {"year": 2012, "Civil Society (Non-market charities)": 93.27217, "Creative Industries": 112.08966, "Cultural Sector": 108.24526, "Digital Sector": 108.09461, "Gambling": 117.59876, "Sport": 112.06827, "Telecoms": 105.10707, "Tourism": 116.66938, "All DCMS sectors": 110.18382, "UK": 105.96585}, {"year": 2013, "Civil Society (Non-market charities)": 97.13698, "Creative Industries": 119.12788, "Cultural Sector": 112.61513, "Digital Sector": 113.45336, "Gambling": 118.62208, "Sport": 106.35852, "Telecoms": 113.44242, "Tourism": 120.03459, "All DCMS sectors": 115.15386, "UK": 110.04476}, {"year": 2014, "Civil Society (Non-market charities)": 109.73321, "Creative Industries": 127.26536, "Cultural Sector": 118.97411, "Digital Sector": 115.18618, "Gambling": 123.6197, "Sport": 110.73235, "Telecoms": 121.25253, "Tourism": 122.96556, "All DCMS sectors": 119.30598, "UK": 115.13226}, {"year": 2015, "Civil Society (Non-market charities)": 117.1992, "Creative Industries": 136.11023, "Cultural Sector": 126.91603, "Digital Sector": 117.09937, "Gambling": 122.44169, "Sport": 124.41903, "Telecoms": 122.71919, "Tourism": 138.40301, "All DCMS sectors": 128.14282, "UK": 118.35577}, {"year": 2016, "Civil Society (Non-market charities)": 128.90963, "Creative Industries": 142.92819, "Cultural Sector": 129.23997, "Digital Sector": 123.80158, "Gambling": 120.13327, "Sport": 132.97971, "Telecoms": 127.00202, "Tourism": 138.88466, "All DCMS sectors": 131.93763, "UK": 122.8329}, {"year": 2017, "Civil Society (Non-market charities)": 124.09894, "Creative Industries": 153.0547, "Cultural Sector": 138.52014, "Digital Sector": 132.89477, "Gambling": 110.26892, "Sport": 140.03751, "Telecoms": 131.55556, "Tourism": 137.65456, "All DCMS sectors": 136.40465, "UK": 128.70012}], 80, 160)
+mychart('#figure_4_1', [{"year": 2010, "All DCMS sectors (excl Tourism)": 100.0, "UK": 100.0}, {"year": 2011, "All DCMS sectors (excl Tourism)": 105.81682, "UK": 102.70715}, {"year": 2012, "All DCMS sectors (excl Tourism)": 108.017, "UK": 105.96585}, {"year": 2013, "All DCMS sectors (excl Tourism)": 113.5232, "UK": 110.04476}, {"year": 2014, "All DCMS sectors (excl Tourism)": 118.08331, "UK": 115.13226}, {"year": 2015, "All DCMS sectors (excl Tourism)": 124.71488, "UK": 118.35577}, {"year": 2016, "All DCMS sectors (excl Tourism)": 129.61663, "UK": 122.8329}, {"year": 2017, "All DCMS sectors (excl Tourism)": 135.98705, "UK": 128.70012}], 80, 160)
+mychart('#figure_4_2', [{"year": 2010, "Civil Society (Non-market charities)": 100.0, "Creative Industries": 100.0, "Cultural Sector": 100.0, "Digital Sector": 100.0, "Gambling": 100.0, "Sport": 100.0, "Telecoms": 100.0, "Tourism": 100.0}, {"year": 2011, "Civil Society (Non-market charities)": 102.09322, "Creative Industries": 106.79102, "Cultural Sector": 104.23159, "Digital Sector": 105.7934, "Gambling": 110.5545, "Sport": 104.97024, "Telecoms": 102.85657, "Tourism": 109.75992}, {"year": 2012, "Civil Society (Non-market charities)": 93.27217, "Creative Industries": 112.08966, "Cultural Sector": 108.24526, "Digital Sector": 108.09461, "Gambling": 117.59876, "Sport": 112.06827, "Telecoms": 105.10707, "Tourism": 116.66938}, {"year": 2013, "Civil Society (Non-market charities)": 97.13698, "Creative Industries": 119.12788, "Cultural Sector": 112.61513, "Digital Sector": 113.45336, "Gambling": 118.62208, "Sport": 106.35852, "Telecoms": 113.44242, "Tourism": 120.03459}, {"year": 2014, "Civil Society (Non-market charities)": 109.73321, "Creative Industries": 127.26536, "Cultural Sector": 118.97411, "Digital Sector": 115.18618, "Gambling": 123.6197, "Sport": 110.73235, "Telecoms": 121.25253, "Tourism": 122.96556}, {"year": 2015, "Civil Society (Non-market charities)": 117.1992, "Creative Industries": 136.11023, "Cultural Sector": 126.91603, "Digital Sector": 117.09937, "Gambling": 122.44169, "Sport": 124.41903, "Telecoms": 122.71919, "Tourism": 138.40301}, {"year": 2016, "Civil Society (Non-market charities)": 128.90963, "Creative Industries": 142.92819, "Cultural Sector": 129.23997, "Digital Sector": 123.80158, "Gambling": 120.13327, "Sport": 132.97971, "Telecoms": 127.00202, "Tourism": 138.88466}, {"year": 2017, "Civil Society (Non-market charities)": 124.09894, "Creative Industries": 153.0547, "Cultural Sector": 138.52014, "Digital Sector": 132.89477, "Gambling": 110.26892, "Sport": 140.03751, "Telecoms": 131.55556, "Tourism": 137.65456}], 80, 160)
 
 
+// var mydata = [{"year":2010,"All DCMS sectors (exc. Tourism)":100,"UK":100},{"year":2011,"All DCMS sectors (exc. Tourism)":105.8,"UK":102.7},{"year":2012,"All DCMS sectors (exc. Tourism)":108,"UK":106},{"year":2013,"All DCMS sectors (exc. Tourism)":113.5,"UK":110},{"year":2014,"All DCMS sectors (exc. Tourism)":118.1,"UK":115.1},{"year":2015,"All DCMS sectors (exc. Tourism)":124.7,"UK":118.4},{"year":2016,"All DCMS sectors (exc. Tourism)":129.6,"UK":122.8},{"year":2017,"All DCMS sectors (exc. Tourism)":136,"UK":128.7}]
 
-
+// var chart = c3.generate({
+//     bindto: '#figure_2_1',
+//     data: {
+//         json: [
+//             {"year": 2010, "www.site1.com": 100, "hello": 100},
+//             {"year": 2011, "www.site1.com": 140, "hello": 160},
+//             {"year": 2012, "www.site1.com": 170, "hello": 190}
+//         ],
+//         keys: {
+//             x: 'year',
+//             value: ["www.site1.com", "hello"]
+//         },
+//     },
+// });
 
 
 // all dcms
