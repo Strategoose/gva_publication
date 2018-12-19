@@ -46,13 +46,7 @@ enquiries@culture.gov.uk
 &nbsp;
 
 
-This is the first interactive web report developed by DCMS which will allow users to click through the data they are interested in. The alternative PDF report and tables can be accessed [here](https://www.gov.uk/government/statistics/dcms-sectors-economic-estimates-2017-gva).  
-
-
-&nbsp;
-
- 
-As this is the first release incorporating an interactive tool, feedback is welcome on this approach. Please send any comments to evidence@culture.gov.uk    
+This is the first interactive web report developed by DCMS. The alternative PDF report and tables can be accessed [here](https://www.gov.uk/government/statistics/dcms-sectors-economic-estimates-2017-gva). Feedback is welcome on this approach. Please send any comments to evidence@culture.gov.uk    
 
 
 &nbsp;

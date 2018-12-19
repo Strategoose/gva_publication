@@ -9,13 +9,13 @@ mychart = function(id, data, yaxismin, yaxismax) {
     //     console.log(id == '#figure_3_7');
     // }
     grid_annotation = {};
-    // if (id == '#figure_3_8' | id == '#figure_4_2') {
-    //     grid_annotation = {
-    //         lines: [
-    //             {value: 2015, text: 'Change in Toursim Methodology'},
-    //         ]
-    //     };
-    // }
+    if (id == '#figure_3_8' | id == '#figure_4_2') {
+        grid_annotation = {
+            lines: [
+                {value: 2015, text: 'Change in Toursim Methodology (see note)'},
+            ]
+        };
+    }
     // grid_annotation = {
     //     lines: [
     //         {value: 2011, text: 'Label 1'},
@@ -28,8 +28,8 @@ mychart = function(id, data, yaxismin, yaxismax) {
     // seriesnames.push('All DCMS sectors (exc Tourism)');
     // seriesnames.push('UK');
     // console.log(seriesnames);
-    console.log('for ' + id + ' data is:');
-    console.log(JSON.stringify(data));
+    // console.log('for ' + id + ' data is:');
+    // console.log(JSON.stringify(data));
     var chart = c3.generate({
       bindto: id,
       data: {

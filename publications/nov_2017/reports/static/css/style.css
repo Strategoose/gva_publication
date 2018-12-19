@@ -2,9 +2,9 @@
 html,
 body,
 p,
-ol,
+/* ol, */
 ul,
-li,
+/* li, */
 dl,
 dt,
 dd,
@@ -87,7 +87,10 @@ a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, sub, sup, tt, var,
 b, u, i, center,
-dl, dt, dd, ol, ul, li,
+dl, dt, dd, 
+/* ol,  */
+ul, 
+/* li, */
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
@@ -177,7 +180,7 @@ tfoot tr:last-child td {
 { text-align: center; } */
 
 ol {
-  padding: 0 0 0 30px;
+  /* padding: 0 0 0 30px; */
 }
 
 sup { 
@@ -383,7 +386,7 @@ body {
 }
 
 #sidenav a {
-  padding: 0 10px 0 10px;
+  padding: 0 10px 0 20px;
 }
 
 #main {
@@ -418,7 +421,7 @@ body {
 
 #summary-text {
   grid-area: summary-text;
-  padding: 0 70px 0 70px
+  padding: 0 50px 0 10px
 }
 
 #summary-perc-text {
@@ -576,7 +579,12 @@ body {
 } */
 
 ul, ol {
-  padding-left: 20px;
+  /* padding-left: 10px; */
+}
+/* ol {list-style-position: inside;} */
+ul, ol {
+  list-style-position: outside;
+  padding-left: 30px;
 }
 
 
@@ -666,4 +674,11 @@ footer {
 }
 footer img {
   padding: 0 20px 0 0;
+}
+
+#fig-3-8-note {
+  padding: 0 20px 10px 30px;
+}
+#fig-4-2-note {
+  padding: 20px 20px 10px 30px;
 }

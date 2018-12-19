@@ -124,15 +124,12 @@ The Gambling Sector decreased by 9.6% between 2016 and 2017 and 9.8% since 2010.
 <div class="chart mdc-elevation--z3">
     <p class="chart-title">Figure 4.2: Indexed growth in GVA (expressed in chained volume measures, 2010 = 100) in each DCMS Sector (excluding Civil Society): 2010-2017</p>
     <div id="figure_4_2"></div>
+    <div id="fig-4-2-note">
+<font size="-4">
+<strong>Note: </strong>  
+Estimates for Tourism are based on a different methodology to all other sectors, as they are taken from the Tourism Satellite Account. Several methodology improvements were made for the 2016 Tourism data, which resulted in the 2015 data being revised. In 2016, several improvements were made to the Great Britain Day Visits Survey (GBDVS). More information on these changes can be found in Chapter 3 of the <a href="https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology">methodology note</a>. As a result of these changes, a 15% increase was observed in the levels of visits reported by respondents. The 2015 data have been revised in line with the increased level of reporting of day visits. This change has not yet been implemented in the data prior to 2015. ONS plan to implement these changes in 2019 and therefore, caution should be taken when comparing data from 2015 onwards with previous years.</font>
 </div>
 
-
-&nbsp;
-
-&nbsp;
-**Notes**
-
-<font size="-4">
-1. Estimates for Tourism are based on a different methodology to all other sectors, as they are taken from the Tourism Satellite Account. Several methodology improvements were made for the 2016 Tourism data, which resulted in the 2015 data being revised. In 2016, several improvements were made to the Great Britain Day Visits Survey (GBDVS). More information on these changes can be found in Chapter 3 of the [methodology note](https://www.gov.uk/government/publications/dcms-sectors-economic-estimates-methodology). As a result of these changes, a 15% increase was observed in the levels of visits reported by respondents. The 2015 data have been revised in line with the increased level of reporting of day visits. This change has not yet been implemented in the data prior to 2015. ONS plan to implement these changes in 2019 and therefore, caution should be taken when comparing data from 2015 onwards with previous years. </font>
+</div>
 
 &nbsp;
