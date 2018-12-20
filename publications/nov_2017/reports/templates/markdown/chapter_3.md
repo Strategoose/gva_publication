@@ -378,7 +378,7 @@ The Tourism Sector **contributed £67.7bn** to the UK economy in 2017, accountin
 
 <div class="clear"></div>
 <div class="chart mdc-elevation--z3">
-    <p class="chart-title">Figure 3.8 Index of GVA growth for the Tourism Sector and for total UK: 2010 to 2017 (2010=100)</p>
+    <p class="chart-title">Figure 3.8 Index of GVA growth for the Tourism Sector and for total UK: 2015 to 2017 (2010=100)</p>
     <div id="figure_3_8"></div>
 &nbsp;
 

@@ -9,13 +9,13 @@ mychart = function(id, data, yaxismin, yaxismax) {
     //     console.log(id == '#figure_3_7');
     // }
     grid_annotation = {};
-    if (id == '#figure_3_8' | id == '#figure_4_2') {
-        grid_annotation = {
-            lines: [
-                {value: 2015, text: 'Change in Toursim Methodology (see note)'},
-            ]
-        };
-    }
+    // if (id == '#figure_3_8' | id == '#figure_4_2') {
+    //     grid_annotation = {
+    //         lines: [
+    //             {value: 2015, text: 'Change in Toursim Methodology (see note)'},
+    //         ]
+    //     };
+    // }
     // grid_annotation = {
     //     lines: [
     //         {value: 2011, text: 'Label 1'},
