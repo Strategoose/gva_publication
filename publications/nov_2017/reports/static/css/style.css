@@ -347,8 +347,8 @@ body {
 }
 #dcms-logo {
   grid-area: dcms-logo;
-  height: 100px;
-  width: 145px;
+  height: 89px;
+  width: 123px;
   place-self: center;
 }
 #header-text {

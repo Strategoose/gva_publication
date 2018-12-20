@@ -189,10 +189,15 @@ footer {
   }
   footer a {
     /* color: red; */
-    text-decoration: underline;
+    /* text-decoration: underline; */
+  }
+  
+  a, a:visited {
+    color: #ce4b99;
   }
   a:hover { 
-    text-decoration: none; 
+    text-decoration: underline;
+    color: #ce4b99;
     /* color: inherit; */
   }
 
@@ -203,3 +208,7 @@ footer {
   #tsChartMeasureTypes {
     margin: 10px 0 0 2px;
   }
+
+.about-data {
+  margin-top: 80px;
+}
