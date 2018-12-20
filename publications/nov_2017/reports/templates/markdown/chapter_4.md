@@ -26,7 +26,7 @@ The GVA expressed in chained volume measures does not currently include the indu
 
 &nbsp;
 
-It is estimated that in 2017, the contribution of DCMS sectors to the UK economy (GVA) was **£239.8bn* , or 13.4%  of UK GVA**, expressed in chained volume measures (CVM).This represented a 1.8% increase since 2016, compared to 2.3% for the UK economy as a whole. 
+It is estimated that in 2017, the contribution of DCMS sectors to the UK economy (GVA) was **£239.8bn* , or 13.4%  of UK GVA**, expressed in chained volume measures (CVM). This represented a 1.8% increase since 2016, compared to 2.3% for the UK economy as a whole. 
 
 <font size="-4">
 *All estimates of GVA are shown in chained volume measures (i.e. adjusted for inflation). The GVA expressed in Chained Volume Measures is lower than in current prices because of the effects of inflation being taken into account, but mainly due to civil society not currently being included in the Chained Volume Measures estimate.</font> 

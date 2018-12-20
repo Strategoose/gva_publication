@@ -1,10 +1,10 @@
-##Annex A: Limitations
-***
+##Annex A: Limitations  
+***  
 
-&nbsp;
-The estimates set out in this report are robust but there are some limitations which users should be aware of:
+&nbsp;  
+The estimates set out in this report are robust but there are some limitations which users should be aware of:  
 
-&nbsp;
+&nbsp;  
 
 **ABS survey design changes** – The ABS (Annual Business Survey) is used to break down the Supply and Use Tables (SUT) estimates to the 4 digit level. However, users should note that the ABS population was expanded in 2015 which led to an increase in the number of businesses in the overall population of approximately 4%. In 2015, these businesses increased the level of turnover by 0.4% and aGVA by 0.8%. 
 
