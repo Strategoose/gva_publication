@@ -34,7 +34,8 @@ def dated_url_for(endpoint, **values):
 
 @app.route('/')
 def hello():
-    return flask.redirect("https://www.gov.uk/government/organisations/department-for-digital-culture-media-sport/about/statistics")
+#     return flask.redirect("https://www.gov.uk/government/organisations/department-for-digital-culture-media-sport/about/statistics")
+    return 'DCMS Statistics';
 
 @app.route('/publications/gva-2017')
 def index():
