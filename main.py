@@ -11,12 +11,12 @@ print(app.static_url_path)
 print(app.template_folder)
 
 
-@app.before_request
-def before_request():
-    if not request.is_secure:
-        url = request.url.replace("http://", "https://", 1)
-        code = 301
-        return redirect(url, code=code)
+# @app.before_request
+# def before_request():
+#     if not request.is_secure:
+#         url = request.url.replace("http://", "https://", 1)
+#         code = 301
+#         return redirect(url, code=code)
 
 # appened static content with version number to overcome caching
 @app.context_processor
@@ -34,8 +34,7 @@ def dated_url_for(endpoint, **values):
 
 @app.route('/')
 def hello():
-#     return flask.redirect("https://www.gov.uk/government/organisations/department-for-digital-culture-media-sport/about/statistics")
-    return 'DCMS Statistics';
+    return flask.redirect("https://www.gov.uk/government/organisations/department-for-digital-culture-media-sport/about/statistics")
 
 @app.route('/publications/gva-2017')
 def index():
