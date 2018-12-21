@@ -11,6 +11,13 @@ print(app.static_url_path)
 print(app.template_folder)
 
 
+@app.before_request
+def before_request():
+    if not request.is_secure:
+        url = request.url.replace("http://", "https://", 1)
+        code = 301
+        return redirect(url, code=code)
+
 # appened static content with version number to overcome caching
 @app.context_processor
 def override_url_for():
