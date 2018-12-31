@@ -4,5 +4,5 @@ dispatch:
     service: default
 
   # Send all mobile traffic to the mobile frontend.
-  - url: "*/museum/*"
-    service: museum
+  - url: "*/museums/*"
+    service: museums
