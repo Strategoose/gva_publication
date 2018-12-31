@@ -1,0 +1,8 @@
+dispatch:
+  # Default service serves simple hostname request.
+  - url: "statistics.culture.gov.uk/"
+    service: default
+
+  # Send all mobile traffic to the mobile frontend.
+  - url: "*/museum/*"
+    service: museum
