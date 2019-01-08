@@ -1,10 +1,8 @@
 dispatch:
+  # Default service serves simple hostname request.
   - url: "dcms-statistics-internal.appspot.com/"
     service: default
 
-  - url: "dcms-statistics-internal.appspot.com/data-tools/museum-visits"
-    service: museum-visits-dashboard
-    
-  - url: "dcms-statistics-internal.appspot.com/data-tools/economic-estimates"
-    service: economic-estimates-tool
-
+  # Send all mobile traffic to the mobile frontend.
+  - url: "dcms-statistics-internal.appspot.com/museums*"
+    service: museums
