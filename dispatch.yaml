@@ -1,6 +1,6 @@
 dispatch:
   # Default service serves simple hostname request.
-  - url: "statistics.culture.gov.uk/"
+  - url: "dcms-statistics-internal.appspot.com"
     service: default
 
   # Send all mobile traffic to the mobile frontend.
