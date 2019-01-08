@@ -2,9 +2,9 @@ dispatch:
   - url: "dcms-statistics-internal.appspot.com/"
     service: default
 
-  - url: "*/data-tools/museum-visits"
+  - url: "dcms-statistics-internal.appspot.com/data-tools/museum-visits"
     service: museum-visits-dashboard
     
-  - url: "*/data-tools/economic-estimates"
+  - url: "dcms-statistics-internal.appspot.com/data-tools/economic-estimates"
     service: economic-estimates-tool
 
