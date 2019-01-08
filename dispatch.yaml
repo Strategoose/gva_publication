@@ -4,5 +4,5 @@ dispatch:
     service: default
 
   # Send all mobile traffic to the mobile frontend.
-  - url: "dcms-statistics-internal.appspot.com/data-tools/museums*"
+  - url: "dcms-statistics-internal.appspot.com/data-tools/museum-visits"
     service: museums
