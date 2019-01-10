@@ -1,4 +1,4 @@
-service: gva_publication
+service: gva-publication
 runtime: python37
 entrypoint: gunicorn -b :$PORT main:app
 
