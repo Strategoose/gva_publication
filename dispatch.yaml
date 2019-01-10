@@ -1,8 +1,0 @@
-dispatch:
-  # Default service serves simple hostname request.
-  - url: "*/"
-    service: default
-
-  # Send all mobile traffic to the mobile frontend.
-  - url: "*/data-tools/museum-visits"
-    service: museum-visits-dashboard
